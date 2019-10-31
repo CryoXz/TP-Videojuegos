@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Home.master.cs" Inherits="PRESENTACION.Home" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Game Shop</title>
+    <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header>
+            
+            <div class="container-fluid" style="background-color:white">
+                <nav class="navbar navbar-expand-lg navbar-light" style="background-color:white">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                     <a href="#"><img src="IMAGES/gslogo.png" alt="gs" style="width:150px;height:45px;margin-right:10px;"></a>                  
+                    </div>
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Encuentra consolas, juegos o accesorios...">
+                                <div class="input-group-append">
+                                  <button class="btn btn-danger" type="submit">
+                                    <i class="fa fa-search">BUSCAR</i>
+                                  </button>
+                                </div>
+                            </div>
+                        <ul  class="navbar-nav mr-auto" style="color:white">
+                            <li class="nav-item"><a href="#" class="nav-link">CONSOLAS</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">ACCESORIOS</a></li>
+                            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">VIDEOJUEGOS</a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="#">JUEGOS</a>
+                              <a class="dropdown-item" href="#">CONSOLAS</a>
+                              <div class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#">MEMES</a>
+                              </div>
+                            </li>
+                            <li class="nav-item"><a href="#" class="nav-link">CONTACTO</a></li>
+                            <li><a href="#"><img src="IMAGES/carritologo.png" alt="carrito" style="width:25px;height:25px;margin-top:8px;margin-right:8px;"></a></li>
+                            <li><button type="button" class="btn btn-danger">INICIAR SESION</button></li>
+                        </ul>            
+                    </div>
+                </div>
+             </nav>
+            </div>
+        </header>
+        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        
+        <footer>
+            <div class="row" style="background-color:black">
+                <div style="color:white ; margin-left:10%">
+                    Telefono: 4420-2222<br />
+                    Direccion: Av. del Sesquicentenario, Gral Pacheco<br />
+                    Mail: contacto@gamestop.com.ar
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>  
+</body>
+</html>
