@@ -41,6 +41,7 @@
                 <button type="button" class="btn btn-danger">Ventas</button>
                 <button type="button" class="btn btn-danger">Productos</button>
                 <button type="button" class="btn btn-danger">Pedidos</button>
+                <button type="button" class="btn btn-danger">Plataformas</button>
             </div>
  
  

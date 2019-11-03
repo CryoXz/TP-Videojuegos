@@ -69,7 +69,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPlataformas.aspx" />
     <Content Include="AdminProductos.aspx" />
+    <Content Include="AdminUsuarios.aspx" />
     <Content Include="AdminVentas.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -147,12 +149,26 @@
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="AdminPlataformas.aspx.cs">
+      <DependentUpon>AdminPlataformas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPlataformas.aspx.designer.cs">
+      <DependentUpon>AdminPlataformas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminProductos.aspx.cs">
       <DependentUpon>AdminProductos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminProductos.aspx.designer.cs">
       <DependentUpon>AdminProductos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminUsuarios.aspx.cs">
+      <DependentUpon>AdminUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminUsuarios.aspx.designer.cs">
+      <DependentUpon>AdminUsuarios.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminVentas.aspx.cs">
       <DependentUpon>AdminVentas.aspx</DependentUpon>
