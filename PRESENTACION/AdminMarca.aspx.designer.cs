@@ -10,7 +10,7 @@
 namespace PRESENTACION {
     
     
-    public partial class AdminProductos {
+    public partial class Formulario_web13 {
         
         /// <summary>
         /// Control Button10.
@@ -92,23 +92,5 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button7;
-        
-        /// <summary>
-        /// Control Button8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button8;
-        
-        /// <summary>
-        /// Control Button9.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button9;
     }
 }
