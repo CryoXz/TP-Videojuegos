@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using NEGOCIO;
+
 
 namespace PRESENTACION
 {
@@ -12,6 +14,10 @@ namespace PRESENTACION
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
         }
+
+        
+
     }
 }

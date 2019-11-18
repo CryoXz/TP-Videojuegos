@@ -104,5 +104,15 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{8aa14c05-fa13-4cfe-b794-690f9d3b3183}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ENTIDAD\ENTIDAD.csproj">
+      <Project>{6bc0be4b-d2ae-4901-a088-48fcb9b7ed37}</Project>
+      <Name>ENTIDAD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
