@@ -1,0 +1,6 @@
+D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
+D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
+D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
+D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb

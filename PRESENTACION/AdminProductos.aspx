@@ -1,5 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AdminProductos.aspx.cs" Inherits="PRESENTACION.AdminProductos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            margin-left: 40px;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -18,7 +23,7 @@
  
  
 <div class="col-lg-2">
-    <asp:Button class="btn btn-danger" ID="Button10" runat="server" Text="Agregar Producto" />
+    <asp:Button class="btn btn-danger" ID="Button10" runat="server" Text="Agregar Producto" OnClick="Button10_Click" />
     </div>
 
 
@@ -199,7 +204,9 @@
     <li><a href="#"> 2 </a> </li>
     <li><a href="#"> 3 </a> </li>
     <li><a href="#"> 4 </a> </li>
-    <li><a href="#"> 5 </a> </li>
+    <li class="auto-style1"><a href="#"> 5 
+        <asp:Calendar ID="Calen" runat="server"></asp:Calendar>
+        </a> </li>
   </ul>
                 </div>
  

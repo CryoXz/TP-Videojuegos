@@ -12,6 +12,14 @@ namespace PRESENTACION
         protected void Page_Load(object sender, EventArgs e)
         {
 
+
+           
+        }
+
+        protected void Button10_Click(object sender, EventArgs e)
+        {
+            string fecha =
+            fecha = Calen.SelectedDate.ToShortDateString();
         }
     }
 }
