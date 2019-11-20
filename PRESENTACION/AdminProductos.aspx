@@ -90,9 +90,14 @@
                     </div>
                 </div>
                </div>
+                            
+                                <div class="col-lg-2">
+                                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                                    </div>
+                                
 
 
-                    <table class="table ">
+                    <table class="table">
                         <thead>
                            
                             <tr class="active">

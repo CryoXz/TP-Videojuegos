@@ -69,6 +69,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminAltaCompras.aspx" />
+    <Content Include="AdminAltaMarca.aspx" />
+    <Content Include="AdminAltaProducto.aspx" />
+    <Content Include="AdminListarCompras.aspx" />
+    <Content Include="AdminMarca.aspx" />
     <Content Include="AdminPlataformas.aspx" />
     <Content Include="AdminProductos.aspx" />
     <Content Include="AdminUsuarios.aspx" />
@@ -148,6 +153,41 @@
     </Compile>
     <Compile Include="Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAltaCompras.aspx.cs">
+      <DependentUpon>AdminAltaCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAltaCompras.aspx.designer.cs">
+      <DependentUpon>AdminAltaCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAltaMarca.aspx.cs">
+      <DependentUpon>AdminAltaMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAltaMarca.aspx.designer.cs">
+      <DependentUpon>AdminAltaMarca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAltaProducto.aspx.cs">
+      <DependentUpon>AdminAltaProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAltaProducto.aspx.designer.cs">
+      <DependentUpon>AdminAltaProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminListarCompras.aspx.cs">
+      <DependentUpon>AdminListarCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminListarCompras.aspx.designer.cs">
+      <DependentUpon>AdminListarCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminMarca.aspx.cs">
+      <DependentUpon>AdminMarca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminMarca.aspx.designer.cs">
+      <DependentUpon>AdminMarca.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPlataformas.aspx.cs">
       <DependentUpon>AdminPlataformas.aspx</DependentUpon>
