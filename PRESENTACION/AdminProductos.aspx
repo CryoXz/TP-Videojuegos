@@ -69,7 +69,7 @@
                 </div>
                                &nbsp
                 <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Categorias
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

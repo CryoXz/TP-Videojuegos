@@ -27,7 +27,7 @@ namespace ENTIDAD
         {
             return NombrePlataforma;
         }
-        public void setNombrePLataforma(String nombrePlataforma)
+        public void setNombrePlataforma(String nombrePlataforma)
         {
             NombrePlataforma = nombrePlataforma;
         }

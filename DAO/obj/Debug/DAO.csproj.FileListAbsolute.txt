@@ -7,3 +7,12 @@ D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompile
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.dll
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\DAO.dll
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.dll
+C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.pdb

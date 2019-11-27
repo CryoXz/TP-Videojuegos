@@ -9,3 +9,14 @@ D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.Cor
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csprojAssemblyReference.cache
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.dll
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.dll
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.dll
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.pdb
+C:\Users\Rocio\Desktop\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
