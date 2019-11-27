@@ -44,14 +44,32 @@ namespace PRESENTACION
         {
 
            int Id = Convert.ToInt32(GrdPlataformas.DataKeys[e.RowIndex].Value);
-       
-            
-            
+
+
+     
 
             N_Plataforma n_plat = new N_Plataforma();
             n_plat.eliminarPlataforma(Id);
             
             cargarGridview();
+
+        }
+
+        protected void GrdPlataformas_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            GrdPlataformas.EditIndex = e.NewEditIndex;
+            cargarGridview();
+
+        }
+
+        protected void GrdPlataformas_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            GrdPlataformas.EditIndex = -1;
+            cargarGridview();
+        }
+
+        protected void GrdPlataformas_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
 
         }
     }
