@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ENTIDAD;
 using DAO;
+
 using System.Data;
 
 
@@ -29,13 +30,26 @@ namespace NEGOCIO
         {
             //Validar id existente 
             DaoPlataforma dao = new DaoPlataforma();
-            Plataforma cat = new Plataforma();
-            cat.setCodigoPlataforma(id);
-            int op = dao.eliminarPlataforma(cat);
+            Plataforma p = new Plataforma();
+            p.setCodigoPlataforma(id);
+            int op = dao.eliminarPlataforma(p);
             if (op == 1)
                 return true;
             else
                 return false;
         }
+        public bool ActualizarPlataforma(Plataforma p)
+        {
+
+            DaoPlataforma dao = new DaoPlataforma();
+
+            int FilasInsertadas = dao.actualizarPlataforma(p);
+            if (FilasInsertadas == 1)
+                return true;
+            else
+                return false;
+        }
+
+
     }
 }

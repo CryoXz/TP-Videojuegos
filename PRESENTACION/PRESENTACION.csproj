@@ -280,6 +280,10 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ENTIDAD\ENTIDAD.csproj">
+      <Project>{6bc0be4b-d2ae-4901-a088-48fcb9b7ed37}</Project>
+      <Name>ENTIDAD</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NEGOCIO\NEGOCIO.csproj">
       <Project>{dd26736d-292f-4869-8e6e-6059e88401be}</Project>
       <Name>NEGOCIO</Name>

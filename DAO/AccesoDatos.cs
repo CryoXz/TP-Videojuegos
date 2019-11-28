@@ -14,6 +14,7 @@ namespace DAO
         String rutaBDNeptuno =
             "Data Source=DESKTOP-F5N5JLR\\SQL;Initial Catalog=Videojuegos;Integrated Security=True";
         // "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
+        // "Data Source=localhost\\sqlexpress;Initial Catalog=tpCuatrimestral;Integrated Security=True";
 
         public AccesoDatos()
         {

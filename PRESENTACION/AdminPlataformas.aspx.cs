@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using NEGOCIO;
-
+using ENTIDAD;
 
 
 
@@ -26,50 +26,54 @@ namespace PRESENTACION
                 }
             }
 
-            //protected void btnEliminar_Click(object sender, EventArgs e)
-            //{
-            //    N_Plataforma n_plat = new N_Plataforma();
-            //    n_plat.eliminarCategoria(Convert.ToInt32(txtIdCat.Text));
-            //    txtIdCat.Text = "";
-            //    cargarGridview();
-            //}
+
             public void cargarGridview()
             {
                 N_Plataforma n_plat = new N_Plataforma();
-                GrdPlataformas.DataSource = n_plat.getTabla();
-                GrdPlataformas.DataBind();
+                grdPlataformas.DataSource = n_plat.getTabla();
+                grdPlataformas.DataBind();
             }
 
-        protected void GrdPlataformas_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        protected void grdPlataformas_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
-           int Id = Convert.ToInt32(GrdPlataformas.DataKeys[e.RowIndex].Value);
-
-
-     
-
+            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_it_codigoPlataforma")).Text;
+            int i_codigoPlataforma = int.Parse(s_codigoPlataforma);
             N_Plataforma n_plat = new N_Plataforma();
-            n_plat.eliminarPlataforma(Id);
-            
+            n_plat.eliminarPlataforma(i_codigoPlataforma);
+            cargarGridview();
+
+
+        }
+
+        protected void grdPlataformas_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            grdPlataformas.EditIndex = e.NewEditIndex;
             cargarGridview();
 
         }
 
-        protected void GrdPlataformas_RowEditing(object sender, GridViewEditEventArgs e)
+        protected void grdPlataformas_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
-            GrdPlataformas.EditIndex = e.NewEditIndex;
-            cargarGridview();
-
-        }
-
-        protected void GrdPlataformas_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
-        {
-            GrdPlataformas.EditIndex = -1;
+            grdPlataformas.EditIndex = -1;
             cargarGridview();
         }
 
-        protected void GrdPlataformas_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void grdPlataformas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
+            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_eit_codigoPlataforma")).Text;
+            String s_nombrePlataforma = ((TextBox)grdPlataformas.Rows[e.RowIndex].FindControl("txt_eit_nombrePlataforma")).Text;
+
+
+
+            Plataforma plat = new Plataforma();
+            plat.setCodigoPlataforma(Convert.ToInt32(s_codigoPlataforma));
+            plat.setNombrePlataforma(s_nombrePlataforma);
+
+            N_Plataforma n_Plataforma= new N_Plataforma();
+            n_Plataforma.ActualizarPlataforma(plat);
+
+            grdPlataformas.EditIndex = -1;
+            cargarGridview();
 
         }
     }

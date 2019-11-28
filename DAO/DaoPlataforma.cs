@@ -48,7 +48,21 @@ namespace DAO
             SqlParametros.Value = cat.getCodigoPlataforma();
         }
 
-
+        private void ArmarParametrosPlataformas(ref SqlCommand Comando, Plataforma p)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@codigoPlataforma", SqlDbType.Int);
+            SqlParametros.Value = p.getCodigoPlataforma();
+            SqlParametros = Comando.Parameters.Add("@nombrePlataforma", SqlDbType.NVarChar, 40);
+            SqlParametros.Value = p.getNombrePlataforma();
+;
+        }
+        public int actualizarPlataforma(Plataforma cat)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosPlataformas(ref comando, cat);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spActualizarPlataforma");
+        }
 
     }
 }

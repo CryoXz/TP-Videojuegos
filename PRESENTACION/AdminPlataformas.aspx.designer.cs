@@ -22,12 +22,12 @@ namespace PRESENTACION {
         protected global::System.Web.UI.WebControls.Button btnAgregar;
         
         /// <summary>
-        /// Control GrdPlataformas.
+        /// Control grdPlataformas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GrdPlataformas;
+        protected global::System.Web.UI.WebControls.GridView grdPlataformas;
     }
 }
