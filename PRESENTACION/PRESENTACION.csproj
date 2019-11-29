@@ -84,6 +84,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="AdminCategorias.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="IMAGES\carritologo.png" />
     <Content Include="IMAGES\codmw-poster.jpg" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="AdminVentas.aspx.designer.cs">
       <DependentUpon>AdminVentas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCategorias.aspx.cs">
+      <DependentUpon>AdminCategorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminCategorias.aspx.designer.cs">
+      <DependentUpon>AdminCategorias.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
