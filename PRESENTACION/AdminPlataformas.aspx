@@ -15,8 +15,13 @@
             <hr />
             <div class="row">
                 <div class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Nombre Plataforma" aria-label="Search">
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-danger" />
+                    <asp:Label ID="Label1" runat="server" Text="Ingrese el nombre de la nueva plataforma:"></asp:Label>
+                    &nbsp;
+                    <asp:TextBox ID="TxtNombre" runat="server"></asp:TextBox>
+                   
+                    &nbsp;&nbsp;
+                   
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-danger" OnClick="btnAgregar_Click" />
                 </div>
             </div>
         </div>
@@ -29,19 +34,19 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Código">
                         <EditItemTemplate>
-                            <asp:Label ID="lbl_eit_codigoPlataforma" runat="server" Text='<%# Bind("codigoPlataforma") %>'></asp:Label>
+                            <asp:Label ID="lbl_eit_codigoPlataforma" runat="server" Text='<%# Bind("Cod_Plataforma_p") %>'></asp:Label>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_eit_codigoPlataforma" runat="server" Text='<%# Bind("codigoPlataforma") %>'></asp:Label>
+                            <asp:Label ID="lbl_eit_codigoPlataforma" runat="server" Text='<%# Bind("Cod_Plataforma_p") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txt_eit_nombrePlataforma" runat="server" Text='<%# Bind("nombrePlataforma") %>'></asp:TextBox>
+                            <asp:TextBox ID="txt_eit_nombrePlataforma" runat="server" Text='<%# Bind("Nombre_Plataforma_p") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_it_NombrePataforma" runat="server" Text='<%# Bind("nombrePlataforma") %>'></asp:Label>
+                            <asp:Label ID="lbl_it_NombrePataforma" runat="server" Text='<%# Bind("Nombre_Plataforma_p") %>'></asp:Label>
                         </ItemTemplate>
                         <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
                     </asp:TemplateField>
@@ -58,4 +63,5 @@
                 <SortedDescendingHeaderStyle BackColor="#7E0000" />
             </asp:GridView>
         </div>
+         </div>
 </asp:Content>

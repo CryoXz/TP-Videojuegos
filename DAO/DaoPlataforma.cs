@@ -18,11 +18,11 @@ namespace DAO
 
         }
 
-        public Plataforma getPlataforma(int id)
+        public Plataforma getPlataforma(string id)
         {
             Plataforma cat = new Plataforma();
             DataTable tabla = ds.ObtenerTabla("Plataforma", "Select * from plataformas where IdCategoría=" + id);
-            cat.setCodigoPlataforma(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+            cat.setCodigoPlataforma(tabla.Rows[0][0].ToString());
             cat.setNombrePlataforma(tabla.Rows[0][1].ToString());
             return cat;
         }
@@ -44,24 +44,31 @@ namespace DAO
         private void ArmarParametrosPlataformaEliminar(ref SqlCommand Comando, Plataforma cat)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDPlataforma", SqlDbType.Int);
+            SqlParametros = Comando.Parameters.Add("@IDPlataforma", SqlDbType.Char,4);
             SqlParametros.Value = cat.getCodigoPlataforma();
         }
 
         private void ArmarParametrosPlataformas(ref SqlCommand Comando, Plataforma p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@codigoPlataforma", SqlDbType.Int);
+            SqlParametros = Comando.Parameters.Add("@codigoPlataforma", SqlDbType.Char,4);
             SqlParametros.Value = p.getCodigoPlataforma();
             SqlParametros = Comando.Parameters.Add("@nombrePlataforma", SqlDbType.NVarChar, 40);
             SqlParametros.Value = p.getNombrePlataforma();
 ;
         }
-        public int actualizarPlataforma(Plataforma cat)
+        public int actualizarPlataforma(Plataforma p)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosPlataformas(ref comando, cat);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spActualizarPlataforma");
+            ArmarParametrosPlataformas(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarPlataforma");
+        }
+
+       public int AltaPlataforma(Plataforma p)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosPlataformas(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaPlataforma");
         }
 
     }

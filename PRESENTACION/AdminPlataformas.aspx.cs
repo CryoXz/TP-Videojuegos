@@ -37,9 +37,9 @@ namespace PRESENTACION
         protected void grdPlataformas_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_it_codigoPlataforma")).Text;
-            int i_codigoPlataforma = int.Parse(s_codigoPlataforma);
+
             N_Plataforma n_plat = new N_Plataforma();
-            n_plat.eliminarPlataforma(i_codigoPlataforma);
+            n_plat.eliminarPlataforma(s_codigoPlataforma);
             cargarGridview();
 
 
@@ -66,11 +66,32 @@ namespace PRESENTACION
 
 
             Plataforma plat = new Plataforma();
-            plat.setCodigoPlataforma(Convert.ToInt32(s_codigoPlataforma));
+            plat.setCodigoPlataforma(s_codigoPlataforma);
             plat.setNombrePlataforma(s_nombrePlataforma);
 
             N_Plataforma n_Plataforma= new N_Plataforma();
             n_Plataforma.ActualizarPlataforma(plat);
+
+            grdPlataformas.EditIndex = -1;
+            cargarGridview();
+
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Plataforma p = new Plataforma();
+ 
+
+            int N_filas = grdPlataformas.Rows.Count-1;
+            string s_codigoPlataforma=((Label)grdPlataformas.Rows[N_filas].FindControl("lbl_eit_codigoPlataforma")).Text;
+            char[] CharsToTream = { 'P', 'F' };
+            int codNum=Convert.ToInt32( s_codigoPlataforma.TrimStart(CharsToTream))+1;
+
+           p.setCodigoPlataforma ( "PF"+codNum) ;
+            p.setNombrePlataforma(TxtNombre.Text);
+
+            N_Plataforma n_Plataforma = new N_Plataforma();
+            n_Plataforma.AltaPlataforma(p);
 
             grdPlataformas.EditIndex = -1;
             cargarGridview();

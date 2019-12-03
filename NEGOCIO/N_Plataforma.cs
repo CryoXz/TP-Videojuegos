@@ -19,14 +19,14 @@ namespace NEGOCIO
             return dao.getTablaPlataformas();
         }
 
-        public Plataforma get(int id)
+        public Plataforma get(string id)
         {
             DaoPlataforma dao = new DaoPlataforma();
             //Validar si existe esa plataforma
             return dao.getPlataforma(id);
         }
 
-        public bool eliminarPlataforma(int id)
+        public bool eliminarPlataforma(string id)
         {
             //Validar id existente 
             DaoPlataforma dao = new DaoPlataforma();
@@ -49,7 +49,15 @@ namespace NEGOCIO
             else
                 return false;
         }
-
+        public bool AltaPlataforma(Plataforma p)
+        {
+            DaoPlataforma dao = new DaoPlataforma();
+            int FilasInsertadas = dao.AltaPlataforma(p);
+            if (FilasInsertadas == 1)
+                return true;
+            else
+                return false;
+        }
 
     }
 }

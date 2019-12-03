@@ -8,18 +8,19 @@ namespace ENTIDAD
 {
     public class Plataforma
     {
-        private int CodigoPlataforma;
+        private string CodigoPlataforma;
+
         private String NombrePlataforma;
 
         public Plataforma()
         {
 
         }
-        public int getCodigoPlataforma()
+        public string getCodigoPlataforma()
         {
             return CodigoPlataforma;
         }
-        public void setCodigoPlataforma(int codigoPlataforma)
+        public void setCodigoPlataforma(string codigoPlataforma)
         {
             CodigoPlataforma = codigoPlataforma;
         }
