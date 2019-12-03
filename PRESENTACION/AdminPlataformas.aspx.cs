@@ -87,8 +87,9 @@ namespace PRESENTACION
             char[] CharsToTream = { 'P', 'F' };
             int codNum=Convert.ToInt32( s_codigoPlataforma.TrimStart(CharsToTream))+1;
 
-           p.setCodigoPlataforma ( "PF"+codNum) ;
+            p.setCodigoPlataforma ( "PF"+codNum) ;
             p.setNombrePlataforma(TxtNombre.Text);
+
 
             N_Plataforma n_Plataforma = new N_Plataforma();
             n_Plataforma.AltaPlataforma(p);
