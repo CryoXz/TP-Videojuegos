@@ -8,18 +8,18 @@ namespace ENTIDAD
 {
     public class Categoria
     {
-        private int CodigoCategoria;
+        private string CodigoCategoria;
         private String NombreCategoria;
 
         public Categoria()
         {
 
         }
-        public int getCodigoCategoria()
+        public string getCodigoCategoria()
         {
             return CodigoCategoria;
         }
-        public void setCodigoCategoria(int codigoCategoria)
+        public void setCodigoCategoria(string codigoCategoria)
         {
             CodigoCategoria = codigoCategoria;
         }

@@ -18,14 +18,14 @@ namespace NEGOCIO
             return dao.getTablaCategorias();
         }
 
-        public Categoria get(int id)
+        public Categoria get(string id)
         {
             DaoCategoria dao = new DaoCategoria();
             //Validar si existe esa categoria
             return dao.getCategoria(id);
         }
 
-        public bool eliminarCategoria(int id)
+        public bool eliminarCategoria(string id)
         {
             //Validar id existente 
             DaoCategoria dao = new DaoCategoria();
@@ -33,6 +33,18 @@ namespace NEGOCIO
             cat.setCodigoCategoria(id);
             int op = dao.eliminarCategoria(cat);
             if (op == 1)
+                return true;
+            else
+                return false;
+        }
+
+        public bool ActualizarCategoria(Categoria p)
+        {
+
+            DaoCategoria dao = new DaoCategoria();
+
+            int FilasInsertadas = dao.actualizarCategoria(p);
+            if (FilasInsertadas == 1)
                 return true;
             else
                 return false;

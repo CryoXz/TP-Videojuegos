@@ -12,11 +12,11 @@ namespace DAO
     {
         AccesoDatos ds = new AccesoDatos();
 
-        public Categoria getCategoria(int id)
+        public Categoria getCategoria(string id)
         {
             Categoria cat = new Categoria();
             DataTable tabla = ds.ObtenerTabla("Categoria", "Select * from categorías where IdCategoría=" + id);
-            cat.setCodigoCategoria(Convert.ToInt32(tabla.Rows[0][0].ToString()));
+            cat.setCodigoCategoria(tabla.Rows[0][0].ToString());
             cat.setNombreCategoria(tabla.Rows[0][1].ToString());
          
             return cat;
@@ -25,7 +25,7 @@ namespace DAO
         public DataTable getTablaCategorias()
         {
             //List<Categoria> lista = new List<Categoria>();
-            DataTable tabla = ds.ObtenerTabla("Categoria", "Select * from categorías");
+            DataTable tabla = ds.ObtenerTabla("Categoria", "Select * from Categorias");
             return tabla;
         }
 
@@ -39,8 +39,23 @@ namespace DAO
         private void ArmarParametrosCategoriaEliminar(ref SqlCommand Comando, Categoria cat)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Int);
+            SqlParametros = Comando.Parameters.Add("@Cod_Categoria_C", SqlDbType.Char,4);
             SqlParametros.Value = cat.getNombreCategoria();
+        }
+        private void ArmarParametrosCategorias(ref SqlCommand Comando, Categoria p)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Cod_Categoria_C", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getCodigoCategoria();
+            SqlParametros = Comando.Parameters.Add("@Nombre_Categoria_C", SqlDbType.NVarChar, 40);
+            SqlParametros.Value = p.getNombreCategoria();
+            ;
+        }
+        public int actualizarCategoria(Categoria p)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosCategorias(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarCategoria");
         }
     }
 }
