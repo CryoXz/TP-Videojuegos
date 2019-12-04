@@ -46,6 +46,8 @@
     <Compile Include="DaoCategoria.cs" />
     <Compile Include="DaoMarca.cs" />
     <Compile Include="DaoPlataforma.cs" />
+    <Compile Include="DaoTipoUsuario.cs" />
+    <Compile Include="DaoUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

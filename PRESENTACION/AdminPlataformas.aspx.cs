@@ -36,7 +36,7 @@ namespace PRESENTACION
 
         protected void grdPlataformas_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_it_codigoPlataforma")).Text;
+            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_eit_codigoPlataforma")).Text;
 
             N_Plataforma n_plat = new N_Plataforma();
             n_plat.eliminarPlataforma(s_codigoPlataforma);
@@ -90,7 +90,7 @@ namespace PRESENTACION
             p.setCodigoPlataforma ( "PF"+codNum) ;
             p.setNombrePlataforma(TxtNombre.Text);
 
-
+          
             N_Plataforma n_Plataforma = new N_Plataforma();
             n_Plataforma.AltaPlataforma(p);
 

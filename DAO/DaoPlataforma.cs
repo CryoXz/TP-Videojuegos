@@ -51,9 +51,9 @@ namespace DAO
         private void ArmarParametrosPlataformas(ref SqlCommand Comando, Plataforma p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@codigoPlataforma", SqlDbType.Char,4);
+            SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_p", SqlDbType.Char,4);
             SqlParametros.Value = p.getCodigoPlataforma();
-            SqlParametros = Comando.Parameters.Add("@nombrePlataforma", SqlDbType.NVarChar, 40);
+            SqlParametros = Comando.Parameters.Add("@Nombre_Plataforma_p", SqlDbType.NVarChar, 40);
             SqlParametros.Value = p.getNombrePlataforma();
 ;
         }
