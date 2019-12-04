@@ -8,7 +8,7 @@ namespace ENTIDAD
 {
     public class Marca
     {
-        private int CodigoMarca;
+        private string CodigoMarca;
         private String NombreMarca;
         private String NombreContacto;
         // private String direccion;
@@ -22,11 +22,11 @@ namespace ENTIDAD
         {
 
         }
-        public int getCodigoMarca()
+        public string getCodigoMarca()
         {
             return CodigoMarca;
         }
-        public void setCodigoMarca(int codigoMarca)
+        public void setCodigoMarca(string codigoMarca)
         {
             CodigoMarca = codigoMarca;
         }
