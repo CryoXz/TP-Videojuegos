@@ -28,7 +28,7 @@ namespace ENTIDAD
         {
             return CodigoUsuario;
         }
-        public void setCodigoUauario(String codigoUsuario)
+        public void setCodigoUsuario(String codigoUsuario)
         {
             CodigoUsuario = codigoUsuario;
         }       

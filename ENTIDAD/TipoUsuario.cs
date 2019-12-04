@@ -8,18 +8,18 @@ namespace ENTIDAD
 {
     public class TipoUsuario
     {
-        private int CodigoTipoUsuario;
+        private String CodigoTipoUsuario;
         private String NombreTipoUsuario;
 
         public TipoUsuario()
         {
 
         }
-        public int getCodigoTipoUsuario()
+        public String getCodigoTipoUsuario()
         {
             return CodigoTipoUsuario;
         }
-        public void setCodigoTipoUsuario(int codigoTipoUsuario)
+        public void setCodigoTipoUsuario(String codigoTipoUsuario)
         {
             CodigoTipoUsuario = codigoTipoUsuario;
         }
