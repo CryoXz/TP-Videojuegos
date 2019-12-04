@@ -73,5 +73,16 @@ namespace DAO
             Conexion.Close();
             return FilasCambiadas;
         }
+        public DataSet Consultar(string ConsultaSQL)
+        {
+            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            cn.Open();
+            SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
+            SqlDataAdapter da = new SqlDataAdapter(comando);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
     }
 }

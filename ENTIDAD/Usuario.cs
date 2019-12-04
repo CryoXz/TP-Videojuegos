@@ -8,28 +8,27 @@ namespace ENTIDAD
 {
     public class Usuario
     {
-        private int CodigoUsuario;
+        private String CodigoUsuario;
         private TipoUsuario IdTipoUsuario;
         private String Nombre;
         private String Apellido;
-        private String NombreUsuario;
+        private String Nickname;
         private String Contraseña;
-        private int Dni;
+        private String Dni;
         private DateTime FechaNacimiento;
-        private int Telefono;
-        private String Email;        
-        // Direccion direcion 
-        //ver estado
+        private String Telefono;
+        private String Email;
+        private String Direccion;
         private bool Estado;
 
         public Usuario()
         {
         }
-        public int getCodigoUsuario()
+        public String getCodigoUsuario()
         {
             return CodigoUsuario;
         }
-        public void setCodigoUauario(int codigoUsuario)
+        public void setCodigoUauario(String codigoUsuario)
         {
             CodigoUsuario = codigoUsuario;
         }       
@@ -57,13 +56,13 @@ namespace ENTIDAD
         {
             Apellido = apellido;
         }
-        public String getNombreUsuario()
+        public String getNickname()
         {
-            return NombreUsuario;
+            return Nickname;
         }
-        public void setNombreUsuario(String nombreUsuario)
+        public void setNickname(String nickname)
         {
-            NombreUsuario = nombreUsuario;
+            Nickname = nickname;
         }
         public String getContraseña()
         {
@@ -73,20 +72,27 @@ namespace ENTIDAD
         {
             Contraseña = contraseña;
         }
-        public int getDni()
+        public String getDni()
         {
             return Dni;
         }
-        public void setDni(int dni)
+        public void setDni(String dni)
         {
             Dni = dni;
+        }        
+        public DateTime getFechaNacimiento()
+        {
+            return FechaNacimiento;
         }
-        // ver date time
-        public int getTelefono()
+        public void setFechaNacimiento(DateTime fechaNacimiento)
+        {
+            FechaNacimiento = fechaNacimiento;
+        }
+        public String getTelefono()
         {
             return Telefono;
         }
-        public void setTelefono(int telefono)
+        public void setTelefono(String telefono)
         {
             Telefono = telefono;
         }
@@ -97,6 +103,15 @@ namespace ENTIDAD
         public void setEmail(String email)
         {
             Email = email;
+        }
+        public String getDireccion()
+        {
+            return Direccion;
+        }
+        public void setDireccion(String direccion)
+        {
+            Direccion = direccion;
+
         }
         public bool getEstado()
         {
