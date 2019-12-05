@@ -20,6 +20,7 @@ namespace PRESENTACION
 
         private void IniciarLlenadoDropdownList()
         {
+            //carga dropdownlist con los tipos de usuarios
             N_TipoUsuario n_Tipo = new N_TipoUsuario();
             ddlTipoUsuario.DataSource = n_Tipo.getTipoUsuario();
             ddlTipoUsuario.DataTextField = "Nombre_TipoUsuario_TU";
@@ -31,14 +32,12 @@ namespace PRESENTACION
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             N_Usuario N_usuario = new N_Usuario();
+            //  DateTime fechaNacimiento = new DateTime();
+            //  fechaNacimiento = DateTime.Parse(txtfNacimiento_Usuario.ToString());
 
-            DateTime fechaNacimiento = new DateTime();
-            fechaNacimiento = DateTime.Parse(txtfNacimiento_Usuario.ToString());
-            N_usuario.GuardarUsuario(ddlTipoUsuario.DataValueField.ToString(), txtNombre_Usuario.Text, txtApellido_Usuario.Text, txtNickname_Usuario.Text, txtContraseña_usuario.Text, txtDni_Usuario.Text, fechaNacimiento, txtEmail_Usuario.Text, txtTelefono_Usuario.Text, txtDireccion_Usuario.Text);
-
-
+            // se pasa por parametro los el selectdValue de dropdown.tostring, y los demas textbox en .text
+            N_usuario.GuardarUsuario(ddlTipoUsuario.SelectedValue.ToString(), txtNombre_Usuario.Text, txtApellido_Usuario.Text, txtNickname_Usuario.Text, txtContraseña_usuario.Text, txtDni_Usuario.Text, /*fechaNacimiento,*/ txtEmail_Usuario.Text, txtTelefono_Usuario.Text, txtDireccion_Usuario.Text);
+            
         }
-
-
     }
 }
