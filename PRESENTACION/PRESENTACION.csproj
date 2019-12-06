@@ -86,19 +86,32 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="AdminCategorias.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="IMAGES\botw-box.jpg" />
     <Content Include="IMAGES\carritologo.png" />
     <Content Include="IMAGES\codmw-poster.jpg" />
     <Content Include="IMAGES\daysgone-poster.jpg" />
     <Content Include="IMAGES\fifa20-poster.png" />
+    <Content Include="IMAGES\gcc-box.jpg" />
+    <Content Include="IMAGES\gccadapter-box.jpg" />
     <Content Include="IMAGES\gslogo.png" />
+    <Content Include="IMAGES\mariokart-box.jpg" />
+    <Content Include="IMAGES\marioodyssey-box.jpg" />
+    <Content Include="IMAGES\mk11switch-box.jpg" />
+    <Content Include="IMAGES\procontroller-box.jpg" />
+    <Content Include="IMAGES\protectivefilter-box.jpg" />
     <Content Include="IMAGES\ps4logo.png" />
     <Content Include="IMAGES\smash-box.jpg" />
     <Content Include="IMAGES\smash-poster.jpg" />
+    <Content Include="IMAGES\switchgris-box.jpg" />
+    <Content Include="IMAGES\switchlitegris-box.jpg" />
+    <Content Include="IMAGES\switchliteturquesa-box.jpg" />
     <Content Include="IMAGES\switchlogo.png" />
+    <Content Include="IMAGES\switchneon-box.jpg" />
     <Content Include="IMAGES\xboxlogo.png" />
     <Content Include="Login.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="ProductosJuegos.aspx" />
+    <Content Include="ProductosJuegosO.aspx" />
     <Content Include="RegistroUsuario.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -124,6 +137,7 @@
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Login.Master" />
     <Content Include="Admin.Master" />
+    <Content Include="Logo.Master" />
     <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="Scripts\jquery-3.0.0.js" />
     <Content Include="Scripts\jquery-3.0.0.min.js" />
@@ -254,6 +268,13 @@
     <Compile Include="Login.Master.designer.cs">
       <DependentUpon>Login.Master</DependentUpon>
     </Compile>
+    <Compile Include="Logo.Master.cs">
+      <DependentUpon>Logo.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logo.Master.designer.cs">
+      <DependentUpon>Logo.Master</DependentUpon>
+    </Compile>
     <Compile Include="Producto.aspx.cs">
       <DependentUpon>Producto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,6 +288,13 @@
     </Compile>
     <Compile Include="ProductosJuegos.aspx.designer.cs">
       <DependentUpon>ProductosJuegos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosJuegosO.aspx.cs">
+      <DependentUpon>ProductosJuegosO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosJuegosO.aspx.designer.cs">
+      <DependentUpon>ProductosJuegosO.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroUsuario.aspx.cs">

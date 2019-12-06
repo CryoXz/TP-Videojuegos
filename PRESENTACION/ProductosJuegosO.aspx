@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="ProductosJuegos.aspx.cs" Inherits="PRESENTACION.ProductosJuegos" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="ProductosJuegosO.aspx.cs" Inherits="PRESENTACION.ProductosJuegosO" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container-fluid" style="background-color:ghostwhite">
         <br />
         <br />
@@ -34,7 +33,7 @@
             <div class="col-lg-2" style="background-color:crimson"></div>
             <div class="col-lg-8 text-center" style="background-color:ghostwhite">
                 
-                <asp:ListView ID="grdProducto" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="5" OnSelectedIndexChanged="grdProducto_SelectedIndexChanged">
+                <asp:ListView ID="grdProducto" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="5">
                     <EditItemTemplate>
                         <td runat="server" style="">Imagen_Producto_PxP:
                             <asp:TextBox ID="Imagen_Producto_PxPTextBox" runat="server" Text='<%# Bind("Imagen_Producto_PxP") %>' />
@@ -116,5 +115,4 @@
         </div>
   
     </div>
-
 </asp:Content>

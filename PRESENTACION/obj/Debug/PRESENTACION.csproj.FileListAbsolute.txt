@@ -174,7 +174,72 @@ C:\Users\Rocio\Desktop\TP-Videojuegos\PRESENTACION\bin\Microsoft.CodeDom.Provide
 C:\Users\Rocio\Desktop\TP-Videojuegos\PRESENTACION\bin\DAO.pdb
 C:\Users\Rocio\Desktop\TP-Videojuegos\PRESENTACION\bin\ENTIDAD.pdb
 C:\Users\Rocio\Desktop\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.csproj.CopyComplete
+<<<<<<< HEAD
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\PRESENTACION\bin\ENTIDAD.dll
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\PRESENTACION\bin\DAO.dll
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\PRESENTACION\bin\ENTIDAD.pdb
 D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\PRESENTACION\bin\DAO.pdb
+=======
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\PRESENTACION.dll.config
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\PRESENTACION.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\PRESENTACION.pdb
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\csc.exe
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\csc.exe.config
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\csc.rsp
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\csi.exe
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\csi.exe.config
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\csi.rsp
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.AppContext.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Console.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.IO.Compression.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.IO.Pipes.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Security.Claims.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.ValueTuple.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Xml.XPath.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\vbc.exe
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\vbc.exe.config
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\vbc.rsp
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\VBCSCompiler.exe
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\ENTIDAD.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\NEGOCIO.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\DAO.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\ENTIDAD.pdb
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\NEGOCIO.pdb
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\bin\DAO.pdb
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.csprojAssemblyReference.cache
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.csproj.CoreCompileInputs.cache
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.csproj.CopyComplete
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.dll
+C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.pdb
+>>>>>>> 53167fce7f9ce110cd4fe2af724f86d406d5918e
