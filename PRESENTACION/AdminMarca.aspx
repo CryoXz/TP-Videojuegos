@@ -43,7 +43,9 @@
             </div>
                </div>
 
-
+         <div class="col-lg-2">
+             <asp:GridView ID="grdMarca" runat="server"></asp:GridView>
+    </div>
                     <table class="table ">
                         <thead>
                            
