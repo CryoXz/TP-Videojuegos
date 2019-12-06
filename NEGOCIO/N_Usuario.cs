@@ -32,5 +32,18 @@ namespace NEGOCIO
             daoUsuario.GuardarUsuario(usuarioNuevo);
         }
 
+        public int resultadoUsuarios(string user, string pass)
+        {
+
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.getLogin(user, pass);
+        }
+
+        public string getUserType(string user)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.getUserType(user);
+        }
+
     }
 }

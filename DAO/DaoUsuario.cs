@@ -53,5 +53,17 @@ namespace DAO
             SqlParametros.Value = u.getEstado();
 
         }
+
+        public int getLogin(string username, string password)
+        {
+
+            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "' AND Usuarios.Contraseña_Usuario_U = '" + password + "'");
+
+        }
+
+        public string getUserType(string username)
+        {
+            return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_TipoUsuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "'");
+        }
     }
 }

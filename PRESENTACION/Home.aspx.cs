@@ -9,6 +9,17 @@ namespace PRESENTACION
 {
     public partial class Home1 : System.Web.UI.Page
     {
+        void Page_PreInit(Object sender, EventArgs e)
+        {
+            if(Session["usertype"] != null)
+            {
+                this.MasterPageFile = "~/Login.Master";
+            }
+            else
+            {
+                this.MasterPageFile = "~/Home.Master";
+            }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 

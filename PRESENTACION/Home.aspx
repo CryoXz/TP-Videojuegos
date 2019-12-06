@@ -47,13 +47,13 @@
         <br />
         <div class="row">
             <div class="col-lg-4 text-center" style="background-color:ghostwhite">
-                <a href="#"><img src="IMAGES/xboxlogo.png" alt="XBOX" style="width:250px;height:250px;"></a>
+                <a href="ProductosJuegos.aspx?plat=pf7"><img src="IMAGES/xboxlogo.png" alt="XBOX" style="width:250px;height:250px;"></a>
             </div>
             <div class="col-lg-4 text-center" style="background-color:ghostwhite">
-                <a href="#"><img src="IMAGES/ps4logo.png" alt="PS4" style="width:250px;height:250px;"></a>
+                <a href="ProductosJuegos.aspx?plat=pf4"><img src="IMAGES/ps4logo.png" alt="PS4" style="width:250px;height:250px;"></a>
             </div>
             <div class="col-lg-4 text-center" style="background-color:ghostwhite">
-                <a href="#"><img src="IMAGES/switchlogo.png" alt="Nintendo Switch" style="width:250px;height:250px;"></a>
+                <a href="ProductosJuegos.aspx?plat=pf1"><img src="IMAGES/switchlogo.png" alt="Nintendo Switch" style="width:250px;height:250px;"></a>
             </div>
         </div>
         <br />

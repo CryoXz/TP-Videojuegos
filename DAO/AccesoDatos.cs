@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace DAO
 {
     class AccesoDatos
     {
 
         String rutaBDNeptuno =
-          "Data Source=DESKTOP-F5N5JLR\\SQL;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
+          //"Data Source=DESKTOP-F5N5JLR\\SQL;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
          // "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
-         //"Data Source=localhost\\sqlexpress;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
+         "Data Source=localhost\\sqlexpress;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
 
         public AccesoDatos()
         {
@@ -84,5 +85,31 @@ namespace DAO
             cn.Close();
             return ds;
         }
+
+        public int ConsultarUsuario(string ConsultaSQL)
+        {
+
+            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            cn.Open();
+            SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
+            int count = Convert.ToInt32(comando.ExecuteScalar());
+            cn.Close();
+            return count;
+        }
+
+        public string ConsultarTipoUsuario(string ConsultaSQL)
+        {
+            
+            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            cn.Open();
+            SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
+            string type = Convert.ToString(comando.ExecuteScalar());
+            cn.Close();
+   
+
+            return type;
+        }
+
+
     }
 }

@@ -13,5 +13,11 @@ namespace PRESENTACION
         {
 
         }
+
+        public void btnLogout_click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Home.aspx");
+        }
     }
 }
