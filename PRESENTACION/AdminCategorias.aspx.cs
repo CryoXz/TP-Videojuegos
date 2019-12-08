@@ -71,5 +71,10 @@ namespace PRESENTACION
 
         }
 
+        protected void grdCategorias_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdCategorias.PageIndex = e.NewPageIndex;
+            cargarGridview();
+        }
     }
 }    

@@ -11,9 +11,9 @@ namespace ENTIDAD
         private string CodigoMarca;
         private String NombreMarca;
         private String NombreContacto;
-        // private String direccion;
-        // private String 
-        private int Telefono;
+        private String Direccion;
+        private String Ciudad;
+        private string Telefono;
         private String Email;
         //chequear si estado como se representa en la base de datos que tiene bit
         private int Estado;
@@ -46,13 +46,29 @@ namespace ENTIDAD
         {
             NombreContacto = nombreContacto;
         }
+        public String getDireccion()
+        {
+            return Direccion;
+        }
+        public void setDireccion(String direccion)
+        {
+            Direccion = direccion;
+        }
 
-        //hacer direccion
-        public int getTelefono()
+        public String getCiudad()
+        {
+            return Ciudad;
+        }
+        public void setCiudad(String ciudad)
+        {
+            Ciudad = ciudad;
+        }
+
+        public string getTelefono()
         {
             return Telefono;
         }
-        public void setTelefono(int telefono)
+        public void setTelefono(string telefono)
         {
             Telefono = telefono;
         }

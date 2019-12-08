@@ -98,5 +98,11 @@ namespace PRESENTACION
             cargarGridview();
 
         }
+
+        protected void grdPlataformas_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            grdPlataformas.PageIndex = e.NewPageIndex;
+            cargarGridview();
+        }
     }
 }

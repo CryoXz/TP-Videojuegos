@@ -9,7 +9,7 @@ using ENTIDAD;
 
 namespace DAO
 {
-    class DaoMarca
+    public class DaoMarca
     {
         AccesoDatos ds = new AccesoDatos();
 
@@ -40,16 +40,30 @@ namespace DAO
         private void ArmarParametrosMarcaEliminar(ref SqlCommand Comando, Marca m)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Marca_C", SqlDbType.Char, 4);
+            SqlParametros = Comando.Parameters.Add("@Cod_Marca_M", SqlDbType.Char, 4);
             SqlParametros.Value = m.getNombreMarca();
         }
         private void ArmarParametrosMarcas(ref SqlCommand Comando, Marca m)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Marca_C", SqlDbType.Char, 4);
+            SqlParametros = Comando.Parameters.Add("@Cod_Marca_M", SqlDbType.Char, 4);
             SqlParametros.Value = m.getCodigoMarca();
-            SqlParametros = Comando.Parameters.Add("@Nombre_Marca_C", SqlDbType.NVarChar, 40);
+            SqlParametros = Comando.Parameters.Add("@Nombre_Marca_M", SqlDbType.NVarChar, 60);
             SqlParametros.Value = m.getNombreMarca();
+            SqlParametros = Comando.Parameters.Add("@Nombre_Contacto_M", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = m.getNombreContacto();
+            SqlParametros = Comando.Parameters.Add("@Direccion_Marca_M", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = m.getDireccion();
+            SqlParametros = Comando.Parameters.Add("@Ciudad_Marca_M", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = m.getCiudad();
+            SqlParametros = Comando.Parameters.Add("@Telefono_Marca_M", SqlDbType.NVarChar, 15);
+            SqlParametros.Value = m.getTelefono();
+            SqlParametros = Comando.Parameters.Add("@Email_Marca_M", SqlDbType.NVarChar, 200);
+            SqlParametros.Value = m.getEmail();
+            SqlParametros = Comando.Parameters.Add("@Estado_Marca_M", SqlDbType.Bit);
+            SqlParametros.Value = m.getEstado();
+
+
             ;
         }
         public int actualizarMarca(Marca m)
@@ -58,5 +72,12 @@ namespace DAO
             ArmarParametrosMarcas(ref comando, m);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarMarca");
         }
+        public int AltaMarca(Marca x)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosMarcas(ref comando, x);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaMarca");
+        }
+
     }
 }

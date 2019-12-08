@@ -57,5 +57,11 @@ namespace DAO
             ArmarParametrosCategorias(ref comando, p);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarCategoria");
         }
+        public int AltaCategoria(Categoria x)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosCategorias(ref comando, x);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaCategoria");
+        }
     }
 }

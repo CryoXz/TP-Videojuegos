@@ -64,7 +64,7 @@ namespace DAO
             return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarPlataforma");
         }
 
-       public int AltaPlataforma(Plataforma p)
+        public int AltaPlataforma(Plataforma p)
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosPlataformas(ref comando, p);
