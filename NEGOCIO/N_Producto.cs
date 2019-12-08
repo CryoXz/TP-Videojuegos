@@ -18,5 +18,17 @@ namespace NEGOCIO
             return dao.getTablaProductos();
         }
 
+        public string getCodigoProdS(string imgUrl, string name)
+        {
+            DaoProducto daoProd = new DaoProducto();
+            return daoProd.getCodigoS(imgUrl, name);
+        }
+
+        public string getCodigoPlat(string imgUrl, string name)
+        {
+            DaoProducto daoProd = new DaoProducto();
+            return daoProd.getCodigoP(imgUrl, name);
+        }
+
     }
 }

@@ -19,5 +19,12 @@ namespace PRESENTACION
             Session.Abandon();
             Response.Redirect("Home.aspx");
         }
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(txtBusqueda.Text.Trim()))
+            {
+                Response.Redirect("ProductosJuegosO.aspx?s=" + txtBusqueda.Text);
+            }
+        }
     }
 }

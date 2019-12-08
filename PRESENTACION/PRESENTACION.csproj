@@ -76,6 +76,7 @@
     <Content Include="AdminProductos.aspx" />
     <Content Include="AdminUsuarios.aspx" />
     <Content Include="AdminVentas.aspx" />
+    <Content Include="Carrito.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -87,25 +88,50 @@
     <Content Include="IMAGES\botw-box.jpg" />
     <Content Include="IMAGES\carritologo.png" />
     <Content Include="IMAGES\codmw-poster.jpg" />
+    <Content Include="IMAGES\codps4-box.jpg" />
+    <Content Include="IMAGES\codxboxone-box.jpg" />
+    <Content Include="IMAGES\crackdown3-box.jpg" />
+    <Content Include="IMAGES\daysgone-box.jpg" />
     <Content Include="IMAGES\daysgone-poster.jpg" />
     <Content Include="IMAGES\fifa20-poster.png" />
+    <Content Include="IMAGES\forza4-box.jpg" />
     <Content Include="IMAGES\gcc-box.jpg" />
     <Content Include="IMAGES\gccadapter-box.jpg" />
+    <Content Include="IMAGES\gears5-box.jpg" />
+    <Content Include="IMAGES\gow-box.jpg" />
     <Content Include="IMAGES\gslogo.png" />
+    <Content Include="IMAGES\haloinfinite-box.jpg" />
+    <Content Include="IMAGES\joystickxboxoneb-box.jpg" />
+    <Content Include="IMAGES\joystickxboxoneg-box.jpg" />
     <Content Include="IMAGES\mariokart-box.jpg" />
     <Content Include="IMAGES\marioodyssey-box.jpg" />
+    <Content Include="IMAGES\mk11ps4-box.jpg" />
     <Content Include="IMAGES\mk11switch-box.jpg" />
+    <Content Include="IMAGES\mk11xboxone-box.jpg" />
     <Content Include="IMAGES\procontroller-box.jpg" />
     <Content Include="IMAGES\protectivefilter-box.jpg" />
+    <Content Include="IMAGES\ps4camera-box.jpg" />
+    <Content Include="IMAGES\ps4dualshock-box.jpg" />
     <Content Include="IMAGES\ps4logo.png" />
+    <Content Include="IMAGES\ps4move-box.jpg" />
+    <Content Include="IMAGES\ps4pro-box.jpg" />
+    <Content Include="IMAGES\ps4slim-box.jpg" />
+    <Content Include="IMAGES\psclassic-box.jpg" />
+    <Content Include="IMAGES\psvita-box.jpg" />
     <Content Include="IMAGES\smash-box.jpg" />
     <Content Include="IMAGES\smash-poster.jpg" />
+    <Content Include="IMAGES\soportevert-box.jpg" />
+    <Content Include="IMAGES\spiderman-box.jpg" />
+    <Content Include="IMAGES\starwarsps4-box.jpg" />
+    <Content Include="IMAGES\starwarsxboxone-box.jpg" />
     <Content Include="IMAGES\switchgris-box.jpg" />
     <Content Include="IMAGES\switchlitegris-box.jpg" />
     <Content Include="IMAGES\switchliteturquesa-box.jpg" />
     <Content Include="IMAGES\switchlogo.png" />
     <Content Include="IMAGES\switchneon-box.jpg" />
+    <Content Include="IMAGES\unchartedtll-box.jpg" />
     <Content Include="IMAGES\xboxlogo.png" />
+    <Content Include="IMAGES\xboxones-box.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="ProductosJuegos.aspx" />
@@ -293,6 +319,13 @@
     </Compile>
     <Compile Include="AdminCategorias.aspx.designer.cs">
       <DependentUpon>AdminCategorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Carrito.aspx.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Carrito.aspx.designer.cs">
+      <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

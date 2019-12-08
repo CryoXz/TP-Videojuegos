@@ -13,9 +13,9 @@ namespace DAO
     {
 
         String rutaBDNeptuno =
-          "Data Source=DESKTOP-F5N5JLR\\SQL;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
+          //"Data Source=DESKTOP-F5N5JLR\\SQL;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
          // "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
-         //"Data Source=localhost\\sqlexpress;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
+         "Data Source=localhost\\sqlexpress;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
 
         public AccesoDatos()
         {
@@ -110,6 +110,18 @@ namespace DAO
             return type;
         }
 
+        public string ConsultarCodigos(string ConsultaSQL)
+        {
+
+            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            cn.Open();
+            SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
+            string cod = Convert.ToString(comando.ExecuteScalar());
+            cn.Close();
+
+
+            return cod;
+        }
 
     }
 }

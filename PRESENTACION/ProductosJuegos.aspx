@@ -9,7 +9,7 @@
             <br />
         <div class="main row">
             <div class="col-lg-12 text-center">
-                <h1 ID="lblTitulo">-JUEGOS SWITCH-</h1>
+                <asp:Label ID="lblTitulo" runat="server" Text=""></asp:Label>
             </div>
         </div>
         <br />
@@ -20,7 +20,6 @@
                 <div class="form-group">
                     <label>Ordenar por:</label>
                     <select class="form-control" id="exampleFormControlSelect1">
-                      <option>Mas Vendidos</option>
                       <option>Precio: Menor a Mayor</option>
                       <option>Precio: Mayor a Menor</option>
                       <option>A - Z</option>
@@ -34,7 +33,7 @@
             <div class="col-lg-2" style="background-color:crimson"></div>
             <div class="col-lg-8 text-center" style="background-color:ghostwhite">
                 
-                <asp:ListView ID="grdProducto" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="5" OnSelectedIndexChanged="grdProducto_SelectedIndexChanged">
+                <asp:ListView ID="grdProducto" runat="server" DataSourceID="SqlDataSource1" GroupItemCount="5" OnItemCommand="grdProducto_ItemCommand">
                     <EditItemTemplate>
                         <td runat="server" style="">Imagen_Producto_PxP:
                             <asp:TextBox ID="Imagen_Producto_PxPTextBox" runat="server" Text='<%# Bind("Imagen_Producto_PxP") %>' />
@@ -51,7 +50,7 @@
                     <EmptyDataTemplate>
                         <table runat="server" style="">
                             <tr>
-                                <td>No se han devuelto datos.</td>
+                                <td>No se han encontrado resultados.</td>
                             </tr>
                         </table>
                     </EmptyDataTemplate>
@@ -65,19 +64,19 @@
                     </GroupTemplate>
                     <InsertItemTemplate>
                         <td runat="server" style="">Imagen_Producto_PxP:
-                            <asp:TextBox ID="Imagen_Producto_PxPTextBox" runat="server" Text='<%# Bind("Imagen_Producto_PxP") %>' />
+                            <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Imagen_Producto_PxP") %>' />
                             <br />Nombre_Producto_PR:
-                            <asp:TextBox ID="Nombre_Producto_PRTextBox" runat="server" Text='<%# Bind("Nombre_Producto_PR") %>' />
+                            <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Nombre_Producto_PR") %>' />
                             <br />PrecioUnitario_Producto_PxP:
-                            <asp:TextBox ID="PrecioUnitario_Producto_PxPTextBox" runat="server" Text='<%# Bind("PrecioUnitario_Producto_PxP") %>' />
+                            <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("PrecioUnitario_Producto_PxP") %>' />
                             <br />
                             <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insertar" />
                             <br />
-                            <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Borrar" />
+                            <asp:Button ID="Button1" runat="server" CommandName="Cancel" Text="Borrar" />
                             <br /></td>
                     </InsertItemTemplate>
                     <ItemTemplate>
-                        <td runat="server" style="">&nbsp;<asp:ImageButton ID="ImgBtnProd" runat="server" Height="100px" ImageUrl='<%# Eval("Imagen_Producto_PxP") %>' Width="100px" />
+                        <td runat="server" style="">&nbsp;<asp:ImageButton ID="ImgBtnProd" runat="server" Height="100px" ImageUrl='<%# Eval("Imagen_Producto_PxP") %>' Width="100px" OnClick="ImgBtnProd_Click" />
                             <br />
                             <asp:Label ID="Nombre_Producto_PRLabel" runat="server" Text='<%# Eval("Nombre_Producto_PR") %>' />
                             <br />$<asp:Label ID="PrecioUnitario_Producto_PxPLabel" runat="server" Text='<%# Eval("PrecioUnitario_Producto_PxP") %>' />
@@ -102,9 +101,9 @@
                         <td runat="server" style="">Imagen_Producto_PxP:
                             <asp:Label ID="Imagen_Producto_PxPLabel" runat="server" Text='<%# Eval("Imagen_Producto_PxP") %>' />
                             <br />Nombre_Producto_PR:
-                            <asp:Label ID="Nombre_Producto_PRLabel" runat="server" Text='<%# Eval("Nombre_Producto_PR") %>' />
+                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Nombre_Producto_PR") %>' />
                             <br />PrecioUnitario_Producto_PxP:
-                            <asp:Label ID="PrecioUnitario_Producto_PxPLabel" runat="server" Text='<%# Eval("PrecioUnitario_Producto_PxP") %>' />
+                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("PrecioUnitario_Producto_PxP") %>' />
                             <br /></td>
                     </SelectedItemTemplate>
                 </asp:ListView>

@@ -27,7 +27,8 @@
                                 <asp:TextBox runat="server" class="form-control" ID="txtContraseña" Width="100%" TextMode="Password"></asp:TextBox>
                             </div>
                             <div class="form-group">
-                                <label for="remember-me" class="text-info"><span>Recordar</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
+                                <asp:Label ID="lblRecordar" runat="server" class="text-info" Text="Recordar"></asp:Label>
+                                <asp:CheckBox ID="chkRecordar" runat="server" /><br />
                                 <asp:Button ID="Button1" runat="server" CssClass="btn-danger" Text="Acceder" OnClick="Button1_Click" />
                             </div>
                             <asp:label ID="lblIncorrecto" runat="server" Text="Usuario o Contraseña incorrecto." ForeColor="Red" Width="90%"></asp:label>

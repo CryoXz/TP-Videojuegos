@@ -27,12 +27,12 @@ namespace PRESENTACION
             N_Usuario usuario = new N_Usuario();
             count = usuario.resultadoUsuarios(txtUsuario.Text.Trim(), txtContraseña.Text.Trim());
 
-            if(count == 1)
+            if (count == 1)
             {
                 Session["username"] = txtUsuario.Text.Trim();
                 userType = usuario.getUserType(txtUsuario.Text.Trim());
 
-                if(userType.Trim() == "TU1")
+                if (userType.Trim() == "TU1")
                 {
                     Session["usertype"] = userType.Trim();
                     Response.Redirect("AdminMarca.aspx");
@@ -51,6 +51,12 @@ namespace PRESENTACION
             else
             {
                 lblIncorrecto.Visible = true;
+            }
+
+            if (chkRecordar.Checked)
+            {
+                Response.Cookies["username"].Value = txtUsuario.Text.Trim();
+                Response.Cookies["username"].Expires = DateTime.Today.AddDays(1);
             }
         }
     }

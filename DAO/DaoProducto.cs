@@ -23,5 +23,15 @@ namespace DAO
             DataSet data = ds.Consultar("select * from Productos");
             return data;
         }
+
+        public string getCodigoS(string imgUrl, string name)
+        {
+            return ds.ConsultarCodigos("SELECT PlataformaxProducto.Cod_Producto_PxP FROM PlataformaxProducto INNER JOIN Productos ON PlataformaxProducto.Cod_Producto_PxP = Productos.Cod_Producto_PR WHERE PlataformaxProducto.Imagen_Producto_PxP = '" + imgUrl + "' AND Productos.Nombre_Producto_PR = '" + name + "'");
+        }
+
+        public string getCodigoP(string imgUrl, string name)
+        {
+            return ds.ConsultarCodigos("SELECT PlataformaxProducto.Cod_Plataforma_PxP FROM PlataformaxProducto INNER JOIN Productos ON PlataformaxProducto.Cod_Producto_PxP = Productos.Cod_Producto_PR WHERE PlataformaxProducto.Imagen_Producto_PxP = '" + imgUrl + "' AND Productos.Nombre_Producto_PR = '" + name + "'");
+        }
     }
 }
