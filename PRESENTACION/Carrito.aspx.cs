@@ -15,7 +15,16 @@ namespace PRESENTACION
         {
             if (Session["usertype"] != null)
             {
-                this.MasterPageFile = "~/Login.Master";
+                switch (Session["usertype"])
+                {
+                    case "TU1":
+                        this.MasterPageFile = "~/AdminHome.Master";
+                        break;
+                    case "TU2":
+                        this.MasterPageFile = "~/Login.Master";
+                        break;
+                }
+
             }
             else
             {

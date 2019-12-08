@@ -19,12 +19,12 @@
             <div class="col-lg-2 text-center">
                 <div class="form-group">
                     <label>Ordenar por:</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option>Precio: Menor a Mayor</option>
-                      <option>Precio: Mayor a Menor</option>
-                      <option>A - Z</option>
-                      <option>Z - A</option>
-                    </select>
+                    <asp:DropDownList ID="ddlOrden" runat="server" AutoPostBack="True">
+                        <asp:listitem text="A - Z" value="1"></asp:listitem>
+                        <asp:listitem text="Z - A" value="2"></asp:listitem>
+                        <asp:listitem text="Precio: Menor a Mayor" value="3"></asp:listitem>
+                        <asp:listitem text="Precio: Mayor a Menor" value="4"></asp:listitem>
+                    </asp:DropDownList>
                 </div>
             </div>
             <div class="col-lg-5"></div>

@@ -35,7 +35,7 @@ namespace PRESENTACION
                 if (userType.Trim() == "TU1")
                 {
                     Session["usertype"] = userType.Trim();
-                    Response.Redirect("AdminMarca.aspx");
+                    Response.Redirect("Home.aspx");
                 }
                 else if (userType.Trim() == "TU2")
                 {

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Login.master.cs" Inherits="PRESENTACION.Login" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AdminHome.master.cs" Inherits="PRESENTACION.AdminHome" %>
 
 <!DOCTYPE html>
 
@@ -63,7 +63,7 @@
                               <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">USUARIO
                               <span class="caret"></span></button>
                               <ul class="dropdown-menu">
-                                <%--<li><a class="dropdown-item" id="btnLogout" onclick="btnLogout_click" href="Home.aspx">CERRAR SESION</a></li>--%>
+                                  <li><asp:Button ID="btnAdmin" runat="server" CssClass="dropdown-item" Text="ADMINISTRACION" OnClick="btnAdmin_click" /></li>
                                 <li><asp:Button ID="btnLogout1" runat="server" CssClass="dropdown-item" Text="CERRAR SESION" OnClick="btnLogout_click" /></li>
                               </ul>
                             </li>

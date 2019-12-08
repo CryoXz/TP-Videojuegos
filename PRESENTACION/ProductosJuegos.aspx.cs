@@ -16,7 +16,16 @@ namespace PRESENTACION
         {
             if (Session["usertype"] != null)
             {
-                this.MasterPageFile = "~/Login.Master";
+                switch (Session["usertype"])
+                {
+                    case "TU1":
+                        this.MasterPageFile = "~/AdminHome.Master";
+                        break;
+                    case "TU2":
+                        this.MasterPageFile = "~/Login.Master";
+                        break;
+                }
+
             }
             else
             {
@@ -33,8 +42,26 @@ namespace PRESENTACION
                 {
                     string plataforma;
                     plataforma = Request.QueryString["plat"];
-                    SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "'";
 
+                    switch (ddlOrden.SelectedValue)
+                    {
+                        case "1":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY Productos.Nombre_Producto_PR ASC";
+                            break;
+                        case "2":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY Productos.Nombre_Producto_PR DESC";
+                            break;
+                        case "3":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP ASC";
+                            break;
+                        case "4":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP DESC";
+                            break;
+                        default:
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "'";
+                            break;
+                    }
+                    
                     switch (plataforma)
                     {
                         case "pf1":
@@ -57,6 +84,25 @@ namespace PRESENTACION
                     string categoria;
                     categoria = Request.QueryString["cate"];
                     SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "'";
+
+                    switch (ddlOrden.SelectedValue.Trim())
+                    {
+                        case "1":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR ASC";
+                            break;
+                        case "2":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR DESC";
+                            break;
+                        case "3":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP ASC";
+                            break;
+                        case "4":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP DESC";
+                            break;
+                        default:
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "'";
+                            break;
+                    }
 
                     switch (categoria)
                     {
@@ -81,7 +127,25 @@ namespace PRESENTACION
                     string categoria;
                     plataforma = Request.QueryString["plat"];
                     categoria = Request.QueryString["cate"];
-                    SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "'";
+
+                    switch (ddlOrden.SelectedValue.Trim())
+                    {
+                        case "1":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR ASC";
+                            break;
+                        case "2":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR DESC";
+                            break;
+                        case "3":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP ASC";
+                            break;
+                        case "4":
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP DESC";
+                            break;
+                        default:
+                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "'";
+                            break;
+                    }
 
                     if (plataforma == "pf1" && categoria == "ca2")
                     {

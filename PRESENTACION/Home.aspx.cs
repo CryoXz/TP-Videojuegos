@@ -11,9 +11,23 @@ namespace PRESENTACION
     {
         void Page_PreInit(Object sender, EventArgs e)
         {
-            if(Session["usertype"] != null)
+            string type = Convert.ToString(Session["usertype"]).Trim();
+
+            if (type != null)
             {
-                this.MasterPageFile = "~/Login.Master";
+                switch (Session["usertype"])
+                {
+                    case "TU1":
+                        this.MasterPageFile = "~/AdminHome.Master";
+                        break;
+                    case "TU2":
+                        this.MasterPageFile = "~/Login.Master";
+                        break;
+                    default:
+                        this.MasterPageFile = "~/Home.Master";
+                        break;
+                }
+
             }
             else
             {
