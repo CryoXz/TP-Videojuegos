@@ -136,6 +136,7 @@
     <Content Include="Producto.aspx" />
     <Content Include="ProductosJuegos.aspx" />
     <Content Include="ProductosJuegosO.aspx" />
+    <Content Include="Registrarse.aspx" />
     <Content Include="RegistroUsuario.aspx" />
     <Content Include="Login.Master" />
     <Content Include="Admin.Master" />
@@ -392,6 +393,13 @@
       <DependentUpon>ProductosJuegosO.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
