@@ -61,18 +61,25 @@ namespace PRESENTACION
             Image imgbtn = this.ListView1.Items[0].FindControl("ImgProd") as Image;
             Label lbl2 = this.ListView2.Items[0].FindControl("Nombre_Producto_PRLabel") as Label;
             Label lbl3 = this.ListView2.Items[0].FindControl("PrecioUnitario_Producto_PxPLabel") as Label;
+            Label lbl4 = this.ListView2.Items[0].FindControl("Nombre_Plataforma_PLabel") as Label;
             DropDownList ddl = this.ListView2.Items[0].FindControl("ddlCant") as DropDownList;
+            
 
             string imgUrl, name, plat;
-            int cant, precio, preciototal;
+            int cant;
+            float precio, preciototal;
 
             imgUrl = imgbtn.ImageUrl;
             name = lbl2.Text;
-            plat = Request.QueryString["plat"];
+            plat = lbl4.Text;
             cant = Convert.ToInt32(ddl.SelectedValue);
+            precio = (float) Convert.ToDouble(lbl3.Text.Trim());
+
+            preciototal = precio * cant;
 
 
-            gc.AgregarCarrito((DataTable)this.Session["carrito"], imgUrl, name, plat, cant);
+
+            gc.AgregarCarrito((DataTable)this.Session["carrito"], imgUrl, name, plat, cant, preciototal);
 
             Response.Redirect("Carrito.aspx");
 

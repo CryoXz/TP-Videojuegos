@@ -23,8 +23,7 @@ namespace PRESENTACION
 
             N_usuario.GuardarUsuario("TU2", txtNombre.Text, txtApellido.Text, txtUsername.Text, txtContraseña.Text, txtDni.Text, txtMail.Text, txtTelefono.Text, txtDireccion.Text);
 
-
+            Response.Redirect("Home.aspx");
         }
     }
-}
 }
