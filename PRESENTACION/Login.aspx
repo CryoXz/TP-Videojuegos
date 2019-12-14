@@ -7,7 +7,7 @@
         <br />
         <div id="login">
             <div class="text-center">
-                <a href="#"><img src="IMAGES/gslogo.png" alt="gs" style="width:300px;height:90px;margin-right:10px;"></a>
+                <img src="IMAGES/gslogo.png" alt="gs" style="width:300px;height:90px;margin-right:10px;">
             </div>
         
         <br />
@@ -33,7 +33,7 @@
                             </div>
                             <asp:label ID="lblIncorrecto" runat="server" Text="Usuario o Contraseña incorrecto." ForeColor="Red" Width="90%"></asp:label>
                             <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Registrarse</a>
+                                <a href="Registrarse.aspx" class="text-info">Registrarse</a>
                             </div>
                         </form>
                     </div>
