@@ -13,5 +13,30 @@ namespace PRESENTACION
         {
 
         }
+
+        protected void btnUsuario_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminUsuarios.aspx");
+        }
+
+        protected void btnVentas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminVentas.aspx");
+        }
+
+        protected void btnProductos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AminProductos.aspx");
+        }
+
+        protected void btnPedidos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminCompras.aspx");
+        }
+
+        protected void btnPlatafomas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminPlataformas.aspx");
+        }
     }
 }

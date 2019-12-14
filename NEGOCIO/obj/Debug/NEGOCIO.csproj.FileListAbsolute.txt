@@ -42,3 +42,14 @@ C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\NEGOCIO\obj\Debug\NEGOC
 C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
 C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\NEGOCIO\obj\Debug\NEGOCIO.dll
 C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\NEGOCIO\obj\Debug\NEGOCIO.pdb
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.dll
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.pdb
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.dll
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.dll
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.pdb
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.pdb
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csprojAssemblyReference.cache
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
+C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb

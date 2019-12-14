@@ -4,97 +4,92 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-   
+
     <div class="col-md-10">
         <div class="container">
             <h3>Filtros Usuarios</h3>
             <hr />
             <div class="row">
-                <div class="col-md-2">
-                    <asp:Label ID="Label1" runat="server" Text="Label">Nombre Usuario</asp:Label>
-                </div>
                 <div class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Nombre o Apellido" aria-label="Search">
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-danger" />
+                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Label">NOMBRE DE USUARIO</asp:Label>
+                    &nbsp                
+                    <asp:TextBox ID="txtBuscarNombre" runat="server" placeholder="Nombre o Apellido" CssClass="rounded" ></asp:TextBox>
+                    &nbsp
+                    <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click" />
+                    &nbsp
+                    <asp:Label ID="lblFiltrarPor" runat="server" Text="Label">FILTRAR POR:</asp:Label>
+                    &nbsp
+                    <asp:DropDownList ID="ddlTipoUsuario" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
+                    &nbsp
+                    <asp:Button ID="btnFiltrar" runat="server" Text="FILTRAR" CssClass="btn btn-danger" OnClick="btnFiltrar_Click" />
                 </div>
-                <div class="col-md-2">
-                    Filtrar por:
-                </div>
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tipo de Usuario
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Empleado</a>
-                        <a class="dropdown-item" href="#">Cliente</a>                   
-                    </div>
-                </div>
-
             </div>
         </div>
         <hr />
+        <div>
+            <asp:GridView ID="grdUsuarios" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                <Columns>
+                    <asp:TemplateField HeaderText="Codigo">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Codigo" runat="server" Text='<%# Bind("Cod_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Tipo">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Tipo" runat="server" Text='<%# Bind("Nombre_TipoUsuario_TU") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Nombre">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Nombre" runat="server" Text='<%# Bind("Nombre_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Apellido">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Apellido" runat="server" Text='<%# Bind("Apellido_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Dni">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Dni" runat="server" Text='<%# Bind("DNI_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Telefono">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Telefono" runat="server" Text='<%# Bind("Telefono_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="E-mail">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Email" runat="server" Text='<%# Bind("EMail_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Direccion">
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("Direccion_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Estado">
+                        <ItemTemplate>
+                            <asp:CheckBox ID="chk_it_Estado" runat="server" Checked='<%# Bind("Estado_Usuario_U") %>' Text="Activo" Enabled="False" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#dc3545" ForeColor="White" Font-Bold="True" />
+                <HeaderStyle BackColor="#dc3545" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+            </asp:GridView>
+        </div>
 
-        <h3>Usuarios</h3>
-        <table class="table">
-            <caption>List of users</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Codigo</th>
-                    <th scope="col">Tipo</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Dni</th>
-                    <th scope="col">Telefono</th>
-                    <th scope="col">E-mail</th>
-                    <th scope="col">Direccion</th>
-                    <th scope="col">Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Administrador</td>
-                    <td>Alexis</td>
-                    <td>Rogriguez</td>
-                    <td>41864284</td>
-                    <td>1164004585</td>
-                    <td>ard@gmail.com</td>
-                    <td>Moreno 362</td>
-                    <td>1</td>                   
-                    <td>
-                        <asp:Button ID="btnModificar1" runat="server" Text="Modificar" CssClass="btn btn-danger" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Empleado</td>
-                    <td>Anahi</td>
-                    <td>Favre</td>
-                    <td>35123222</td>
-                    <td>1546825737</td>
-                    <td>RAF@Gmail.com</td>
-                    <td>Av Centenario 664</td>
-                    <td>1</td>
-                    <td>
-                        <asp:Button ID="btnModificar2" runat="server" Text="Modificar" CssClass="btn btn-danger" />
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Cliente</td>
-                    <td>Sergio</td>
-                    <td>Robledo</td>
-                    <td>27802555</td>
-                    <td>1166222234</td>
-                    <td>srr2055@hotmail.com</td>
-                    <td>san jose 362</td>
-                    <td>1</td>
-                    <td>
-                        <asp:Button ID="btnModificar3" runat="server" Text="Modificar" CssClass="btn btn-danger" />
-                    </td>
-                </tr>
 
-            </tbody>
-        </table>
+
     </div>
 </asp:Content>

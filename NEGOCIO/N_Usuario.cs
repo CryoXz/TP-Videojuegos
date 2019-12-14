@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using DAO;
 using ENTIDAD;
 
@@ -10,6 +11,23 @@ namespace NEGOCIO
 {
     public class N_Usuario
     {
+        public DataTable getTabla()
+        {
+            DaoUsuario dao = new DaoUsuario();
+            return dao.getTablaUsuarios();
+        }
+        public DataTable getTablaConFiltro(Char tipoUsuario)
+        {
+            DaoUsuario dao = new DaoUsuario();
+            return dao.getTablaUsuariosConFiltro(tipoUsuario);
+        }
+
+        public DataTable getbuscarUsuario(String nombreBuscado)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.getBuscarNombre(nombreBuscado);
+        }
+
         //recibe por parametros desde RegistroUsuario.aspx los parametros en tipo texto.
         public void GuardarUsuario(String tipoUsuario, String nombre, String apellido, String nickname, String contraseña, String dni, /*DateTime fechaNacimiento,*/ String email, String telefono, String direccion)
         {
@@ -36,6 +54,8 @@ namespace NEGOCIO
             daoUsuario.GuardarUsuario(usuarioNuevo); // ahora daoUsuario llama al metodo GuardarUsuario y se le envia el objeto cargado.
         }
 
+    
+
         public int resultadoUsuarios(string user, string pass)
         {
 
@@ -48,6 +68,8 @@ namespace NEGOCIO
             DaoUsuario daoUsuario = new DaoUsuario();
             return daoUsuario.getUserType(user);
         }
+
+        
 
     }
 }

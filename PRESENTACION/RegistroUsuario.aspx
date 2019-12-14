@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col">
                                 <label for="nombre">Nombre</label>
-                                <asp:TextBox ID="txtNombre_Usuario" runat="server" class="form-control"> </asp:TextBox>
+                                <asp:TextBox ID="txtNombre_Usuario" runat="server" class="form-control" type=""> </asp:TextBox>
                             </div>
                             <div class="col">
                                 <label for="nombre">Apellido</label>

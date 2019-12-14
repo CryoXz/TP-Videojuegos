@@ -7,140 +7,81 @@
 
     <div class="col-md-10">
         <div class="container">
-
             <h3>Filtros de Ventas</h3>
             <hr />
             <div class="row">
-                <div class="col-md-2">
-                    <asp:Label ID="Label1" runat="server" Text="Label">Nombre Usuario</asp:Label>
-                </div>
                 <div class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Nombre de Producto" aria-label="Search">
-                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-danger" />
+                    <asp:Label ID="Label1" runat="server" Text="Label">NOMBRE DE PRODUCTO</asp:Label>
+                    &nbsp
+                    <asp:TextBox ID="txtNombreBuscar" runat="server" Cssclass="rounded"></asp:TextBox>
+                    &nbsp
+                    <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click1" />
                 </div>
+            </div>
+            <br />
+            <div class="row">
                 &nbsp
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Plataformas
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Nintendo Switch</a>
-                        <a class="dropdown-item" href="#">Nintendo 3ds</a>
-                        <a class="dropdown-item" href="#">Playstation 3</a>
-                        <a class="dropdown-item" href="#">Playstation 4</a>
-                        <a class="dropdown-item" href="#">PS Vita</a>
-                        <a class="dropdown-item" href="#">Xbox 360</a>
-                        <a class="dropdown-item" href="#">Xbox One</a>
-                        <a class="dropdown-item" href="#">Pc</a>
-                    </div>
-                </div>
+                <asp:DropDownList ID="ddlPlataformas" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
                 &nbsp
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Generos
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Aventura</a>
-                        <a class="dropdown-item" href="#">Lucha</a>
-                        <a class="dropdown-item" href="#">Shoother</a>
-                        <a class="dropdown-item" href="#">Deportes</a>
-                        <a class="dropdown-item" href="#">Accion</a>
-                        <a class="dropdown-item" href="#">Arcade</a>
-                        <a class="dropdown-item" href="#">Carreras</a>
-                        <a class="dropdown-item" href="#">Estrategias</a>
-                    </div>
-                </div>
+                 <asp:DropDownList ID="ddlGeneros" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
                 &nbsp
-                <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Video Juego</a>
-                        <a class="dropdown-item" href="#">Accesorio</a>
-                    </div>
-                </div>
-
+                 <asp:DropDownList ID="ddlCategorias" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
+                &nbsp               
+                    <asp:Button ID="btnFiltrar" runat="server" Text="FILTRAR" CssClass="btn btn-danger" OnClick="btnFiltrar_Click" />
+                &nbsp         
+                   <asp:Button ID="btnQuitarFiltro" runat="server" Text="QUITAR FILTRO" CssClass="btn btn-danger" OnClick="btnQuitarFiltro_Click" />
             </div>
         </div>
-                                 
-        <asp:Label Text="Top ten" runat="server" Font-Size="large" />
-            &nbsp
-        <asp:Label Text="Playstation 4" runat="server" Font-Size="medium" />
-
-        <div class="table-responsive">
-            <table class="table ">
-                <thead>
-                    <tr class="active">
-                        <th>Codigo</th>
-                         <th>Nombre Producto</th>
-                        <th>Categoria</th>
-                        <th>Plataforma</th>
-                         <th>Genero</th>
-                       
-                        <th>Vendidos</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1502</td>
-                        <td>Grid</td>
-                        <td>Video Juego</td>
-                         <td>Playatation 4s</td>
-                        <td>Carreras</td>
-                        
-                        <td>200</td>
-                        <td>
-                            <asp:CheckBox ID="CheckBox1" runat="server" Text="Activo" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>1015</td>
-                         <td>Watch Dogs Legion</td>
-                        <td>Video Juego</td>
-                        <td>Playstation 4</td>
-                         <td>Acción</td>
-                        <td>120</td>
-                        <td>
-                            <asp:CheckBox ID="CheckBox4" runat="server" Text="Activo" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2027</td>
-                         <td>FIFA 20 Champions Edition</td>
-                        <td>Video Juego</td>
-                        <td>Playstation 4</td>
-                         <td>Deportes</td>
-                        <td>110</td>
-                        <td>
-                            <asp:CheckBox ID="CheckBox2" runat="server" Text="Activo" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2030</td>
-                         <td>Dragon Z Kakarot</td>
-                        <td>Video Juego</td>
-                        <td>Playstation 4</td>
-                         <td>Lucha</td>
-                        <td>105</td>
-                        <td>
-                            <asp:CheckBox ID="CheckBox3" runat="server" Text="Activo" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3036</td>
-                         <td>Call of Duty: Modern Warfare</td>
-                        <td>Video Juego</td>
-                        <td>Playstation 4</td>
-                         <td>Acción</td>
-                        <td>90</td>
-                        <td>
-                            <asp:CheckBox ID="CheckBox5" runat="server" Text="Activo" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        &nbsp
+        <asp:GridView ID="grdVentas" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
+            <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            <Columns>
+                <asp:TemplateField HeaderText="Codigo">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Codigo" runat="server" Text='<%# Bind("Cod_Producto_DV") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Nombre Producto">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_NombreProducto" runat="server" Text='<%# Bind("Nombre_Producto_PR") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Categoria">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Categoria" runat="server" Text='<%# Bind("nombre_categoria_C") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Plataforma">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Plataforma" runat="server" Text='<%# Bind("Nombre_Plataforma_P") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Genero">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Genero" runat="server" Text='<%# Bind("Nombre_Genero_G") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Vedidos">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Vendidos" runat="server" Text='<%# Bind("Vendidos") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Estado">
+                    <ItemTemplate>
+                        <asp:CheckBox ID="chk_it_Estado" runat="server" Checked='<%# Bind("estado_Producto_PR") %>' Enabled="False" Text="Activo" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+            <EditRowStyle BackColor="#999999" />
+            <FooterStyle BackColor="#dc3545" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#dc3545" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#E9E7E2" />
+            <SortedAscendingHeaderStyle BackColor="#506C8C" />
+            <SortedDescendingCellStyle BackColor="#FFFDF8" />
+            <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+        </asp:GridView>
     </div>
 </asp:Content>

@@ -54,6 +54,23 @@ namespace DAO
             SqlParametros.Value = u.getEstado();
 
         }
+        public DataTable getTablaUsuarios()
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Estado_Usuario_U from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU");
+            return tabla;
+        }
+        public DataTable getTablaUsuariosConFiltro(Char tipoUsuario)
+        {
+            DataTable tabla = ds.ObtenerTabla("UsuariosConFiltro", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Estado_Usuario_U from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU where Cod_TipoUsuario_U LIKE 'TU"+ tipoUsuario.ToString() +"'");
+            return tabla;
+        }
+
+        public DataTable getBuscarNombre(String nombreBuscado)
+        {
+            DataTable tabla = ds.ObtenerTabla("UsuarioBuscarNombre", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Estado_Usuario_U from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU where Nombre_Usuario_U like '%" + nombreBuscado + "%' or Apellido_Usuario_U like '%" + nombreBuscado + "%'");
+            return tabla;
+        }
+
 
         public int getLogin(string username, string password)
         {
@@ -68,3 +85,5 @@ namespace DAO
         }
     }
 }
+
+

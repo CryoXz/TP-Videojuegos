@@ -39,5 +39,7 @@ namespace PRESENTACION
             N_usuario.GuardarUsuario(ddlTipoUsuario.SelectedValue.ToString(), txtNombre_Usuario.Text, txtApellido_Usuario.Text, txtNickname_Usuario.Text, txtContraseña_usuario.Text, txtDni_Usuario.Text, /*fechaNacimiento,*/ txtEmail_Usuario.Text, txtTelefono_Usuario.Text, txtDireccion_Usuario.Text);
             
         }
+
+
     }
 }
