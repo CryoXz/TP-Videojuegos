@@ -18,7 +18,7 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Categorias", "Select * from categorias where Cod_Categoria_C=" + id);
             cat.setCodigoCategoria(tabla.Rows[0][0].ToString());
             cat.setNombreCategoria(tabla.Rows[0][1].ToString());
-         
+
             return cat;
         }
 
@@ -39,7 +39,7 @@ namespace DAO
         private void ArmarParametrosCategoriaEliminar(ref SqlCommand Comando, Categoria cat)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Char,4);
+            SqlParametros = Comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Char, 4);
             SqlParametros.Value = cat.getCodigoCategoria();
         }
         private void ArmarParametrosCategorias(ref SqlCommand Comando, Categoria p)
@@ -48,7 +48,7 @@ namespace DAO
             SqlParametros = Comando.Parameters.Add("@Cod_Categoria_C", SqlDbType.Char, 4);
             SqlParametros.Value = p.getCodigoCategoria();
             SqlParametros = Comando.Parameters.Add("@Nombre_Categoria_C", SqlDbType.NVarChar, 60);
-            SqlParametros.Value = p.getNombreCategoria();            
+            SqlParametros.Value = p.getNombreCategoria();
         }
         public int actualizarCategoria(Categoria p)
         {

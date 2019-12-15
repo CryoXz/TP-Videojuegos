@@ -44,14 +44,14 @@ namespace DAO
         private void ArmarParametrosPlataformaEliminar(ref SqlCommand Comando, Plataforma cat)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDPlataforma", SqlDbType.Char,4);
+            SqlParametros = Comando.Parameters.Add("@IDPlataforma", SqlDbType.Char, 4);
             SqlParametros.Value = cat.getCodigoPlataforma();
         }
 
         private void ArmarParametrosPlataformas(ref SqlCommand Comando, Plataforma p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_p", SqlDbType.Char,4);
+            SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_p", SqlDbType.Char, 4);
             SqlParametros.Value = p.getCodigoPlataforma();
             SqlParametros = Comando.Parameters.Add("@Nombre_Plataforma_p", SqlDbType.NVarChar, 60);
             SqlParametros.Value = p.getNombrePlataforma();

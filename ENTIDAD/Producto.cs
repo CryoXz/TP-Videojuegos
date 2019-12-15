@@ -8,11 +8,11 @@ namespace ENTIDAD
 {
     public class Producto
     {
-        private int CodigoProducto;
-        private Marca IdCodigoMarca;
-        private Categoria IdCodigoCategoria;
-        private String NombreProducto;
-        private String Descripcion;
+        private string CodigoProducto;
+        Marca marca = new Marca();
+        Categoria categoria = new Categoria();
+        private string NombreProducto;
+        private string Descripcion;
         //private imgen
         private int AnioFabricacion;
         // ver Estado
@@ -22,35 +22,35 @@ namespace ENTIDAD
         {
 
         }
-        public int getCodigoProducto()
+        public string getCodigoProducto()
         {
             return CodigoProducto;
         }
-        public void setCodigoProducto(int codigoProducto)
+        public void setCodigoProducto(string codigoProducto)
         {
             CodigoProducto = codigoProducto;
         }
-        public Marca getIdCodigoMarca()
+        public string getIdCodigoMarca()
         {
-            return IdCodigoMarca;
+            return marca.getCodigoMarca();
         }
-        public void setIdCodigoMarca(Marca idCodigoMarca)
+        public void setIdCodigoMarca(string idCodigoMarca)
         {
-            IdCodigoMarca = idCodigoMarca;
+            marca.setCodigoMarca(idCodigoMarca);
         }
-        public Categoria getIdCodigoCategoria()
+        public string getIdCodigoCategoria()
         {
-            return IdCodigoCategoria;
+            return categoria.getCodigoCategoria();
         }
-        public void setIdCodigoCategoria(Categoria idCodigoCategoria)
+        public void setIdCodigoCategoria(string idCodigoCategoria)
         {
-            IdCodigoCategoria = idCodigoCategoria;
+            categoria.setCodigoCategoria(idCodigoCategoria);
         }
         public String getNombreProducto()
         {
             return NombreProducto;
         }
-        public void setNombreProducto(String nombreProducto)
+        public void setNombreProducto(string nombreProducto)
         {
             NombreProducto = nombreProducto;
         }
@@ -58,7 +58,7 @@ namespace ENTIDAD
         {
             return Descripcion;
         }
-        public void setDescripcion(String descripcion)
+        public void setDescripcion(string descripcion)
         {
             Descripcion = descripcion;
         }

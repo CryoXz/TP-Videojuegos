@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+using ENTIDAD;
+
 namespace DAO
 {
     public class DaoProducto
@@ -17,6 +19,17 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Stock_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = 'PF1'");
             return tabla;
         }
+        public DataTable getTablaProductosConPrecioyStock()
+        {
+
+            DataTable tabla = ds.ObtenerTabla("Productos", "SELECT Productos.Cod_Producto_PR as Codigo, Productos.Nombre_Producto_PR as Nombre, Productos.Descripcion_Producto_PR as Descripcion, Marcas.Cod_Marca_M as CodMarca, Marcas.Nombre_Marca_M as NombreMarca, Categorias.Cod_Categoria_C as CodCategoria, Categorias.Nombre_Categoria_C as NombreCategoria, Generos.Cod_Genero_G as CodGenero, Generos.Nombre_Genero_G as NombreGenero, " +
+            "Productos.fPublicacion_Producto_PR as FPublicacion, Productos.Estado_Producto_PR as Estado, PlataformaxProducto.Stock_Producto_PxP as Stock, PlataformaxProducto.PrecioUnitario_Producto_PxP as PrecioUnitario " +
+            "FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP " +
+            "inner join Marcas on Cod_Marca_M = Cod_Marca_PR inner join Categorias on Cod_Categoria_C = Cod_Categoria_PR " +
+            "inner join Generos on Cod_Genero_G = Cod_Genero_PR");
+            return tabla;
+        }
+
 
         public DataSet getConsultaProductos()
         {
@@ -32,6 +45,66 @@ namespace DAO
         public string getCodigoP(string imgUrl, string name)
         {
             return ds.ConsultarCodigos("SELECT PlataformaxProducto.Cod_Plataforma_PxP FROM PlataformaxProducto INNER JOIN Productos ON PlataformaxProducto.Cod_Producto_PxP = Productos.Cod_Producto_PR WHERE PlataformaxProducto.Imagen_Producto_PxP = '" + imgUrl + "' AND Productos.Nombre_Producto_PR = '" + name + "'");
+        }
+
+        public Producto getProducto(string id)
+        {
+            Producto p = new Producto();
+            DataTable tabla = ds.ObtenerTabla("Producto", "Select * from Productos where Productos.Cod_Producto_PR = '" + id + "'");
+            p.setCodigoProducto(tabla.Rows[0][0].ToString());
+            p.setNombreProducto(tabla.Rows[0][1].ToString());
+            return p;
+        }
+
+
+
+        public int eliminarProducto(Producto cat)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosProductoEliminar(ref comando, cat);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarProducto");
+        }
+
+        private void ArmarParametrosProductoEliminar(ref SqlCommand Comando, Producto cat)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@IDProducto", SqlDbType.Char, 4);
+            SqlParametros.Value = cat.getCodigoProducto();
+        }
+
+        private void ArmarParametrosProductos(ref SqlCommand Comando, Producto p)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getCodigoProducto();
+            SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
+            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros = Comando.Parameters.Add("@Cod_Marca_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros = Comando.Parameters.Add("@Cod_Categoria_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
+            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
+            SqlParametros.Value = p.getNombreProducto();
+
+        }
+        public int actualizarProducto(Producto p)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosProductos(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarProducto");
+        }
+
+        public int AltaProducto(Producto p)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosProductos(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaProducto");
         }
     }
 }
