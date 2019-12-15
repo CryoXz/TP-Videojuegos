@@ -53,9 +53,9 @@ namespace DAO
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_p", SqlDbType.Char,4);
             SqlParametros.Value = p.getCodigoPlataforma();
-            SqlParametros = Comando.Parameters.Add("@Nombre_Plataforma_p", SqlDbType.NVarChar, 40);
+            SqlParametros = Comando.Parameters.Add("@Nombre_Plataforma_p", SqlDbType.NVarChar, 60);
             SqlParametros.Value = p.getNombrePlataforma();
-;
+
         }
         public int actualizarPlataforma(Plataforma p)
         {

@@ -38,5 +38,10 @@ namespace PRESENTACION
         {
             Response.Redirect("AdminPlataformas.aspx");
         }
+
+        protected void btnCategorias_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminCategorias.aspx");
+        }
     }
 }

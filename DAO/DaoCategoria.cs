@@ -15,7 +15,7 @@ namespace DAO
         public Categoria getCategoria(string id)
         {
             Categoria cat = new Categoria();
-            DataTable tabla = ds.ObtenerTabla("Categoria", "Select * from categorías where IdCategoría=" + id);
+            DataTable tabla = ds.ObtenerTabla("Categorias", "Select * from categorias where Cod_Categoria_C=" + id);
             cat.setCodigoCategoria(tabla.Rows[0][0].ToString());
             cat.setNombreCategoria(tabla.Rows[0][1].ToString());
          
@@ -39,17 +39,16 @@ namespace DAO
         private void ArmarParametrosCategoriaEliminar(ref SqlCommand Comando, Categoria cat)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Categoria_C", SqlDbType.Char,4);
-            SqlParametros.Value = cat.getNombreCategoria();
+            SqlParametros = Comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Char,4);
+            SqlParametros.Value = cat.getCodigoCategoria();
         }
         private void ArmarParametrosCategorias(ref SqlCommand Comando, Categoria p)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Cod_Categoria_C", SqlDbType.Char, 4);
             SqlParametros.Value = p.getCodigoCategoria();
-            SqlParametros = Comando.Parameters.Add("@Nombre_Categoria_C", SqlDbType.NVarChar, 40);
-            SqlParametros.Value = p.getNombreCategoria();
-            ;
+            SqlParametros = Comando.Parameters.Add("@Nombre_Categoria_C", SqlDbType.NVarChar, 60);
+            SqlParametros.Value = p.getNombreCategoria();            
         }
         public int actualizarCategoria(Categoria p)
         {
@@ -61,7 +60,7 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosCategorias(ref comando, x);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaCategoria");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaCategorias");
         }
     }
 }

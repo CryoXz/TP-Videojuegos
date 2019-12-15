@@ -9,8 +9,11 @@
             <hr />
             <div class="row">
                 <div class="form-inline">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Nombre Categoría" aria-label="Search">
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-danger" />
+                    <asp:Label ID="lblNombreCtegoria" runat="server" Text="Ingrese el nombre de la nueva categoria"></asp:Label>7
+                    &nbsp
+                    <asp:TextBox ID="txtNombreCategoria" runat="server" CssClass="rounded"></asp:TextBox>                   
+                   &nbsp;
+                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-danger" OnClick="btnAgregar_Click" />
                 </div>
             </div>
         </div>
@@ -23,18 +26,18 @@
                 <Columns>
                     <asp:TemplateField HeaderText="Código">
                         <EditItemTemplate>
-                            <asp:Label ID="lbl_eit_codigo" runat="server" Text='<%# Bind("Cod_Categoria_C") %>'></asp:Label>
+                            <asp:Label ID="lbl_eit_codigoCategoria" runat="server" Text='<%# Bind("Cod_Categoria_C") %>'></asp:Label>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_it_codigo" runat="server" Text='<%# Bind("Cod_Categoria_C") %>'></asp:Label>
+                            <asp:Label ID="lbl_eit_codigoCategoria" runat="server" Text='<%# Bind("Cod_Categoria_C") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Nombre">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txt_eit_nombre" runat="server" Text='<%# Bind("Nombre_Categoria_C") %>'></asp:TextBox>
+                            <asp:TextBox ID="txt_eit_nombreCategoria" runat="server" Text='<%# Bind("Nombre_Categoria_C") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_it_nombre" runat="server" Text='<%# Bind("Nombre_Categoria_C") %>'></asp:Label>
+                            <asp:Label ID="lbl_it_nombreCategoria" runat="server" Text='<%# Bind("Nombre_Categoria_C") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                 </Columns>

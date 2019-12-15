@@ -49,5 +49,14 @@ namespace NEGOCIO
             else
                 return false;
         }
+        public bool AltaCategoria(Categoria categoria)
+        {
+            DaoCategoria daoCategoria = new DaoCategoria();
+            int FilasInsertadas = daoCategoria.AltaCategoria(categoria);
+            if (FilasInsertadas == 1)
+                return true;
+            else
+                return false;
+        }
     }
 }
