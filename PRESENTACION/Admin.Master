@@ -47,7 +47,8 @@
                 <asp:Button ID="btnPedidos" runat="server" Text="Pedidos" CssClass="btn btn-danger" OnClick="btnPedidos_Click" Enabled="False" />
                  <asp:Button ID="btnPlataformas" runat="server" Text="Plataformas" CssClass="btn btn-danger" OnClick="btnPlatafomas_Click"/>
                 <asp:Button ID="btnCategorias" runat="server" Text="Categorias" CssClass="btn btn-danger" OnClick="btnCategorias_Click"/>
-            </div>
+                <asp:Button ID="btnMarcas" runat="server" Text="Marcas" CssClass="btn btn-danger" OnClick="btnMarcas_Click"/>
+                </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

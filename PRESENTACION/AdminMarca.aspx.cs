@@ -21,8 +21,8 @@ namespace PRESENTACION
         }
         public void cargarGridview()
         {
-            N_Marca n_plat = new N_Marca();
-            grdMarcas.DataSource = n_plat.getTabla();
+            N_Marca n_Marca = new N_Marca();
+            grdMarcas.DataSource = n_Marca.getTabla();
             grdMarcas.DataBind();
 
         }
@@ -31,8 +31,8 @@ namespace PRESENTACION
         {
             String s_codigoMarca = ((Label)grdMarcas.Rows[e.RowIndex].FindControl("lbl_it_codigo")).Text;
 
-            N_Marca n_plat = new N_Marca();
-            n_plat.eliminarMarca(s_codigoMarca);
+            N_Marca n_Marca = new N_Marca();
+            n_Marca.eliminarMarca(s_codigoMarca);
             cargarGridview();
 
 
@@ -52,18 +52,27 @@ namespace PRESENTACION
         }
 
         protected void grdMarcas_RowUpdating(object sender, GridViewUpdateEventArgs e)
-        {
+        {            
             String s_codigoMarca = ((Label)grdMarcas.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text;
             String s_nombreMarca = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_nombre")).Text;
+            String s_contacto = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_contacto")).Text;
+            String s_direccion = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_direccion")).Text;
+            String s_ciudad = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_ciudad")).Text;
+            String s_telefono = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_telefono")).Text;
+            String s_email = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_email")).Text;
 
-
-
-            Marca plat = new Marca();
-            plat.setCodigoMarca(s_codigoMarca);
-            plat.setNombreMarca(s_nombreMarca);
+            Marca m = new Marca();
+            m.setCodigoMarca(s_codigoMarca);
+            m.setNombreMarca(s_nombreMarca);
+            m.setNombreContacto(s_contacto);
+            m.setDireccion(s_direccion);
+            m.setCiudad(s_ciudad);
+            m.setTelefono(s_telefono);
+            m.setEmail(s_email);
+            m.setEstado(1);
 
             N_Marca n_Marca = new N_Marca();
-            n_Marca.ActualizarMarca(plat);
+            n_Marca.ActualizarMarca(m);
 
             grdMarcas.EditIndex = -1;
             cargarGridview();
@@ -78,27 +87,24 @@ namespace PRESENTACION
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (txtNombreMarca.Text.Length != 0)
-            {
-                // NO ME SALEEEE
-              
-                //DataTable dt = new DataTable();
-                //using (SqlConnection conn = new SqlConnection("Data Source=LABINF201B13;Initial Catalog=REGISTRO;Integrated Security=True"))
-                //{
+                N_Marca n_Marca = new N_Marca();
+                grdMarcas.DataSource = n_Marca.getBuscarMarca(txtNombreMarca.Text);
+                grdMarcas.DataBind();        
+        }
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            int N_filas = grdMarcas.Rows.Count - 1;
+            string s_codigoMarca = ((Label)grdMarcas.Rows[N_filas].FindControl("lbl_it_codigo")).Text;
+            char[] CharsToTream = { 'M' };
+            int codNum = Convert.ToInt32(s_codigoMarca.TrimStart(CharsToTream)) + 1;
 
-                //    SqlCommand cmd = new SqlCommand("BUSCARCODIGO", conn);
-                //    cmd.CommandType = CommandType.StoredProcedure;
-
-                //    cmd.Parameters.AddWithValue("@codigo", this.TEXTO1.Text);
-
-                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                //    da.Fill(dt);
-                //}
-
-                //GridView1.DataSource = dt;
-                //GridView1.DataBind();
-                //Label3.Text = "BUSQUEDA REALIZADA CON EXITO";
-            }
+            this.Session["codigoMarca"] = codNum;
+            Response.Redirect("AdminAltaMarca.aspx");
         }
     }
 }
+
+
+
+
+   

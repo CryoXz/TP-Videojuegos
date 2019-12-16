@@ -13,14 +13,19 @@ namespace DAO
     {
         AccesoDatos ds = new AccesoDatos();
 
+        public DaoMarca ()
+        {
+
+        }
+
         public Marca getMarca(string id)
         {
-            Marca m = new Marca();
+            Marca marca = new Marca();
             DataTable tabla = ds.ObtenerTabla("Marca", "Select * from Marcas where Cod_Marca_m=" + id);
-            m.setCodigoMarca(tabla.Rows[0][0].ToString());
-            m.setNombreMarca(tabla.Rows[0][1].ToString());
+            marca.setCodigoMarca(tabla.Rows[0][0].ToString());
+            marca.setNombreMarca(tabla.Rows[0][1].ToString());
 
-            return m;
+            return marca;
         }
 
         public DataTable getTablaMarcas()
@@ -30,52 +35,56 @@ namespace DAO
             return tabla;
         }
 
-        public int eliminarMarca(Marca m)
+        public DataTable getBuscarNombre(String nombreBuscado)
+        {
+            DataTable tabla = ds.ObtenerTabla("MarcasBuscarNombre", "select * from marcas where Nombre_Marca_M like '%" + nombreBuscado + "%'");
+            return tabla;
+        }
+
+
+        public int eliminarMarca(Marca marca)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosMarcaEliminar(ref comando, m);
+            ArmarParametrosMarcaEliminar(ref comando, marca);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarMarca");
         }
 
-        private void ArmarParametrosMarcaEliminar(ref SqlCommand Comando, Marca m)
+        private void ArmarParametrosMarcaEliminar(ref SqlCommand Comando, Marca marca)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Cod_Marca_M", SqlDbType.Char, 4);
-            SqlParametros.Value = m.getNombreMarca();
+            SqlParametros.Value = marca.getCodigoMarca();
         }
-        private void ArmarParametrosMarcas(ref SqlCommand Comando, Marca m)
+        private void ArmarParametrosMarcas(ref SqlCommand Comando, Marca marca)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Cod_Marca_M", SqlDbType.Char, 4);
-            SqlParametros.Value = m.getCodigoMarca();
+            SqlParametros.Value = marca.getCodigoMarca();
             SqlParametros = Comando.Parameters.Add("@Nombre_Marca_M", SqlDbType.NVarChar, 60);
-            SqlParametros.Value = m.getNombreMarca();
+            SqlParametros.Value = marca.getNombreMarca();
             SqlParametros = Comando.Parameters.Add("@Nombre_Contacto_M", SqlDbType.NVarChar, 100);
-            SqlParametros.Value = m.getNombreContacto();
+            SqlParametros.Value = marca.getNombreContacto();
             SqlParametros = Comando.Parameters.Add("@Direccion_Marca_M", SqlDbType.NVarChar, 100);
-            SqlParametros.Value = m.getDireccion();
+            SqlParametros.Value = marca.getDireccion();
             SqlParametros = Comando.Parameters.Add("@Ciudad_Marca_M", SqlDbType.NVarChar, 100);
-            SqlParametros.Value = m.getCiudad();
+            SqlParametros.Value = marca.getCiudad();
             SqlParametros = Comando.Parameters.Add("@Telefono_Marca_M", SqlDbType.NVarChar, 15);
-            SqlParametros.Value = m.getTelefono();
+            SqlParametros.Value = marca.getTelefono();
             SqlParametros = Comando.Parameters.Add("@Email_Marca_M", SqlDbType.NVarChar, 200);
-            SqlParametros.Value = m.getEmail();
+            SqlParametros.Value = marca.getEmail();
             SqlParametros = Comando.Parameters.Add("@Estado_Marca_M", SqlDbType.Bit);
-            SqlParametros.Value = m.getEstado();
-
-
-            ;
+            SqlParametros.Value = marca.getEstado();            
         }
-        public int actualizarMarca(Marca m)
+        public int actualizarMarca(Marca marca)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosMarcas(ref comando, m);
+            ArmarParametrosMarcas(ref comando, marca);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarMarca");
         }
-        public int AltaMarca(Marca x)
+        public int AltaMarca(Marca marca)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosMarcas(ref comando, x);
+            ArmarParametrosMarcas(ref comando, marca);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaMarca");
         }
 
