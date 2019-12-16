@@ -15,15 +15,15 @@
             <hr />
             <div class="row">
                 <div class="form-inline">
-                    <asp:Label ID="Label1" runat="server" Text="Ingrese el nombre de la nueva plataforma:"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="INGRESE EL NOMBRE DE LA NUEVA PLATAFORMA:"></asp:Label>
                     &nbsp;
                     <asp:TextBox ID="TxtNombre" runat="server" CssClass="rounded"></asp:TextBox>                   
                     &nbsp;                   
-                    <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn btn-danger" OnClick="btnAgregar_Click" />
+                    <asp:Button ID="btnAgregar" runat="server" Text="AGREGAR" CssClass="btn btn-danger" OnClick="btnAgregar_Click" />
                 </div>
             </div>
         </div>
-        <br />
+        <hr />    
         <h3>Plataformas</h3>
 
         <div class="col-lg-2">

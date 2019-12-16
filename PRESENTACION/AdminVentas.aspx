@@ -32,7 +32,7 @@
                    <asp:Button ID="btnQuitarFiltro" runat="server" Text="QUITAR FILTRO" CssClass="btn btn-danger" OnClick="btnQuitarFiltro_Click" />
             </div>
         </div>
-        &nbsp
+        <hr />      
         <asp:GridView ID="grdVentas" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>

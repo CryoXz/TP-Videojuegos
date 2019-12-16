@@ -10,7 +10,7 @@
 
                <label class="col-lg-2 col-form-label">Nombre Companía:</label> 
               <div class ="col-lg-4">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtNombreMarca" runat="server"></asp:TextBox>
                   </div>
                 
               </div>
@@ -18,33 +18,33 @@
          <div class="form-group row">
   <label class="col-lg-2 col-form-label">Nombre de Contacto:</label> 
               <div class ="col-lg-4">
-                <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtNombreContacto" runat="server"></asp:TextBox>
                   </div>
                            </div>
 
          <div class="form-group row">
  <label class="col-lg-2 col-form-label">Dirección: </label> 
               <div class ="col-lg-4">
-                <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
                   </div>
                            </div>
 
          <div class="form-group row">
                 <label class="col-lg-2 col-form-label">Ciudad:</label> 
               <div class ="col-lg-4">
-                <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCiudad" runat="server"></asp:TextBox>
                   </div>
                            </div>
                     <div class="form-group row">
  <label class="col-lg-2 col-form-label">Teléfono:</label> 
               <div class ="col-lg-4">
-                <asp:TextBox ID="TextBox7" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
                   </div>
                            </div>
                     <div class="form-group row">
  <label class="col-lg-2 col-form-label">E-Mail:</label> 
               <div class ="col-lg-4">
-                <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" CssClass="rounded"></asp:TextBox>
                   </div>
                            </div>
 
@@ -54,7 +54,7 @@
                           <div class="col-lg-2">
                               </div>
              <div class="col-lg-4">
-                <asp:Button class="btn btn-danger" ID="Button1" runat="server" Text="Agregar" />
+                <asp:Button class="btn btn-danger" ID="btnAgregar" runat="server" Text="Agregar" OnClick="btnAgregar_Click"/>
 
                  </div>
 

@@ -17,6 +17,12 @@ namespace NEGOCIO
             return dao.getTablaMarcas();
         }
 
+        public DataTable getBuscarMarca(String nombreBuscado)
+        {
+            DaoMarca daoMarca = new DaoMarca();
+            return daoMarca.getBuscarNombre(nombreBuscado);
+        }
+
         public Marca get(string id)
         {
             DaoMarca dao = new DaoMarca();
@@ -28,30 +34,30 @@ namespace NEGOCIO
         {
             //Validar id existente 
             DaoMarca dao = new DaoMarca();
-            Marca m = new Marca();
-            m.setCodigoMarca(id);
-            int op = dao.eliminarMarca(m);
+            Marca marca = new Marca();
+            marca.setCodigoMarca(id);
+            int op = dao.eliminarMarca(marca);
             if (op == 1)
                 return true;
             else
                 return false;
         }
 
-        public bool ActualizarMarca(Marca m)
+        public bool ActualizarMarca(Marca marca)
         {
 
             DaoMarca dao = new DaoMarca();
 
-            int FilasInsertadas = dao.actualizarMarca(m);
+            int FilasInsertadas = dao.actualizarMarca(marca);
             if (FilasInsertadas == 1)
                 return true;
             else
                 return false;
         }
-        public bool AltaMarca(Marca m)
+        public bool AltaMarca(Marca marca)
         {
             DaoMarca dao = new DaoMarca();
-            int FilasInsertadas = dao.AltaMarca(m);
+            int FilasInsertadas = dao.AltaMarca(marca);
             if (FilasInsertadas == 1)
                 return true;
             else

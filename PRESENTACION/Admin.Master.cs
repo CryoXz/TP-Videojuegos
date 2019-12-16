@@ -43,5 +43,10 @@ namespace PRESENTACION
         {
             Response.Redirect("AdminCategorias.aspx");
         }
+
+        protected void btnMarcas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminMarca.aspx");
+        }
     }
 }
