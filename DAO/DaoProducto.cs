@@ -75,28 +75,49 @@ namespace DAO
         private void ArmarParametrosProductos(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
+           
+            SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
+            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
+            SqlParametros.Value = p.getDescripcion();
+            SqlParametros = Comando.Parameters.Add("@Cod_Marca_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getIdCodigoMarca();
+            SqlParametros = Comando.Parameters.Add("@Cod_Categoria_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getIdCodigoCategoria();
+            SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getIdCodigoGenero();
+            //SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
+            //SqlParametros.Value = p.getAnioFabricacion().ToString();
+            SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
+            SqlParametros.Value = p.getEstado();
+
+        }
+        
+        private void ArmarParametrosProductoModificar(ref SqlCommand Comando, Producto p)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
             SqlParametros.Value = p.getCodigoProducto();
             SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
             SqlParametros.Value = p.getNombreProducto();
             SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
-            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros.Value = p.getDescripcion();
             SqlParametros = Comando.Parameters.Add("@Cod_Marca_PR", SqlDbType.Char, 4);
-            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros.Value = p.getIdCodigoMarca();
             SqlParametros = Comando.Parameters.Add("@Cod_Categoria_PR", SqlDbType.Char, 4);
-            SqlParametros.Value = p.getNombreProducto();
+            SqlParametros.Value = p.getIdCodigoCategoria();
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
-            SqlParametros.Value = p.getNombreProducto();
-            SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
-            SqlParametros.Value = p.getNombreProducto();
-            SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
-            SqlParametros.Value = p.getNombreProducto();
-
+            SqlParametros.Value = p.getIdCodigoGenero();
+           // SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
+            //SqlParametros.Value = p.getAnioFabricacion();
+            //SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
+            //SqlParametros.Value = p.getEstado();
         }
+
         public int actualizarProducto(Producto p)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosProductos(ref comando, p);
+             ArmarParametrosProductoModificar(ref comando, p);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarProducto");
         }
 

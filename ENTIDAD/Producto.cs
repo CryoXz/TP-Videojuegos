@@ -8,15 +8,19 @@ namespace ENTIDAD
 {
     public class Producto
     {
-        private string CodigoProducto;
+        private String CodigoProducto;
+        
         Marca marca = new Marca();
         Categoria categoria = new Categoria();
-        private string NombreProducto;
-        private string Descripcion;
+        Genero genero = new Genero();
+        private String NombreProducto;
+        private String Descripcion;
         //private imgen
-        private int AnioFabricacion;
+        private String AnioFabricacion;
         // ver Estado
-        private bool Estado;
+        private bool Estado;       
+       
+     
 
         public Producto()
         {
@@ -46,6 +50,14 @@ namespace ENTIDAD
         {
             categoria.setCodigoCategoria(idCodigoCategoria);
         }
+        public string getIdCodigoGenero()
+        {
+            return genero.getCodigoGenero();
+        }
+        public void setIdCodigoGenero(string idCodigoGenero)
+        {
+            genero.setCodigoGenero(idCodigoGenero);
+        }
         public String getNombreProducto()
         {
             return NombreProducto;
@@ -62,12 +74,12 @@ namespace ENTIDAD
         {
             Descripcion = descripcion;
         }
-        //imagen
-        public int getAnioFabricacion()
+        
+        public String getAnioFabricacion()
         {
             return AnioFabricacion;
         }
-        public void setAnioFabricacion(int anioFabricacion)
+        public void setAnioFabricacion(String anioFabricacion)
         {
             AnioFabricacion = anioFabricacion;
         }
@@ -81,3 +93,4 @@ namespace ENTIDAD
         }
     }
 }
+

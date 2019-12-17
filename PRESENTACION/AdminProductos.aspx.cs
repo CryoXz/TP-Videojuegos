@@ -54,17 +54,25 @@ namespace PRESENTACION
 
         protected void grdProductos_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            string s_codigoProducto = ((Label)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_codigoProducto")).Text;
-            string s_nombreProducto = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_nombreProducto")).Text;
-            ///agregar los qeu faltan
-            string s_codMarca = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_marca")).SelectedValue;
-
+            string s_codigoProducto = ((Label)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_Codigo")).Text;
+            string s_nombreProducto = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_nombre")).Text;
+            string s_DescripcionProducto = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_descripcion")).Text;
+            string s_MarcaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_marca")).SelectedValue;
+            string s_CategoriaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_categoria")).SelectedValue;
+            string s_GeneroProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_genero")).SelectedValue;
+          //   DateTime s_FechaPublicacion = ((DateTime)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_FPublicacion")).ToString();
+          //  int s_Estado =  (CheckBox)grdProductos.Rows[e.RowIndex].FindControl("CheckBox1");
+        
             ENTIDAD.Producto p = new ENTIDAD.Producto();
 
             p.setCodigoProducto(s_codigoProducto);
             p.setNombreProducto(s_nombreProducto);
-
-            p.setIdCodigoMarca(s_codMarca);
+            p.setDescripcion(s_DescripcionProducto);
+            p.setIdCodigoMarca(s_MarcaProducto);
+            p.setIdCodigoCategoria(s_CategoriaProducto);
+            p.setIdCodigoGenero(s_GeneroProducto);
+            //  p.setAnioFabricacion(s_FechaPublicacion);
+           // p.setEstado();
 
             N_Producto n_Producto = new N_Producto();
             n_Producto.ActualizarProducto(p);
@@ -115,6 +123,16 @@ namespace PRESENTACION
 
 
             }
+        }
+
+        protected void btnBuscar_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminAltaProducto.aspx");
         }
     }
 }

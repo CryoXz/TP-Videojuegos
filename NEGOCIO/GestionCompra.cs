@@ -49,6 +49,7 @@ namespace NEGOCIO
         }*/
         public void AgregarCarrito(DataTable Carrito, string img, string name, string plat, int cant, float preciototal)
         {
+
             DataRow dr = Carrito.NewRow();
             dr["ImgUrl"] = img;
             dr["Nombre"] = name;

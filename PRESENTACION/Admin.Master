@@ -30,7 +30,7 @@
 
                             </div>
                             <div class="col-lg-8" style="margin-left: 280%">
-                                <button type="button" class="btn btn-danger">CERRAR SESION</button>
+                                <asp:Button ID="btnLogout1" runat="server" CssClass="btn btn-danger" Text="CERRAR SESION" OnClick="btnLogout_click" />
                             </div>
                         </div>
                     </nav>
@@ -43,8 +43,8 @@
 
                 <asp:Button ID="btnUsuarios" runat="server" Text="Usuarios" CssClass="btn btn-danger" OnClick="btnUsuario_Click" />
                 <asp:Button ID="btnVentas" runat="server" Text="Ventas" CssClass="btn btn-danger" OnClick="btnVentas_Click" />
-                <asp:Button ID="btnProductos" runat="server" Text="Productos" CssClass="btn btn-danger" OnClick="btnProductos_Click" Enabled="False" />
-                <asp:Button ID="btnPedidos" runat="server" Text="Pedidos" CssClass="btn btn-danger" OnClick="btnPedidos_Click" Enabled="False" />
+                <asp:Button ID="btnProductos" runat="server" Text="Productos" CssClass="btn btn-danger" OnClick="btnProductos_Click" Enabled="true" />
+                
                  <asp:Button ID="btnPlataformas" runat="server" Text="Plataformas" CssClass="btn btn-danger" OnClick="btnPlatafomas_Click"/>
                 <asp:Button ID="btnCategorias" runat="server" Text="Categorias" CssClass="btn btn-danger" OnClick="btnCategorias_Click"/>
                 <asp:Button ID="btnMarcas" runat="server" Text="Marcas" CssClass="btn btn-danger" OnClick="btnMarcas_Click"/>

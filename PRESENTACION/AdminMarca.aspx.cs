@@ -62,6 +62,7 @@ namespace PRESENTACION
             String s_email = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_email")).Text;
 
             Marca m = new Marca();
+            
             m.setCodigoMarca(s_codigoMarca);
             m.setNombreMarca(s_nombreMarca);
             m.setNombreContacto(s_contacto);

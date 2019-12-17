@@ -41,6 +41,11 @@ namespace DAO
             return tabla;
         }
 
+        public DataSet getConsultarMarca()
+        {
+            DataSet data = ds.Consultar("select * from marcas");
+            return data;
+        }
 
         public int eliminarMarca(Marca marca)
         {

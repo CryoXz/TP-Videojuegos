@@ -26,13 +26,10 @@ namespace PRESENTACION
 
         protected void btnProductos_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AminProductos.aspx");
+            Response.Redirect("AdminProductos.aspx");
         }
 
-        protected void btnPedidos_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AdminCompras.aspx");
-        }
+       
 
         protected void btnPlatafomas_Click(object sender, EventArgs e)
         {
@@ -48,5 +45,12 @@ namespace PRESENTACION
         {
             Response.Redirect("AdminMarca.aspx");
         }
+
+        public void btnLogout_click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Response.Redirect("Home.aspx");
+        }
+
     }
 }
