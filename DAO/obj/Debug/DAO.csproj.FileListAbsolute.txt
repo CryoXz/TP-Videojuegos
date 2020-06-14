@@ -43,3 +43,12 @@ C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.Co
 C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.dll
 C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\bin\Debug\DAO.dll
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.dll
+C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.pdb

@@ -49,5 +49,15 @@ namespace NEGOCIO
             else
                 return false;
         }
+
+        public bool AltaGenero(Genero genero)
+        {
+            DaoGenero dao = new DaoGenero();
+            int FilasInsertadas = dao.AltaGenero(genero);
+            if (FilasInsertadas == 1)
+                return true;
+            else
+                return false;
+        }
     }
 }
