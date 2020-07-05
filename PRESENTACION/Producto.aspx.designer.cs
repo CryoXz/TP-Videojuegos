@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PRESENTACION {
-    
-    
-    public partial class Producto {
-        
+namespace PRESENTACION
+{
+
+
+    public partial class Producto
+    {
+
         /// <summary>
         /// Control ListView1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListView1;
-        
+
         /// <summary>
         /// Control SqlDataSource1.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
-        
+
         /// <summary>
         /// Control ListView2.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView ListView2;
-        
+
         /// <summary>
         /// Control SqlDataSource2.
         /// </summary>
@@ -47,7 +49,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
-        
+
         /// <summary>
         /// Control btnCarrito.
         /// </summary>

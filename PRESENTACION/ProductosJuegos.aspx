@@ -95,6 +95,18 @@
                             <tr runat="server">
                                 <td runat="server" style=""></td>
                             </tr>
+                                                
+                    <tr runat="server">
+                        <td runat="server" style="text-align: center; background-color: #5D7B9D; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF">
+                            <asp:DataPager ID="DataPager1" runat="server" PageSize="6">
+                                <Fields>
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                    <asp:NumericPagerField />
+                                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                                </Fields>
+                            </asp:DataPager>
+                        </td>
+                    </tr>
                         </table>
                     </LayoutTemplate>
                     <SelectedItemTemplate>

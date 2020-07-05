@@ -84,5 +84,10 @@ namespace PRESENTACION
             Response.Redirect("Carrito.aspx");
 
         }
+
+        protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
