@@ -65,17 +65,18 @@ namespace DAO
             return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarProducto");
         }
 
-        private void ArmarParametrosProductoEliminar(ref SqlCommand Comando, Producto cat)
+        private void ArmarParametrosProductoEliminar(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@IDProducto", SqlDbType.Char, 4);
-            SqlParametros.Value = cat.getCodigoProducto();
+            SqlParametros.Value = p.getCodigoProducto();
         }
 
         private void ArmarParametrosProductos(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-           
+            //SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
+            //SqlParametros.Value = p.getCodigoProducto();
             SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
             SqlParametros.Value = p.getNombreProducto();
             SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
@@ -108,8 +109,9 @@ namespace DAO
             SqlParametros.Value = p.getIdCodigoCategoria();
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
             SqlParametros.Value = p.getIdCodigoGenero();
-           // SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
-            //SqlParametros.Value = p.getAnioFabricacion();
+            SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
+            SqlParametros.Value = p.getAnioFabricacion();
+           
             //SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
             //SqlParametros.Value = p.getEstado();
         }

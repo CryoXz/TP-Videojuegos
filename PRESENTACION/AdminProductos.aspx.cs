@@ -60,7 +60,7 @@ namespace PRESENTACION
             string s_MarcaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_marca")).SelectedValue;
             string s_CategoriaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_categoria")).SelectedValue;
             string s_GeneroProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_genero")).SelectedValue;
-          //   DateTime s_FechaPublicacion = ((DateTime)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_FPublicacion")).ToString();
+            //DateTime s_FechaPublicacion = ((DateTime)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_FPublicacion")).ToString();
           //  int s_Estado =  (CheckBox)grdProductos.Rows[e.RowIndex].FindControl("CheckBox1");
         
             ENTIDAD.Producto p = new ENTIDAD.Producto();
@@ -101,6 +101,8 @@ namespace PRESENTACION
                     ddl_Marca.DataSource = n_marca.getTabla();
                     ddl_Marca.DataTextField = "Nombre_Marca_M";
                     ddl_Marca.DataValueField = "Cod_Marca_M";
+                    ddl_Marca.SelectedValue = null;
+                
                     ddl_Marca.DataBind();
                 }
                 if (ddl_Categoria != null)
