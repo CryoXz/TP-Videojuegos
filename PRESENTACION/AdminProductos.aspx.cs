@@ -60,7 +60,7 @@ namespace PRESENTACION
             string s_MarcaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_marca")).SelectedValue;
             string s_CategoriaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_categoria")).SelectedValue;
             string s_GeneroProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_genero")).SelectedValue;
-            //DateTime s_FechaPublicacion = ((DateTime)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_FPublicacion")).ToString();
+            string s_FechaPublicacion = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_FPublicacion")).Text.ToString();
           //  int s_Estado =  (CheckBox)grdProductos.Rows[e.RowIndex].FindControl("CheckBox1");
         
             ENTIDAD.Producto p = new ENTIDAD.Producto();
@@ -71,7 +71,7 @@ namespace PRESENTACION
             p.setIdCodigoMarca(s_MarcaProducto);
             p.setIdCodigoCategoria(s_CategoriaProducto);
             p.setIdCodigoGenero(s_GeneroProducto);
-            //  p.setAnioFabricacion(s_FechaPublicacion);
+            p.setAnioFabricacion(s_FechaPublicacion);
            // p.setEstado();
 
             N_Producto n_Producto = new N_Producto();
@@ -99,10 +99,9 @@ namespace PRESENTACION
                 {
                     N_Marca n_marca = new N_Marca();
                     ddl_Marca.DataSource = n_marca.getTabla();
+
                     ddl_Marca.DataTextField = "Nombre_Marca_M";
                     ddl_Marca.DataValueField = "Cod_Marca_M";
-                    ddl_Marca.SelectedValue = null;
-                
                     ddl_Marca.DataBind();
                 }
                 if (ddl_Categoria != null)
@@ -135,6 +134,41 @@ namespace PRESENTACION
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Response.Redirect("AdminAltaProducto.aspx");
+        }
+
+        protected void grdProductos_DataBound(object sender, EventArgs e)
+        {
+            foreach (GridViewRow row in grdProductos.Rows)
+            {
+                DropDownList ddlMarcas = row.FindControl("ddl_eit_marca") as DropDownList;
+                HiddenField hfMarcaId = row.FindControl("hfMarcaId") as HiddenField;
+
+                if (ddlMarcas != null && hfMarcaId != null)
+                {
+                    ddlMarcas.SelectedValue = hfMarcaId.Value;
+                }
+            }
+            foreach (GridViewRow row2 in grdProductos.Rows)
+            {
+                DropDownList ddlCategoria = row2.FindControl("ddl_eit_categoria") as DropDownList;
+                HiddenField hfCategoriaId = row2.FindControl("hfCategoriaId") as HiddenField;
+
+                if (ddlCategoria != null && hfCategoriaId != null)
+                {
+                    ddlCategoria.SelectedValue = hfCategoriaId.Value;
+                }
+            }
+            foreach (GridViewRow row3 in grdProductos.Rows)
+            {
+                DropDownList ddlGenero = row3.FindControl("ddl_eit_genero") as DropDownList;
+                HiddenField hfGeneroId = row3.FindControl("hfGeneroId") as HiddenField;
+
+                if (ddlGenero != null && hfGeneroId != null)
+                {
+                    ddlGenero.SelectedValue = hfGeneroId.Value;
+                }
+            }
+
         }
     }
 }
