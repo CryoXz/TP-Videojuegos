@@ -60,3 +60,4 @@ D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
 D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.dll
 D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
+D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache

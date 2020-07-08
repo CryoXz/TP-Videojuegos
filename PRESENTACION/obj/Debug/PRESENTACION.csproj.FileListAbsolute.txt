@@ -257,3 +257,4 @@ D:\Projects\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.csprojAssemblyRef
 D:\Projects\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.csproj.CopyComplete
 D:\Projects\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.dll
 D:\Projects\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.pdb
+D:\Projects\TP-Videojuegos\PRESENTACION\obj\Debug\PRESENTACION.csproj.CoreCompileInputs.cache

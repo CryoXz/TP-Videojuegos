@@ -74,3 +74,4 @@ D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csprojAssemblyReference.cac
 D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
 D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
 D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb
+D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
