@@ -1,0 +1,6 @@
+D:\Projects\TP-Videojuegos\ENTIDAD\bin\Release\ENTIDAD.dll
+D:\Projects\TP-Videojuegos\ENTIDAD\bin\Release\ENTIDAD.pdb
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Release\ENTIDAD.csprojAssemblyReference.cache
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Release\ENTIDAD.csproj.CoreCompileInputs.cache
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Release\ENTIDAD.dll
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Release\ENTIDAD.pdb

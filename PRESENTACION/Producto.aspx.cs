@@ -67,7 +67,7 @@ namespace PRESENTACION
 
             string imgUrl, name, plat;
             int cant;
-            float precio, preciototal;
+            float precio;
 
             imgUrl = imgbtn.ImageUrl;
             name = lbl2.Text;
@@ -75,11 +75,11 @@ namespace PRESENTACION
             cant = Convert.ToInt32(ddl.SelectedValue);
             precio = (float) Convert.ToDouble(lbl3.Text.Trim());
 
-            preciototal = precio * cant;
+            
 
 
 
-            gc.AgregarCarrito((DataTable)this.Session["carrito"], imgUrl, name, plat, cant, preciototal);
+            gc.AgregarCarrito((DataTable)this.Session["carrito"], imgUrl, name, plat, cant, precio);
 
             Response.Redirect("Carrito.aspx");
 

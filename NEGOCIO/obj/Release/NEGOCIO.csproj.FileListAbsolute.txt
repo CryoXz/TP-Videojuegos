@@ -1,0 +1,11 @@
+D:\Projects\TP-Videojuegos\NEGOCIO\bin\Release\NEGOCIO.dll
+D:\Projects\TP-Videojuegos\NEGOCIO\bin\Release\NEGOCIO.pdb
+D:\Projects\TP-Videojuegos\NEGOCIO\bin\Release\DAO.dll
+D:\Projects\TP-Videojuegos\NEGOCIO\bin\Release\ENTIDAD.dll
+D:\Projects\TP-Videojuegos\NEGOCIO\bin\Release\DAO.pdb
+D:\Projects\TP-Videojuegos\NEGOCIO\bin\Release\ENTIDAD.pdb
+D:\Projects\TP-Videojuegos\NEGOCIO\obj\Release\NEGOCIO.csprojAssemblyReference.cache
+D:\Projects\TP-Videojuegos\NEGOCIO\obj\Release\NEGOCIO.csproj.CoreCompileInputs.cache
+D:\Projects\TP-Videojuegos\NEGOCIO\obj\Release\NEGOCIO.csproj.CopyComplete
+D:\Projects\TP-Videojuegos\NEGOCIO\obj\Release\NEGOCIO.dll
+D:\Projects\TP-Videojuegos\NEGOCIO\obj\Release\NEGOCIO.pdb

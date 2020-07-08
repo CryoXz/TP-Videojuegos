@@ -25,7 +25,7 @@ namespace NEGOCIO
             dt.Columns.Add(dc);
             dc = new DataColumn("Cantidad", System.Type.GetType("System.Int32"));
             dt.Columns.Add(dc);
-            dc = new DataColumn("PrecioTotal", System.Type.GetType("System.Decimal"));
+            dc = new DataColumn("PrecioUnitario", System.Type.GetType("System.Decimal"));
             dt.Columns.Add(dc);
             return dt;
         }
@@ -55,7 +55,7 @@ namespace NEGOCIO
             dr["Nombre"] = name;
             dr["Plataforma"] = plat;
             dr["Cantidad"] = cant;
-            dr["PrecioTotal"] = preciototal;
+            dr["PrecioUnitario"] = preciototal;
             Carrito.Rows.Add(dr);
         }
         public void EliminaCarrito(DataTable Carrito, int pos)

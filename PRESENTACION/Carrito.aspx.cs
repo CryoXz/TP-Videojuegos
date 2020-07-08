@@ -51,5 +51,50 @@ namespace PRESENTACION
             grdCarrito.DataBind();
         }
 
+        protected void btnComprar_Click(object sender, EventArgs e)
+        {
+            if(Session["usertype"] != null)
+            {
+                ///redirect checkout
+            }
+            else
+            {
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void grdCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            int index = Convert.ToInt32(e.RowIndex);
+            DataTable dt = (DataTable)Session["carrito"];
+            dt.Rows[index].Delete();
+            Session["carrito"] = dt;
+            grdCarrito.DataSource = dt;
+            grdCarrito.DataBind();
+
+        }
+
+        protected void grdCarrito_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+            grdCarrito.EditIndex = e.NewEditIndex;
+            cargarGridview();
+        }
+
+        protected void grdCarrito_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+            grdCarrito.EditIndex = -1;
+            cargarGridview();
+        }
+
+        protected void grdCarrito_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+            int cantidad = Convert.ToInt32(((DropDownList)grdCarrito.Rows[e.RowIndex].FindControl("ddlCantidad")).SelectedValue);
+            DataTable dt = (DataTable)Session["carrito"];
+            dt.Rows[e.RowIndex]["Cantidad"] = cantidad;
+            Session["carrito"] = dt;
+            grdCarrito.EditIndex = -1;
+            grdCarrito.DataSource = dt;
+            grdCarrito.DataBind();
+        }
     }
 }
