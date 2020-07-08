@@ -21,7 +21,7 @@ namespace DAO
         public Plataforma getPlataforma(string id)
         {
             Plataforma cat = new Plataforma();
-            DataTable tabla = ds.ObtenerTabla("Plataforma", "Select * from plataformas where IdCategoría=" + id);
+            DataTable tabla = ds.ObtenerTabla("Plataforma", "Select * from plataformas where Cod_Plataforma_P=" + id);
             cat.setCodigoPlataforma(tabla.Rows[0][0].ToString());
             cat.setNombrePlataforma(tabla.Rows[0][1].ToString());
             return cat;
