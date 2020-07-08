@@ -18,7 +18,7 @@ namespace DAO
 
         }
 
-        public PlataformaXProducto getPlataforma(string id)
+        public PlataformaXProducto getPlataformaxProducto(string id)
         {
             PlataformaXProducto pxp = new PlataformaXProducto();
             Producto p = new Producto();
@@ -37,49 +37,36 @@ namespace DAO
             return pxp;
         }
 
-        public DataTable getTablaPlataformas()
+        public DataTable getTablaPlataformaxProducto()
         {
             //List<Plataforma> lista = new List<Plataforma>();
-            DataTable tabla = ds.ObtenerTabla("Plataforma", "Select * from plataformas");
+            DataTable tabla = ds.ObtenerTabla("PlataformaxProducto", "Select * from PlataformaxProducto");
             return tabla;
         }
 
-        public int eliminarPlataforma(Plataforma cat)
-        {
-            SqlCommand comando = new SqlCommand();
-            ArmarParametrosPlataformaEliminar(ref comando, cat);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarPlataforma");
-        }
 
-        private void ArmarParametrosPlataformaEliminar(ref SqlCommand Comando, Plataforma cat)
+        private void ArmarParametrosPlataformaxProducto(ref SqlCommand Comando, PlataformaXProducto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDPlataforma", SqlDbType.Char, 4);
-            SqlParametros.Value = cat.getCodigoPlataforma();
-        }
+            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PxP", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getIdProducto();
+            SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_PxP", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getIdPlataforma();
+            SqlParametros = Comando.Parameters.Add("@Stock_Producto_PxP", SqlDbType.Int);
+            SqlParametros.Value = p.getIdPlataforma();
+            SqlParametros = Comando.Parameters.Add("@PrecioUnitario_Producto_PxP", SqlDbType.Money);
+            SqlParametros.Value = p.getIdPlataforma();
+            SqlParametros = Comando.Parameters.Add("@Imagen_Producto_PxP", SqlDbType.VarChar, 100);
+            SqlParametros.Value = p.getIdPlataforma();
 
-        private void ArmarParametrosPlataformas(ref SqlCommand Comando, Plataforma p)
-        {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_p", SqlDbType.Char, 4);
-            SqlParametros.Value = p.getCodigoPlataforma();
-            SqlParametros = Comando.Parameters.Add("@Nombre_Plataforma_p", SqlDbType.NVarChar, 60);
-            SqlParametros.Value = p.getNombrePlataforma();
-
         }
-        public int actualizarPlataforma(Plataforma p)
-        {
-            SqlCommand comando = new SqlCommand();
-            ArmarParametrosPlataformas(ref comando, p);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarPlataforma");
-        }
-
-        public int AltaPlataforma(Plataforma p)
+        public int actualizarPlataformaxProducto(PlataformaXProducto p)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosPlataformas(ref comando, p);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaPlataforma");
+            ArmarParametrosPlataformaxProducto(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarPlataformaXProducto");
         }
+
 
     }
 }

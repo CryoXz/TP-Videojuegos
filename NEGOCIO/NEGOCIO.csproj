@@ -46,6 +46,7 @@
     <Compile Include="N_Categoria.cs" />
     <Compile Include="N_Genero.cs" />
     <Compile Include="N_Marca.cs" />
+    <Compile Include="N_PlataformaXProducto.cs" />
     <Compile Include="N_Plataforma.cs" />
     <Compile Include="N_Producto.cs" />
     <Compile Include="N_TipoUsuario.cs" />
