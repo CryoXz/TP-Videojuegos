@@ -13,17 +13,17 @@ namespace DAO
     public class DaoProducto
     {
         AccesoDatos ds = new AccesoDatos();
-        public DataTable getTablaProductos()
-        {
+        //public DataTable getTablaProductos()
+        //{
 
-            DataTable tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Stock_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = 'PF1'");
-            return tabla;
-        }
+        //    DataTable tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Stock_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = 'PF1'");
+        //    return tabla;
+        //}
         public DataTable getTablaProductosConPrecioyStock()
         {
 
             DataTable tabla = ds.ObtenerTabla("Productos", "SELECT Productos.Cod_Producto_PR as Codigo, Productos.Nombre_Producto_PR as Nombre, Productos.Descripcion_Producto_PR as Descripcion, Marcas.Cod_Marca_M as CodMarca, Marcas.Nombre_Marca_M as NombreMarca, Categorias.Cod_Categoria_C as CodCategoria, Categorias.Nombre_Categoria_C as NombreCategoria, Generos.Cod_Genero_G as CodGenero, Generos.Nombre_Genero_G as NombreGenero, " +
-            "Productos.fPublicacion_Producto_PR as FPublicacion, Productos.Estado_Producto_PR as Estado, PlataformaxProducto.Stock_Producto_PxP as Stock, PlataformaxProducto.PrecioUnitario_Producto_PxP as PrecioUnitario " +
+            "Productos.fPublicacion_Producto_PR as FPublicacion, Productos.Estado_Producto_PR as Estado, PlataformaxProducto.Cod_Plataforma_PxP as CodPlataforma, PlataformaxProducto.Stock_Producto_PxP as Stock, PlataformaxProducto.PrecioUnitario_Producto_PxP as PrecioUnitario " +
             "FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP " +
             "inner join Marcas on Cod_Marca_M = Cod_Marca_PR inner join Categorias on Cod_Categoria_C = Cod_Categoria_PR " +
             "inner join Generos on Cod_Genero_G = Cod_Genero_PR");
@@ -87,8 +87,8 @@ namespace DAO
             SqlParametros.Value = p.getIdCodigoCategoria();
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
             SqlParametros.Value = p.getIdCodigoGenero();
-            //SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
-            //SqlParametros.Value = p.getAnioFabricacion().ToString();
+            SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
+            SqlParametros.Value = p.getAnioFabricacion().ToString();
             SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
             SqlParametros.Value = p.getEstado();
 

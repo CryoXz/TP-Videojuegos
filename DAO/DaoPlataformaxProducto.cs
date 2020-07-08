@@ -9,22 +9,32 @@ using ENTIDAD;
 
 namespace DAO
 {
-    public class DaoPlataforma
+    public class DaoPlataformaxProducto
     {
         AccesoDatos ds = new AccesoDatos();
 
-        public DaoPlataforma()
+        public DaoPlataformaxProducto()
         {
 
         }
 
-        public Plataforma getPlataforma(string id)
+        public PlataformaXProducto getPlataforma(string id)
         {
-            Plataforma cat = new Plataforma();
-            DataTable tabla = ds.ObtenerTabla("Plataforma", "Select * from plataformas where Cod_Plataforma_P=" + id);
-            cat.setCodigoPlataforma(tabla.Rows[0][0].ToString());
-            cat.setNombrePlataforma(tabla.Rows[0][1].ToString());
-            return cat;
+            PlataformaXProducto pxp = new PlataformaXProducto();
+            Producto p = new Producto();
+            Plataforma plat = new Plataforma();
+
+            DataTable tabla = ds.ObtenerTabla("PlataformaxProducto", "Select * from PlataformasxProducto where =" + id);
+            p.setCodigoProducto(tabla.Rows[0][0].ToString());
+            plat.setCodigoPlataforma(tabla.Rows[0][1].ToString());
+            pxp.setIdProducto(p);
+            pxp.setIdPlataforma(plat);
+            pxp.setStock((int)tabla.Rows[0][2]);
+            pxp.setPrecioUnitario((decimal)tabla.Rows[0][3]);
+            pxp.setimgURL(tabla.Rows[0][4].ToString());
+  
+
+            return pxp;
         }
 
         public DataTable getTablaPlataformas()

@@ -11,12 +11,12 @@ namespace NEGOCIO
 {
     public class N_Producto
     {
-        public DataTable getTabla()
-        {
+        //public DataTable getTabla()
+        //{
 
-            DaoProducto dao = new DaoProducto();
-            return dao.getTablaProductos();
-        }
+        //    DaoProducto dao = new DaoProducto();
+        //    return dao.getTablaProductos();
+        //}
 
         public string getCodigoProdS(string imgUrl, string name)
         {

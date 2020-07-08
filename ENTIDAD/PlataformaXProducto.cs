@@ -12,6 +12,7 @@ namespace ENTIDAD
         private Plataforma IdPlataforma;
         private int Stock;
         private Decimal PrecioUnitario;
+        private String imgURL;
 
         public PlataformaXProducto()
         {
@@ -48,6 +49,14 @@ namespace ENTIDAD
         public void setPrecioUnitario(Decimal precioUnitario)
         {
             PrecioUnitario = precioUnitario;
+        }
+        public string getimgURL()
+        {
+            return imgURL;
+        }
+        public void setimgURL(string img)
+        {
+            imgURL=img;
         }
     }
 }
