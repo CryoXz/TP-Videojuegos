@@ -77,6 +77,8 @@
     <Content Include="AdminUsuarios.aspx" />
     <Content Include="AdminVentas.aspx" />
     <Content Include="Carrito.aspx" />
+    <Content Include="CarritoCheckout.aspx" />
+    <Content Include="CarritoError.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -85,6 +87,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="AdminCategorias.aspx" />
     <Content Include="AdminGenero.aspx" />
+    <Content Include="Content\Carrito.css" />
     <Content Include="Home.aspx" />
     <Content Include="IMAGES\botw-box.jpg" />
     <Content Include="IMAGES\carritologo.png" />
@@ -343,6 +346,20 @@
     </Compile>
     <Compile Include="AdminGenero.aspx.designer.cs">
       <DependentUpon>AdminGenero.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoCheckout.aspx.cs">
+      <DependentUpon>CarritoCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarritoCheckout.aspx.designer.cs">
+      <DependentUpon>CarritoCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoError.aspx.cs">
+      <DependentUpon>CarritoError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarritoError.aspx.designer.cs">
+      <DependentUpon>CarritoError.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

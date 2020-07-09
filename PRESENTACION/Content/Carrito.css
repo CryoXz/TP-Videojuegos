@@ -1,0 +1,29 @@
+﻿.container {
+    width: auto;
+    height: auto;
+}
+    .container img {
+        max-height: 200px;
+        max-width: 100px;
+        width: auto;
+    }
+
+.Grid {
+    background-color: #fff;
+    border: solid 0 #ffffff;
+    table-layout: fixed;
+}
+
+    .Grid td {
+        font-family: Calibri;
+        border: solid 1px #fff;
+        color: crimson;
+        text-align: center;
+        height:200px;
+        width:300px;
+    }
+    .Grid th {
+        color: #fff;
+        font-family: Calibri;
+
+    }  
