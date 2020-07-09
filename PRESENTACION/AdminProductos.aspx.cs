@@ -61,9 +61,16 @@ namespace PRESENTACION
             string s_CategoriaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_categoria")).SelectedValue;
             string s_GeneroProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_genero")).SelectedValue;
             string s_FechaPublicacion = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_FPublicacion")).Text.ToString();
-          //  int s_Estado =  (CheckBox)grdProductos.Rows[e.RowIndex].FindControl("CheckBox1");
-        
+            string s_CodigoPlataforma = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_plataforma")).SelectedValue; 
+            int s_Stock = Int32.Parse(((TextBox)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_Stock")).Text);
+            decimal s_PU =decimal.Parse(((TextBox)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_PrecioUnitario")).Text);
+            string s_img = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_Imagen")).Text.ToString(); ;
+
+
             ENTIDAD.Producto p = new ENTIDAD.Producto();
+            PlataformaXProducto PxP = new PlataformaXProducto();
+            Plataforma plat = new Plataforma();
+            plat.setCodigoPlataforma(s_CodigoPlataforma);
 
             p.setCodigoProducto(s_codigoProducto);
             p.setNombreProducto(s_nombreProducto);
@@ -72,10 +79,17 @@ namespace PRESENTACION
             p.setIdCodigoCategoria(s_CategoriaProducto);
             p.setIdCodigoGenero(s_GeneroProducto);
             p.setAnioFabricacion(s_FechaPublicacion);
-           // p.setEstado();
+            PxP.setIdProducto(p);
+            PxP.setIdPlataforma(plat);
+            PxP.setStock(s_Stock);
+            PxP.setPrecioUnitario(s_PU);
+            PxP.setimgURL(s_img);
 
+            
             N_Producto n_Producto = new N_Producto();
             n_Producto.ActualizarProducto(p);
+            N_PlataformaXProducto n_PxP = new N_PlataformaXProducto();
+            n_PxP.ActualizarPlataformaxProducto(PxP);
 
             grdProductos.EditIndex = -1;
             cargarGridview();
@@ -95,6 +109,8 @@ namespace PRESENTACION
                 DropDownList ddl_Marca = (DropDownList)e.Row.FindControl("ddl_eit_marca");
                 DropDownList ddl_Categoria = (DropDownList)e.Row.FindControl("ddl_eit_categoria");
                 DropDownList ddl_Genero = (DropDownList)e.Row.FindControl("ddl_eit_genero");
+                DropDownList ddl_Plataforma = (DropDownList)e.Row.FindControl("ddl_eit_plataforma");
+
                 if (ddl_Marca != null)
                 {
                     N_Marca n_marca = new N_Marca();
@@ -112,7 +128,6 @@ namespace PRESENTACION
                     ddl_Categoria.DataValueField = "Cod_Categoria_C";
                     ddl_Categoria.DataBind();
                 }
-
                 if (ddl_Genero != null)
                 {
                     N_Genero n_Genero = new N_Genero();
@@ -121,7 +136,14 @@ namespace PRESENTACION
                     ddl_Genero.DataValueField = "Cod_Genero_G";
                     ddl_Genero.DataBind();
                 }
-
+                if (ddl_Plataforma != null)
+                {
+                    N_Plataforma n_Plat = new N_Plataforma();
+                    ddl_Plataforma.DataSource = n_Plat.getTabla();
+                    ddl_Plataforma.DataTextField = "Nombre_Plataforma_P";
+                    ddl_Plataforma.DataValueField = "Cod_Plataforma_P";
+                    ddl_Plataforma.DataBind();
+                }
 
             }
         }
@@ -166,6 +188,16 @@ namespace PRESENTACION
                 if (ddlGenero != null && hfGeneroId != null)
                 {
                     ddlGenero.SelectedValue = hfGeneroId.Value;
+                }
+            }
+            foreach (GridViewRow row4 in grdProductos.Rows)
+            {
+                DropDownList ddlPlataforma = row4.FindControl("ddl_eit_plataforma") as DropDownList;
+                HiddenField hfPlataformaId = row4.FindControl("hfPlataformaId") as HiddenField;
+
+                if (ddlPlataforma != null && hfPlataformaId != null)
+                {
+                    ddlPlataforma.SelectedValue = hfPlataformaId.Value;
                 }
             }
 

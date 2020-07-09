@@ -127,6 +127,16 @@
                         <asp:Label ID="lbl_it_Genero" runat="server" Text='<%# Bind("NombreGenero") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+                <asp:TemplateField HeaderText="Plataforma">
+                    <EditItemTemplate>
+                        <asp:HiddenField ID="hfPlataformaId" runat="server" Value='<%# Bind("CodPlataforma") %>' />
+                        <asp:DropDownList ID="ddl_eit_plataforma" runat="server">
+                        </asp:DropDownList>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Plataforma" runat="server" Text='<%# Bind("NombrePlataforma") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:TemplateField HeaderText="Fecha de Publicación">
                     <EditItemTemplate>
                         <asp:TextBox ID="lbl_eit_FPublicacion" runat="server" Text='<%# Bind("FPublicacion") %>' TextMode="DateTime"></asp:TextBox>
@@ -145,10 +155,18 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Stock">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txt_eit_stock" runat="server" Text='<%# Bind("Stock") %>'></asp:TextBox>
+                        <asp:TextBox ID="txt_eit_Stock" runat="server" Text='<%# Bind("Stock") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_Stock" runat="server" Text='<%# Bind("Stock") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="URL Imagen">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="txt_eit_Imagen" runat="server" Text='<%# Bind("ImgURL") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_Imagen" runat="server" Text='<%# Bind("ImgURL") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
