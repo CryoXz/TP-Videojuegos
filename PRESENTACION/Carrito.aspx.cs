@@ -36,13 +36,16 @@ namespace PRESENTACION
         {
             if (!IsPostBack)
             {
-                cargarGridview();
-
-                DataTable dt = (DataTable)Session["carrito"];
+                
+                
                 float preciototal = 0;
 
                 if (this.Session["carrito"] != null)
                 {
+                    cargarGridview();
+
+                    DataTable dt = (DataTable)Session["carrito"];
+
                     for (int i = 0; i < dt.Rows.Count; i++)
                     {
                         preciototal += float.Parse(dt.Rows[i]["PrecioUnitario"].ToString());
@@ -55,8 +58,8 @@ namespace PRESENTACION
             }
 
 
-            if (this.Session["carrito"] == null)
-                this.Session["carrito"] = GestionCompra.CrearCarrito();
+            /*if (this.Session["carrito"] == null)
+                this.Session["carrito"] = GestionCompra.CrearCarrito();*/
 
         }
 
@@ -72,7 +75,7 @@ namespace PRESENTACION
             {
                 if (Session["usertype"] != null)
                 {
-                    ///redirect checkout
+                    Response.Redirect("CarritoConfirmar.aspx");
                 }
                 else
                 {
@@ -89,17 +92,37 @@ namespace PRESENTACION
         {
             int index = Convert.ToInt32(e.RowIndex);
             float total = 0;
-            DataTable dt = (DataTable)Session["carrito"];
-            dt.Rows[index].Delete();
-            Session["carrito"] = dt;
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if (index == 0)
             {
-                total += float.Parse(dt.Rows[i]["PrecioUnitario"].ToString());
+                DataTable dt = (DataTable)Session["carrito"];
+                dt.Rows[index].Delete();
+                Session["carrito"] = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    total += float.Parse(dt.Rows[i]["PrecioUnitario"].ToString());
 
+                }
+                this.Session["PrecioTotal"] = total;
+                grdCarrito.DataSource = dt;
+                grdCarrito.DataBind();
+                this.Session["carrito"] = null;
             }
-            this.Session["PrecioTotal"] = total;
-            grdCarrito.DataSource = dt;
-            grdCarrito.DataBind();
+            else
+            {
+                
+                DataTable dt = (DataTable)Session["carrito"];
+                dt.Rows[index].Delete();
+                Session["carrito"] = dt;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    total += float.Parse(dt.Rows[i]["PrecioUnitario"].ToString());
+
+                }
+                this.Session["PrecioTotal"] = total;
+                grdCarrito.DataSource = dt;
+                grdCarrito.DataBind();
+            }
+            
 
         }
 

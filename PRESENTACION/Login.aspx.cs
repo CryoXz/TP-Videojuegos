@@ -29,7 +29,7 @@ namespace PRESENTACION
 
             if (count == 1)
             {
-                Session["username"] = txtUsuario.Text.Trim();
+                this.Session["username"] = txtUsuario.Text.Trim();
                 userType = usuario.getUserType(txtUsuario.Text.Trim());
 
                 if (userType.Trim() == "TU1")

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="AccesoDatos.cs" />
     <Compile Include="DaoCategoria.cs" />
+    <Compile Include="DaoDetalleVentas.cs" />
     <Compile Include="DaoGenero.cs" />
     <Compile Include="DaoMarca.cs" />
     <Compile Include="DaoPlataformaxProducto.cs" />

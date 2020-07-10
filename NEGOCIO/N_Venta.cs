@@ -11,6 +11,13 @@ namespace NEGOCIO
 {
     public class N_Venta
     {
+
+        public int GuardarVenta(Venta venta)
+        {
+            DaoVenta dao = new DaoVenta();
+            return dao.GuardarVenta(venta);
+        }
+
         public DataTable getTabla()
         {
             DaoVenta dao = new DaoVenta();
@@ -47,8 +54,13 @@ namespace NEGOCIO
             return daoVenta.getBuscarProductoFiltrado(n_ClausulaSqlProductos);
         }
 
+        public int getCodVenta(Venta venta)
+        {
+            DaoVenta daoVenta = new DaoVenta();
+            return daoVenta.getCodVenta(venta);
+        }
 
-           
+
 
     }
 }

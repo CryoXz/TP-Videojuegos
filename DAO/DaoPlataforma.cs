@@ -27,6 +27,11 @@ namespace DAO
             return cat;
         }
 
+        public string getCodigoPlataformaConNombre(string name)
+        {
+            return ds.ConsultarCodigos("SELECT Cod_Plataforma_P FROM Plataformas WHERE Nombre_Plataforma_P = '" + name + "'");
+        }
+
         public DataTable getTablaPlataformas()
         {
             //List<Plataforma> lista = new List<Plataforma>();

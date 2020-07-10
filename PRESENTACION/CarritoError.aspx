@@ -10,7 +10,7 @@
         <div class="main row">
             <div class="col-lg-4" style="background-color:crimson"></div>
             <div class="col-lg-4" style="text-align:center;background-color:crimson">
-                <h4 style="color:white">El carrito se encuentra vacio.</h4>
+                <h4 style="color:white">Ha ocurrido un error.</h4>
             </div>
             <div class="col-lg-4" style="background-color:crimson"></div>
         </div>

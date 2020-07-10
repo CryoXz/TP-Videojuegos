@@ -11,16 +11,25 @@ namespace PRESENTACION
 {
 
 
-    public partial class CarritoCheckout
+    public partial class CarritoConfirmar
     {
 
         /// <summary>
-        /// Control btnHome.
+        /// Control ddlTipoPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnHome;
+        protected global::System.Web.UI.WebControls.DropDownList ddlTipoPago;
+
+        /// <summary>
+        /// Control btnComprar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnComprar;
     }
 }

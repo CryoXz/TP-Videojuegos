@@ -76,5 +76,11 @@ namespace NEGOCIO
             else
                 return false;
         }
+
+        public string getCodigoProductoConNombre(string name)
+        {
+            DaoProducto dao = new DaoProducto();
+            return dao.getCodigoProductoConNombre(name);
+        }
     }
 }

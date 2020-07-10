@@ -8,23 +8,15 @@ namespace ENTIDAD
 {
     public class DetalleVenta
     {
-        private int IdDetalleVenta;
         private Venta IdCodigoVenta;
         private Producto IdCodigoProducto;
+        private Plataforma IdCodigoPlataforma;
         private int CantidadVendida;
-        private Decimal PrecioUnitario;
+        private float PrecioUnitario;
 
         public DetalleVenta()
         {
-        }
-        public int getIdDetalleVenta()
-        {
-            return IdDetalleVenta;
-        }
-        public void setDetalleVenta(int idDetalleVenta)
-        {
-            IdDetalleVenta = idDetalleVenta;
-        }        
+        } 
         public Venta getIdCodigoVenta()
         {
             return IdCodigoVenta;
@@ -41,6 +33,14 @@ namespace ENTIDAD
         {
             IdCodigoProducto = idCodigoProducto;
         }
+        public Plataforma getIdCodigoPlataforma()
+        {
+            return IdCodigoPlataforma;
+        }
+        public void setIdCodigoPlataforma(Plataforma codplataforma)
+        {
+            IdCodigoPlataforma = codplataforma;
+        }
         public int getCantidadVendida()
         {
             return CantidadVendida;
@@ -49,11 +49,11 @@ namespace ENTIDAD
         {
             CantidadVendida = cantidadVendida;
         }
-        public decimal getPrecioUnitario()
+        public float getPrecioUnitario()
         {
             return PrecioUnitario;
         }
-        public void setPrecioUnitario(Decimal precioUnitario)
+        public void setPrecioUnitario(float precioUnitario)
         {
             PrecioUnitario = precioUnitario;
         }

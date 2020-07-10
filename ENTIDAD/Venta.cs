@@ -12,7 +12,7 @@ namespace ENTIDAD
         private Usuario IdCodigoUsuario;
         private DateTime FechaVenta;
         private TipoDePago IdTipoPago;
-        private Decimal PrecioTotal;
+        private float PrecioTotal;
 
         public Venta()
         {
@@ -34,6 +34,15 @@ namespace ENTIDAD
         {
             IdCodigoUsuario = idCodigoUsuario;
         }
+
+        public DateTime getFechaVenta()
+        {
+            return FechaVenta;
+        }
+        public void setFechaVenta(DateTime fecha)
+        {
+            FechaVenta = fecha;
+        }
         // ver fecha
         public TipoDePago getIdTipoPago()
         {
@@ -43,11 +52,11 @@ namespace ENTIDAD
         {
             IdTipoPago = idTipoPago;
         }
-        public Decimal getPrecioTotal()
+        public float getPrecioTotal()
         {
             return PrecioTotal;
         }
-        public void setPrecioTotal(Decimal precioTotal)
+        public void setPrecioTotal(float precioTotal)
         {
             PrecioTotal = precioTotal;
         }

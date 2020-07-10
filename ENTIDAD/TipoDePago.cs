@@ -8,18 +8,18 @@ namespace ENTIDAD
 {
     public class TipoDePago
     {
-        private int CodigoTipo;
+        private String CodigoTipo;
         private String NombrePago;
 
         public TipoDePago()
         {
 
         }
-        public int getCodigoTIpo()
+        public string getCodigoTIpo()
         {
             return CodigoTipo;
         }
-        public void setcodigoTipo(int codigoTipo)
+        public void setcodigoTipo(string codigoTipo)
         {
             CodigoTipo = codigoTipo;
         }

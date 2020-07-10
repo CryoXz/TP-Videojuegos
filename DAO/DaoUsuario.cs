@@ -83,6 +83,11 @@ namespace DAO
         {
             return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_TipoUsuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "'");
         }
+
+        public string getIDporUsername(string username)
+        {
+            return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_Usuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "'");
+        }
     }
 }
 

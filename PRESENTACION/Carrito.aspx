@@ -85,7 +85,7 @@
         <div class="row">
             <div class="col-lg-2"></div>
             <div class="col-lg-8" style="text-align:center;background-color:white">
-                <asp:Button ID="btnComprar" runat="server" class="btn btn-warning" Text="FINALIZAR COMPRA"  OnClick="btnComprar_Click" />
+                <asp:Button ID="btnComprar" runat="server" class="btn btn-danger" Text="FINALIZAR COMPRA"  OnClick="btnComprar_Click" />
                 <br />
                 <br />
             </div>

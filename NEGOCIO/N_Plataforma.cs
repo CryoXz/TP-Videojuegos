@@ -59,5 +59,11 @@ namespace NEGOCIO
                 return false;
         }
 
+        public string getCodigoPlataformaConNombre(string name)
+        {
+            DaoPlataforma dao = new DaoPlataforma();
+            return dao.getCodigoPlataformaConNombre(name);
+        }
+
     }
 }

@@ -69,7 +69,11 @@ namespace NEGOCIO
             return daoUsuario.getUserType(user);
         }
 
-        
+        public string getIDporUsername(string user)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.getIDporUsername(user);
+        }
 
     }
 }

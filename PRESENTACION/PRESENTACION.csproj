@@ -78,6 +78,7 @@
     <Content Include="AdminVentas.aspx" />
     <Content Include="Carrito.aspx" />
     <Content Include="CarritoCheckout.aspx" />
+    <Content Include="CarritoConfirmar.aspx" />
     <Content Include="CarritoError.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -353,6 +354,13 @@
     </Compile>
     <Compile Include="CarritoCheckout.aspx.designer.cs">
       <DependentUpon>CarritoCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CarritoConfirmar.aspx.cs">
+      <DependentUpon>CarritoConfirmar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CarritoConfirmar.aspx.designer.cs">
+      <DependentUpon>CarritoConfirmar.aspx</DependentUpon>
     </Compile>
     <Compile Include="CarritoError.aspx.cs">
       <DependentUpon>CarritoError.aspx</DependentUpon>
