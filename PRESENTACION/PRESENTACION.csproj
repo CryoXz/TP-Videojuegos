@@ -89,6 +89,7 @@
     <Content Include="AdminCategorias.aspx" />
     <Content Include="AdminGenero.aspx" />
     <Content Include="Content\Carrito.css" />
+    <Content Include="HistorialCompras.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="IMAGES\botw-box.jpg" />
     <Content Include="IMAGES\carritologo.png" />
@@ -368,6 +369,13 @@
     </Compile>
     <Compile Include="CarritoError.aspx.designer.cs">
       <DependentUpon>CarritoError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialCompras.aspx.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistorialCompras.aspx.designer.cs">
+      <DependentUpon>HistorialCompras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

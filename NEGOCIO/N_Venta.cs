@@ -24,6 +24,12 @@ namespace NEGOCIO
             return dao.getTablaVentas();
         }
 
+        public DataTable getTablaVentasPorUsuario(string codUser)
+        {
+            DaoVenta dao = new DaoVenta();
+            return dao.getTablaVentasPorUsuario(codUser);
+        }
+
         public DataTable getBuscarProductoVendido(String nombreBuscado)
         {
             DaoVenta daoVenta = new DaoVenta();

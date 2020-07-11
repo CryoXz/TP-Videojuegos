@@ -71,7 +71,7 @@
         </asp:ContentPlaceHolder>
         
         <footer>
-            <div class="row" style="background-color:black">
+            <div style="background-color:black">
                 <div class="col-lg-12" style="color:white">
                     <h6>Telefono: 4420-2222</h6>
                     <h6>Direccion: Av. del Sesquicentenario, Gral Pacheco</h6>
