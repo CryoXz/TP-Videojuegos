@@ -67,6 +67,13 @@ namespace DAO
             return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarPlataformaXProducto");
         }
 
+        public int AltaPlataformaxProducto(PlataformaXProducto p)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosPlataformaxProducto(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaPlataformaxProducto");
+        }
+
 
     }
 }

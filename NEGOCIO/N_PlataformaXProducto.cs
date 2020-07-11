@@ -38,7 +38,15 @@ namespace NEGOCIO
             else
                 return false;
         }
-
+        public bool AltaPlataformaxProducto(PlataformaXProducto p)
+        {
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            int FilasInsertadas = dao.AltaPlataformaxProducto(p);
+            if (FilasInsertadas == 1)
+                return true;
+            else
+                return false;
+        }
 
     }
 }

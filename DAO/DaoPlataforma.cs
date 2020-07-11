@@ -38,6 +38,11 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Plataforma", "Select * from plataformas");
             return tabla;
         }
+        public DataSet getConsultarPlataforma()
+        {
+            DataSet data = ds.Consultar("select * from Plataformas");
+            return data;
+        }
 
         public int eliminarPlataforma(Plataforma cat)
         {

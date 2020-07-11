@@ -11,13 +11,16 @@ namespace PRESENTACION
 {
     public partial class Formulario_web1 : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {              
                 cargarDropdownListGeneros();
                 cargarDropdownListMarcas();
                 cargarDropdownListCategorias();
+                cargarDropdownListPlataformas();
             }
         }
     
@@ -44,11 +47,20 @@ namespace PRESENTACION
         public void cargarDropdownListMarcas()
         {
             N_Marca n_Marca = new N_Marca();
-            ddlMarcas.DataSource = n_Marca.getMarcass();
+            ddlMarcas.DataSource = n_Marca.getMarcas();
             ddlMarcas.DataTextField = "Nombre_Marca_M";
             ddlMarcas.DataValueField = "Cod_Marca_M";
             ddlMarcas.DataBind();
             ddlMarcas.Items.Insert(0, new ListItem("MARCAS", "0"));
+        }
+        public void cargarDropdownListPlataformas()
+        {
+            N_Plataforma n_Plat = new N_Plataforma();
+            ddlPlataformas.DataSource = n_Plat.getPlataformas();
+            ddlPlataformas.DataTextField = "Nombre_Plataforma_P";
+            ddlPlataformas.DataValueField = "Cod_Plataforma_P";
+            ddlPlataformas.DataBind();
+            ddlPlataformas.Items.Insert(0, new ListItem("PLATAFORMAS", "0"));
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -56,25 +68,44 @@ namespace PRESENTACION
             try
             {
                 ENTIDAD.Producto producto = new ENTIDAD.Producto();
+                PlataformaXProducto PxP = new PlataformaXProducto();
+                Plataforma plat = new Plataforma();
 
                 String s_categoria = ddlCategoria.SelectedValue.ToString();
                 String s_genero = ddlGeneros.SelectedValue.ToString();
                 String s_marca = ddlMarcas.SelectedValue.ToString();
+                String s_plat = ddlPlataformas.SelectedValue.ToString();
 
+                N_Producto n_Producto = new N_Producto();
 
+                int n = Int32.Parse(n_Producto.getConsultaUltimoProducto()) + 1;
+                producto.setCodigoProducto(n.ToString()); ;
                 producto.setNombreProducto(txtNombreProducto.Text);
                 producto.setIdCodigoCategoria(s_categoria);
                 producto.setIdCodigoGenero(s_genero);
                 producto.setIdCodigoMarca(s_marca);
                 producto.setDescripcion(txtDescripcion.Text);
-                //  producto.setAnioFabricacion(txtAnioFabricacion.Text);
+                producto.setAnioFabricacion(txtAnioFabricacion.Text.ToString());
                 producto.setEstado(true);
 
+                plat.setCodigoPlataforma(s_plat);
+                PxP.setIdPlataforma(plat);
+  
+                PxP.setimgURL(txtimgURL.Text);
+                PxP.setPrecioUnitario(decimal.Parse(txtPrecio.Text));
+                PxP.setStock(Int32.Parse(txtStock.Text));
 
-                N_Producto n_Producto = new N_Producto();
+                
+
                 if (n_Producto.AltaProducto(producto) == true)
                 {
-                    Label1.Text = "Se ha agregado con exito";
+
+                    PxP.setIdProducto(producto);
+                    N_PlataformaXProducto n_PXP = new N_PlataformaXProducto();
+                    if (n_PXP.AltaPlataformaxProducto(PxP) == true) {
+                        Label1.Text = "Se ha agregado con exito";
+                    }
+   
                 }
 
                 Response.Redirect("AdminProductos.aspx");
