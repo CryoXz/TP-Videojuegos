@@ -42,5 +42,11 @@ namespace DAO
 
         }
 
+        public DataTable getTablaDetalleVentasPrecioTotalPorCodUsuario(string codUser)
+        {
+            DataTable tabla = ds.ObtenerTabla("PrecioTotal", "SELECT SUM(DetalleVentas.PrecioUnitario_Venta_DV*DetalleVentas.Cantidad_Producto_DV) AS PrecioTotal FROM DetalleVentas INNER JOIN Ventas ON Cod_Venta_DV = Cod_Venta_V WHERE Cod_Usuario_V = '" + codUser + "' GROUP BY Cod_Venta_V");
+            return tabla;
+        }
+
     }
 }
