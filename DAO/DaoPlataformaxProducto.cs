@@ -21,14 +21,12 @@ namespace DAO
         public PlataformaXProducto getPlataformaxProducto(string id)
         {
             PlataformaXProducto pxp = new PlataformaXProducto();
-            Producto p = new Producto();
-            Plataforma plat = new Plataforma();
+
 
             DataTable tabla = ds.ObtenerTabla("PlataformaxProducto", "Select * from PlataformasxProducto where =" + id);
-            p.setCodigoProducto(tabla.Rows[0][0].ToString());
-            plat.setCodigoPlataforma(tabla.Rows[0][1].ToString());
-            pxp.setIdProducto(p);
-            pxp.setIdPlataforma(plat);
+            
+            pxp.setIdProducto(tabla.Rows[0][0].ToString());
+            pxp.setIdPlataforma(tabla.Rows[0][1].ToString());
             pxp.setStock((int)tabla.Rows[0][2]);
             pxp.setPrecioUnitario((decimal)tabla.Rows[0][3]);
             pxp.setimgURL(tabla.Rows[0][4].ToString());

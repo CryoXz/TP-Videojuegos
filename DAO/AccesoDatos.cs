@@ -12,7 +12,7 @@ namespace DAO
     class AccesoDatos
     {
 
-        String rutaBDNeptuno =
+        String DBtpVideojuego =
           //"Data Source=DESKTOP-F5N5JLR\\SQL;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
          // "Data Source=localhost\\sqlexpress;Initial Catalog=Neptuno;Integrated Security=True";
          "Data Source=localhost\\sqlexpress;Initial Catalog=TiendaVideojuegos;Integrated Security=True";
@@ -24,7 +24,7 @@ namespace DAO
 
         private SqlConnection ObtenerConexion()
         {
-            SqlConnection cn = new SqlConnection(rutaBDNeptuno);
+            SqlConnection cn = new SqlConnection(DBtpVideojuego);
             try
             {
                 cn.Open();
@@ -76,7 +76,7 @@ namespace DAO
         }
         public DataSet Consultar(string ConsultaSQL)
         {
-            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            SqlConnection cn = new SqlConnection(DBtpVideojuego);
             cn.Open();
             SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
             SqlDataAdapter da = new SqlDataAdapter(comando);
@@ -89,7 +89,7 @@ namespace DAO
         public int ConsultarUsuario(string ConsultaSQL)
         {
 
-            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            SqlConnection cn = new SqlConnection(DBtpVideojuego);
             cn.Open();
             SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
             int count = Convert.ToInt32(comando.ExecuteScalar());
@@ -100,7 +100,7 @@ namespace DAO
         public string ConsultarTipoUsuario(string ConsultaSQL)
         {
             
-            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            SqlConnection cn = new SqlConnection(DBtpVideojuego);
             cn.Open();
             SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
             string type = Convert.ToString(comando.ExecuteScalar());
@@ -113,7 +113,7 @@ namespace DAO
         public string ConsultarCodigos(string ConsultaSQL)
         {
 
-            SqlConnection cn = new SqlConnection(rutaBDNeptuno);//cambiar a DBtpVideojuego
+            SqlConnection cn = new SqlConnection(DBtpVideojuego);
             cn.Open();
             SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
             string cod = Convert.ToString(comando.ExecuteScalar());

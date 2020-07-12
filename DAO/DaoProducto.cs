@@ -35,10 +35,10 @@ namespace DAO
             DataSet data = ds.Consultar("select * from Productos");
             return data;
         }
-        public string getConsultaUltimoProducto()
+        public int getConsultaUltimoProducto()
         {
 
-            return ds.ConsultarCodigos("SELECT COUNT(*) FROM Productos");
+            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Productos");
         }
 
         public string getCodigoS(string imgUrl, string name)

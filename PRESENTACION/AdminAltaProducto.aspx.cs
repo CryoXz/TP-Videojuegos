@@ -79,7 +79,7 @@ namespace PRESENTACION
 
                 N_Producto n_Producto = new N_Producto();
           
-                int n = Int32.Parse(n_Producto.getConsultaUltimoProducto()) + 1;
+                int n = n_Producto.getConsultaUltimoProducto() + 1;
                 string cod = "A"+ n.ToString();
 
                 producto.setCodigoProducto(cod);
@@ -93,7 +93,7 @@ namespace PRESENTACION
                 PxP.setIdPlataforma(s_plat);
                 PxP.setimgURL(txtimgURL.Text);
                 PxP.setPrecioUnitario(decimal.Parse(txtPrecio.Text));
-                PxP.setStock(Int32.Parse(txtStock.Text));
+                PxP.setStock(Int16.Parse(txtStock.Text.ToString()));
                 PxP.setIdProducto(cod);
 
                 N_PlataformaXProducto n_PXP = new N_PlataformaXProducto();

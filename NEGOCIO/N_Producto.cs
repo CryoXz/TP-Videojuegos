@@ -23,7 +23,7 @@ namespace NEGOCIO
             DaoProducto daoProd = new DaoProducto();
             return daoProd.getCodigoS(imgUrl, name);
         }
-        public string getConsultaUltimoProducto()
+        public int getConsultaUltimoProducto()
         {
             DaoProducto daoProd = new DaoProducto();
             return daoProd.getConsultaUltimoProducto();
