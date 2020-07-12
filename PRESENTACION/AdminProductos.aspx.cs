@@ -69,8 +69,7 @@ namespace PRESENTACION
 
             ENTIDAD.Producto p = new ENTIDAD.Producto();
             PlataformaXProducto PxP = new PlataformaXProducto();
-            Plataforma plat = new Plataforma();
-            plat.setCodigoPlataforma(s_CodigoPlataforma);
+
 
             p.setCodigoProducto(s_codigoProducto);
             p.setNombreProducto(s_nombreProducto);
@@ -79,8 +78,8 @@ namespace PRESENTACION
             p.setIdCodigoCategoria(s_CategoriaProducto);
             p.setIdCodigoGenero(s_GeneroProducto);
             p.setAnioFabricacion(s_FechaPublicacion);
-            PxP.setIdProducto(p);
-            PxP.setIdPlataforma(plat);
+            PxP.setIdProducto(s_codigoProducto);
+            PxP.setIdPlataforma(s_CodigoPlataforma);
             PxP.setStock(s_Stock);
             PxP.setPrecioUnitario(s_PU);
             PxP.setimgURL(s_img);

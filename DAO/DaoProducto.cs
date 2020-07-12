@@ -35,6 +35,11 @@ namespace DAO
             DataSet data = ds.Consultar("select * from Productos");
             return data;
         }
+        public int getConsultaUltimoProducto()
+        {
+
+            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Productos");
+        }
 
         public DataTable getNombreProductoDetalleVenta(string codVenta)
         {
@@ -85,8 +90,8 @@ namespace DAO
         private void ArmarParametrosProductos(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            //SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
-            //SqlParametros.Value = p.getCodigoProducto();
+            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getCodigoProducto();
             SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
             SqlParametros.Value = p.getNombreProducto();
             SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
@@ -98,7 +103,7 @@ namespace DAO
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
             SqlParametros.Value = p.getIdCodigoGenero();
             SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
-            SqlParametros.Value = p.getAnioFabricacion().ToString();
+            SqlParametros.Value = p.getAnioFabricacion();
             SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
             SqlParametros.Value = p.getEstado();
 
@@ -107,8 +112,7 @@ namespace DAO
         private void ArmarParametrosProductoModificar(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
-            SqlParametros.Value = p.getCodigoProducto();
+
             SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
             SqlParametros.Value = p.getNombreProducto();
             SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
@@ -137,7 +141,7 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosProductos(ref comando, p);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaProducto");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaProductos");
         }
     }
 }

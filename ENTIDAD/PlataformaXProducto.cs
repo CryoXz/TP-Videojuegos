@@ -8,6 +8,9 @@ namespace ENTIDAD
 {
     public class PlataformaXProducto
     {
+        Producto producto = new Producto();
+        Plataforma plataforma = new Plataforma();
+
         private Producto IdProducto;
         private Plataforma IdPlataforma;
         private int Stock;
@@ -18,21 +21,21 @@ namespace ENTIDAD
         {
 
         }
-        public Producto getIdProducto()
+        public string getIdProducto()
         {
-            return IdProducto;
+            return producto.getCodigoProducto();
         }
-        public void setIdProducto(Producto idProducto)
+        public void setIdProducto(String idProducto)
         {
-            IdProducto = idProducto;
+            producto.setCodigoProducto(idProducto);
         }
-        public Plataforma getIdPlataforma()
+        public string getIdPlataforma()
         {
-            return IdPlataforma;
+            return plataforma.getCodigoPlataforma();
         }
-        public void setIdPlataforma(Plataforma idPlataforma)
+        public void setIdPlataforma(string idPlataforma)
         {
-            IdPlataforma = idPlataforma;
+            plataforma.setCodigoPlataforma(idPlataforma);
         }
         public int getStock()
         {

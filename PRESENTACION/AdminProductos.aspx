@@ -139,7 +139,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Fecha de Publicación">
                     <EditItemTemplate>
-                        <asp:TextBox ID="lbl_eit_FPublicacion" runat="server" Text='<%# Bind("FPublicacion") %>' TextMode="DateTime"></asp:TextBox>
+                        <asp:TextBox ID="lbl_eit_FPublicacion" runat="server" Text='<%# Bind("FPublicacion") %>' TextMode="Date"></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_FPublicacion" runat="server" Text='<%# Bind("FPublicacion") %>'></asp:Label>

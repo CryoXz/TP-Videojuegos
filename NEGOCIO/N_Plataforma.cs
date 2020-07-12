@@ -70,6 +70,12 @@ namespace NEGOCIO
             DaoPlataforma dao = new DaoPlataforma();
             return dao.getCodigoPlataformaConNombre(name);
         }
+        public DataSet getPlataformas()
+        {
+            DaoPlataforma daoPlat = new DaoPlataforma();
+            DataSet data = daoPlat.getConsultarPlataforma();
+            return data;
+        }
 
     }
 }

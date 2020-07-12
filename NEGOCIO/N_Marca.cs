@@ -30,10 +30,10 @@ namespace NEGOCIO
             return dao.getMarca(id);
         }
 
-        public DataSet getMarcass()
+        public DataSet getMarcas()
         {
             DaoMarca daoMarca = new DaoMarca();
-            DataSet data = daoMarca.getConsultarMarca(); // getConsultalataformas
+            DataSet data = daoMarca.getConsultarMarca();
             return data;
         }
 
