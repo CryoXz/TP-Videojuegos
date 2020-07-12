@@ -38,7 +38,7 @@ namespace DAO
         public string getConsultaUltimoProducto()
         {
 
-            return ds.ConsultarCodigos("SELECT TOP 1 * FROM Productos ORDER BY Cod_Producto_PR DESC");
+            return ds.ConsultarCodigos("SELECT COUNT(*) FROM Productos");
         }
 
         public string getCodigoS(string imgUrl, string name)
@@ -84,7 +84,8 @@ namespace DAO
         private void ArmarParametrosProductos(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-
+            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getCodigoProducto();
             SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
             SqlParametros.Value = p.getNombreProducto();
             SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
@@ -105,8 +106,7 @@ namespace DAO
         private void ArmarParametrosProductoModificar(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
-            SqlParametros.Value = p.getCodigoProducto();
+
             SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
             SqlParametros.Value = p.getNombreProducto();
             SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);

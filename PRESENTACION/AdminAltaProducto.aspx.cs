@@ -16,12 +16,13 @@ namespace PRESENTACION
         {
 
             if (!IsPostBack)
-            {              
+            {
                 cargarDropdownListGeneros();
                 cargarDropdownListMarcas();
                 cargarDropdownListCategorias();
                 cargarDropdownListPlataformas();
             }
+  
         }
     
 
@@ -69,7 +70,7 @@ namespace PRESENTACION
             {
                 ENTIDAD.Producto producto = new ENTIDAD.Producto();
                 PlataformaXProducto PxP = new PlataformaXProducto();
-                Plataforma plat = new Plataforma();
+
 
                 String s_categoria = ddlCategoria.SelectedValue.ToString();
                 String s_genero = ddlGeneros.SelectedValue.ToString();
@@ -77,9 +78,11 @@ namespace PRESENTACION
                 String s_plat = ddlPlataformas.SelectedValue.ToString();
 
                 N_Producto n_Producto = new N_Producto();
-
+          
                 int n = Int32.Parse(n_Producto.getConsultaUltimoProducto()) + 1;
-                producto.setCodigoProducto(n.ToString()); ;
+                string cod = "A"+ n.ToString();
+
+                producto.setCodigoProducto(cod);
                 producto.setNombreProducto(txtNombreProducto.Text);
                 producto.setIdCodigoCategoria(s_categoria);
                 producto.setIdCodigoGenero(s_genero);
@@ -87,24 +90,16 @@ namespace PRESENTACION
                 producto.setDescripcion(txtDescripcion.Text);
                 producto.setAnioFabricacion(txtAnioFabricacion.Text.ToString());
                 producto.setEstado(true);
-
-                plat.setCodigoPlataforma(s_plat);
-                PxP.setIdPlataforma(plat);
-  
+                PxP.setIdPlataforma(s_plat);
                 PxP.setimgURL(txtimgURL.Text);
                 PxP.setPrecioUnitario(decimal.Parse(txtPrecio.Text));
                 PxP.setStock(Int32.Parse(txtStock.Text));
+                PxP.setIdProducto(cod);
 
-                
-
-                if (n_Producto.AltaProducto(producto) == true)
+                N_PlataformaXProducto n_PXP = new N_PlataformaXProducto();
+                if (n_Producto.AltaProducto(producto) == true && n_PXP.AltaPlataformaxProducto(PxP) == true)
                 {
-
-                    PxP.setIdProducto(producto);
-                    N_PlataformaXProducto n_PXP = new N_PlataformaXProducto();
-                    if (n_PXP.AltaPlataformaxProducto(PxP) == true) {
                         Label1.Text = "Se ha agregado con exito";
-                    }
    
                 }
 

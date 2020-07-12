@@ -15,9 +15,7 @@ namespace ENTIDAD
         Genero genero = new Genero();
         private String NombreProducto;
         private String Descripcion;
-        //private imgen
         private String AnioFabricacion;
-        // ver Estado
         private bool Estado;       
        
      
