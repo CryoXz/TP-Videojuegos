@@ -38,6 +38,11 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Plataforma", "Select * from plataformas");
             return tabla;
         }
+        public DataTable getPlataformaDetalleVenta(string codVenta)
+        {
+            DataTable tabla = ds.ObtenerTabla("Plataforma", "SELECT Nombre_Plataforma_P FROM Plataformas INNER JOIN DetalleVentas ON Cod_Plataforma_P = Cod_Plataforma_DV WHERE Cod_Venta_DV = '" + codVenta + "'");
+            return tabla;
+        }
 
         public int eliminarPlataforma(Plataforma cat)
         {

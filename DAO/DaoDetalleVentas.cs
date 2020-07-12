@@ -48,5 +48,11 @@ namespace DAO
             return tabla;
         }
 
+        public DataTable getCantPrecioDetalleVenta(string codVenta)
+        {
+            DataTable tabla = ds.ObtenerTabla("CantPrecio", "SELECT Cantidad_Producto_DV, Cantidad_Producto_DV*PrecioUnitario_Venta_DV AS PrecioTotal FROM DetalleVentas WHERE Cod_Venta_DV = '" + codVenta + "'");
+            return tabla;
+        }
+
     }
 }

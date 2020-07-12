@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="HistorialCompras.aspx.cs" Inherits="PRESENTACION.HistorialCompras" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="HistorialDetalle.aspx.cs" Inherits="PRESENTACION.HistorialDetalle" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="Content/Carrito.css" rel="stylesheet" />
 </asp:Content>
@@ -12,32 +12,38 @@
             <div class="col-lg-2" style="background-color:crimson"></div>
             <div class="col-lg-8" style="background-color:white">
                 <div class="container">   
-                <asp:GridView ID="grdVentas" CssClass="Grid" runat="server" ShowHeader="False" AutoGenerateColumns="False" AllowPaging="True" OnPageIndexChanging="grdVentas_PageIndexChanging" PageSize="2">
+                    <asp:GridView ID="grdDetalle" CssClass="Grid" runat="server" ShowHeader="False" AutoGenerateColumns="False">
                     <Columns>
-                        <asp:TemplateField HeaderText="CODIGO DE VENTA">
+                        
+                        <asp:TemplateField HeaderText="IMAGEN">
                             <ItemTemplate>
-                                Codigo de venta: <asp:Label ID="lblCodVenta" runat="server" Text='<%# Bind("Cod_Venta_V") %>'></asp:Label>
+                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Bind("Imagen_Producto_PxP") %>' />
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="FECHA">
+                        <asp:TemplateField HeaderText="NOMBRE">
                             <ItemTemplate>
-                                <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("fVenta_V") %>'></asp:Label>                  
+                                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Nombre") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="PRECIO TOTAL">
+                        <asp:TemplateField HeaderText="PLATAFORMA">
                             <ItemTemplate>
-                                <h5>$<asp:Label ID="lblPrecio" runat="server" Text='<%# Bind("PrecioTotal") %>'></asp:Label></h5>
+                                <asp:Label ID="Label2" runat="server" Text='<%# Bind("Plataforma") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="VER DETALLE">
-                            <ItemTemplate>           
-                                <asp:Button ID="Button" class="btn btn-danger" runat="server" Text="VER DETALLE" OnClick="btnDetalle_Click" />
+                        <asp:TemplateField HeaderText="CANTIDAD">
+                            <ItemTemplate>
+                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("Cantidad") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
+                        <asp:TemplateField HeaderText="PRECIOTOTAL">
+                            <ItemTemplate>
+                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("PrecioTotal") %>'></asp:Label>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        
                     </Columns>
                     <FooterStyle BackColor="#FFFFFF" ForeColor="#FFFFFF" />
                     <RowStyle BackColor="White" ForeColor="#330099" />
-                    <PagerStyle CssClass="pagination-ys" />
                     <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="#663399" />
                     <SortedAscendingCellStyle BackColor="#FEFCEB" />
                     <SortedAscendingHeaderStyle BackColor="#AF0101" />
@@ -47,11 +53,22 @@
                 </div>
             </div>
             <div class="col-lg-2" style="background-color:crimson"></div>
-        </div>      
+        </div>   
+        
         <div class="row" style="background-color:crimson">
+        <div class="col-lg-2" style="background-color:crimson"></div>
+        <div class="col-lg-8" style="background-color:white;text-align:center">
+        <br />
+        <a ID="btnHome" runat="server" class="btn btn-danger" href="HistorialCompras.aspx">VOLVER</a>
         <br />
         <br />
-        <br />
+        </div>
+        <div class="col-lg-2" style="background-color:crimson"></div>
+        </div>
+        <div class="row" style="background-color:crimson">
+            <br />
+            <br />
+            <br />
         </div>
 
     </div>

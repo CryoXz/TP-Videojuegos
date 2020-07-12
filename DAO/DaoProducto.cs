@@ -36,6 +36,12 @@ namespace DAO
             return data;
         }
 
+        public DataTable getNombreProductoDetalleVenta(string codVenta)
+        {
+            DataTable table = ds.ObtenerTabla("NombreProducto", "SELECT Nombre_Producto_PR FROM Productos INNER JOIN DetalleVentas ON Cod_Producto_PR = Cod_Producto_DV WHERE Cod_Venta_DV = '" + codVenta + "'");
+            return table;
+        }
+
         public string getCodigoS(string imgUrl, string name)
         {
             return ds.ConsultarCodigos("SELECT PlataformaxProducto.Cod_Producto_PxP FROM PlataformaxProducto INNER JOIN Productos ON PlataformaxProducto.Cod_Producto_PxP = Productos.Cod_Producto_PR WHERE PlataformaxProducto.Imagen_Producto_PxP = '" + imgUrl + "' AND Productos.Nombre_Producto_PR = '" + name + "'");
