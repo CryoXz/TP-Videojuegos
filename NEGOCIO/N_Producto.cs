@@ -42,6 +42,12 @@ namespace NEGOCIO
             return dao.getTablaProductosConPrecioyStock();
         }
 
+        public DataTable getNombreProductoDetalleVenta(string codVenta)
+        {
+            DaoProducto dao = new DaoProducto();
+            return dao.getNombreProductoDetalleVenta(codVenta);
+        }
+
         public Producto get(string id)
         {
             DaoProducto dao = new DaoProducto();

@@ -22,5 +22,11 @@ namespace NEGOCIO
             DaoDetalleVentas dao = new DaoDetalleVentas();
             return dao.getTablaDetalleVentasPrecioTotalPorCodUsuario(codUser);
         }
+
+        public DataTable getCantPrecioDetalleVenta(string codVenta)
+        {
+            DaoDetalleVentas dao = new DaoDetalleVentas();
+            return dao.getCantPrecioDetalleVenta(codVenta);
+        }
     }
 }

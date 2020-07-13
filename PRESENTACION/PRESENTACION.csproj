@@ -90,6 +90,7 @@
     <Content Include="AdminGenero.aspx" />
     <Content Include="Content\Carrito.css" />
     <Content Include="HistorialCompras.aspx" />
+    <Content Include="HistorialDetalle.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="IMAGES\botw-box.jpg" />
     <Content Include="IMAGES\carritologo.png" />
@@ -376,6 +377,13 @@
     </Compile>
     <Compile Include="HistorialCompras.aspx.designer.cs">
       <DependentUpon>HistorialCompras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialDetalle.aspx.cs">
+      <DependentUpon>HistorialDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HistorialDetalle.aspx.designer.cs">
+      <DependentUpon>HistorialDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>

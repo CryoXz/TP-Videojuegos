@@ -19,6 +19,12 @@ namespace NEGOCIO
             return dao.getTablaPlataformaxProducto();
         }
 
+        public DataTable getImagenDetalleVenta(string codVenta)
+        {
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            return dao.getImagenDetalleVenta(codVenta);
+        }
+
         public PlataformaXProducto get(string id)
         {
             DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
