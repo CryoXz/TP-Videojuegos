@@ -20,7 +20,11 @@ namespace ENTIDAD
         private String Email;
         private String Direccion;
         private bool Estado;
+        private Provincia IdProvincia;
+        private Localidad IdLocalidad;
 
+        Provincia provincia = new Provincia();
+        Localidad localidad = new Localidad();
         public Usuario()
         {
         }
@@ -120,6 +124,24 @@ namespace ENTIDAD
         public void setEstado(bool estado)
         {
             Estado = estado;
+        }
+
+        public string getIdProvincia()
+        {
+            return provincia.getCodigoProvincia();
+        }
+        public void setProvincia(string p)
+        {
+            provincia.setCodigoProvincia(p);
+        }
+
+        public string getIdLocalidad()
+        {
+            return localidad.getCodigoProvincia();
+        }
+        public void setLocalidad(string p)
+        {
+            localidad.setCodigoLocalidad(p);
         }
     }
 }

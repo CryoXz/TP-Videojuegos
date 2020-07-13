@@ -18,6 +18,11 @@ namespace DAO
 
         }
 
+        public DataSet getConsultarPlataforma()
+        {
+            DataSet data = ds.Consultar("select * from Plataformas");
+            return data;
+        }
         public Plataforma getPlataforma(string id)
         {
             Plataforma cat = new Plataforma();

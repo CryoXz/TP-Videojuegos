@@ -46,13 +46,16 @@
     <Compile Include="DaoCategoria.cs" />
     <Compile Include="DaoDetalleVentas.cs" />
     <Compile Include="DaoGenero.cs" />
+    <Compile Include="DaoLocalidad.cs" />
     <Compile Include="DaoMarca.cs" />
     <Compile Include="DaoPlataformaxProducto.cs" />
     <Compile Include="DaoPlataforma.cs" />
     <Compile Include="DaoProducto.cs" />
+    <Compile Include="DaoProvincia.cs" />
     <Compile Include="DaoTipoUsuario.cs" />
     <Compile Include="DaoUsuario.cs" />
     <Compile Include="DaoVenta.cs" />
+    <Compile Include="N_Localidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
