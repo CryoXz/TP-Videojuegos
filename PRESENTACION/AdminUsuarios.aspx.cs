@@ -15,36 +15,20 @@ namespace PRESENTACION
         {
             if (!IsPostBack)
             {
-                ListItemCollection coleccion = new ListItemCollection();
 
-                coleccion.Add(new ListItem("Administrador", "1"));
-                coleccion.Add(new ListItem("Cliente", "2"));
-                ddlTipoUsuario.DataValueField = "Value";
-                ddlTipoUsuario.DataTextField = "Text";
-                ddlTipoUsuario.DataSource = coleccion;
-                ddlTipoUsuario.DataBind();
-
-                cargarGridview("");                    
+                cargarGridview();                    
 
             }
         }
 
 
 
-        public void cargarGridview(String codigoTipo)
+        public void cargarGridview()
         {
-            N_Usuario N_usuario = new N_Usuario();     
-           if(codigoTipo == "")
-            {
-                grdUsuarios.DataSource = N_usuario.getTabla();
-                grdUsuarios.DataBind();
+            N_Usuario n_Usuario = new N_Usuario();
+            grdUsuarios.DataSource = n_Usuario.getTabla();
+            grdUsuarios.DataBind();
 
-            }
-           else
-            {
-                // no muestra la grilla con el filtro
-                
-            }
 
         }
         protected void btnBuscar_Click(object sender, EventArgs e)
@@ -71,7 +55,40 @@ namespace PRESENTACION
             grdUsuarios.DataBind();
         }
 
-       
+        protected void grdUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        {
+
+        }
+
+        protected void grdUsuarios_RowEditing(object sender, GridViewEditEventArgs e)
+        {
+
+        }
+
+        protected void grdUsuarios_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            String s_codigo = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("")).Text;
+
+            N_Producto n_plat = new N_Producto();
+            n_plat.eliminarProducto(s_codigo);
+            cargarGridview();
+
+        }
+
+        protected void grdUsuarios_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        {
+
+        }
+
+        protected void grdUsuarios_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+
+        }
+
+        protected void grdUsuarios_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+
+        }
     }
 
 
