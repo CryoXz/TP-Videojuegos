@@ -8,5 +8,8 @@ namespace ENTIDAD
 {
     class Localidades
     {
+        private string CodigoLocalidad;
+
+
     }
 }
