@@ -77,7 +77,7 @@ namespace PRESENTACION
             p.setIdCodigoMarca(s_MarcaProducto);
             p.setIdCodigoCategoria(s_CategoriaProducto);
             p.setIdCodigoGenero(s_GeneroProducto);
-            p.setAnioFabricacion(s_FechaPublicacion);
+            p.setFechaPublicacion(DateTime.Parse(s_FechaPublicacion));
             PxP.setIdProducto(s_codigoProducto);
             PxP.setIdPlataforma(s_CodigoPlataforma);
             PxP.setStock(s_Stock);

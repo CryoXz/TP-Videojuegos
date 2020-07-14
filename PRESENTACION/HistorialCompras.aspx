@@ -21,7 +21,7 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="FECHA">
                             <ItemTemplate>
-                                <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("fVenta_V") %>'></asp:Label>                  
+                                <asp:Label ID="lblFecha" runat="server" Text='<%# Bind("fVenta_V", "{0:d/M/yyyy}") %>'></asp:Label>                  
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="PRECIO TOTAL">

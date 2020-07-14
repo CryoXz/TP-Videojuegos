@@ -103,7 +103,7 @@ namespace DAO
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
             SqlParametros.Value = p.getIdCodigoGenero();
             SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
-            SqlParametros.Value = p.getAnioFabricacion();
+            SqlParametros.Value = p.getFechaPublicacion().ToString("dd/MM/yyyy");
             SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
             SqlParametros.Value = p.getEstado();
 
@@ -124,7 +124,7 @@ namespace DAO
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
             SqlParametros.Value = p.getIdCodigoGenero();
             SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
-            SqlParametros.Value = p.getAnioFabricacion();
+            SqlParametros.Value = p.getFechaPublicacion();
            
             //SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
             //SqlParametros.Value = p.getEstado();

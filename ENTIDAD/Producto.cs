@@ -8,14 +8,13 @@ namespace ENTIDAD
 {
     public class Producto
     {
-        private String CodigoProducto;
-        
+        private String CodigoProducto;        
         Marca marca = new Marca();
         Categoria categoria = new Categoria();
         Genero genero = new Genero();
         private String NombreProducto;
         private String Descripcion;
-        private String AnioFabricacion;
+        private DateTime FechaPublicacion;
         private bool Estado;       
        
      
@@ -73,13 +72,13 @@ namespace ENTIDAD
             Descripcion = descripcion;
         }
         
-        public String getAnioFabricacion()
+        public DateTime getFechaPublicacion()
         {
-            return AnioFabricacion;
+            return FechaPublicacion;
         }
-        public void setAnioFabricacion(String anioFabricacion)
+        public void setFechaPublicacion(DateTime fechaPub)
         {
-            AnioFabricacion = anioFabricacion;
+            FechaPublicacion = fechaPub;
         }
         public bool getEstado()
         {

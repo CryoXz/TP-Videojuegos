@@ -88,7 +88,7 @@ namespace PRESENTACION
                 producto.setIdCodigoGenero(s_genero);
                 producto.setIdCodigoMarca(s_marca);
                 producto.setDescripcion(txtDescripcion.Text);
-                producto.setAnioFabricacion(txtAnioFabricacion.Text.ToString());
+                producto.setFechaPublicacion(DateTime.Parse(txtAnioFabricacion.Text.ToString()));
                 producto.setEstado(true);
                 PxP.setIdPlataforma(s_plat);
                 PxP.setimgURL(txtimgURL.Text);

@@ -33,8 +33,8 @@ namespace DAO
             SqlParametros.Value = v.getIdCodigoUsuario().getCodigoUsuario();
             SqlParametros = Comando.Parameters.Add("@Cod_TipoUsuario_V", SqlDbType.Char, 4);
             SqlParametros.Value = v.getIdCodigoUsuario().getIdTipoUsuario().getCodigoTipoUsuario();  // composicion se hace getIdTipoUsuario en usuario que devuelve un objeto tipoUsuario y de ahi se hace el getCodigoTIpoUsuario() para traer el codigo 
-            SqlParametros = Comando.Parameters.Add("@fVenta_V", SqlDbType.SmallDateTime);
-            SqlParametros.Value = v.getFechaVenta();
+            SqlParametros = Comando.Parameters.Add("@fVenta_V", SqlDbType.Date);
+            SqlParametros.Value = v.getFechaVenta().ToString("dd/MM/yyyy");
             SqlParametros = Comando.Parameters.Add("@Cod_TipoPago_V", SqlDbType.Char, 4);
             SqlParametros.Value = v.getIdTipoPago().getCodigoTIpo();
 
