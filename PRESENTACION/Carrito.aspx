@@ -41,18 +41,8 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="CANTIDAD">
                             <EditItemTemplate>
-                                Cantidad: <asp:DropDownList ID="ddlCantidad" runat="server" SelectedValue='<%# Bind("Cantidad") %>'>
-                                    <asp:ListItem>1</asp:ListItem>
-                                    <asp:ListItem>2</asp:ListItem>
-                                    <asp:ListItem>3</asp:ListItem>
-                                    <asp:ListItem>4</asp:ListItem>
-                                    <asp:ListItem>5</asp:ListItem>
-                                    <asp:ListItem>6</asp:ListItem>
-                                    <asp:ListItem>7</asp:ListItem>
-                                    <asp:ListItem>8</asp:ListItem>
-                                    <asp:ListItem>9</asp:ListItem>
-                                    <asp:ListItem>10</asp:ListItem>
-                                </asp:DropDownList>
+                                Cantidad: 
+                                <asp:TextBox ID="txtCantidad" runat="server" type="number" Text='<%# Bind("Cantidad") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <h7>Cantidad: <asp:Label ID="lblCantidad" runat="server" Text='<%# Bind("Cantidad") %>'></asp:Label></h7>

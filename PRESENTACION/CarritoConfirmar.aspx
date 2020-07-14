@@ -15,7 +15,7 @@
                 <br />
                 <h5 style="color:crimson;text-align:left">Seleccione tipo de pago: <asp:DropDownList ID="ddlTipoPago" runat="server"> 
                                     <asp:ListItem Value="TP1">Efectivo</asp:ListItem>
-                                    <asp:ListItem Value="TP2">Tarjeta de Credito</asp:ListItem>
+                                    <asp:ListItem Value="TP2">Tarjeta de Debito</asp:ListItem>
                                     <asp:ListItem Value="TP3">Tarjeta de Credito</asp:ListItem>
                                 </asp:DropDownList></h5>
                 <br />
