@@ -84,7 +84,7 @@ CREATE TABLE Usuarios
 	Nickname_Usuario_U varchar(100) NOT NULL,
 	Contraseña_Usuario_U varchar(100) NOT NULL,
 	DNI_Usuario_U varchar(10) NOT NULL,
-	fNacimiento_Usuario_U smalldatetime NOT NULL,
+	fNacimiento_Usuario_U date NOT NULL,
 	Telefono_Usuario_U varchar(15) NULL,
 	EMail_Usuario_U varchar(100) NULL,
 	Direccion_Usuario_U varchar(100) NOT NULL,
@@ -103,7 +103,7 @@ CREATE TABLE Productos
 	Cod_Marca_PR char(4) NOT NULL,
 	Cod_Categoria_PR char(4) NOT NULL,
 	Cod_Genero_PR char(4) NULL,
-	fPublicacion_Producto_PR smalldatetime NULL,
+	fPublicacion_Producto_PR date NULL,
 	Estado_Producto_PR bit NOT NULL,
 )
 GO
@@ -123,7 +123,7 @@ CREATE TABLE Compras
 (
 	Cod_Compra_CO int PRIMARY KEY NOT NULL identity (1,1),
 	Cod_Marca_CO char(4) NOT NULL,
-	Fecha_Compra_CO smalldatetime NOT NULL,
+	Fecha_Compra_CO date NOT NULL,
 )
 GO
 
@@ -143,7 +143,7 @@ CREATE TABLE Ventas
 	Cod_Venta_V int PRIMARY KEY NOT NULL identity (1,1),
 	Cod_Usuario_V char(4) NOT NULL,
 	Cod_TipoUsuario_V char(4) NOT NULL,
-	fVenta_V smalldatetime NOT NULL,
+	fVenta_V date NOT NULL,
 	Cod_TipoPago_V char(4) NOT NULL,
 )
 GO
@@ -2835,7 +2835,7 @@ CREATE PROCEDURE spModificarPlataforma(
 CREATE PROCEDURE SpAltaVentas(
 				@Cod_Usuario_V char(4),
 				@Cod_TipoUsuario_V char(4),
-				@fVenta_V smalldatetime,
+				@fVenta_V date,
 				@Cod_TipoPago_V char(4)
 	)
 	AS
