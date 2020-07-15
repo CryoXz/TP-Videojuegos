@@ -54,7 +54,11 @@ namespace NEGOCIO
             daoUsuario.GuardarUsuario(usuarioNuevo); // ahora daoUsuario llama al metodo GuardarUsuario y se le envia el objeto cargado.
         }
 
-    
+        public DataTable getUsuarioPorUsername(String username)
+        {
+            DaoUsuario dao = new DaoUsuario();
+            return dao.getUsuarioPorUsername(username);
+        }
 
         public int resultadoUsuarios(string user, string pass)
         {

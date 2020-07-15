@@ -32,5 +32,11 @@ namespace NEGOCIO
             DataSet data = daoProvincia.getConsultarProvincia();
             return data;
         }
+
+        public string getStringProvincia(string codProv)
+        {
+            DaoProvincia daoProvincia = new DaoProvincia();
+            return daoProvincia.getStringProvincia(codProv);
+        }
     }
 }

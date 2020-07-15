@@ -17,57 +17,57 @@
                 <br />
                 <div>
                     <h6>Nombre:</h6>
-                    <asp:Label ID="lblNombre" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblNombre" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Apellido:</h6>
-                    <asp:Label ID="lblApellido" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblApellido" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Nombre de usuario:</h6>
-                    <asp:Label ID="lblUsername" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblUsername" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Contraseña:</h6>
-                    <asp:Label ID="lblPassword" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblPassword" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Email:</h6>
-                    <asp:Label ID="lblEmail" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblEmail" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>DNI:</h6>
-                    <asp:Label ID="lblDNI" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblDNI" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Fecha de nacimiento:</h6>
-                    <asp:Label ID="lblFecha" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblFecha" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Provincia:</h6>
-                    <asp:Label ID="lblProvincia" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblProvincia" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Localidad:</h6>
-                    <asp:Label ID="lblLocalidad" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblLocalidad" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Direccion:</h6>
-                    <asp:Label ID="lblDireccion" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblDireccion" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div>
                     <h6>Telefono:</h6>
-                    <asp:Label ID="lblTelefono" runat="server" Text=""></asp:Label>
+                    <asp:Label ID="lblTelefono" style="color:black" runat="server" Text=""></asp:Label>
                 </div>
                 <br />
                 <div style="text-align:center">

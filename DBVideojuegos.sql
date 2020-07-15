@@ -196,6 +196,14 @@ ADD CONSTRAINT FK_DetalleVentas_Productos FOREIGN KEY (Cod_Producto_DV) REFERENC
 GO
 
 ALTER TABLE Usuarios
+ADD CONSTRAINT FK_Usuarios_Provincias FOREIGN KEY (Provincia_Usuario_U) REFERENCES Provincias (Cod_Provincia_prov)
+GO
+
+ALTER TABLE Usuarios
+ADD CONSTRAINT FK_Usuarios_Localidades FOREIGN KEY (Localidad_Usuario_U) REFERENCES Localidades (Cod_Localidad_loc)
+GO
+
+ALTER TABLE Usuarios
 ADD CONSTRAINT FK_Usuarios_TipoUsuarios FOREIGN KEY (Cod_TipoUsuario_U) REFERENCES Tipo_Usuarios (Cod_TipoUsuario_TU)
 GO
 

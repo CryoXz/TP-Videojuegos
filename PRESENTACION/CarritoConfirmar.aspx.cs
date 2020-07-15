@@ -42,7 +42,6 @@ namespace PRESENTACION
         {
             int filasventa = 0;
             int filasdet = 0;
-            int codVenta;
             Venta venta = new Venta();
             Usuario usr = new Usuario();
             TipoDePago tp = new TipoDePago();
@@ -63,45 +62,78 @@ namespace PRESENTACION
             venta.setFechaVenta(DateTime.Now);
             tp.setcodigoTipo(tipoPago);
             venta.setIdTipoPago(tp);
-
             filasventa = negv.GuardarVenta(venta);
-
-            codVenta = negv.getCodVenta(venta);
+            
 
             DataTable dt = (DataTable)Session["carrito"];
+            int stockTotal = 0;
 
-            for (int i = 0; i < dt.Rows.Count; i++)
+            ///COMPROBAR QUE TODOS LOS PRODUCTOS TENGAN STOCK
+            for (int c = 0; c < dt.Rows.Count; c++)
             {
-                N_DetalleVenta negd = new N_DetalleVenta();
-                DetalleVenta detalle = new DetalleVenta();
-                Venta v = new Venta();
-                ENTIDAD.Producto p = new ENTIDAD.Producto();
-                ENTIDAD.Plataforma pl = new Plataforma();
-                string codProd = negp.getCodigoProductoConNombre(dt.Rows[i]["Nombre"].ToString());
-                string codPlat = negpl.getCodigoPlataformaConNombre(dt.Rows[i]["Plataforma"].ToString());
-                int cant = Convert.ToInt32(dt.Rows[i]["Cantidad"].ToString());
-                float preciototal = float.Parse(dt.Rows[i]["PrecioUnitario"].ToString());
-
-                v.setCodigoVenta(codVenta);
-                detalle.setIdCodigoVenta(v);
-                p.setCodigoProducto(codProd);
-                detalle.setIdCodigoProducto(p);
-                pl.setCodigoPlataforma(codPlat);
-                detalle.setIdCodigoPlataforma(pl);
-                detalle.setCantidadVendida(cant);
-                detalle.setPrecioUnitario(preciototal / cant);
-
-                filasdet = negd.GuardarDetalleVenta(detalle);
+                N_PlataformaXProducto negPXP = new N_PlataformaXProducto();
+                string codProd = negp.getCodigoProductoConNombre(dt.Rows[c]["Nombre"].ToString());
+                string stockProd = negPXP.getStockProducto(codProd);
+                int stockFinal = Convert.ToInt32(stockProd) - Convert.ToInt32(dt.Rows[c]["Cantidad"].ToString());
+                if (stockFinal >= 0)
+                {
+                    stockTotal++;
+                }
             }
 
-            if(filasventa > 0 && filasdet > 0)
+            if(stockTotal == dt.Rows.Count)
             {
-                Response.Redirect("CarritoCheckout.aspx");
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    N_DetalleVenta negd = new N_DetalleVenta();
+                    N_PlataformaXProducto pxp = new N_PlataformaXProducto();
+                    DetalleVenta detalle = new DetalleVenta();
+                    Venta v = new Venta();
+                    ENTIDAD.Producto p = new ENTIDAD.Producto();
+                    ENTIDAD.Plataforma pl = new Plataforma();
+                    string codProd = negp.getCodigoProductoConNombre(dt.Rows[i]["Nombre"].ToString());
+                    string codPlat = negpl.getCodigoPlataformaConNombre(dt.Rows[i]["Plataforma"].ToString());
+                    int cant = Convert.ToInt32(dt.Rows[i]["Cantidad"].ToString());
+                    float preciototal = float.Parse(dt.Rows[i]["PrecioUnitario"].ToString());
+                    string stockProd = pxp.getStockProducto(codProd);
+                    int nuevostock = Convert.ToInt32(stockProd) - Convert.ToInt32(dt.Rows[i]["Cantidad"].ToString());
+                    int codVenta = negv.getCodVenta();
+
+                    v.setCodigoVenta(codVenta);
+                    detalle.setIdCodigoVenta(v);
+                    p.setCodigoProducto(codProd);
+                    detalle.setIdCodigoProducto(p);
+                    pl.setCodigoPlataforma(codPlat);
+                    detalle.setIdCodigoPlataforma(pl);
+                    detalle.setCantidadVendida(cant);
+                    detalle.setPrecioUnitario(preciototal / cant);
+
+                    filasdet = negd.GuardarDetalleVenta(detalle);
+
+                    pxp.modificarStockProducto(codProd, nuevostock.ToString());
+                    
+                }
+
+                if (filasventa > 0 && filasdet > 0)
+                {
+                    this.Session["carrito"] = null;
+                    Response.Redirect("CarritoCheckout.aspx");
+                }
+                else
+                {
+                    this.Session["carrito"] = null;
+                    Response.Redirect("CarritoError.aspx");
+                }
             }
             else
             {
-                Response.Redirect("CarritoError.aspx");
+                this.Session["carrito"] = null;
+                Response.Redirect("CarritoStock.aspx");
             }
+
+            
+
+           
 
         }
     }

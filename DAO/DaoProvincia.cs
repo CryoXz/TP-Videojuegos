@@ -36,5 +36,11 @@ namespace DAO
             DataSet data = ds.Consultar("select * from Provincias");
             return data;
         }
+
+        public string getStringProvincia(string codProv)
+        {
+            return ds.ConsultarCodigos("SELECT Nombre_prov FROM Provincias WHERE Cod_Provincia_prov='" + codProv + "'");
+            
+        }
     }
 }

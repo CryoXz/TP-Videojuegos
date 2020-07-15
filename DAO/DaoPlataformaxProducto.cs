@@ -48,6 +48,15 @@ namespace DAO
             return tabla;
         }
 
+        public string getStockProducto(string codProducto)
+        {
+            return ds.ConsultarCodigos("SELECT Stock_Producto_PxP FROM PlataformaxProducto WHERE Cod_Producto_PxP = '" + codProducto + "'");
+        }
+
+        public int modificarStockProducto(string codProd, string stock)
+        {
+            return ds.modificar("UPDATE PlataformaxProducto SET Stock_Producto_PxP = " + stock + " WHERE Cod_Producto_PxP = '"+ codProd + "'");
+        }
 
         private void ArmarParametrosPlataformaxProducto(ref SqlCommand Comando, PlataformaXProducto p)
         {

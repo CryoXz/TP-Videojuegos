@@ -60,10 +60,10 @@ namespace NEGOCIO
             return daoVenta.getBuscarProductoFiltrado(n_ClausulaSqlProductos);
         }
 
-        public int getCodVenta(Venta venta)
+        public int getCodVenta()
         {
             DaoVenta daoVenta = new DaoVenta();
-            return daoVenta.getCodVenta(venta);
+            return daoVenta.getCodVenta();
         }
 
 

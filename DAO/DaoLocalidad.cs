@@ -36,5 +36,11 @@ namespace DAO
             DataSet data = ds.Consultar("select * from Localidades");
             return data;
         }
+
+        public string getStringLocalidad(string codLoc)
+        {
+            return ds.ConsultarCodigos("SELECT Nombre_loc FROM Localidades WHERE Cod_Localidad_loc='" + codLoc + "'");
+
+        }
     }
 }

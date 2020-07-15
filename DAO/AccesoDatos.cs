@@ -97,6 +97,17 @@ namespace DAO
             return count;
         }
 
+        public int modificar(string ConsultaSQL)
+        {
+            int Filas;
+            SqlConnection cn = new SqlConnection(DBtpVideojuego);
+            cn.Open();
+            SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
+            Filas = comando.ExecuteNonQuery();
+            cn.Close();
+            return Filas;
+        }
+
         public string ConsultarTipoUsuario(string ConsultaSQL)
         {
             

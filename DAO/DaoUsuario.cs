@@ -71,6 +71,12 @@ namespace DAO
             return tabla;
         }
 
+        public DataTable getUsuarioPorUsername(String username)
+        {
+            DataTable tabla = ds.ObtenerTabla("Usuario", "SELECT * FROM Usuarios WHERE Nickname_Usuario_U = '" + username +"'");
+            return tabla;
+        }
+
 
         public int getLogin(string username, string password)
         {

@@ -78,9 +78,10 @@ namespace DAO
             return data;
         }
 
-        public int getCodVenta(Venta venta)
+        public int getCodVenta()
         {
-            return ds.ConsultarUsuario("SELECT Cod_Venta_V FROM Ventas WHERE Cod_Usuario_V = '" + venta.getIdCodigoUsuario().getCodigoUsuario().ToString() + "' AND fVenta_V = '" + venta.getFechaVenta() + "'");
+            int total = ds.ConsultarUsuario("SELECT COUNT (*) FROM Ventas");
+            return total;
         }
     }
 }

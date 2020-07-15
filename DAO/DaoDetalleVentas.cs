@@ -22,7 +22,7 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosDetalleVenta(ref comando, detalleventa);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaDetalleVentas");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SpAltaDetalleVentas");
 
         }
         private void ArmarParametrosDetalleVenta(ref SqlCommand Comando, DetalleVenta dv) // funcion que arma los parametros del procedimiento almacenado
@@ -31,9 +31,9 @@ namespace DAO
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Cod_Venta_DV", SqlDbType.Int);
             SqlParametros.Value = dv.getIdCodigoVenta().getCodigoVenta();
-            SqlParametros = Comando.Parameters.Add("@Cod_Producto_DV ", SqlDbType.Char, 4);
+            SqlParametros = Comando.Parameters.Add("@Cod_Producto_DV", SqlDbType.Char, 4);
             SqlParametros.Value = dv.getIdCodigoProducto().getCodigoProducto(); 
-            SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_DV  ", SqlDbType.Char, 4);
+            SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_DV ", SqlDbType.Char, 4);
             SqlParametros.Value = dv.getIdCodigoPlataforma().getCodigoPlataforma();
             SqlParametros = Comando.Parameters.Add("@Cantidad_Producto_DV", SqlDbType.Int);
             SqlParametros.Value = dv.getCantidadVendida();

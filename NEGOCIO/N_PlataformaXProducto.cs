@@ -32,7 +32,11 @@ namespace NEGOCIO
             return dao.getPlataformaxProducto(id);
         }
 
-
+        public string getStockProducto(string codProducto)
+        {
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            return dao.getStockProducto(codProducto);
+        }
         public bool ActualizarPlataformaxProducto(PlataformaXProducto p)
         {
 
@@ -52,6 +56,12 @@ namespace NEGOCIO
                 return true;
             else
                 return false;
+        }
+
+        public int modificarStockProducto(string codProd, string stock)
+        {
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            return dao.modificarStockProducto(codProd, stock);
         }
 
     }
