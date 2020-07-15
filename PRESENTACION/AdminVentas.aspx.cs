@@ -56,9 +56,14 @@ namespace PRESENTACION
         }
         protected void btnBuscar_Click1(object sender, EventArgs e)
         {
-            N_Venta n_Venta = new N_Venta();
-            grdVentas.DataSource = n_Venta.getBuscarProductoVendido(txtNombreBuscar.Text);
-            grdVentas.DataBind();            
+            if(txtNombreBuscar.Text != "")
+            {
+               
+                N_Venta n_Venta = new N_Venta();
+                grdVentas.DataSource = n_Venta.getBuscarProductoVendido(txtNombreBuscar.Text);
+                grdVentas.DataBind();
+            }
+                      
         }
 
         private void ConstruirClausulaSQL(string NombreCampo, // idProducto - nombreCategoria 
@@ -78,6 +83,14 @@ namespace PRESENTACION
                     d1 = " LIKE '%";
                     d2 = "%'";
                     break;
+                case "mayor:":
+                    d1 = " >  '";
+                    d2 = " ' ";
+                    break;
+                case "menor:":
+                    d1 = " < '";
+                    d2 = " ' ";
+                    break;
             }
             Clausula =
                 Clausula + NombreCampo + d1 + Valor + d2;
@@ -93,6 +106,12 @@ namespace PRESENTACION
                 String txtGeneroElegido = ddlGeneros.SelectedItem.Text;
 
                 string ClausulaSQLProductos = "";
+                if (ddlPlataformas.SelectedItem.Text != "PLATAFORMAS")
+                    ConstruirClausulaSQL("Nombre_Plataforma_P",
+                                        "Contiene:",
+                                        ddlPlataformas.SelectedItem.Text,
+                                        ref ClausulaSQLProductos);
+
                 if (ddlCategorias.SelectedItem.Text != "CATEGORIAS")
                     ConstruirClausulaSQL("nombre_categoria_C", // string nombre campo
                                          "Contiene:", // "mayor a" "Menor a" "igual a"
@@ -103,7 +122,16 @@ namespace PRESENTACION
                                         "Contiene:",
                                         ddlGeneros.SelectedItem.Text,
                                         ref ClausulaSQLProductos);
-
+                if (TxtFechaInicio.Text != "")
+                    ConstruirClausulaSQL("fVenta_V",
+                                         "mayor:",
+                                         TxtFechaInicio.Text,
+                                         ref ClausulaSQLProductos);
+                if(TxtFechaFin.Text != "")
+                    ConstruirClausulaSQL("fVenta_V",
+                                        "menor:",
+                                        TxtFechaFin.Text,
+                                        ref ClausulaSQLProductos);
 
                 grdVentas.DataSource = n_Venta.getFiltrarProductoVendido(ClausulaSQLProductos);
                 grdVentas.DataBind();       
@@ -121,6 +149,8 @@ namespace PRESENTACION
             cargarDropdownListPlataformas();
             cargarDropdownListGeneros();
             cargarDropdownListCategorias();
+            TxtFechaInicio.Text = "";
+            TxtFechaFin.Text = "";
             grdVentas.DataSource = n_Venta.getTabla();
             grdVentas.DataBind();      
         }

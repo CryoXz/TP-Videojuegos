@@ -6,31 +6,37 @@
 
 
     <div class="col-md-10">
-        <div class="container">
+        <div class="container-fluid">
             <h3>Filtros de Ventas</h3>
             <hr />
             <div class="row">
                 <div class="form-inline">
                     <asp:Label ID="Label1" runat="server" Text="Label">NOMBRE DE PRODUCTO</asp:Label>
                     &nbsp
-                    <asp:TextBox ID="txtNombreBuscar" runat="server" Cssclass="rounded"></asp:TextBox>
+                    <asp:TextBox ID="txtNombreBuscar" runat="server" Cssclass="rounded" pattern="[A-Za-z]*{1,30}" title="Solo se admiten Letras sin caracteres especiales. Tamaño mínimo: 1. Tamaño máximo: 30"></asp:TextBox>
                     &nbsp
                     <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click1" />
                 </div>
             </div>
             <br />
             <div class="row">
-                &nbsp
-                <asp:DropDownList ID="ddlPlataformas" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
-                &nbsp
+                
+                 <asp:DropDownList ID="ddlPlataformas" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
+                 &nbsp
                  <asp:DropDownList ID="ddlGeneros" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
-                &nbsp
+                 &nbsp
                  <asp:DropDownList ID="ddlCategorias" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
-                &nbsp               
-                    <asp:Button ID="btnFiltrar" runat="server" Text="FILTRAR" CssClass="btn btn-danger" OnClick="btnFiltrar_Click" />
+                 &nbsp                  
+                <asp:TextBox ID = "TxtFechaInicio" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>           
+                 &nbsp   
+                <asp:Label ID="LblHasta" runat="server" Text="Label">ENTRE:</asp:Label> 
+                 
+                 <asp:TextBox ID = "TxtFechaFin" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>
+                 &nbsp
+                 <asp:Button ID="btnFiltrar" runat="server" Text="FILTRAR" CssClass="btn btn-danger" OnClick="btnFiltrar_Click" />
                 &nbsp         
                    <asp:Button ID="btnQuitarFiltro" runat="server" Text="QUITAR FILTRO" CssClass="btn btn-danger" OnClick="btnQuitarFiltro_Click" />
-            </div>
+            </div>           
         </div>
         <hr />      
         <asp:GridView ID="grdVentas" runat="server" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -61,9 +67,14 @@
                         <asp:Label ID="lbl_it_Genero" runat="server" Text='<%# Bind("Nombre_Genero_G") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Vedidos">
+                <asp:TemplateField HeaderText="Vendidos">
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_Vendidos" runat="server" Text='<%# Bind("Vendidos") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Fecha Venta">
+                    <ItemTemplate>
+                        <asp:Label ID="lbl_it_FechaVenta" runat="server" Text='<%# Bind("fVenta_V") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Estado">
@@ -83,5 +94,5 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-    </div>
+      </div>
 </asp:Content>

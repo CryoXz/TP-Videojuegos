@@ -1,6 +1,7 @@
 USE MASTER
 GO
-
+drop database TiendaVideojuegos
+go
 CREATE DATABASE TiendaVideojuegos
 GO
 
@@ -2773,6 +2774,8 @@ INSERT INTO DetalleVentas(Cod_Venta_DV, Cod_Producto_DV, Cod_Plataforma_DV, Cant
 SELECT 1, 'A2', 'PF1', 1, 32500 UNION
 SELECT 2, 'A5', 'PF1', 1, 4900 UNION
 SELECT 2, 'A6', 'PF1', 1, 5000
+
+go
 
 CREATE PROCEDURE SpAltaCategorias(
 	@Cod_Categoria_C char(4),

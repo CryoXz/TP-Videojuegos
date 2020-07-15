@@ -67,6 +67,33 @@ namespace PRESENTACION {
         protected global::System.Web.UI.WebControls.DropDownList ddlCategorias;
         
         /// <summary>
+        /// Control TxtFechaInicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtFechaInicio;
+        
+        /// <summary>
+        /// Control LblHasta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblHasta;
+        
+        /// <summary>
+        /// Control TxtFechaFin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtFechaFin;
+        
+        /// <summary>
         /// Control btnFiltrar.
         /// </summary>
         /// <remarks>
