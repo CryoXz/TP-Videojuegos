@@ -42,7 +42,7 @@
                         <asp:TemplateField HeaderText="CANTIDAD">
                             <EditItemTemplate>
                                 Cantidad: 
-                                <asp:TextBox ID="txtCantidad" runat="server" type="number" Text='<%# Bind("Cantidad") %>'></asp:TextBox>
+                                <asp:TextBox ID="txtCantidad" runat="server" type="number" min="1" max="10" Text='<%# Bind("Cantidad") %>'></asp:TextBox>
                             </EditItemTemplate>
                             <ItemTemplate>
                                 <h7>Cantidad: <asp:Label ID="lblCantidad" runat="server" Text='<%# Bind("Cantidad") %>'></asp:Label></h7>

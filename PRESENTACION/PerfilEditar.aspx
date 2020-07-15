@@ -17,42 +17,37 @@
                 <br />
                 <div>
                     <h6>Nombre:</h6>
-                    <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtNombre" runat="server" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <div>
                     <h6>Apellido:</h6>
-                    <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtApellido" runat="server" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <div>
                     <h6>Nombre de usuario:</h6>
-                    <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
-                </div>
-                <br />
-                <div>
-                    <h6>Contraseña:</h6>
-                    <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtUsername" runat="server" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <div>
                     <h6>Email:</h6>
-                    <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" type="email" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <div>
                     <h6>DNI:</h6>
-                    <asp:TextBox ID="txtDNI" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDNI" runat="server" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <div>
                     <h6>Fecha de nacimiento:</h6>
-                    <asp:TextBox ID="txtFecha" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtFecha" runat="server" type="date"></asp:TextBox>
                 </div>
                 <br />
                 <div>
                     <h6>Provincia:</h6>
-                    <asp:DropDownList ID="ddlProvincia" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged"></asp:DropDownList>
                 </div>
                 <br />
                 <div>
@@ -62,17 +57,17 @@
                 <br />
                 <div>
                     <h6>Direccion:</h6>
-                    <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtDireccion" runat="server" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <div>
                     <h6>Telefono:</h6>
-                    <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefono" runat="server" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <br />
                 <div style="text-align:center">
-                    <asp:Button ID="btnFinalizar" class="btn btn-danger" runat="server" Text="FINALIZAR EDICION" />
+                    <asp:Button ID="btnFinalizar" class="btn btn-danger" runat="server" Text="FINALIZAR EDICION" OnClick="btnFinalizar_Click" />
                 </div>
                 
                 <br />

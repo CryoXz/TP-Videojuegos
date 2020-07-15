@@ -28,6 +28,12 @@ namespace NEGOCIO
             return daoUsuario.getBuscarNombre(nombreBuscado);
         }
 
+        public int ModificarUsuario(Usuario usuario)
+        {
+            DaoUsuario daoUsuario = new DaoUsuario();
+            return daoUsuario.ModificarUsuario(usuario);
+        }
+
         //recibe por parametros desde RegistroUsuario.aspx los parametros en tipo texto.
         public void GuardarUsuario(String tipoUsuario, String nombre, String apellido, String nickname, String contraseña, String dni, /*DateTime fechaNacimiento,*/ String email, String telefono, String direccion)
         {

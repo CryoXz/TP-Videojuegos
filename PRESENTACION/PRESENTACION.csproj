@@ -143,6 +143,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Perfil.aspx" />
     <Content Include="PerfilEditar.aspx" />
+    <Content Include="PerfilPass.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="ProductosJuegos.aspx" />
     <Content Include="ProductosJuegosO.aspx" />
@@ -443,6 +444,13 @@
     </Compile>
     <Compile Include="PerfilEditar.aspx.designer.cs">
       <DependentUpon>PerfilEditar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilPass.aspx.cs">
+      <DependentUpon>PerfilPass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilPass.aspx.designer.cs">
+      <DependentUpon>PerfilPass.aspx</DependentUpon>
     </Compile>
     <Compile Include="Producto.aspx.cs">
       <DependentUpon>Producto.aspx</DependentUpon>

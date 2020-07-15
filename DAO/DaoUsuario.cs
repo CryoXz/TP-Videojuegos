@@ -24,6 +24,13 @@ namespace DAO
             return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaUsuario");
 
         }
+        public int ModificarUsuario(Usuario usuario)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosUsuario(ref comando, usuario);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarUsuario");
+
+        }
         private void ArmarParametrosUsuario(ref SqlCommand Comando, Usuario u) // funcion que arma los parametros del procedimiento almacenado
         {
             //definir parametro de acuerdo a la base de datos nueva
@@ -42,14 +49,18 @@ namespace DAO
             SqlParametros.Value = u.getContraseña();
             SqlParametros = Comando.Parameters.Add("@DNI_Usuario_U", SqlDbType.VarChar, 10);
             SqlParametros.Value = u.getDni();
-           // SqlParametros = Comando.Parameters.Add("@fNacimiento_Usuario_U", SqlDbType.SmallDateTime);
-           // SqlParametros.Value = u.getFechaNacimiento().ToString("yyyy-mm-dd");
+            SqlParametros = Comando.Parameters.Add("@fNacimiento_Usuario_U", SqlDbType.Date);
+            SqlParametros.Value = u.getFechaNacimiento().ToString("dd/MM/yyyy");
             SqlParametros = Comando.Parameters.Add("@Telefono_Usuario_U", SqlDbType.VarChar, 15);
             SqlParametros.Value = u.getTelefono();
             SqlParametros = Comando.Parameters.Add("@EMail_Usuario_U", SqlDbType.VarChar, 100);
             SqlParametros.Value = u.getEmail();
             SqlParametros = Comando.Parameters.Add("@Direccion_Usuario_U", SqlDbType.VarChar, 100);
             SqlParametros.Value = u.getDireccion();
+            SqlParametros = Comando.Parameters.Add("@Provincia_Usuario_U", SqlDbType.Char, 2);
+            SqlParametros.Value = u.getIdProvincia().getCodigoProvincia();
+            SqlParametros = Comando.Parameters.Add("@Localidad_Usuario_U", SqlDbType.Char, 4);
+            SqlParametros.Value = u.getIdLocalidad().getCodigolocalidad();
             SqlParametros = Comando.Parameters.Add("@Estado_Usuario_U", SqlDbType.Bit);
             SqlParametros.Value = u.getEstado();
 

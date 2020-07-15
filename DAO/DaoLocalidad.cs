@@ -30,6 +30,13 @@ namespace DAO
             return tabla;
         }
 
+        public DataTable getTablaPorID(string codProv)
+        {
+            //List<Localidad> lista = new List<Localidad>();
+            DataTable tabla = ds.ObtenerTabla("Localidad", "Select * from Localidades WHERE Cod_Provincia_loc = '" + codProv + "'");
+            return tabla;
+        }
+
 
         public DataSet getConsultarLocalidad()
         {

@@ -32,6 +32,12 @@ namespace NEGOCIO
             return data;
         }
 
+        public DataTable getTablaPorID(string codProv)
+        {
+            DaoLocalidad daoLocalidad = new DaoLocalidad();
+            DataTable tabla = daoLocalidad.getTablaPorID(codProv);
+            return tabla;
+        }
         public string getStringLocalidad(string codLoc)
         {
             DaoLocalidad daoLocalidad = new DaoLocalidad();

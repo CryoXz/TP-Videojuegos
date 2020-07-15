@@ -78,6 +78,9 @@
                     <a href="PerfilEditar.aspx">Editar datos de usuario</a>
                 </div>
                 <div style="text-align:right">
+                    <a href="PerfilPass.aspx">Cambiar contraseña</a>
+                </div>
+                <div style="text-align:right">
                     <a href="HistorialCompras.aspx">Ver historial de compras</a>
                 </div>
                 <br />

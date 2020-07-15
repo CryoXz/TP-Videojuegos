@@ -2868,3 +2868,51 @@ CREATE PROCEDURE SpAltaDetalleVentas(
 		VALUES(@Cod_Venta_DV, @Cod_Producto_DV, @Cod_Plataforma_DV, @Cantidad_Producto_DV, @PrecioUnitario_Venta_DV)
 		RETURN
 		GO
+
+    CREATE PROCEDURE spAltaUsuario(
+    		@Cod_Usuario_U char(4),
+        @Cod_TipoUsuario_U char(4),
+        @Nombre_Usuario_U varchar(60),
+        @Apellido_Usuario_U varchar(60),
+        @Nickname_Usuario_U varchar(100),
+        @Contraseña_Usuario_U varchar(100),
+        @DNI_Usuario_U varchar(10),
+        @fNacimiento_Usuario_U date,
+        @Telefono_Usuario_U varchar(15),
+        @EMail_Usuario_U varchar(100),
+        @Direccion_Usuario_U varchar(100),
+        @Provincia_Usuario_U char(2),
+        @Localidad_Usuario_U char(4),
+        @Estado_Usuario_U bit
+    		)
+    		AS
+    		INSERT INTO Usuarios(Cod_Usuario_U,Cod_TipoUsuario_U,Nombre_Usuario_U,Apellido_Usuario_U,Nickname_Usuario_U,Contraseña_Usuario_U,DNI_Usuario_U,fNacimiento_Usuario_U,Telefono_Usuario_U,EMail_Usuario_U,Direccion_Usuario_U,Provincia_Usuario_U,Localidad_Usuario_U,Estado_Usuario_U)
+        VALUES(@Cod_Usuario_U,@Cod_TipoUsuario_U,@Nombre_Usuario_U,@Apellido_Usuario_U,@Nickname_Usuario_U,@Contraseña_Usuario_U,@DNI_Usuario_U,@fNacimiento_Usuario_U,@Telefono_Usuario_U,@EMail_Usuario_U,@Direccion_Usuario_U,@Provincia_Usuario_U,@Localidad_Usuario_U,@Estado_Usuario_U)
+    		RETURN
+    		GO
+
+    CREATE PROCEDURE spModificarUsuario(
+        		@Cod_Usuario_U char(4),
+            @Cod_TipoUsuario_U char(4),
+            @Nombre_Usuario_U varchar(60),
+            @Apellido_Usuario_U varchar(60),
+            @Nickname_Usuario_U varchar(100),
+            @Contraseña_Usuario_U varchar(100),
+            @DNI_Usuario_U varchar(10),
+            @fNacimiento_Usuario_U date,
+            @Telefono_Usuario_U varchar(15),
+            @EMail_Usuario_U varchar(100),
+            @Direccion_Usuario_U varchar(100),
+            @Provincia_Usuario_U char(2),
+            @Localidad_Usuario_U char(4),
+            @Estado_Usuario_U bit
+        		)
+        		AS
+            BEGIN
+        		   UPDATE Usuarios SET Cod_Usuario_U = @Cod_Usuario_U, Cod_TipoUsuario_U = @Cod_TipoUsuario_U, Nombre_Usuario_U=@Nombre_Usuario_U ,Apellido_Usuario_U=@Apellido_Usuario_U, Nickname_Usuario_U=@Nickname_Usuario_U, Contraseña_Usuario_U=@Contraseña_Usuario_U,
+               DNI_Usuario_U=@DNI_Usuario_U,fNacimiento_Usuario_U=@fNacimiento_Usuario_U,Telefono_Usuario_U=@Telefono_Usuario_U,
+               EMail_Usuario_U=@EMail_Usuario_U,Direccion_Usuario_U=@Direccion_Usuario_U,Provincia_Usuario_U=@Provincia_Usuario_U,Localidad_Usuario_U=@Localidad_Usuario_U,Estado_Usuario_U=@Estado_Usuario_U
+        			WHERE Cod_Usuario_U = @Cod_Usuario_U AND Cod_TipoUsuario_U = @Cod_TipoUsuario_U
+        		END
+        		RETURN
+        		GO

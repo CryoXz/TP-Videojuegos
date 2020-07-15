@@ -23,8 +23,6 @@ namespace ENTIDAD
         private Provincia IdProvincia;
         private Localidad IdLocalidad;
 
-        Provincia provincia = new Provincia();
-        Localidad localidad = new Localidad();
         public Usuario()
         {
         }
@@ -126,22 +124,22 @@ namespace ENTIDAD
             Estado = estado;
         }
 
-        public string getIdProvincia()
+        public Provincia getIdProvincia()
         {
-            return provincia.getCodigoProvincia();
+            return IdProvincia;
         }
-        public void setProvincia(string p)
+        public void setProvincia(Provincia p)
         {
-            provincia.setCodigoProvincia(p);
+            IdProvincia = p;
         }
 
-        public string getIdLocalidad()
+        public Localidad getIdLocalidad()
         {
-            return localidad.getCodigoProvincia();
+            return IdLocalidad;
         }
-        public void setLocalidad(string p)
+        public void setLocalidad(Localidad l)
         {
-            localidad.setCodigoLocalidad(p);
+            IdLocalidad = l;
         }
     }
 }
