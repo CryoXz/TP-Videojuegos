@@ -143,7 +143,7 @@ namespace PRESENTACION
             DataTable dt = (DataTable)Session["carrito"];
             float total = 0;
             int cantidadvieja = Convert.ToInt32(dt.Rows[e.RowIndex]["Cantidad"]);
-            int cantidadnueva = Convert.ToInt32(((DropDownList)grdCarrito.Rows[e.RowIndex].FindControl("ddlCantidad")).SelectedValue);
+            int cantidadnueva = Convert.ToInt32(((TextBox)grdCarrito.Rows[e.RowIndex].FindControl("txtCantidad")).Text);
             float preciototal = float.Parse(((Label)grdCarrito.Rows[e.RowIndex].FindControl("lblPrecio")).Text);
             float preciounitario = preciototal / cantidadvieja;
             float precionuevo = preciounitario * cantidadnueva;

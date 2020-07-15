@@ -140,6 +140,8 @@
     <Content Include="IMAGES\xboxlogo.png" />
     <Content Include="IMAGES\xboxones-box.jpg" />
     <Content Include="Login.aspx" />
+    <Content Include="Perfil.aspx" />
+    <Content Include="PerfilEditar.aspx" />
     <Content Include="Producto.aspx" />
     <Content Include="ProductosJuegos.aspx" />
     <Content Include="ProductosJuegosO.aspx" />
@@ -419,6 +421,20 @@
     </Compile>
     <Compile Include="Logo.Master.designer.cs">
       <DependentUpon>Logo.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Perfil.aspx.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Perfil.aspx.designer.cs">
+      <DependentUpon>Perfil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilEditar.aspx.cs">
+      <DependentUpon>PerfilEditar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilEditar.aspx.designer.cs">
+      <DependentUpon>PerfilEditar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Producto.aspx.cs">
       <DependentUpon>Producto.aspx</DependentUpon>

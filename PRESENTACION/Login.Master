@@ -63,7 +63,7 @@
                                 <%=this.Session["username"].ToString().ToUpper() %>
                               </button>
                               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">PERFIL</a>
+                                <a class="dropdown-item" href="Perfil.aspx">PERFIL</a>
                                   <a class="dropdown-item" href="HistorialCompras.aspx">HISTORIAL DE COMPRAS</a>
                                 <div class="dropdown-divider"></div>
                                 <asp:Button ID="btnLogout1" runat="server" CssClass="dropdown-item" Text="CERRAR SESION" OnClick="btnLogout_click" />
