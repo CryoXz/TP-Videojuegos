@@ -61,3 +61,12 @@ D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
 D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.dll
 D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
 D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\DAO.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
