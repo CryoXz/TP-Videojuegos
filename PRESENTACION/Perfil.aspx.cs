@@ -76,7 +76,7 @@ namespace PRESENTACION
                         lblMensaje.Text = "SE HA ACTUALIZADO LA CONTRASEÑA CON EXITO!";
                         break;
                     default:
-                        lblMensaje.Text = "HA OCURRIDO UN ERROR";
+                        lblMensaje.Text = "";
                         break;
                 }
             }
