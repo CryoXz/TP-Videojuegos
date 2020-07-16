@@ -2916,3 +2916,44 @@ CREATE PROCEDURE SpAltaDetalleVentas(
         		END
         		RETURN
         		GO
+ 
+create procedure SpModificarProductos(
+	@Cod_Producto_PR char (4),
+	@Nombre_Producto_PR varchar (100),
+	@Descripcion_Producto_PR varchar (500),
+	@Cod_Marca_PR char (4),
+	@Cod_Categoria_PR char(4),
+	@Cod_Genero_PR char (4),
+	@fPublicacion_Producto_PR smalldatetime,
+	@Estado_Producto_PR bit
+)
+as
+begin 
+	update Productos SET Nombre_Producto_PR=@Nombre_Producto_PR, Descripcion_Producto_PR=@Descripcion_Producto_PR, Cod_Marca_PR=@Cod_Marca_PR, Cod_Categoria_PR=@Cod_Categoria_PR, Cod_Genero_PR=@Cod_Genero_PR, fPublicacion_Producto_PR=@fPublicacion_Producto_PR, Estado_Producto_PR=@Estado_Producto_PR
+	where Cod_Producto_PR=@Cod_Producto_PR
+end
+
+create procedure SpAltaProductos(
+	@Cod_Producto_PR char (4),
+	@Nombre_Producto_PR varchar (100),
+	@Descripcion_Producto_PR varchar (500),
+	@Cod_Marca_PR char (4),
+	@Cod_Categoria_PR char(4),
+	@Cod_Genero_PR char (4),
+	@fPublicacion_Producto_PR smalldatetime,
+	@Estado_Producto_PR bit
+)
+as 
+	insert into Productos(Cod_Producto_PR, Nombre_Producto_PR, Descripcion_Producto_PR, Cod_Marca_PR, Cod_Categoria_PR, Cod_Genero_PR, fPublicacion_Producto_PR, Estado_Producto_PR)
+	values(@Cod_Producto_PR, @Nombre_Producto_PR, @Descripcion_Producto_PR, @Cod_Marca_PR, @Cod_Categoria_PR, @Cod_Genero_PR, @fPublicacion_Producto_PR, @Estado_Producto_PR)
+	RETURN
+	GO
+	
+	CREATE PROCEDURE spEliminarProducto(
+    @IDPRODUCTO char(4)
+    )
+    AS
+    UPDATE Productos SET  Estado_Producto_PR=0
+ WHERE Cod_Producto_PR = @IDPRODUCTO
+    RETURN
+GO
