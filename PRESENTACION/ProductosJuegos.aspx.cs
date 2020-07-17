@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using NEGOCIO;
 using ENTIDAD;
 
@@ -37,31 +41,19 @@ namespace PRESENTACION
             if (!IsPostBack)
             {
 
+                N_PlataformaXProducto negpxp = new N_PlataformaXProducto();
+                DataTable tabla = null;
 
                 if (String.IsNullOrEmpty(Request.QueryString["cate"]))
                 {
                     string plataforma;
                     plataforma = Request.QueryString["plat"];
 
-                    switch (ddlOrden.SelectedValue)
-                    {
-                        case "1":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY Productos.Nombre_Producto_PR ASC";
-                            break;
-                        case "2":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY Productos.Nombre_Producto_PR DESC";
-                            break;
-                        case "3":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP ASC";
-                            break;
-                        case "4":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP DESC";
-                            break;
-                        default:
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "'";
-                            break;
-                    }
-                    
+                    tabla = negpxp.getTablaProductosJuegos(plataforma, "", 0, "ASC");
+                    grdProducto.DataSource = tabla;
+                    grdProducto.DataBind();
+
+
                     switch (plataforma)
                     {
                         case "pf1":
@@ -83,26 +75,9 @@ namespace PRESENTACION
                 {
                     string categoria;
                     categoria = Request.QueryString["cate"];
-                    SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "'";
-
-                    switch (ddlOrden.SelectedValue.Trim())
-                    {
-                        case "1":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR ASC";
-                            break;
-                        case "2":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR DESC";
-                            break;
-                        case "3":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP ASC";
-                            break;
-                        case "4":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP DESC";
-                            break;
-                        default:
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "'";
-                            break;
-                    }
+                    tabla = negpxp.getTablaProductosJuegos("", categoria, 0, "ASC");
+                    grdProducto.DataSource = tabla;
+                    grdProducto.DataBind();
 
                     switch (categoria)
                     {
@@ -127,25 +102,9 @@ namespace PRESENTACION
                     string categoria;
                     plataforma = Request.QueryString["plat"];
                     categoria = Request.QueryString["cate"];
-
-                    switch (ddlOrden.SelectedValue.Trim())
-                    {
-                        case "1":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR ASC";
-                            break;
-                        case "2":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY Productos.Nombre_Producto_PR DESC";
-                            break;
-                        case "3":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP ASC";
-                            break;
-                        case "4":
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "' AND Productos.Cod_Categoria_PR = '" + categoria + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP DESC";
-                            break;
-                        default:
-                            SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "'";
-                            break;
-                    }
+                    tabla = negpxp.getTablaProductosJuegos(plataforma, categoria, 0, "ASC");
+                    grdProducto.DataSource = tabla;
+                    grdProducto.DataBind();
 
                     if (plataforma == "pf1" && categoria == "ca2")
                     {
@@ -174,20 +133,7 @@ namespace PRESENTACION
                     else { lblTitulo.Text = "<h1>-OTROS-</h1>"; }
                 }
 
-                if (this.Session["carrito"] == null)
-                    this.Session["carrito"] = GestionCompra.CrearCarrito();
-
             }
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void grdProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
 
@@ -220,10 +166,162 @@ namespace PRESENTACION
 
         }
 
-        protected void grdProducto_ItemCommand(object sender, ListViewCommandEventArgs e)
+        protected void ddlOrden_SelectedIndexChanged(object sender, EventArgs e)
         {
+            grdProducto.DataSource = null;
+            grdProducto.DataBind();
+            N_PlataformaXProducto negpxp = new N_PlataformaXProducto();
+            DataTable tabla = null;
 
+            if (String.IsNullOrEmpty(Request.QueryString["cate"]))
+            {
+                string plataforma;
+                plataforma = Request.QueryString["plat"];
 
+                switch (ddlOrden.SelectedValue)
+                {
+                    case "1":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, "", 0, "ASC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "2":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, "", 0, "DESC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "3":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, "", 1, "ASC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "4":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, "", 1, "DESC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                }
+
+                switch (plataforma)
+                {
+                    case "pf1":
+                        lblTitulo.Text = "<h1>-OFERTAS SWITCH-</h1>";
+                        break;
+                    case "pf4":
+                        lblTitulo.Text = "<h1>-OFERTAS PLAYSTATION 4-</h1>";
+                        break;
+                    case "pf7":
+                        lblTitulo.Text = "<h1>-OFERTAS XBOX ONE-</h1>";
+                        break;
+                    default:
+                        lblTitulo.Text = "";
+                        break;
+
+                }
+            }
+            else if (String.IsNullOrEmpty(Request.QueryString["plat"]))
+            {
+                string categoria;
+                categoria = Request.QueryString["cate"];
+
+                switch (ddlOrden.SelectedValue)
+                {
+                    case "1":
+                        tabla = negpxp.getTablaProductosJuegos("", categoria, 0, "ASC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "2":
+                        tabla = negpxp.getTablaProductosJuegos("", categoria, 0, "DESC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "3":
+                        tabla = negpxp.getTablaProductosJuegos("", categoria, 1, "ASC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "4":
+                        tabla = negpxp.getTablaProductosJuegos("", categoria, 1, "DESC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                }
+
+                switch (categoria)
+                {
+                    case "ca1":
+                        lblTitulo.Text = "<h1>-CONSOLAS-</h1>";
+                        break;
+                    case "ca2":
+                        lblTitulo.Text = "<h1>-VIDEOJUEGOS-</h1>";
+                        break;
+                    case "ca3":
+                        lblTitulo.Text = "<h1>-ACCESORIOS-</h1>";
+                        break;
+                    default:
+                        lblTitulo.Text = "<h1>-OTROS-</h1>";
+                        break;
+
+                }
+            }
+            else
+            {
+                string plataforma;
+                string categoria;
+                plataforma = Request.QueryString["plat"];
+                categoria = Request.QueryString["cate"];
+
+                switch (ddlOrden.SelectedValue)
+                {
+                    case "1":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, categoria, 0, "ASC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "2":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, categoria, 0, "DESC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "3":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, categoria, 1, "ASC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                    case "4":
+                        tabla = negpxp.getTablaProductosJuegos(plataforma, categoria, 1, "DESC");
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        break;
+                }
+
+                if (plataforma == "pf1" && categoria == "ca2")
+                {
+                    lblTitulo.Text = "<h1>-JUEGOS SWITCH-</h1>";
+                }
+                else if (plataforma == "pf1" && categoria.Trim() == "ca3")
+                {
+                    lblTitulo.Text = "<h1>-ACCESORIOS SWITCH-</h1>";
+                }
+                else if (plataforma == "pf4" && categoria.Trim() == "ca2")
+                {
+                    lblTitulo.Text = "<h1>-JUEGOS PLAYSTATION 4-</h1>";
+                }
+                else if (plataforma == "pf4" && categoria.Trim() == "ca3")
+                {
+                    lblTitulo.Text = "<h1>-ACCESORIOS PLAYSTATION 4-</h1>";
+                }
+                else if (plataforma == "pf7" && categoria.Trim() == "ca2")
+                {
+                    lblTitulo.Text = "<h1>-JUEGOS XBOX ONE-</h1>";
+                }
+                else if (plataforma == "pf7" && categoria.Trim() == "ca3")
+                {
+                    lblTitulo.Text = "<h1>-ACCESORIOS XBOX ONE-</h1>";
+                }
+                else { lblTitulo.Text = "<h1>-OTROS-</h1>"; }
+            }
         }
     }
 }
