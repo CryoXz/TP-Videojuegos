@@ -143,5 +143,17 @@ namespace DAO
             ArmarParametrosProductos(ref comando, p);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaProductos");
         }
+        
+        public DataTable getTablaProductoFoto(string codProd, string codPlat)
+        {
+            DataTable table = ds.ObtenerTabla("Producto", "SELECT PlataformaxProducto.Imagen_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP INNER JOIN Plataformas ON PlataformaxProducto.Cod_Plataforma_PxP = Plataformas.Cod_Plataforma_P WHERE PlataformaxProducto.Cod_Producto_PxP = '" + codProd + "' AND PlataformaxProducto.Cod_Plataforma_PxP = '" + codPlat + "'");
+            return table;
+        }
+
+        public DataTable getTablaProductoDatos(string codProd, string codPlat)
+        {
+            DataTable table = ds.ObtenerTabla("Producto", "SELECT Productos.Nombre_Producto_PR, Plataformas.Nombre_Plataforma_P, PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP INNER JOIN Plataformas ON PlataformaxProducto.Cod_Plataforma_PxP = Plataformas.Cod_Plataforma_P WHERE PlataformaxProducto.Cod_Producto_PxP = '" + codProd + "' AND PlataformaxProducto.Cod_Plataforma_PxP = '" + codPlat + "'");
+            return table;
+        }
     }
 }

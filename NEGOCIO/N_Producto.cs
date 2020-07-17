@@ -93,5 +93,17 @@ namespace NEGOCIO
             DaoProducto dao = new DaoProducto();
             return dao.getCodigoProductoConNombre(name);
         }
+
+        public DataTable getTablaProductoFoto(string codProd, string codPlat)
+        {
+            DaoProducto dao = new DaoProducto();
+            return dao.getTablaProductoFoto(codProd, codPlat);
+        }
+
+        public DataTable getTablaProductoDatos(string codProd, string codPlat)
+        {
+            DaoProducto dao = new DaoProducto();
+            return dao.getTablaProductoDatos(codProd, codPlat);
+        }
     }
 }

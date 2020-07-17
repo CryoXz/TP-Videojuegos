@@ -38,14 +38,19 @@ namespace PRESENTACION
             {
                 if (!String.IsNullOrEmpty(Request.QueryString["prod"]) && !String.IsNullOrEmpty(Request.QueryString["plat"]))
                 {
-
+                    N_Producto negP = new N_Producto();
                     string producto;
                     string plataforma;
                     producto = Request.QueryString["prod"];
                     plataforma = Request.QueryString["plat"];
-                    SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP INNER JOIN Plataformas ON PlataformaxProducto.Cod_Plataforma_PxP = Plataformas.Cod_Plataforma_P WHERE PlataformaxProducto.Cod_Producto_PxP = '" + producto + "' AND PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "'";
 
-                    SqlDataSource2.SelectCommand = "SELECT Productos.Nombre_Producto_PR, Plataformas.Nombre_Plataforma_P, PlataformaxProducto.PrecioUnitario_Producto_PxP  FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP INNER JOIN Plataformas ON PlataformaxProducto.Cod_Plataforma_PxP = Plataformas.Cod_Plataforma_P WHERE PlataformaxProducto.Cod_Producto_PxP = '" + producto + "' AND PlataformaxProducto.Cod_Plataforma_PxP = '" + plataforma + "'";
+                    DataTable tabla = negP.getTablaProductoFoto(producto, plataforma);
+                    grdProd.DataSource = tabla;
+                    grdProd.DataBind();
+
+                    DataTable tabla2 = negP.getTablaProductoDatos(producto, plataforma);
+                    grdDatos.DataSource = tabla2;
+                    grdDatos.DataBind();
                 }
             }
 
@@ -58,11 +63,11 @@ namespace PRESENTACION
             GestionCompra gc = new GestionCompra();
 
 
-            Image imgbtn = this.ListView1.Items[0].FindControl("ImgProd") as Image;
-            Label lbl2 = this.ListView2.Items[0].FindControl("Nombre_Producto_PRLabel") as Label;
-            Label lbl3 = this.ListView2.Items[0].FindControl("PrecioUnitario_Producto_PxPLabel") as Label;
-            Label lbl4 = this.ListView2.Items[0].FindControl("Nombre_Plataforma_PLabel") as Label;
-            DropDownList ddl = this.ListView2.Items[0].FindControl("ddlCant") as DropDownList;
+            Image imgbtn = this.grdProd.Items[0].FindControl("ImgProd") as Image;
+            Label lbl2 = this.grdDatos.Items[0].FindControl("Nombre_Producto_PRLabel") as Label;
+            Label lbl3 = this.grdDatos.Items[0].FindControl("PrecioUnitario_Producto_PxPLabel") as Label;
+            Label lbl4 = this.grdDatos.Items[0].FindControl("Nombre_Plataforma_PLabel") as Label;
+            TextBox txt = this.grdDatos.Items[0].FindControl("txtCant") as TextBox;
             
 
             string imgUrl, name, plat;
@@ -72,7 +77,7 @@ namespace PRESENTACION
             imgUrl = imgbtn.ImageUrl;
             name = lbl2.Text;
             plat = lbl4.Text;
-            cant = Convert.ToInt32(ddl.SelectedValue);
+            cant = Convert.ToInt32(txt.Text);
             precio = (float) Convert.ToDouble(lbl3.Text.Trim());
             preciototal = precio * cant;
             
@@ -85,9 +90,5 @@ namespace PRESENTACION
 
         }
 
-        protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
