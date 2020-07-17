@@ -32,8 +32,8 @@ namespace PRESENTACION
         {
             String s_codigoProducto = ((Label)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_codigoProducto")).Text;
 
-            N_Producto n_plat = new N_Producto();
-            n_plat.eliminarProducto(s_codigoProducto);
+            N_Producto n = new N_Producto();
+            n.eliminarProducto(s_codigoProducto);
             cargarGridview();
 
 

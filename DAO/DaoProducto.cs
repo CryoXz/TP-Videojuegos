@@ -73,10 +73,10 @@ namespace DAO
 
 
 
-        public int eliminarProducto(Producto cat)
+        public int eliminarProducto(Producto p)
         {
             SqlCommand comando = new SqlCommand();
-            ArmarParametrosProductoEliminar(ref comando, cat);
+            ArmarParametrosProductoEliminar(ref comando, p);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarProducto");
         }
 

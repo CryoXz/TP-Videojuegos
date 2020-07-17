@@ -85,5 +85,18 @@ namespace NEGOCIO
             return daoUsuario.getIDporUsername(user);
         }
 
+        public bool eliminarUsuario(string id)
+        {
+
+            DaoUsuario dao = new DaoUsuario();
+            Usuario u = new Usuario();
+            u.setCodigoUsuario(id);
+            int op = dao.eliminarUsuario(u);
+            if (op == 1)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

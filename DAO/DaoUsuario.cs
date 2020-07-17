@@ -67,7 +67,7 @@ namespace DAO
         }
         public DataTable getTablaUsuarios()
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Estado_Usuario_U from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU");
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Cod_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Provincia_Usuario_U, Localidad_Usuario_U, Nombre_prov, Nombre_loc, Estado_Usuario_U, Cod_Provincia_loc from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU inner join Localidades on Localidad_Usuario_U=Cod_Localidad_loc inner join Provincias on Provincia_Usuario_U=Cod_Provincia_prov");
             return tabla;
         }
         public DataTable getTablaUsuariosConFiltro(Char tipoUsuario)
@@ -104,6 +104,19 @@ namespace DAO
         public string getIDporUsername(string username)
         {
             return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_Usuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "'");
+        }
+
+        public int eliminarUsuario(Usuario u)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosUsuarioEliminar(ref comando, u);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarProducto");
+        }
+        private void ArmarParametrosUsuarioEliminar(ref SqlCommand Comando, Usuario u)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@IDUsuario", SqlDbType.Char, 4);
+            SqlParametros.Value = u.getCodigoUsuario();
         }
     }
 }
