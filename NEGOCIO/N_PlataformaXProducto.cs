@@ -64,5 +64,23 @@ namespace NEGOCIO
             return dao.modificarStockProducto(codProd, stock);
         }
 
+        public DataTable getTablaProductosJuegos(string plat, string cate, int modo, string sort)
+        {
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            return dao.getTablaProductosJuegos(plat, cate, modo, sort);
+        }
+
+        public DataTable getTablaProductosJuegosBusqueda(string busqueda, string sort, int modo)
+        {
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            return dao.getTablaProductosJuegosBusqueda(busqueda, sort, modo);
+        }
+
+        public DataTable getTablaProductosJuegosO(string cate, string sort, int modo)
+        {
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            return dao.getTablaProductosJuegosO(cate, sort, modo);
+        }
+
     }
 }

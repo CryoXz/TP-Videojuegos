@@ -4,6 +4,10 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using NEGOCIO;
 using ENTIDAD;
 
@@ -36,22 +40,32 @@ namespace PRESENTACION
         {
             if (!IsPostBack)
             {
+                N_PlataformaXProducto negpxp = new N_PlataformaXProducto();
+                DataTable tabla = null;
 
-                if (!String.IsNullOrEmpty(Request.QueryString["s"]))
-                {
-                    string busqueda;
-                    busqueda = Request.QueryString["s"];
-                    SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Nombre_Producto_PR LIKE '%" + busqueda + "%'";
-                    lblTitulo.Text = "<h1>-RESULTADOS-</h1>";
-
-                }
-                else
+                if (String.IsNullOrEmpty(Request.QueryString["s"]))
                 {
                     string categoria;
                     categoria = Request.QueryString["cate"];
-                    SqlDataSource1.SelectCommand = "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + categoria + "' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF1' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF4' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF7'";
-
+                    tabla = negpxp.getTablaProductosJuegosO(categoria, "ASC", 0);
+                    grdProducto.DataSource = tabla;
+                    grdProducto.DataBind();
                     lblTitulo.Text = "<h1>-OTROS-</h1>";
+                }
+                else
+                {
+                    string busqueda;
+                    busqueda = Request.QueryString["s"].Trim();
+                    tabla = negpxp.getTablaProductosJuegosBusqueda(busqueda, "ASC", 0);
+                    grdProducto.DataSource = tabla;
+                    grdProducto.DataBind();
+                    lblTitulo.Text = "<h1>-RESULTADOS-</h1>";
+
+
+
+                    ///SqlDataSource1.SelectCommand = ";
+
+
                 }
 
 
@@ -86,6 +100,84 @@ namespace PRESENTACION
 
 
 
+        }
+
+        protected void ddlOrden_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            grdProducto.DataSource = null;
+            grdProducto.DataBind();
+            N_PlataformaXProducto negpxp = new N_PlataformaXProducto();
+            DataTable tabla = null;
+
+            if (String.IsNullOrEmpty(Request.QueryString["s"]))
+            {
+                string categoria;
+                categoria = Request.QueryString["cate"];
+
+                switch (ddlOrden.SelectedValue)
+                {
+                    case "1":
+                        tabla = negpxp.getTablaProductosJuegosO(categoria, "ASC", 0);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-OTROS-</h1>";
+                        break;
+                    case "2":
+                        tabla = negpxp.getTablaProductosJuegosO(categoria, "DESC", 0);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-OTROS-</h1>";
+                        break;
+                    case "3":
+                        tabla = negpxp.getTablaProductosJuegosO(categoria, "ASC", 1);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-OTROS-</h1>";
+                        break;
+                    case "4":
+                        tabla = negpxp.getTablaProductosJuegosO(categoria, "DESC", 1);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-OTROS-</h1>";
+                        break;
+                }
+
+            }
+            else
+            {
+                string busqueda;
+                busqueda = Request.QueryString["s"].Trim();
+
+                switch (ddlOrden.SelectedValue)
+                {
+                    case "1":
+                        tabla = negpxp.getTablaProductosJuegosBusqueda(busqueda, "ASC", 0);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-RESULTADOS-</h1>";
+                        break;
+                    case "2":
+                        tabla = negpxp.getTablaProductosJuegosBusqueda(busqueda, "DESC", 0);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-RESULTADOS-</h1>";
+                        break;
+                    case "3":
+                        tabla = negpxp.getTablaProductosJuegosBusqueda(busqueda, "ASC", 1);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-RESULTADOS-</h1>";
+                        break;
+                    case "4":
+                        tabla = negpxp.getTablaProductosJuegosBusqueda(busqueda, "DESC", 1);
+                        grdProducto.DataSource = tabla;
+                        grdProducto.DataBind();
+                        lblTitulo.Text = "<h1>-RESULTADOS-</h1>";
+                        break;
+                }
+
+
+            }
         }
     }
 }
