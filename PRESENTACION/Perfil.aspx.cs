@@ -75,6 +75,15 @@ namespace PRESENTACION
                     case "3":
                         lblMensaje.Text = "SE HA ACTUALIZADO LA CONTRASEÑA CON EXITO!";
                         break;
+                    case "4":
+                        lblMensaje.Text = "EMAIL INCORRECTO!";
+                        break;
+                    case "5":
+                        lblMensaje.Text = "ERROR AL ACTUALIZAR!";
+                        break;
+                    case "6":
+                        lblMensaje.Text = "FECHA INCORRECTA!";
+                        break;
                     default:
                         lblMensaje.Text = "";
                         break;

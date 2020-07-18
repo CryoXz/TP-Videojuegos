@@ -11,18 +11,6 @@ namespace PRESENTACION
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            switch (Session["usertype"])
-            {
-                case "TU1":
-                    btnPerfil.Text = "ADMINISTRACIÓN";
-                    break;
-                case "TU2":
-                    btnPerfil.Text = "PERFIL";
-                    break;
-                default:
-                    btnPerfil.Text = "PERFIL";
-                    break;
-            }
         }
 
         public void btnLogout_click(object sender, EventArgs e)
@@ -35,22 +23,6 @@ namespace PRESENTACION
             if (!String.IsNullOrEmpty(txtBusqueda.Text.Trim()))
             {
                 Response.Redirect("ProductosJuegosO.aspx?s=" + txtBusqueda.Text);
-            }
-        }
-
-        protected void btnPerfil_Click(object sender, EventArgs e)
-        {
-            switch (Session["usertype"])
-            {
-                case "TU1":
-                    Response.Redirect("AdminVentas.aspx");
-                    break;
-                case "TU2":
-                    Response.Redirect("Perfil.aspx");
-                    break;
-                default:
-                    Response.Redirect("Perfil.aspx");
-                    break;
             }
         }
     }

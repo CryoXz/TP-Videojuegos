@@ -32,12 +32,12 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="CANTIDAD">
                             <ItemTemplate>
-                                <asp:Label ID="Label3" runat="server" Text='<%# Bind("Cantidad") %>'></asp:Label>
+                                Cantidad: <asp:Label ID="Label3" runat="server" Text='<%# Bind("Cantidad") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="PRECIOTOTAL">
                             <ItemTemplate>
-                                <asp:Label ID="Label4" runat="server" Text='<%# Bind("PrecioTotal") %>'></asp:Label>
+                                $<asp:Label ID="Label4" runat="server" Text='<%# Bind("PrecioTotal", "{0:0.00}") %>'></asp:Label>
                             </ItemTemplate>
                         </asp:TemplateField>
                         

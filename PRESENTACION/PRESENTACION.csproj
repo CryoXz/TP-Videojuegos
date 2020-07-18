@@ -91,6 +91,7 @@
     <Content Include="AdminGenero.aspx" />
     <Content Include="Content\Carrito.css" />
     <Content Include="Content\ProductosJuegos.css" />
+    <Content Include="Content\Random.css" />
     <Content Include="HistorialCompras.aspx" />
     <Content Include="HistorialDetalle.aspx" />
     <Content Include="Home.aspx" />
