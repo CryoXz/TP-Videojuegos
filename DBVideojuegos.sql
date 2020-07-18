@@ -2923,14 +2923,15 @@ create procedure SpModificarProductos(
 	@Cod_Marca_PR char (4),
 	@Cod_Categoria_PR char(4),
 	@Cod_Genero_PR char (4),
-	@fPublicacion_Producto_PR smalldatetime,
-	@Estado_Producto_PR bit
+	@fPublicacion_Producto_PR smalldatetime
+
 )
 as
 begin
-	update Productos SET Nombre_Producto_PR=@Nombre_Producto_PR, Descripcion_Producto_PR=@Descripcion_Producto_PR, Cod_Marca_PR=@Cod_Marca_PR, Cod_Categoria_PR=@Cod_Categoria_PR, Cod_Genero_PR=@Cod_Genero_PR, fPublicacion_Producto_PR=@fPublicacion_Producto_PR, Estado_Producto_PR=@Estado_Producto_PR
+	update Productos SET Nombre_Producto_PR=@Nombre_Producto_PR, Descripcion_Producto_PR=@Descripcion_Producto_PR, Cod_Marca_PR=@Cod_Marca_PR, Cod_Categoria_PR=@Cod_Categoria_PR, Cod_Genero_PR=@Cod_Genero_PR, fPublicacion_Producto_PR=@fPublicacion_Producto_PR
 	where Cod_Producto_PR=@Cod_Producto_PR
 end
+go
 
 create procedure SpAltaProductos(
 	@Cod_Producto_PR char (4),
