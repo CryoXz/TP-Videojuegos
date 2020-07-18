@@ -154,5 +154,22 @@ namespace DAO
             DataTable table = ds.ObtenerTabla("Producto", "SELECT Productos.Nombre_Producto_PR, Plataformas.Nombre_Plataforma_P, PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP INNER JOIN Plataformas ON PlataformaxProducto.Cod_Plataforma_PxP = Plataformas.Cod_Plataforma_P WHERE PlataformaxProducto.Cod_Producto_PxP = '" + codProd + "' AND PlataformaxProducto.Cod_Plataforma_PxP = '" + codPlat + "'");
             return table;
         }
+
+        public DataTable getBuscarNombre(String nombreBuscado)
+        {
+            DataTable tabla = ds.ObtenerTabla("Productos", "SELECT Productos.Cod_Producto_PR as Codigo, Productos.Nombre_Producto_PR as Nombre, Productos.Descripcion_Producto_PR as Descripcion, Marcas.Cod_Marca_M as CodMarca, Marcas.Nombre_Marca_M as NombreMarca, Categorias.Cod_Categoria_C as CodCategoria, Categorias.Nombre_Categoria_C as NombreCategoria, Generos.Cod_Genero_G as CodGenero, Generos.Nombre_Genero_G as NombreGenero, " +
+            "Productos.fPublicacion_Producto_PR as FPublicacion, Productos.Estado_Producto_PR as Estado, PlataformaxProducto.Cod_Plataforma_PxP as CodPlataforma, PlataformaxProducto.Stock_Producto_PxP as Stock, PlataformaxProducto.PrecioUnitario_Producto_PxP as PrecioUnitario, PlataformaxProducto.Imagen_Producto_PxP as imgURL, Plataformas.Nombre_Plataforma_P as NombrePlataforma " +
+            "FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP inner join Plataformas on Cod_Plataforma_P = Cod_Plataforma_PxP " +
+            "inner join Marcas on Cod_Marca_M = Cod_Marca_PR inner join Categorias on Cod_Categoria_C = Cod_Categoria_PR inner join Generos on Cod_Genero_G = Cod_Genero_PR WHERE Productos.Estado_Producto_PR=1 AND Nombre_Producto_PR like '%" + nombreBuscado.ToString() + "%' group by Cod_Producto_PR, Nombre_Producto_PR, nombre_categoria_C, Nombre_Plataforma_P, Nombre_Genero_G, fPublicacion_PR, Estado_Producto_PR");
+            return tabla;
+        }
+        public DataSet getBuscarProductoFiltrado(String ClausulaSqlProductos)
+        {
+            DataSet data = ds.Consultar("SELECT Productos.Cod_Producto_PR as Codigo, Productos.Nombre_Producto_PR as Nombre, Productos.Descripcion_Producto_PR as Descripcion, Marcas.Cod_Marca_M as CodMarca, Marcas.Nombre_Marca_M as NombreMarca, Categorias.Cod_Categoria_C as CodCategoria, Categorias.Nombre_Categoria_C as NombreCategoria, Generos.Cod_Genero_G as CodGenero, Generos.Nombre_Genero_G as NombreGenero, " +
+            "Productos.fPublicacion_Producto_PR as FPublicacion, Productos.Estado_Producto_PR as Estado, PlataformaxProducto.Cod_Plataforma_PxP as CodPlataforma, PlataformaxProducto.Stock_Producto_PxP as Stock, PlataformaxProducto.PrecioUnitario_Producto_PxP as PrecioUnitario, PlataformaxProducto.Imagen_Producto_PxP as imgURL, Plataformas.Nombre_Plataforma_P as NombrePlataforma " +
+            "FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP inner join Plataformas on Cod_Plataforma_P = Cod_Plataforma_PxP " +
+            "inner join Marcas on Cod_Marca_M = Cod_Marca_PR inner join Categorias on Cod_Categoria_C = Cod_Categoria_PR inner join Generos on Cod_Genero_G = Cod_Genero_PR WHERE Productos.Estado_Producto_PR=1 AND" + ClausulaSqlProductos + "group by Cod_Producto_PR, Nombre_Producto_PR, nombre_categoria_C, Nombre_Plataforma_P, Nombre_Genero_G, fPublicacion_PR, Estado_Producto_PR");
+            return data;
+        }
     }
 }

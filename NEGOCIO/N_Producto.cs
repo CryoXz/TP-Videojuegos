@@ -105,5 +105,20 @@ namespace NEGOCIO
             DaoProducto dao = new DaoProducto();
             return dao.getTablaProductoDatos(codProd, codPlat);
         }
+
+
+        public DataTable getBuscarProducto(String nombreBuscado)
+        {
+            DaoProducto dao= new DaoProducto();
+            return dao.getBuscarNombre(nombreBuscado);
+        }
+
+        public DataSet getFiltrarProducto(String n_ClausulaSqlProductos)
+        {
+            DaoProducto dao = new DaoProducto();
+            return dao.getBuscarProductoFiltrado(n_ClausulaSqlProductos);
+        }
+
+
     }
 }

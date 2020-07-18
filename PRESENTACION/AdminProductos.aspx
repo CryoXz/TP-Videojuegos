@@ -37,11 +37,6 @@
                 </div>
             &nbsp
                 <div class="dropdown">
-                    <asp:DropDownList ID="ddlMarcas" runat="server" AutoPostBack="True" >
-                    </asp:DropDownList>
-                </div>
-            &nbsp
-                <div class="dropdown">
                         <asp:DropDownList ID="ddlGeneros" runat="server" AutoPostBack="True" >
                         </asp:DropDownList>
                 </div>
