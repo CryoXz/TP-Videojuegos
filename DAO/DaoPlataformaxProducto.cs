@@ -66,11 +66,11 @@ namespace DAO
             SqlParametros = Comando.Parameters.Add("@Cod_Plataforma_PxP", SqlDbType.Char, 4);
             SqlParametros.Value = p.getIdPlataforma();
             SqlParametros = Comando.Parameters.Add("@Stock_Producto_PxP", SqlDbType.Int);
-            SqlParametros.Value = p.getIdPlataforma();
+            SqlParametros.Value = p.getStock().ToString();
             SqlParametros = Comando.Parameters.Add("@PrecioUnitario_Producto_PxP", SqlDbType.Money);
-            SqlParametros.Value = p.getIdPlataforma();
+            SqlParametros.Value = p.getPrecioUnitario().ToString();
             SqlParametros = Comando.Parameters.Add("@Imagen_Producto_PxP", SqlDbType.VarChar, 100);
-            SqlParametros.Value = p.getIdPlataforma();
+            SqlParametros.Value = p.getimgURL();
 
         }
         public int actualizarPlataformaxProducto(PlataformaXProducto p)
