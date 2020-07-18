@@ -8,11 +8,13 @@
         <div class="container">
             <h3>Agregar Nuevo Producto</h3>
             <hr />
+       
             <div class="form-group row">
 
                 <label class="col-lg-2 col-form-label">Nombre Producto:</label>
                 <div class="col-lg-4">
-                    <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="rounded" ></asp:TextBox>
+                    <asp:TextBox ID="txtNombreProducto" runat="server" CssClass="rounded"></asp:TextBox>
+                    
                 </div>
 
             </div>

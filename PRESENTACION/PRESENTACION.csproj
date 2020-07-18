@@ -70,7 +70,6 @@
     <Content Include="AdminAltaCompras.aspx" />
     <Content Include="AdminAltaMarca.aspx" />
     <Content Include="AdminAltaProducto.aspx" />
-    <Content Include="AdminListarCompras.aspx" />
     <Content Include="AdminMarca.aspx" />
     <Content Include="AdminPlataformas.aspx" />
     <Content Include="AdminProductos.aspx" />
@@ -291,13 +290,6 @@
     </Compile>
     <Compile Include="AdminHome.Master.designer.cs">
       <DependentUpon>AdminHome.Master</DependentUpon>
-    </Compile>
-    <Compile Include="AdminListarCompras.aspx.cs">
-      <DependentUpon>AdminListarCompras.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminListarCompras.aspx.designer.cs">
-      <DependentUpon>AdminListarCompras.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminMarca.aspx.cs">
       <DependentUpon>AdminMarca.aspx</DependentUpon>

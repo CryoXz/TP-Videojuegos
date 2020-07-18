@@ -77,11 +77,6 @@
                         <asp:Label ID="lbl_it_FechaVenta" runat="server" Text='<%# Bind("fVenta_V") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:TemplateField HeaderText="Estado">
-                    <ItemTemplate>
-                        <asp:CheckBox ID="chk_it_Estado" runat="server" Checked='<%# Bind("estado_Producto_PR") %>' Enabled="False" Text="Activo" />
-                    </ItemTemplate>
-                </asp:TemplateField>
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#dc3545" Font-Bold="True" ForeColor="White" />
