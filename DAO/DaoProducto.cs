@@ -112,7 +112,8 @@ namespace DAO
         private void ArmarParametrosProductoModificar(ref SqlCommand Comando, Producto p)
         {
             SqlParameter SqlParametros = new SqlParameter();
-
+            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PR", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getCodigoProducto();
             SqlParametros = Comando.Parameters.Add("@Nombre_Producto_PR", SqlDbType.NVarChar, 100);
             SqlParametros.Value = p.getNombreProducto();
             SqlParametros = Comando.Parameters.Add("@Descripcion_Producto_PR", SqlDbType.NVarChar, 500);
@@ -124,17 +125,15 @@ namespace DAO
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_PR", SqlDbType.Char, 4);
             SqlParametros.Value = p.getIdCodigoGenero();
             SqlParametros = Comando.Parameters.Add("@fPublicacion_Producto_PR", SqlDbType.SmallDateTime);
-            SqlParametros.Value = p.getFechaPublicacion();
-           
-            //SqlParametros = Comando.Parameters.Add("@Estado_Producto_PR", SqlDbType.Bit);
-            //SqlParametros.Value = p.getEstado();
+            SqlParametros.Value = p.getFechaPublicacion().ToString("dd/MM/yyyy");
+
         }
 
         public int actualizarProducto(Producto p)
         {
             SqlCommand comando = new SqlCommand();
              ArmarParametrosProductoModificar(ref comando, p);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarProducto");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarProductos");
         }
 
         public int AltaProducto(Producto p)

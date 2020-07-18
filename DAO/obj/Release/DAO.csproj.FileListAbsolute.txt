@@ -1,9 +1,0 @@
-D:\Projects\TP-Videojuegos\DAO\bin\Release\DAO.dll
-D:\Projects\TP-Videojuegos\DAO\bin\Release\DAO.pdb
-D:\Projects\TP-Videojuegos\DAO\bin\Release\ENTIDAD.dll
-D:\Projects\TP-Videojuegos\DAO\bin\Release\ENTIDAD.pdb
-D:\Projects\TP-Videojuegos\DAO\obj\Release\DAO.csprojAssemblyReference.cache
-D:\Projects\TP-Videojuegos\DAO\obj\Release\DAO.csproj.CoreCompileInputs.cache
-D:\Projects\TP-Videojuegos\DAO\obj\Release\DAO.csproj.CopyComplete
-D:\Projects\TP-Videojuegos\DAO\obj\Release\DAO.dll
-D:\Projects\TP-Videojuegos\DAO\obj\Release\DAO.pdb

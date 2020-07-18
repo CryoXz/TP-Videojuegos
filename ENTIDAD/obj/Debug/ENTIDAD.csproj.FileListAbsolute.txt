@@ -1,42 +1,6 @@
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
-C:\Users\Rocio\Desktop\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
-C:\Users\Rocio\Desktop\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
-C:\Users\Rocio\Desktop\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
-C:\Users\Rocio\Desktop\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
-C:\Users\Rocio\Desktop\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
-C:\Users\Rocio\Desktop\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
-D:\Projects\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
-D:\Projects\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
-D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
-D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
-D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
-D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb

@@ -60,11 +60,11 @@ namespace PRESENTACION
             string s_MarcaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_marca")).SelectedValue;
             string s_CategoriaProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_categoria")).SelectedValue;
             string s_GeneroProducto = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_genero")).SelectedValue;
-            string s_FechaPublicacion = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_FPublicacion")).Text.ToString();
+            string s_FechaPublicacion = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_FPublicacion")).Text;
             string s_CodigoPlataforma = ((DropDownList)grdProductos.Rows[e.RowIndex].FindControl("ddl_eit_plataforma")).SelectedValue; 
-            int s_Stock = Int32.Parse(((TextBox)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_Stock")).Text);
-            decimal s_PU =decimal.Parse(((TextBox)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_PrecioUnitario")).Text);
-            string s_img = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_Imagen")).Text.ToString(); ;
+            string s_Stock = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_Stock")).Text;
+            string s_PU =((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_PrecioUnitario")).Text;
+            string s_img = ((TextBox)grdProductos.Rows[e.RowIndex].FindControl("txt_eit_Imagen")).Text;
 
 
             ENTIDAD.Producto p = new ENTIDAD.Producto();
@@ -80,8 +80,8 @@ namespace PRESENTACION
             p.setFechaPublicacion(DateTime.Parse(s_FechaPublicacion));
             PxP.setIdProducto(s_codigoProducto);
             PxP.setIdPlataforma(s_CodigoPlataforma);
-            PxP.setStock(s_Stock);
-            PxP.setPrecioUnitario(s_PU);
+            PxP.setStock(Int32.Parse(s_Stock));
+            PxP.setPrecioUnitario(decimal.Parse(s_PU));
             PxP.setimgURL(s_img);
 
             

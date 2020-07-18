@@ -64,12 +64,36 @@
                             <asp:Label ID="lbl_it_Apellido" runat="server" Text='<%# Bind("Apellido_Usuario_U") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:TemplateField HeaderText="NickName">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txt_eit_nickname" runat="server" Text='<%# Bind("Nickname_Usuario_U") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_nickname" runat="server" Text='<%# Bind("Nickname_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Contraseña">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txt_eit_contraseña" runat="server" Text='<%# Bind("Contraseña_Usuario_U") %>'></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_contraseña" runat="server" Text='<%# Bind("Contraseña_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
                     <asp:TemplateField HeaderText="Dni">
                         <EditItemTemplate>
                             <asp:TextBox ID="txt_eit_dni" runat="server" Text='<%# Bind("DNI_Usuario_U") %>'></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_Dni" runat="server" Text='<%# Bind("DNI_Usuario_U") %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Fecha de nacimiento">
+                        <EditItemTemplate>
+                            <asp:TextBox ID="txt_eit_fnac" runat="server" Text='<%# Bind("fNacimiento_Usuario_U") %>' TextMode="Date"></asp:TextBox>
+                        </EditItemTemplate>
+                        <ItemTemplate>
+                            <asp:Label ID="lbl_it_fnac" runat="server" Text='<%# Bind("fNacimiento_Usuario_U") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Telefono">
@@ -91,7 +115,7 @@
                     <asp:TemplateField HeaderText="Provincia">
                         <EditItemTemplate>
                             <asp:HiddenField ID="hfProvinciaId" runat="server" Value='<%# Bind("Cod_Provincia_loc") %>' />
-                            <asp:DropDownList ID="ddl_eit_provincia" runat="server" AutoPostBack="True">
+                            <asp:DropDownList ID="ddl_eit_provincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddl_eit_provincia_SelectedIndexChanged">
                             </asp:DropDownList>
                         </EditItemTemplate>
                         <ItemTemplate>
