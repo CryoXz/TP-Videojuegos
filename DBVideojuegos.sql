@@ -1,7 +1,6 @@
 USE MASTER
 GO
-drop database TiendaVideojuegos
-go
+
 CREATE DATABASE TiendaVideojuegos
 GO
 
@@ -135,7 +134,7 @@ CREATE TABLE DetalleCompras
 	Cod_Plataforma_DC char(4) NOT NULL,
 	Cantidad_Producto_DC int NOT NULL,
 	PrecioUnitario_Compra_DC money NOT NULL,
-	CONSTRAINT PK_DetalleCompras PRIMARY KEY (Cod_Compra_DC, Cod_Producto_DC)
+	CONSTRAINT PK_DetalleCompras PRIMARY KEY (Cod_Compra_DC, Cod_Producto_DC, Cod_Plataforma_DC)
 )
 GO
 
@@ -156,7 +155,7 @@ CREATE TABLE DetalleVentas
 	Cod_Plataforma_DV char(4) NOT NULL,
 	Cantidad_Producto_DV int NOT NULL,
 	PrecioUnitario_Venta_DV money NOT NULL,
-	CONSTRAINT PK_DetalleVentas PRIMARY KEY (Cod_Venta_DV, Cod_Producto_DV)
+	CONSTRAINT PK_DetalleVentas PRIMARY KEY (Cod_Venta_DV, Cod_Producto_DV, Cod_Plataforma_DV)
 )
 GO
 
@@ -185,7 +184,7 @@ ADD CONSTRAINT FK_DetalleCompras_Compras FOREIGN KEY (Cod_Compra_DC) REFERENCES 
 GO
 
 ALTER TABLE DetalleCompras
-ADD CONSTRAINT FK_DetalleCompras_Productos FOREIGN KEY (Cod_Producto_DC) REFERENCES Productos (Cod_Producto_PR)
+ADD CONSTRAINT FK_DetalleCompras_Productos FOREIGN KEY (Cod_Producto_DC, Cod_Plataforma_DC) REFERENCES PlataformaxProducto (Cod_Producto_PxP, Cod_Plataforma_PxP)
 GO
 
 ALTER TABLE DetalleVentas
@@ -193,7 +192,7 @@ ADD CONSTRAINT FK_DetalleVentas_Ventas FOREIGN KEY (Cod_Venta_DV) REFERENCES Ven
 GO
 
 ALTER TABLE DetalleVentas
-ADD CONSTRAINT FK_DetalleVentas_Productos FOREIGN KEY (Cod_Producto_DV) REFERENCES Productos (Cod_Producto_PR)
+ADD CONSTRAINT FK_DetalleVentas_Productos FOREIGN KEY (Cod_Producto_DV, Cod_Plataforma_DV) REFERENCES PlataformaxProducto (Cod_Producto_PxP, Cod_Plataforma_PxP)
 GO
 
 ALTER TABLE Usuarios
@@ -2916,7 +2915,7 @@ CREATE PROCEDURE SpAltaDetalleVentas(
         		END
         		RETURN
         		GO
- 
+
 create procedure SpModificarProductos(
 	@Cod_Producto_PR char (4),
 	@Nombre_Producto_PR varchar (100),
@@ -2928,7 +2927,7 @@ create procedure SpModificarProductos(
 	@Estado_Producto_PR bit
 )
 as
-begin 
+begin
 	update Productos SET Nombre_Producto_PR=@Nombre_Producto_PR, Descripcion_Producto_PR=@Descripcion_Producto_PR, Cod_Marca_PR=@Cod_Marca_PR, Cod_Categoria_PR=@Cod_Categoria_PR, Cod_Genero_PR=@Cod_Genero_PR, fPublicacion_Producto_PR=@fPublicacion_Producto_PR, Estado_Producto_PR=@Estado_Producto_PR
 	where Cod_Producto_PR=@Cod_Producto_PR
 end
@@ -2943,12 +2942,12 @@ create procedure SpAltaProductos(
 	@fPublicacion_Producto_PR smalldatetime,
 	@Estado_Producto_PR bit
 )
-as 
+as
 	insert into Productos(Cod_Producto_PR, Nombre_Producto_PR, Descripcion_Producto_PR, Cod_Marca_PR, Cod_Categoria_PR, Cod_Genero_PR, fPublicacion_Producto_PR, Estado_Producto_PR)
 	values(@Cod_Producto_PR, @Nombre_Producto_PR, @Descripcion_Producto_PR, @Cod_Marca_PR, @Cod_Categoria_PR, @Cod_Genero_PR, @fPublicacion_Producto_PR, @Estado_Producto_PR)
 	RETURN
 	GO
-	
+
 	CREATE PROCEDURE spEliminarProducto(
     @IDPRODUCTO char(4)
     )
