@@ -1,0 +1,41 @@
+﻿.productItem {
+    width: 200px;
+    float: left;
+    padding: 5px;
+    margin: 5px;
+    text-align: center;
+    background-color: White;
+}
+.imgbut {
+    max-height: 200px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+}
+
+.Grid {
+    background-color: #fff;
+    border: solid 0 #ffffff;
+    table-layout: fixed;
+}
+
+    .Grid td {
+        font-family: Calibri;
+        border: solid 1px #fff;
+        color: crimson;
+        text-align: center;
+        height: 200px;
+        width: 300px;
+    }
+
+    .Grid th {
+        color: #fff;
+        font-family: Calibri;
+    }
+
+.productoFoto {
+    max-height: 500px;
+    max-width: 500px;
+    width: auto;
+    height: auto;
+}

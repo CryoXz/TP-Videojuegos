@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Home.Master" AutoEventWireup="true" CodeBehind="Producto.aspx.cs" Inherits="PRESENTACION.Producto" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="Content/ProductosJuegos.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -12,7 +13,7 @@
                     <ItemTemplate>
                         <tr style="">
                             <td>
-                                <asp:Image ID="ImgProd" runat="server" Height="300px" ImageUrl='<%# Eval("Imagen_Producto_PxP") %>' Width="500px" />
+                                <asp:Image ID="ImgProd" CssClass="productoFoto" runat="server" ImageUrl='<%# Eval("Imagen_Producto_PxP") %>' />
                             </td>
                         </tr>
                     </ItemTemplate>
