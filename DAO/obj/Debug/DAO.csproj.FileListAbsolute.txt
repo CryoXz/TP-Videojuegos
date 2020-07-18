@@ -1,48 +1,3 @@
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\bin\Debug\DAO.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\DAO.dll
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.dll
-C:\Users\Rocio\Desktop\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\bin\Debug\DAO.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\obj\Debug\DAO.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\bin\Debug\DAO.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\bin\Debug\DAO.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\bin\Debug\ENTIDAD.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\bin\Debug\ENTIDAD.pdb
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\obj\Debug\DAO.csproj.CopyComplete
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\obj\Debug\DAO.dll
-C:\Users\cryox\OneDrive\Escritorio\TP-Videojuegos-master\DAO\obj\Debug\DAO.pdb
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\bin\Debug\DAO.dll
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.dll
-C:\Users\compu\Desktop\Programacion 3\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\bin\Debug\DAO.dll
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
@@ -52,21 +7,3 @@ C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreComp
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.dll
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
-D:\Projects\TP-Videojuegos\DAO\bin\Debug\DAO.dll
-D:\Projects\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
-D:\Projects\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
-D:\Projects\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
-D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
-D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.dll
-D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.pdb
-D:\Projects\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\DAO.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\DAO.pdb
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\bin\Debug\ENTIDAD.pdb
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.csproj.CopyComplete
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.dll
-D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\DAO\obj\Debug\DAO.pdb

@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PRESENTACION {
-    
-    
-    public partial class AdminUsuarios {
-        
+namespace PRESENTACION
+{
+
+
+    public partial class AdminUsuarios
+    {
+
         /// <summary>
         /// Control lblNombreUsuario.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
-        
+
         /// <summary>
         /// Control txtBuscarNombre.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBuscarNombre;
-        
+
         /// <summary>
         /// Control btnBuscar.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
-        
+
         /// <summary>
         /// Control lblFiltrarPor.
         /// </summary>
@@ -47,7 +49,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblFiltrarPor;
-        
+
         /// <summary>
         /// Control ddlTipoUsuario.
         /// </summary>
@@ -56,7 +58,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipoUsuario;
-        
+
         /// <summary>
         /// Control btnFiltrar.
         /// </summary>
@@ -65,7 +67,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
-        
+
         /// <summary>
         /// Control grdUsuarios.
         /// </summary>

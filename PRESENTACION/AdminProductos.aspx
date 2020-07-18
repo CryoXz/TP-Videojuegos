@@ -1,12 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin.Master" AutoEventWireup="true" CodeBehind="AdminProductos.aspx.cs" Inherits="PRESENTACION.AdminProductos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style1 {
-            height: 36px;
-        }
-    </style>
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
@@ -32,41 +27,34 @@
             <hr />     
             <div class="row">
                     <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Plataformas</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Nintendo Switch</a>
-                        <a class="dropdown-item" href="#">Nintendo 3ds</a>
-                        <a class="dropdown-item" href="#">Playstation 3</a>
-                        <a class="dropdown-item" href="#">Playstation 4</a>
-                        <a class="dropdown-item" href="#">PS Vita</a>
-                        <a class="dropdown-item" href="#">Xbox 360</a>
-                        <a class="dropdown-item" href="#">Xbox One</a>
-                        <a class="dropdown-item" href="#">Pc</a>
-                    </div>
+                        <asp:DropDownList ID="ddlPlataformas" runat="server" AutoPostBack="True">
+                        </asp:DropDownList>
                 </div>
             &nbsp
                 <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categorias
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Video Juego</a>
-                        <a class="dropdown-item" href="#">Accesorio</a>
-                    </div>
+                    <asp:DropDownList ID="ddlCategorias" runat="server" AutoPostBack="True">
+                    </asp:DropDownList>
                 </div>
             &nbsp
                 <div class="dropdown">
-                    <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Marcas
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Nintendo</a>
-                        <a class="dropdown-item" href="#">Sony</a>
-                        <a class="dropdown-item" href="#">Logitech</a>
-                        <a class="dropdown-item" href="#">Microsoft</a>
-                    </div>
+                    <asp:DropDownList ID="ddlMarcas" runat="server" AutoPostBack="True" >
+                    </asp:DropDownList>
                 </div>
+            &nbsp
+                <div class="dropdown">
+                        <asp:DropDownList ID="ddlGeneros" runat="server" AutoPostBack="True" >
+                        </asp:DropDownList>
+                </div>
+                                 &nbsp                  
+                <asp:TextBox ID = "TxtFechaInicio" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>           
+                 &nbsp   
+                <asp:Label ID="LblHasta" runat="server" Text="Label">ENTRE:</asp:Label> 
+                 
+                 <asp:TextBox ID = "TxtFechaFin" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>
+                 &nbsp
+                 <asp:Button ID="btnFiltrar" runat="server" Text="FILTRAR" CssClass="btn btn-danger" OnClick="btnFiltrar_Click" />
+                &nbsp         
+                   <asp:Button ID="btnQuitarFiltro" runat="server" Text="QUITAR FILTRO" CssClass="btn btn-danger" OnClick="btnQuitarFiltro_Click" />
             </div>            
         </div>
         <br />
@@ -139,10 +127,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Fecha de Publicación">
                     <EditItemTemplate>
-                        <asp:TextBox ID="lbl_eit_FPublicacion" runat="server" Text='<%# Bind("FPublicacion") %>' TextMode="Date"></asp:TextBox>
+                        <asp:TextBox ID="txt_eit_FPublicacion" runat="server" Text='<%# Bind("FPublicacion", "{0:d/M/yyy}") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_FPublicacion" runat="server" Text='<%# Bind("FPublicacion") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_FPublicacion" runat="server" Text='<%# Bind("FPublicacion", "{0:d/M/yyy}") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Precio Unitario">
