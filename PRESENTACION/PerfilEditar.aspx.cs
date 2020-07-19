@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -83,6 +84,15 @@ namespace PRESENTACION
             ddlLocalidad.DataBind();
         }
 
+        private bool isvalidEmail(string address)
+        {
+            EmailAddressAttribute e = new EmailAddressAttribute();
+            if (e.IsValid(address))
+                return true;
+            else
+                return false;
+        }
+
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
             N_Usuario negu = new N_Usuario();
@@ -100,7 +110,10 @@ namespace PRESENTACION
             user.setNickname(txtUsername.Text);
             user.SetContraseña(dt.Rows[0]["Contraseña_Usuario_U"].ToString());
             user.setDni(txtDNI.Text);
-            user.setFechaNacimiento(DateTime.Parse(txtFecha.Text));
+            if(txtFecha.Text != "")
+            {
+                user.setFechaNacimiento(DateTime.Parse(txtFecha.Text));
+            }
             user.setTelefono(txtTelefono.Text);
             user.setEmail(txtEmail.Text);
             user.setDireccion(txtDireccion.Text);
@@ -110,12 +123,52 @@ namespace PRESENTACION
             user.setLocalidad(lo);
             user.setEstado(Convert.ToBoolean(dt.Rows[0]["Estado_Usuario_U"].ToString()));
 
-            int filas = negu.ModificarUsuario(user);
+            bool mail = isvalidEmail(txtEmail.Text);
+            bool fecha = true;
+            bool vacio1 = true;
+            bool vacio2 = true;
 
-            if(filas > 0)
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtUsername.Text == "" || txtDNI.Text == "")
+                vacio1 = false;
+
+            if (txtTelefono.Text == "" || txtEmail.Text == "" || txtDireccion.Text == "")
+                vacio2 = false;
+
+            if (txtFecha.Text == "" || DateTime.Compare(DateTime.Parse(txtFecha.Text), DateTime.Now) > 0)
             {
-                Response.Redirect("Perfil.aspx?us=1");
+                fecha = false;
             }
+
+            if(fecha && mail && vacio1 && vacio2)
+            {
+                int filas = negu.ModificarUsuario(user);
+                if (filas > 0)
+                {
+                    Response.Redirect("Perfil.aspx?us=1");
+                }
+                else
+                {
+                    Response.Redirect("Perfil.aspx?us=5");
+                }
+            }
+            else if(fecha && !mail && vacio1 && vacio2)
+            {
+                Response.Redirect("Perfil.aspx?us=4");
+            }
+            else if(!fecha && mail && vacio1 && vacio2)
+            {
+                Response.Redirect("Perfil.aspx?us=6");
+            }
+            else if (fecha && mail && !vacio1 && vacio2)
+            {
+                Response.Redirect("Perfil.aspx?us=7");
+            }
+            else if (fecha && mail && vacio1 && !vacio2)
+            {
+                Response.Redirect("Perfil.aspx?us=7");
+            }
+
+
         }
     }
 }

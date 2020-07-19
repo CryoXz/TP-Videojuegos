@@ -44,7 +44,7 @@ namespace DAO
 
         public DataTable getImagenDetalleVenta(string codVenta)
         {
-            DataTable tabla = ds.ObtenerTabla("Imagen", "SELECT Imagen_Producto_PxP FROM PlataformaxProducto INNER JOIN DetalleVentas ON Cod_Producto_PxP = Cod_Producto_DV WHERE Cod_Venta_DV = '" + codVenta + "'" );
+            DataTable tabla = ds.ObtenerTabla("Imagen", "SELECT Imagen_Producto_PxP FROM PlataformaxProducto INNER JOIN DetalleVentas ON Cod_Producto_PxP = Cod_Producto_DV AND Cod_Plataforma_PxP = Cod_Plataforma_DV WHERE Cod_Venta_DV = '" + codVenta + "'" );
             return tabla;
         }
 

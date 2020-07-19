@@ -49,7 +49,9 @@ namespace PRESENTACION
                     tabla.Columns.Add("PrecioTotal", typeof(string));
                     for (int i = 0; i < tabla.Rows.Count; i++)
                     {
-                        tabla.Rows[i]["PrecioTotal"] = tabla2.Rows[i]["PrecioTotal"];
+                        decimal precio = Convert.ToDecimal(tabla2.Rows[i]["PrecioTotal"].ToString());
+                        
+                        tabla.Rows[i]["PrecioTotal"] = precio.ToString("N2");
 
                     }
                     grdVentas.DataSource = tabla;
@@ -72,7 +74,9 @@ namespace PRESENTACION
             tabla.Columns.Add("PrecioTotal", typeof(string));
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
-                tabla.Rows[i]["PrecioTotal"] = tabla2.Rows[i]["PrecioTotal"];
+                decimal precio = Convert.ToDecimal(tabla2.Rows[i]["PrecioTotal"].ToString());
+
+                tabla.Rows[i]["PrecioTotal"] = precio.ToString("N2");
 
             }
             grdVentas.DataSource = tabla;

@@ -59,14 +59,18 @@
                             <li class="nav-item"><a href="ProductosJuegosO.aspx?cate=ca3" class="nav-link">OTROS</a></li>
                             <li><a href="Carrito.aspx"><img src="IMAGES/carritologo.png" alt="carrito" style="width:25px;height:25px;margin-top:8px;margin-right:8px;"></a></li>
                             
-                            <li class="dropdown">
-                              <button class="btn btn-danger dropdown-toggle" type="button" data-toggle="dropdown">USUARIO
-                              <span class="caret"></span></button>
-                              <ul class="dropdown-menu">
-                                  <li><asp:Button ID="btnAdmin" runat="server" CssClass="dropdown-item" Text="ADMINISTRACION" OnClick="btnAdmin_click" /></li>
-                                <li><asp:Button ID="btnLogout1" runat="server" CssClass="dropdown-item" Text="CERRAR SESION" OnClick="btnLogout_click" /></li>
-                              </ul>
-                            </li>
+                            <div class="dropdown">
+                              <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <%=this.Session["username"].ToString().ToUpper() %>
+                              </button>
+                              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                  <a class="dropdown-item" href="Perfil.aspx">PERFIL</a>
+                                  <a class="dropdown-item" href="AdminUsuarios.aspx">ADMINISTRACIÓN</a>
+                                  <a class="dropdown-item" href="HistorialCompras.aspx">HISTORIAL DE COMPRAS</a>
+                                <div class="dropdown-divider"></div>
+                                <asp:Button ID="btnLogout1" runat="server" CssClass="dropdown-item" Text="CERRAR SESION" OnClick="btnLogout_click" />
+                              </div>
+                            </div>
                             
                         </ul>            
                     </div>
@@ -79,7 +83,7 @@
         </asp:ContentPlaceHolder>
         
         <footer>
-            <div class="row" style="background-color:black">
+            <div style="background-color:black">
                 <div class="col-lg-12" style="color:white">
                     <h6>Telefono: 4420-2222</h6>
                     <h6>Direccion: Av. del Sesquicentenario, Gral Pacheco</h6>

@@ -52,13 +52,18 @@
                                     <h6>
                                         <asp:Label ID="Nombre_Plataforma_PLabel" runat="server" Text='<%# Eval("Nombre_Plataforma_P") %>' /></h6>
                                 </td>
-
+                                <td>
+                                    <h7>
+                                        <asp:Label ID="Descripcion_Producto_PRLabel" runat="server" Text='<%# Eval("Descripcion_Producto_PR") %>' /></h7>
+                                </td>
+                                <br />
+                                <br />
                                 Cantidad:
                                 <asp:TextBox ID="txtCant" runat="server" type="number" min="1" max="10" >1</asp:TextBox>
                                 <br />
                                 <br />
                                 <td>
-                                    <h4>$<asp:Label ID="PrecioUnitario_Producto_PxPLabel" runat="server" Text='<%# Eval("PrecioUnitario_Producto_PxP") %>' /></h4>
+                                    <h4>$<asp:Label ID="PrecioUnitario_Producto_PxPLabel" runat="server" Text='<%# Eval("PrecioUnitario_Producto_PxP", "{0:0.00}") %>' /></h4>
                                 </td>
                                 <br />
                             </tr>

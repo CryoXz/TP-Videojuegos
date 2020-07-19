@@ -17,7 +17,7 @@
                 <div class="form-inline">
                     <asp:Label ID="Label1" runat="server" Text="INGRESE EL NOMBRE DE LA NUEVA PLATAFORMA:"></asp:Label>
                     &nbsp;
-                    <asp:TextBox ID="TxtNombre" runat="server" CssClass="rounded"></asp:TextBox>                   
+                    <asp:TextBox ID="TxtNombrePlataforma" runat="server" CssClass="rounded"></asp:TextBox>                   
                     &nbsp;                   
                     <asp:Button ID="btnAgregar" runat="server" Text="AGREGAR" CssClass="btn btn-danger" OnClick="btnAgregar_Click" />
                 </div>

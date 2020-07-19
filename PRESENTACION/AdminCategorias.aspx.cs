@@ -28,7 +28,7 @@ namespace PRESENTACION
 
         protected void grdCategorias_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            String s_codigoCategoria = ((Label)grdCategorias.Rows[e.RowIndex].FindControl("lbl_eit_codigoCategoria")).Text;
+            String s_codigoCategoria = ((Label)grdCategorias.Rows[e.RowIndex].FindControl("lbl_eit_codigoCategoria")).Text.Trim();
 
             N_Categoria n_Categoria = new N_Categoria();
             n_Categoria.eliminarCategoria(s_codigoCategoria);
@@ -50,8 +50,8 @@ namespace PRESENTACION
 
         protected void grdCategorias_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            String s_codigoCategoria = ((Label)grdCategorias.Rows[e.RowIndex].FindControl("lbl_eit_codigoCategoria")).Text;
-            String s_nombreCategoria = ((TextBox)grdCategorias.Rows[e.RowIndex].FindControl("txt_eit_nombreCategoria")).Text;
+            String s_codigoCategoria = ((Label)grdCategorias.Rows[e.RowIndex].FindControl("lbl_eit_codigoCategoria")).Text.Trim();
+            String s_nombreCategoria = ((TextBox)grdCategorias.Rows[e.RowIndex].FindControl("txt_eit_nombreCategoria")).Text.Trim();
 
 
 
@@ -70,20 +70,38 @@ namespace PRESENTACION
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             Categoria categoria = new Categoria();
-
-            int N_Filas = grdCategorias.Rows.Count - 1;
-            string s_codigoCategoria = ((Label)grdCategorias.Rows[N_Filas].FindControl("lbl_eit_codigoCategoria")).Text;
-            char[] charsToTream = { 'C', 'A' };
-            int codNum = Convert.ToInt32(s_codigoCategoria.TrimStart(charsToTream)) + 1;
-
-            categoria.setCodigoCategoria("CA" + codNum);
-            categoria.setNombreCategoria(txtNombreCategoria.Text);
-
             N_Categoria n_Categoria = new N_Categoria();
-            n_Categoria.AltaCategoria(categoria);
 
-            grdCategorias.EditIndex = -1;
-            cargarGridview();
+          //  n_Categoria.getTabla();
+            string nombreCategoria = txtNombreCategoria.Text.Trim();
+            if (nombreCategoria != "")
+            {
+                if (!n_Categoria.getBuscarNombreCategoria(nombreCategoria))
+                {
+                    int ultimaCategoria = n_Categoria.getConsultaUltimaCategoria() + 1;
+                    categoria.setCodigoCategoria("CA" + ultimaCategoria);
+                    categoria.setNombreCategoria(nombreCategoria);
+                    n_Categoria.AltaCategoria(categoria);
+                    Response.Write("<script>alert('Categoria agregada con exito');</script>");
+                    txtNombreCategoria.Text = "";
+                    grdCategorias.EditIndex = -1;
+                    cargarGridview();
+                }
+                else
+                {
+                    Response.Write("<script>alert('La categoria ya existe');</script>");
+                    txtNombreCategoria.Text = "";
+                    grdCategorias.EditIndex = -1;                    
+                    cargarGridview();
+                }
+            }
+            else
+            {                
+                Response.Write("<script>alert('Debe ingresar una categoria');</script>");
+                txtNombreCategoria.Text = "";
+                grdCategorias.EditIndex = -1;               
+                cargarGridview();
+            }
 
         }
         protected void grdCategorias_PageIndexChanging(object sender, GridViewPageEventArgs e)

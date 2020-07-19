@@ -1,15 +1,16 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login.Master" AutoEventWireup="true" CodeBehind="PerfilEditar.aspx.cs" Inherits="PRESENTACION.PerfilEditar" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container-fluid" style="background-color:crimson">
+    <div class="container-fluid" style="background-color: crimson">
         <br />
         <br />
-        <h2 style="color:white;text-align:center">PERFIL</h2>
+        <h2 style="color: white; text-align: center">PERFIL</h2>
         <br />
         <div class="main row">
-            <div class="col-lg-4" style="background-color:crimson"></div>
-            <div class="col-lg-4" style="background-color:white; color:crimson">
+            <div class="col-lg-4" style="background-color: crimson"></div>
+            <div class="col-lg-4" style="background-color: white; color: crimson">
                 <br />
                 <div>
                     <h3>Datos</h3>
@@ -36,8 +37,21 @@
                 </div>
                 <br />
                 <div>
+                    <style>
+                        /* Chrome, Safari, Edge, Opera */
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        /* Firefox */
+                        input[type=number] {
+                            -moz-appearance: textfield;
+                        }
+                    </style>
                     <h6>DNI:</h6>
-                    <asp:TextBox ID="txtDNI" runat="server" Width="500px"></asp:TextBox>
+                    <asp:TextBox ID="txtDNI" runat="server" type="number" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <div>
@@ -62,20 +76,20 @@
                 <br />
                 <div>
                     <h6>Telefono:</h6>
-                    <asp:TextBox ID="txtTelefono" runat="server" Width="500px"></asp:TextBox>
+                    <asp:TextBox ID="txtTelefono" runat="server" type="number" Width="500px"></asp:TextBox>
                 </div>
                 <br />
                 <br />
-                <div style="text-align:center">
+                <div style="text-align: center">
                     <asp:Button ID="btnFinalizar" class="btn btn-danger" runat="server" Text="FINALIZAR EDICION" OnClick="btnFinalizar_Click" />
                 </div>
-                
+
                 <br />
                 <br />
             </div>
-            <div class="col-lg-4" style="background-color:crimson"></div>
+            <div class="col-lg-4" style="background-color: crimson"></div>
         </div>
-        <div class="row" style="background-color:crimson">
+        <div class="row" style="background-color: crimson">
             <br />
             <br />
             <br />

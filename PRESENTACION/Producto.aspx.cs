@@ -62,6 +62,8 @@ namespace PRESENTACION
             ///encontrar img url
             GestionCompra gc = new GestionCompra();
 
+            if (this.Session["carrito"] == null)
+                this.Session["carrito"] = GestionCompra.CrearCarrito();
 
             Image imgbtn = this.grdProd.Items[0].FindControl("ImgProd") as Image;
             Label lbl2 = this.grdDatos.Items[0].FindControl("Nombre_Producto_PRLabel") as Label;
