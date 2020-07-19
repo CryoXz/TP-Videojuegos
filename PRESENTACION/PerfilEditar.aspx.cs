@@ -151,19 +151,19 @@ namespace PRESENTACION
                     Response.Redirect("Perfil.aspx?us=5");
                 }
             }
-            else if(fecha && !mail && vacio1 && vacio2)
+            else if(!mail)
             {
                 Response.Redirect("Perfil.aspx?us=4");
             }
-            else if(!fecha && mail && vacio1 && vacio2)
+            else if(!fecha)
             {
                 Response.Redirect("Perfil.aspx?us=6");
             }
-            else if (fecha && mail && !vacio1 && vacio2)
+            else if (!vacio1)
             {
                 Response.Redirect("Perfil.aspx?us=7");
             }
-            else if (fecha && mail && vacio1 && !vacio2)
+            else if (!vacio2)
             {
                 Response.Redirect("Perfil.aspx?us=7");
             }

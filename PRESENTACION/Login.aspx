@@ -31,7 +31,7 @@
                                 <asp:CheckBox ID="chkRecordar" runat="server" /><br />
                                 <asp:Button ID="Button1" runat="server" CssClass="btn-danger" Text="Acceder" OnClick="Button1_Click" />
                             </div>
-                            <asp:label ID="lblIncorrecto" runat="server" Text="Usuario o Contraseña incorrecto." ForeColor="Red" Width="90%"></asp:label>
+                            <asp:label ID="lblIncorrecto" runat="server" Text="" ForeColor="Red" Width="90%"></asp:label>
                             <div id="register-link" class="text-right">
                                 <a href="Registrarse.aspx" class="text-info">Registrarse</a>
                             </div>
