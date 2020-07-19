@@ -70,5 +70,18 @@ namespace NEGOCIO
             else
                 return false;
         }
+
+        public bool getBuscarNombreMarca(String nombreMarca)
+        {
+            DaoMarca dao = new DaoMarca();
+            return dao.getBuscarNombreMarca(nombreMarca);
+        }
+
+        public int getConsultaUltimaMarca()
+        {
+            DaoMarca dao = new DaoMarca();
+            return dao.getConsultaUltimaMarca();
+        }
+
     }
 }

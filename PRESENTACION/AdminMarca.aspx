@@ -79,7 +79,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Email">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txt_eit_email" runat="server" Text='<%# Bind("Email_Marca_M") %>'></asp:TextBox>
+                        <asp:TextBox ID="txt_eit_email" runat="server" Text='<%# Bind("Email_Marca_M") %>' TextMode="Email"></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_Email" runat="server" Text='<%# Bind("Email_Marca_M") %>'></asp:Label>
