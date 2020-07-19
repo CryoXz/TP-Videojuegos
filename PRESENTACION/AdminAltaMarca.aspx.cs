@@ -10,45 +10,55 @@ using ENTIDAD;
 namespace PRESENTACION
 {
     public partial class Formulario_web11 : System.Web.UI.Page
-    {
-        int codNum;
-        protected void Page_Load(object sender, EventArgs e)
-        {
-
-            if (this.Session["codigoMarca"] != null)             
-
-            codNum = Convert.ToInt32( this.Session["codigoMarca"].ToString()) ;
-        }
+    {       
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             try
             {
                 Marca marca = new Marca();
-                
-                marca.setCodigoMarca("M" + codNum);
-                marca.setNombreMarca(txtNombreMarca.Text);
-                marca.setNombreContacto(txtNombreContacto.Text);
-                marca.setDireccion(txtDireccion.Text);
-                marca.setCiudad(txtCiudad.Text);
-                marca.setTelefono(txtTelefono.Text);
-                marca.setEmail(txtEmail.Text);
-                marca.setEstado(1);
-
                 N_Marca n_Marca = new N_Marca();
-                n_Marca.AltaMarca(marca);
 
-                Response.Redirect("AdminMarca.aspx");
+                string nombreMarca = txtNombreMarca.Text.Trim();
+                string nombreContacto = txtNombreContacto.Text.Trim();
+                string direccion = txtDireccion.Text.Trim();
+                string ciudad = txtCiudad.Text.Trim();
+                string telefono = txtTelefono.Text.Trim();
+                string email = txtEmail.Text.Trim();
+
+                if (nombreMarca !="" && nombreContacto !="" && direccion !="" && ciudad !="" && telefono !="" && email !="")
+                {
+                    if(!n_Marca.getBuscarNombreMarca(nombreMarca))
+                    {
+                        int ultimaMarca = n_Marca.getConsultaUltimaMarca() + 1;
+                        marca.setCodigoMarca("M" + ultimaMarca);                       
+                        marca.setNombreMarca(nombreMarca);
+                        marca.setNombreContacto(nombreContacto);
+                        marca.setDireccion(direccion);
+                        marca.setCiudad(ciudad);
+                        marca.setTelefono(telefono);
+                        marca.setEmail(email);
+
+                        n_Marca.AltaMarca(marca);
+                        Response.Write("<script>alert('Marca agregada con exito');</script>");
+                        Response.Redirect("AdminMarca.aspx");
+                    }
+                    else
+                    {
+                        Response.Write("<script>alert('La marca ya existe');</script>");
+                    }                   
+                }
+                else
+                {
+                    Response.Write("<script>alert('Debe completar todos los campos');</script>");                     
+                }                         
 
             }
             catch (Exception ex)
             {
-
                 throw;
-            }
-            
-            //grdMarcas.EditIndex = -1;
-            //cargarGridview();
+            }           
+          
         }
     }
 }

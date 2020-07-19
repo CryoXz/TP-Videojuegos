@@ -72,7 +72,7 @@ namespace PRESENTACION
             Categoria categoria = new Categoria();
             N_Categoria n_Categoria = new N_Categoria();
 
-          //  n_Categoria.getTabla();
+           
             string nombreCategoria = txtNombreCategoria.Text.Trim();
             if (nombreCategoria != "")
             {
@@ -83,23 +83,20 @@ namespace PRESENTACION
                     categoria.setNombreCategoria(nombreCategoria);
                     n_Categoria.AltaCategoria(categoria);
                     Response.Write("<script>alert('Categoria agregada con exito');</script>");
-                    txtNombreCategoria.Text = "";
-                    grdCategorias.EditIndex = -1;
+                    txtNombreCategoria.Text = "";                     
                     cargarGridview();
                 }
                 else
                 {
                     Response.Write("<script>alert('La categoria ya existe');</script>");
-                    txtNombreCategoria.Text = "";
-                    grdCategorias.EditIndex = -1;                    
+                    txtNombreCategoria.Text = "";                                         
                     cargarGridview();
                 }
             }
             else
             {                
                 Response.Write("<script>alert('Debe ingresar una categoria');</script>");
-                txtNombreCategoria.Text = "";
-                grdCategorias.EditIndex = -1;               
+                txtNombreCategoria.Text = "";                          
                 cargarGridview();
             }
 
