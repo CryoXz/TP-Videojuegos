@@ -104,10 +104,10 @@ namespace DAO
                 switch (modo)
                 {
                     case 0:
-                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' ORDER BY Productos.Nombre_Producto_PR " + sort);
+                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' AND Productos.Estado_Producto_PR = 1 ORDER BY Productos.Nombre_Producto_PR " + sort);
                         return tabla;
                     case 1:
-                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP, Productos.Nombre_Producto_PR, PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP " + sort);
+                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP, Productos.Nombre_Producto_PR, PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' AND Productos.Estado_Producto_PR = 1 ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP " + sort);
                         return tabla;
                 }
 
@@ -118,10 +118,10 @@ namespace DAO
                 switch (modo)
                 {
                     case 0:
-                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' ORDER BY Productos.Nombre_Producto_PR " + sort);
+                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' AND Productos.Estado_Producto_PR = 1 ORDER BY Productos.Nombre_Producto_PR " + sort);
                         return tabla;
                     case 1:
-                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP " + sort);
+                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' AND Productos.Estado_Producto_PR = 1 ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP " + sort);
                         return tabla;
                 }
             }
@@ -131,10 +131,10 @@ namespace DAO
                 switch (modo)
                 {
                     case 0:
-                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' AND Productos.Cod_Categoria_PR = '" + cate + "' ORDER BY Productos.Nombre_Producto_PR " + sort);
+                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' AND Productos.Cod_Categoria_PR = '" + cate + "' AND Productos.Estado_Producto_PR = 1 ORDER BY Productos.Nombre_Producto_PR " + sort);
                         return tabla;
                     case 1:
-                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' AND Productos.Cod_Categoria_PR = '" + cate + "' ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP " + sort);
+                        tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE PlataformaxProducto.Cod_Plataforma_PxP = '" + plat + "' AND Productos.Cod_Categoria_PR = '" + cate + "' AND Productos.Estado_Producto_PR = 1 ORDER BY PlataformaxProducto.PrecioUnitario_Producto_PxP " + sort);
                         return tabla;
                 }
             }
@@ -156,10 +156,10 @@ namespace DAO
             switch (modo)
             {
                 case 0:
-                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Nombre_Producto_PR LIKE '%" + busqueda + "%' ORDER BY Productos.Nombre_Producto_PR " + sort);
+                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Nombre_Producto_PR LIKE '%" + busqueda + "%' AND Productos.Estado_Producto_PR = 1 ORDER BY Productos.Nombre_Producto_PR " + sort);
                     return tabla;
                 case 1:
-                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Nombre_Producto_PR LIKE '%" + busqueda + "%' ORDER BY PrecioUnitario_Producto_PxP " + sort);
+                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Nombre_Producto_PR LIKE '%" + busqueda + "%' AND Productos.Estado_Producto_PR = 1 ORDER BY PrecioUnitario_Producto_PxP " + sort);
                     return tabla;
             }
 
@@ -178,10 +178,10 @@ namespace DAO
             switch (modo)
             {
                 case 0:
-                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF1' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF4' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF7' ORDER BY Productos.Nombre_Producto_PR " + sort);
+                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF1' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF4' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF7' AND Productos.Estado_Producto_PR = 1 ORDER BY Productos.Nombre_Producto_PR " + sort);
                     return tabla;
                 case 1:
-                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF1' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF4' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF7' ORDER BY PrecioUnitario_Producto_PxP " + sort);
+                    tabla = ds.ObtenerTabla("Productos", "SELECT PlataformaxProducto.Imagen_Producto_PxP,Productos.Nombre_Producto_PR,PlataformaxProducto.PrecioUnitario_Producto_PxP FROM Productos INNER JOIN PlataformaxProducto ON Productos.Cod_Producto_PR = PlataformaxProducto.Cod_Producto_PxP WHERE Productos.Cod_Categoria_PR = '" + cate + "' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF1' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF4' AND PlataformaxProducto.Cod_Plataforma_PxP != 'PF7' AND Productos.Estado_Producto_PR = 1 ORDER BY PrecioUnitario_Producto_PxP " + sort);
                     return tabla;
             }
 
