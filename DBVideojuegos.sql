@@ -1,7 +1,6 @@
 USE MASTER
 GO
-drop database TiendaVideojuegos
-go
+
 CREATE DATABASE TiendaVideojuegos
 GO
 
@@ -137,7 +136,7 @@ CREATE TABLE DetalleCompras
 	Cod_Plataforma_DC char(4) NOT NULL,
 	Cantidad_Producto_DC int NOT NULL,
 	PrecioUnitario_Compra_DC money NOT NULL,
-	CONSTRAINT PK_DetalleCompras PRIMARY KEY (Cod_Compra_DC, Cod_Producto_DC)
+	CONSTRAINT PK_DetalleCompras PRIMARY KEY (Cod_Compra_DC, Cod_Producto_DC, Cod_Plataforma_DC)
 )
 GO
 
@@ -158,7 +157,7 @@ CREATE TABLE DetalleVentas
 	Cod_Plataforma_DV char(4) NOT NULL,
 	Cantidad_Producto_DV int NOT NULL,
 	PrecioUnitario_Venta_DV money NOT NULL,
-	CONSTRAINT PK_DetalleVentas PRIMARY KEY (Cod_Venta_DV, Cod_Producto_DV)
+	CONSTRAINT PK_DetalleVentas PRIMARY KEY (Cod_Venta_DV, Cod_Producto_DV, Cod_Plataforma_DV)
 )
 GO
 
@@ -187,7 +186,7 @@ ADD CONSTRAINT FK_DetalleCompras_Compras FOREIGN KEY (Cod_Compra_DC) REFERENCES 
 GO
 
 ALTER TABLE DetalleCompras
-ADD CONSTRAINT FK_DetalleCompras_Productos FOREIGN KEY (Cod_Producto_DC) REFERENCES Productos (Cod_Producto_PR)
+ADD CONSTRAINT FK_DetalleCompras_Productos FOREIGN KEY (Cod_Producto_DC, Cod_Plataforma_DC) REFERENCES PlataformaxProducto (Cod_Producto_PxP, Cod_Plataforma_PxP)
 GO
 
 ALTER TABLE DetalleVentas
@@ -195,7 +194,15 @@ ADD CONSTRAINT FK_DetalleVentas_Ventas FOREIGN KEY (Cod_Venta_DV) REFERENCES Ven
 GO
 
 ALTER TABLE DetalleVentas
-ADD CONSTRAINT FK_DetalleVentas_Productos FOREIGN KEY (Cod_Producto_DV) REFERENCES Productos (Cod_Producto_PR)
+ADD CONSTRAINT FK_DetalleVentas_Productos FOREIGN KEY (Cod_Producto_DV, Cod_Plataforma_DV) REFERENCES PlataformaxProducto (Cod_Producto_PxP, Cod_Plataforma_PxP)
+GO
+
+ALTER TABLE Usuarios
+ADD CONSTRAINT FK_Usuarios_Provincias FOREIGN KEY (Provincia_Usuario_U) REFERENCES Provincias (Cod_Provincia_prov)
+GO
+
+ALTER TABLE Usuarios
+ADD CONSTRAINT FK_Usuarios_Localidades FOREIGN KEY (Localidad_Usuario_U) REFERENCES Localidades (Cod_Localidad_loc)
 GO
 
 ALTER TABLE Usuarios
@@ -2811,7 +2818,7 @@ CREATE PROCEDURE spEliminarPlataforma(
     @Cod_Plataforma_P char(4)
     )
     AS
-    update Plataformas set Estado_Plataforma_P = 0 
+    update Plataformas set Estado_Plataforma_P = 0
 	WHERE Cod_Plataforma_P = @Cod_Plataforma_P
     RETURN
 		GO
@@ -2823,7 +2830,7 @@ CREATE PROCEDURE spModificarCategoria(
 		AS
 		BEGIN
 		    UPDATE Categorias SET Nombre_Categoria_C = @Nombre_Categoria_C
-			WHERE Cod_Categoria_C = @Cod_Categoria_C 
+			WHERE Cod_Categoria_C = @Cod_Categoria_C
 		END
 		GO
 
@@ -2864,6 +2871,95 @@ CREATE PROCEDURE SpAltaDetalleVentas(
 		RETURN
 		GO
 
+    CREATE PROCEDURE spAltaUsuario(
+    		@Cod_Usuario_U char(4),
+        @Cod_TipoUsuario_U char(4),
+        @Nombre_Usuario_U varchar(60),
+        @Apellido_Usuario_U varchar(60),
+        @Nickname_Usuario_U varchar(100),
+        @Contraseña_Usuario_U varchar(100),
+        @DNI_Usuario_U varchar(10),
+        @fNacimiento_Usuario_U date,
+        @Telefono_Usuario_U varchar(15),
+        @EMail_Usuario_U varchar(100),
+        @Direccion_Usuario_U varchar(100),
+        @Provincia_Usuario_U char(2),
+        @Localidad_Usuario_U char(4),
+        @Estado_Usuario_U bit
+    		)
+    		AS
+    		INSERT INTO Usuarios(Cod_Usuario_U,Cod_TipoUsuario_U,Nombre_Usuario_U,Apellido_Usuario_U,Nickname_Usuario_U,Contraseña_Usuario_U,DNI_Usuario_U,fNacimiento_Usuario_U,Telefono_Usuario_U,EMail_Usuario_U,Direccion_Usuario_U,Provincia_Usuario_U,Localidad_Usuario_U,Estado_Usuario_U)
+        VALUES(@Cod_Usuario_U,@Cod_TipoUsuario_U,@Nombre_Usuario_U,@Apellido_Usuario_U,@Nickname_Usuario_U,@Contraseña_Usuario_U,@DNI_Usuario_U,@fNacimiento_Usuario_U,@Telefono_Usuario_U,@EMail_Usuario_U,@Direccion_Usuario_U,@Provincia_Usuario_U,@Localidad_Usuario_U,@Estado_Usuario_U)
+    		RETURN
+    		GO
+
+    CREATE PROCEDURE spModificarUsuario(
+        		@Cod_Usuario_U char(4),
+            @Cod_TipoUsuario_U char(4),
+            @Nombre_Usuario_U varchar(60),
+            @Apellido_Usuario_U varchar(60),
+            @Nickname_Usuario_U varchar(100),
+            @Contraseña_Usuario_U varchar(100),
+            @DNI_Usuario_U varchar(10),
+            @fNacimiento_Usuario_U date,
+            @Telefono_Usuario_U varchar(15),
+            @EMail_Usuario_U varchar(100),
+            @Direccion_Usuario_U varchar(100),
+            @Provincia_Usuario_U char(2),
+            @Localidad_Usuario_U char(4),
+            @Estado_Usuario_U bit
+        		)
+        		AS
+            BEGIN
+        		   UPDATE Usuarios SET Cod_Usuario_U = @Cod_Usuario_U, Cod_TipoUsuario_U = @Cod_TipoUsuario_U, Nombre_Usuario_U=@Nombre_Usuario_U ,Apellido_Usuario_U=@Apellido_Usuario_U, Nickname_Usuario_U=@Nickname_Usuario_U, Contraseña_Usuario_U=@Contraseña_Usuario_U,
+               DNI_Usuario_U=@DNI_Usuario_U,fNacimiento_Usuario_U=@fNacimiento_Usuario_U,Telefono_Usuario_U=@Telefono_Usuario_U,
+               EMail_Usuario_U=@EMail_Usuario_U,Direccion_Usuario_U=@Direccion_Usuario_U,Provincia_Usuario_U=@Provincia_Usuario_U,Localidad_Usuario_U=@Localidad_Usuario_U,Estado_Usuario_U=@Estado_Usuario_U
+        			WHERE Cod_Usuario_U = @Cod_Usuario_U AND Cod_TipoUsuario_U = @Cod_TipoUsuario_U
+        		END
+        		RETURN
+        		GO
+
+create procedure SpModificarProductos(
+	@Cod_Producto_PR char (4),
+	@Nombre_Producto_PR varchar (100),
+	@Descripcion_Producto_PR varchar (500),
+	@Cod_Marca_PR char (4),
+	@Cod_Categoria_PR char(4),
+	@Cod_Genero_PR char (4),
+	@fPublicacion_Producto_PR smalldatetime
+
+)
+as
+begin
+	update Productos SET Nombre_Producto_PR=@Nombre_Producto_PR, Descripcion_Producto_PR=@Descripcion_Producto_PR, Cod_Marca_PR=@Cod_Marca_PR, Cod_Categoria_PR=@Cod_Categoria_PR, Cod_Genero_PR=@Cod_Genero_PR, fPublicacion_Producto_PR=@fPublicacion_Producto_PR
+	where Cod_Producto_PR=@Cod_Producto_PR
+end
+go
+
+create procedure SpAltaProductos(
+	@Cod_Producto_PR char (4),
+	@Nombre_Producto_PR varchar (100),
+	@Descripcion_Producto_PR varchar (500),
+	@Cod_Marca_PR char (4),
+	@Cod_Categoria_PR char(4),
+	@Cod_Genero_PR char (4),
+	@fPublicacion_Producto_PR smalldatetime,
+	@Estado_Producto_PR bit
+)
+as
+	insert into Productos(Cod_Producto_PR, Nombre_Producto_PR, Descripcion_Producto_PR, Cod_Marca_PR, Cod_Categoria_PR, Cod_Genero_PR, fPublicacion_Producto_PR, Estado_Producto_PR)
+	values(@Cod_Producto_PR, @Nombre_Producto_PR, @Descripcion_Producto_PR, @Cod_Marca_PR, @Cod_Categoria_PR, @Cod_Genero_PR, @fPublicacion_Producto_PR, @Estado_Producto_PR)
+	RETURN
+	GO
+
+	CREATE PROCEDURE spEliminarProducto(
+    @IDPRODUCTO char(4)
+    )
+    AS
+    UPDATE Productos SET  Estado_Producto_PR=0
+ WHERE Cod_Producto_PR = @IDPRODUCTO
+    RETURN
+GO
 CREATE PROCEDURE SpAltaMarca(
 					@Cod_Marca_M char(4),
 					@Nombre_Marca_M varchar(60),
@@ -2875,7 +2971,7 @@ CREATE PROCEDURE SpAltaMarca(
 		)
 		AS
 		INSERT INTO Marcas(Cod_Marca_M, Nombre_Marca_M, Nombre_Contacto_M, Direccion_Marca_M, Ciudad_Marca_M, Telefono_Marca_M, EMail_Marca_M, Estado_Marca_M)
-		VALUES(@Cod_Marca_M, @Nombre_Marca_M, @Nombre_Contacto_M, @Direccion_Marca_M, @Ciudad_Marca_M, @Telefono_Marca_M, @EMail_Marca_M, 1)				
+		VALUES(@Cod_Marca_M, @Nombre_Marca_M, @Nombre_Contacto_M, @Direccion_Marca_M, @Ciudad_Marca_M, @Telefono_Marca_M, @EMail_Marca_M, 1)
 		RETURN
 		GO
 
@@ -2890,10 +2986,10 @@ CREATE PROCEDURE SpModificarMarca(
 		)
 		AS
 		BEGIN
-		   UPDATE Marcas SET Nombre_Marca_M = @Nombre_Marca_M, 
-		   Nombre_Contacto_M = @Nombre_Contacto_M, 
-		   Direccion_Marca_M = @Direccion_Marca_M, 
-		   Ciudad_Marca_M = @Ciudad_Marca_M, 
+		   UPDATE Marcas SET Nombre_Marca_M = @Nombre_Marca_M,
+		   Nombre_Contacto_M = @Nombre_Contacto_M,
+		   Direccion_Marca_M = @Direccion_Marca_M,
+		   Ciudad_Marca_M = @Ciudad_Marca_M,
 		   Telefono_Marca_M = @Telefono_Marca_M,
 		   EMail_Marca_M = @EMail_Marca_M
 			WHERE Cod_Marca_M = @Cod_Marca_M
@@ -2904,12 +3000,12 @@ CREATE PROCEDURE spEliminarMarca(
 			 @Cod_Marca_M char(4)
 		 )
 		 AS
-		 update Marcas set Estado_Marca_M = 0 
+		 update Marcas set Estado_Marca_M = 0
 		 WHERE Cod_Marca_M = @Cod_Marca_M
 		 RETURN
 		 GO
 
-		 
+
 CREATE PROCEDURE SpAltaGeneros(
 	@Cod_Genero_G char(4),
 	@Nombre_Genero_G varchar(60)
@@ -2927,7 +3023,7 @@ CREATE PROCEDURE spModificarGenero(
 		AS
 		BEGIN
 		    UPDATE Generos SET Nombre_Genero_G = @Nombre_Genero_G
-			WHERE Cod_Genero_G = @Cod_Genero_G 
+			WHERE Cod_Genero_G = @Cod_Genero_G
 		END
 		GO
 
@@ -2936,7 +3032,7 @@ CREATE PROCEDURE spEliminarGenero(
 		 )
 		 AS
 		 BEGIN
-		 update Generos set Estado_Genero_G = 0 
+		 update Generos set Estado_Genero_G = 0
 		 WHERE Cod_Genero_G = @Cod_Genero_G
-		 END 
+		 END
 		 GO

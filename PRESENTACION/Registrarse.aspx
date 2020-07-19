@@ -82,7 +82,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <asp:Button ID="btnRegistrarse" runat="server" CssClass="btn-danger" Text="Acceder" OnClick="btnRegistrarse_Click" />
+                                    <asp:Button ID="btnRegistrarse" runat="server" class="btn btn-danger" Text="Acceder" OnClick="btnRegistrarse_Click" />
                                 </div>
                                 <asp:Label ID="lblIncorrecto" runat="server" Text="" ForeColor="Red" Width="90%"></asp:Label>
                             </form>
