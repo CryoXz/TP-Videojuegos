@@ -82,5 +82,17 @@ namespace NEGOCIO
             return dao.getTablaProductosJuegosO(cate, sort, modo);
         }
 
+        public bool eliminarPxP(string id)
+        {
+            //Validar id existente 
+            DaoPlataformaxProducto dao = new DaoPlataformaxProducto();
+            PlataformaXProducto p = new PlataformaXProducto();
+            p.setIdProducto(id);
+            int op = dao.eliminarPlataformaxProducto(p);
+            if (op == 1)
+                return true;
+            else
+                return false;
+        }
     }
 }

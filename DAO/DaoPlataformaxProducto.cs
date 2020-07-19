@@ -188,5 +188,19 @@ namespace DAO
             return tabla;
         }
 
+        private void ArmarParametrosPxPEliminar(ref SqlCommand Comando, PlataformaXProducto p)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Cod_Producto_PxP", SqlDbType.Char, 4);
+            SqlParametros.Value = p.getIdProducto();
+        }
+
+        public int eliminarPlataformaxProducto(PlataformaXProducto p)
+        {
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosPxPEliminar(ref comando, p);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarPlataformaxProducto");
+        }
+
     }
 }

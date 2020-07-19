@@ -117,6 +117,7 @@ CREATE TABLE PlataformaxProducto
 	Stock_Producto_PxP int NOT NULL,
 	PrecioUnitario_Producto_PxP money NOT NULL,
 	Imagen_Producto_PxP varchar(100) NULL,
+	Estado_Plataforma_PxP bit NOT NULL,
 	CONSTRAINT PK_PlataformaxProducto PRIMARY KEY (Cod_Producto_PxP,Cod_Plataforma_PxP)
 )
 GO
@@ -2722,45 +2723,46 @@ SELECT 'A32','Star Wars Jedi Fallen Order','Videojuego de aventura.','M4','CA2',
 SELECT 'A33','Mortal Kombat 11','Videojuego de peleas.','M5','CA2','G2','',1 UNION
 SELECT 'A34','Call of Duty: Modern Warfare','Videojuego de disparos.','M6','CA2','G3','',1
 
-INSERT INTO PlataformaxProducto(Cod_Producto_PxP,Cod_Plataforma_PxP,Stock_Producto_PxP,PrecioUnitario_Producto_PxP,Imagen_Producto_PxP)
-SELECT 'A1','PF1',1000,32500,'IMAGES/switchgris-box.jpg' UNION
-SELECT 'A2','PF1',1000,32500,'IMAGES/switchneon-box.jpg' UNION
-SELECT 'A3','PF1',1000,22500,'IMAGES/switchlitegris-box.jpg' UNION
-SELECT 'A4','PF1',1000,22500,'IMAGES/switchliteturquesa-box.jpg' UNION
-SELECT 'A5','PF1',1000,4900,'IMAGES/smash-box.jpg' UNION
-SELECT 'A6','PF1',1000,5000,'IMAGES/botw-box.jpg' UNION
-SELECT 'A7','PF1',1000,4800,'IMAGES/marioodyssey-box.jpg' UNION
-SELECT 'A8','PF1',1000,4900,'IMAGES/mariokart-box.jpg' UNION
-SELECT 'A9','PF1',1000,8500,'IMAGES/procontroller-box.jpg' UNION
-SELECT 'A10','PF1',1000,2900,'IMAGES/gccadapter-box.jpg' UNION
-SELECT 'A11','PF1',1000,10500,'IMAGES/gcc-box.jpg' UNION
-SELECT 'A12','PF1',1000,1200,'IMAGES/protectivefilter-box.jpg' UNION
-SELECT 'A13','PF4',1000,24500,'IMAGES/ps4slim-box.jpg' UNION
-SELECT 'A14','PF4',1000,30000,'IMAGES/ps4pro-box.jpg' UNION
-SELECT 'A15','PF9',1000,7000,'IMAGES/psclassic-box.jpg' UNION
-SELECT 'A16','PF4',1000,33000,'IMAGES/psvita-box.jpg' UNION
-SELECT 'A17','PF4',1000,2800,'IMAGES/gow-box.jpg' UNION
-SELECT 'A18','PF4',1000,3900,'IMAGES/daysgone-box.jpg' UNION
-SELECT 'A19','PF4',1000,2000,'IMAGES/unchartedtll-box.jpg' UNION
-SELECT 'A20','PF4',1000,3700,'IMAGES/spiderman-box.jpg' UNION
-SELECT 'A21','PF4',1000,5400,'IMAGES/ps4dualshock-box.jpg' UNION
-SELECT 'A22','PF4',1000,5700,'IMAGES/ps4camera-box.jpg' UNION
-SELECT 'A23','PF4',1000,1300,'IMAGES/soportevert-box.jpg' UNION
-SELECT 'A24','PF4',1000,10600,'IMAGES/ps4move-box.jpg' UNION
-SELECT 'A25','PF7',1000,6700,'IMAGES/gears5-box.jpg' UNION
-SELECT 'A26','PF7',1000,3000,'IMAGES/crackdown3-box.jpg' UNION
-SELECT 'A27','PF7',1000,5400,'IMAGES/haloinfinite-box.jpg' UNION
-SELECT 'A28','PF7',1000,3000,'IMAGES/forza4-box.jpg' UNION
-SELECT 'A29','PF7',1000,6000,'IMAGES/joystickxboxoneb-box.jpg' UNION
-SELECT 'A30','PF7',1000,6000,'IMAGES/joystickxboxoneg-box.jpg' UNION
-SELECT 'A31','PF7',1000,35000,'IMAGES/xboxones-box.jpg' UNION
-SELECT 'A32','PF4',1000,5300,'IMAGES/starwarsps4-box.jpg' UNION
-SELECT 'A32','PF7',1000,6500,'IMAGES/starwarsxboxone-box.jpg' UNION
-SELECT 'A33','PF1',1000,4000,'IMAGES/mk11switch-box.jpg' UNION
-SELECT 'A33','PF4',1000,4000,'IMAGES/mk11ps4-box.jpg' UNION
-SELECT 'A33','PF7',1000,5500,'IMAGES/mk11xboxone-box.jpg' UNION
-SELECT 'A34','PF4',1000,5600,'IMAGES/codps4-box.jpg' UNION
-SELECT 'A34','PF7',1000,5600,'IMAGES/codxboxone-box.jpg'
+INSERT INTO PlataformaxProducto(Cod_Producto_PxP,Cod_Plataforma_PxP,Stock_Producto_PxP,PrecioUnitario_Producto_PxP,Imagen_Producto_PxP,Estado_Plataforma_PxP)
+SELECT 'A1','PF1',1000,32500,'IMAGES/switchgris-box.jpg', 1 UNION
+SELECT 'A2','PF1',1000,32500,'IMAGES/switchneon-box.jpg', 1 UNION
+SELECT 'A3','PF1',1000,22500,'IMAGES/switchlitegris-box.jpg', 1 UNION
+SELECT 'A4','PF1',1000,22500,'IMAGES/switchliteturquesa-box.jpg', 1 UNION
+SELECT 'A5','PF1',1000,4900,'IMAGES/smash-box.jpg', 1 UNION
+SELECT 'A6','PF1',1000,5000,'IMAGES/botw-box.jpg', 1 UNION
+SELECT 'A7','PF1',1000,4800,'IMAGES/marioodyssey-box.jpg', 1 UNION
+SELECT 'A8','PF1',1000,4900,'IMAGES/mariokart-box.jpg', 1 UNION
+SELECT 'A9','PF1',1000,8500,'IMAGES/procontroller-box.jpg', 1 UNION
+SELECT 'A10','PF1',1000,2900,'IMAGES/gccadapter-box.jpg', 1 UNION
+SELECT 'A11','PF1',1000,10500,'IMAGES/gcc-box.jpg', 1 UNION
+SELECT 'A12','PF1',1000,1200,'IMAGES/protectivefilter-box.jpg', 1 UNION
+SELECT 'A13','PF4',1000,24500,'IMAGES/ps4slim-box.jpg', 1 UNION
+SELECT 'A14','PF4',1000,30000,'IMAGES/ps4pro-box.jpg', 1 UNION
+SELECT 'A15','PF9',1000,7000,'IMAGES/psclassic-box.jpg', 1 UNION
+SELECT 'A16','PF4',1000,33000,'IMAGES/psvita-box.jpg', 1 UNION
+SELECT 'A17','PF4',1000,2800,'IMAGES/gow-box.jpg', 1 UNION
+SELECT 'A18','PF4',1000,3900,'IMAGES/daysgone-box.jpg', 1 UNION
+SELECT 'A19','PF4',1000,2000,'IMAGES/unchartedtll-box.jpg', 1 UNION
+SELECT 'A20','PF4',1000,3700,'IMAGES/spiderman-box.jpg', 1 UNION
+SELECT 'A21','PF4',1000,5400,'IMAGES/ps4dualshock-box.jpg', 1 UNION
+SELECT 'A22','PF4',1000,5700,'IMAGES/ps4camera-box.jpg', 1 UNION
+SELECT 'A23','PF4',1000,1300,'IMAGES/soportevert-box.jpg', 1 UNION
+SELECT 'A24','PF4',1000,10600,'IMAGES/ps4move-box.jpg', 1 UNION
+SELECT 'A25','PF7',1000,6700,'IMAGES/gears5-box.jpg', 1 UNION
+SELECT 'A26','PF7',1000,3000,'IMAGES/crackdown3-box.jpg', 1 UNION
+SELECT 'A27','PF7',1000,5400,'IMAGES/haloinfinite-box.jpg', 1 UNION
+SELECT 'A28','PF7',1000,3000,'IMAGES/forza4-box.jpg', 1 UNION
+SELECT 'A29','PF7',1000,6000,'IMAGES/joystickxboxoneb-box.jpg', 1 UNION
+SELECT 'A30','PF7',1000,6000,'IMAGES/joystickxboxoneg-box.jpg', 1 UNION
+SELECT 'A31','PF7',1000,35000,'IMAGES/xboxones-box.jpg', 1 UNION
+SELECT 'A32','PF4',1000,5300,'IMAGES/starwarsps4-box.jpg', 1 UNION
+SELECT 'A32','PF7',1000,6500,'IMAGES/starwarsxboxone-box.jpg', 1 UNION
+SELECT 'A33','PF1',1000,4000,'IMAGES/mk11switch-box.jpg', 1 UNION
+SELECT 'A33','PF4',1000,4000,'IMAGES/mk11ps4-box.jpg', 1 UNION
+SELECT 'A33','PF7',1000,5500,'IMAGES/mk11xboxone-box.jpg', 1 UNION
+SELECT 'A34','PF4',1000,5600,'IMAGES/codps4-box.jpg', 1 UNION
+SELECT 'A34','PF7',1000,5600,'IMAGES/codxboxone-box.jpg', 1
+
 
 INSERT INTO Usuarios(Cod_Usuario_U,Cod_TipoUsuario_U,Nombre_Usuario_U,Apellido_Usuario_U,Nickname_Usuario_U,Contraseña_Usuario_U,DNI_Usuario_U,fNacimiento_Usuario_U,Telefono_Usuario_U,EMail_Usuario_U,Direccion_Usuario_U,Estado_Usuario_U,Provincia_Usuario_U,Localidad_Usuario_U)
 SELECT 'U1','TU1','Alexis','Rodriguez','CryoXz','123456','41804277','03/04/1999','44650251','ard@outlook.com','Moreno 362',1,'01','0048' UNION
@@ -2776,15 +2778,26 @@ SELECT 1, 'A7', 'PF1', 1000, 3800 UNION
 SELECT 2, 'A17', 'PF4', 1000, 2200
 
 INSERT INTO Ventas(Cod_Usuario_V, Cod_TipoUsuario_V, fVenta_V, Cod_TipoPago_V)
-SELECT 'U2', 'TU2', '08/12/2019', 'TP1' UNION
-SELECT 'U2', 'TU2', '09/12/2019', 'TP1'
+SELECT 'U2', 'TU2', '08/02/2020', 'TP1' UNION
+SELECT 'U2', 'TU2', '09/02/2020', 'TP1' UNION
+SELECT 'U2', 'TU2', '07/03/2020', 'TP1' UNION
+SELECT 'U2', 'TU2', '12/04/2020', 'TP1' UNION
+SELECT 'U2', 'TU2', '14/04/2020', 'TP1' 
 
 INSERT INTO DetalleVentas(Cod_Venta_DV, Cod_Producto_DV, Cod_Plataforma_DV, Cantidad_Producto_DV, PrecioUnitario_Venta_DV)
 SELECT 1, 'A2', 'PF1', 1, 32500 UNION
 SELECT 2, 'A5', 'PF1', 1, 4900 UNION
-SELECT 2, 'A6', 'PF1', 1, 5000
+SELECT 2, 'A6', 'PF1', 1, 5000 UNION
+SELECT 3, 'A2', 'PF1', 1, 32500 UNION
+SELECT 3, 'A34','PF7', 1, 5600 UNION
+SELECT 4, 'A6', 'PF1', 1, 5000 UNION
+SELECT 4, 'A11', 'PF1', 1, 10500 UNION
+SELECT 5, 'A7', 'PF1', 1, 4800 UNION
+SELECT 5, 'A31', 'PF7',1, 35000 UNION
+SELECT 5, 'A8', 'PF1', 1, 4900 
 
 go
+
 
 CREATE PROCEDURE SpAltaCategorias(
 	@Cod_Categoria_C char(4),
@@ -2806,13 +2819,6 @@ CREATE PROCEDURE SpAltaPlataforma(
 		RETURN
 		GO
 
-CREATE PROCEDURE spEliminarCategoria(
-	  @Cod_Categoria_C char(4)
-	 )
-	 AS
-	 DELETE Categorias WHERE Cod_Categoria_C = @Cod_Categoria_C
-	 RETURN
-	 GO
 
 CREATE PROCEDURE spEliminarPlataforma(
     @Cod_Plataforma_P char(4)
@@ -3036,3 +3042,35 @@ CREATE PROCEDURE spEliminarGenero(
 		 WHERE Cod_Genero_G = @Cod_Genero_G
 		 END
 		 GO
+		 
+create procedure SpModificarPlataformaXProducto(
+	@Cod_Producto_PxP char (4),
+	@Cod_Plataforma_PxP char (4),
+	@Stock_Producto_PxP int,
+	@PrecioUnitario_Producto_PxP Money,
+	@Imagen_Producto_PxP varchar(100)
+)
+as
+begin
+	update Productos SET Cod_Plataforma_PxP=@Cod_Plataforma_PxP, Stock_Producto_PxP=@Stock_Producto_PxP, PrecioUnitario_Producto_PxP=@PrecioUnitario_Producto_PxP, Imagen_Producto_PxP= @Imagen_Producto_PxP
+	where Cod_Producto_PxP =@Cod_Producto_PxP
+end
+go
+
+	CREATE PROCEDURE spEliminarPlataformaXProducto(
+    @Cod_Producto_PxP char(4)
+    )
+    AS
+    UPDATE PlataformaxProducto SET  Estado_Plataforma_PxP=0
+ WHERE Cod_Producto_PxP = @Cod_Producto_PxP
+    RETURN
+GO
+
+	CREATE PROCEDURE spEliminarUsuario(
+    @Cod_Usuario_U char(4)
+    )
+    AS
+    UPDATE Usuarios SET  Estado_Usuario_U=0
+ WHERE Cod_Usuario_U = @Cod_Usuario_U
+    RETURN
+GO

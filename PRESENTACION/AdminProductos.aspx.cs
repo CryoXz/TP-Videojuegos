@@ -35,9 +35,10 @@ namespace PRESENTACION
         protected void grdProductos_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             String s_codigoProducto = ((Label)grdProductos.Rows[e.RowIndex].FindControl("lbl_eit_codigoProducto")).Text;
-
+            N_PlataformaXProducto n_pxp = new N_PlataformaXProducto();
             N_Producto n = new N_Producto();
             n.eliminarProducto(s_codigoProducto);
+            n_pxp.eliminarPxP(s_codigoProducto);
             cargarGridview();
 
 

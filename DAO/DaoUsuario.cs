@@ -114,12 +114,12 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosUsuarioEliminar(ref comando, u);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarProducto");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarUsuario");
         }
         private void ArmarParametrosUsuarioEliminar(ref SqlCommand Comando, Usuario u)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDUsuario", SqlDbType.Char, 4);
+            SqlParametros = Comando.Parameters.Add("@Cod_Usuario_U", SqlDbType.Char, 4);
             SqlParametros.Value = u.getCodigoUsuario();
         }
     }
