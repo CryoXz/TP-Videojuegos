@@ -22,13 +22,13 @@ namespace PRESENTACION {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Control TxtNombre.
+        /// Control TxtNombrePlataforma.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
+        protected global::System.Web.UI.WebControls.TextBox TxtNombrePlataforma;
         
         /// <summary>
         /// Control btnAgregar.

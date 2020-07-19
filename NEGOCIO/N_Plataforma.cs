@@ -77,5 +77,17 @@ namespace NEGOCIO
             return data;
         }
 
+        public bool getBuscarNombrePlataforma(String nombrePlataforma)
+        {
+            DaoPlataforma dao = new DaoPlataforma();
+            return dao.getBuscarNombrePlataforma(nombrePlataforma);
+        }
+
+        public int getConsultaUltimaPlataforma()
+        {
+            DaoPlataforma dao = new DaoPlataforma();
+            return dao.getConsultaUltimaPlataforma();
+        }
+
     }
 }

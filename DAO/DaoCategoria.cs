@@ -27,6 +27,13 @@ namespace DAO
             //List<Categoria> lista = new List<Categoria>();
             DataTable tabla = ds.ObtenerTabla("Categoria", "Select * from Categorias");
             return tabla;
+        }        
+
+        private void ArmarParametrosCategoriaEliminar(ref SqlCommand Comando, Categoria cat)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Cod_Categoria_C", SqlDbType.Char, 4);
+            SqlParametros.Value = cat.getCodigoCategoria();
         }
 
         public int eliminarCategoria(Categoria cat)
@@ -36,12 +43,6 @@ namespace DAO
             return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarCategoria");
         }
 
-        private void ArmarParametrosCategoriaEliminar(ref SqlCommand Comando, Categoria cat)
-        {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDCATEGORIA", SqlDbType.Char, 4);
-            SqlParametros.Value = cat.getCodigoCategoria();
-        }
         private void ArmarParametrosCategorias(ref SqlCommand Comando, Categoria p)
         {
             SqlParameter SqlParametros = new SqlParameter();
@@ -61,6 +62,27 @@ namespace DAO
             SqlCommand comando = new SqlCommand();
             ArmarParametrosCategorias(ref comando, x);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaCategorias");
+        }
+
+        public bool getBuscarNombreCategoria(String NombreCategoria)
+        {
+            Categoria cat = new Categoria();
+            DataTable tabla = new DataTable();
+            tabla = ds.ObtenerTabla("Categorias", "select  Cod_Categoria_C, Nombre_Categoria_C  from Categorias where  Nombre_Categoria_C like '" + NombreCategoria.ToString() + "' ");
+
+            if (tabla.Rows.Count != 0)
+            {
+                return true;               
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public int getConsultaUltimaCategoria()
+        {
+            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Categorias");
         }
     }
 }
