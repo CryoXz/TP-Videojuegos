@@ -84,6 +84,9 @@ namespace PRESENTACION
                     case "6":
                         lblMensaje.Text = "FECHA INCORRECTA!";
                         break;
+                    case "7":
+                        lblMensaje.Text = "ERROR, DATOS VACIOS!";
+                        break;
                     default:
                         lblMensaje.Text = "";
                         break;

@@ -125,12 +125,21 @@ namespace PRESENTACION
 
             bool mail = isvalidEmail(txtEmail.Text);
             bool fecha = true;
-            if(txtFecha.Text == "" || DateTime.Compare(DateTime.Parse(txtFecha.Text), DateTime.Now) > 0)
+            bool vacio1 = true;
+            bool vacio2 = true;
+
+            if (txtNombre.Text == "" || txtApellido.Text == "" || txtUsername.Text == "" || txtDNI.Text == "")
+                vacio1 = false;
+
+            if (txtTelefono.Text == "" || txtEmail.Text == "" || txtDireccion.Text == "")
+                vacio2 = false;
+
+            if (txtFecha.Text == "" || DateTime.Compare(DateTime.Parse(txtFecha.Text), DateTime.Now) > 0)
             {
                 fecha = false;
             }
 
-            if(fecha && mail)
+            if(fecha && mail && vacio1 && vacio2)
             {
                 int filas = negu.ModificarUsuario(user);
                 if (filas > 0)
@@ -142,16 +151,24 @@ namespace PRESENTACION
                     Response.Redirect("Perfil.aspx?us=5");
                 }
             }
-            else if(fecha && !mail)
+            else if(fecha && !mail && vacio1 && vacio2)
             {
                 Response.Redirect("Perfil.aspx?us=4");
             }
-            else if(!fecha && mail)
+            else if(!fecha && mail && vacio1 && vacio2)
             {
                 Response.Redirect("Perfil.aspx?us=6");
             }
+            else if (fecha && mail && !vacio1 && vacio2)
+            {
+                Response.Redirect("Perfil.aspx?us=7");
+            }
+            else if (fecha && mail && vacio1 && !vacio2)
+            {
+                Response.Redirect("Perfil.aspx?us=7");
+            }
 
-            
+
         }
     }
 }
