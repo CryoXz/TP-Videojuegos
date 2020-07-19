@@ -133,6 +133,18 @@ namespace DAO
 
             return cod;
         }
+        public Double ConsultarDouble(string ConsultaSQL)
+        {
+
+            SqlConnection cn = new SqlConnection(DBtpVideojuego);
+            cn.Open();
+            SqlCommand comando = new SqlCommand(ConsultaSQL, cn);
+            Double cod = Convert.ToDouble(comando.ExecuteScalar());
+            cn.Close();
+
+
+            return cod;
+        }
 
     }
 }

@@ -50,6 +50,12 @@ namespace DAO
             DataTable tabla = ds.ObtenerTabla("Ventas", "SELECT * FROM Ventas WHERE Cod_Usuario_V = '" + codUser + "'");
             return tabla;
         }
+        public Double getVentasPorMes(string fecha1, string fecha2)
+        {
+            Double venta = ds.ConsultarDouble("select isnull(sum(Cantidad_Producto_DV* PrecioUnitario_Venta_DV),0) as ventas from Ventas inner join DetalleVentas on Cod_Venta_DV= Cod_Venta_V where fVenta_V between '"+fecha1+"' AND '"+fecha2+"'");
+            
+            return venta;
+        }
 
         public DataTable getBuscarNombre(String nombreBuscado)
         {
@@ -83,5 +89,6 @@ namespace DAO
             int total = ds.ConsultarUsuario("SELECT COUNT (*) FROM Ventas");
             return total;
         }
+
     }
 }
