@@ -3052,7 +3052,7 @@ create procedure SpModificarPlataformaXProducto(
 )
 as
 begin
-	update Productos SET Cod_Plataforma_PxP=@Cod_Plataforma_PxP, Stock_Producto_PxP=@Stock_Producto_PxP, PrecioUnitario_Producto_PxP=@PrecioUnitario_Producto_PxP, Imagen_Producto_PxP= @Imagen_Producto_PxP
+	update PlataformaxProducto SET Cod_Plataforma_PxP=@Cod_Plataforma_PxP, Stock_Producto_PxP=@Stock_Producto_PxP, PrecioUnitario_Producto_PxP=@PrecioUnitario_Producto_PxP, Imagen_Producto_PxP= @Imagen_Producto_PxP
 	where Cod_Producto_PxP =@Cod_Producto_PxP
 end
 go
