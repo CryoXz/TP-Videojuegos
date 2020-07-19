@@ -29,7 +29,7 @@ namespace PRESENTACION
 
         protected void grdMarcas_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            String s_codigoMarca = ((Label)grdMarcas.Rows[e.RowIndex].FindControl("lbl_it_codigo")).Text;
+            String s_codigoMarca = ((Label)grdMarcas.Rows[e.RowIndex].FindControl("lbl_it_codigo")).Text.Trim();
 
             N_Marca n_Marca = new N_Marca();
             n_Marca.eliminarMarca(s_codigoMarca);
@@ -53,13 +53,13 @@ namespace PRESENTACION
 
         protected void grdMarcas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {            
-            String s_codigoMarca = ((Label)grdMarcas.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text;
-            String s_nombreMarca = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_nombre")).Text;
-            String s_contacto = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_contacto")).Text;
-            String s_direccion = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_direccion")).Text;
-            String s_ciudad = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_ciudad")).Text;
-            String s_telefono = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_telefono")).Text;
-            String s_email = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_email")).Text;
+            String s_codigoMarca = ((Label)grdMarcas.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text.Trim();
+            String s_nombreMarca = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_nombre")).Text.Trim();
+            String s_contacto = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_contacto")).Text.Trim();
+            String s_direccion = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_direccion")).Text.Trim();
+            String s_ciudad = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_ciudad")).Text.Trim();
+            String s_telefono = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_telefono")).Text.Trim();
+            String s_email = ((TextBox)grdMarcas.Rows[e.RowIndex].FindControl("txt_eit_email")).Text.Trim();
 
             Marca m = new Marca();
             
@@ -69,8 +69,7 @@ namespace PRESENTACION
             m.setDireccion(s_direccion);
             m.setCiudad(s_ciudad);
             m.setTelefono(s_telefono);
-            m.setEmail(s_email);
-            m.setEstado(1);
+            m.setEmail(s_email);           
 
             N_Marca n_Marca = new N_Marca();
             n_Marca.ActualizarMarca(m);
@@ -88,18 +87,32 @@ namespace PRESENTACION
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
-                N_Marca n_Marca = new N_Marca();
-                grdMarcas.DataSource = n_Marca.getBuscarMarca(txtNombreMarca.Text);
-                grdMarcas.DataBind();        
+            N_Marca n_Marca = new N_Marca();
+            string nombreMarca = txtNombreMarca.Text.Trim();
+            if(nombreMarca != "")
+            {
+                grdMarcas.DataSource = n_Marca.getBuscarMarca(nombreMarca);
+                grdMarcas.DataBind();
+                if (grdMarcas.Rows.Count != 0)
+                {
+                    txtNombreMarca.Text = "";                   
+                }
+                else
+                {
+                    Response.Write("<script>alert('No se entontro marca');</script>");
+                    txtNombreMarca.Text = "";
+                    cargarGridview();
+                }               
+            }
+            else
+            {
+                Response.Write("<script>alert('Debe agregar un nombre');</script>");
+                cargarGridview();
+            }
+                  
         }
         protected void btnAgregar_Click(object sender, EventArgs e)
-        {
-            int N_filas = grdMarcas.Rows.Count - 1;
-            string s_codigoMarca = ((Label)grdMarcas.Rows[N_filas].FindControl("lbl_it_codigo")).Text;
-            char[] CharsToTream = { 'M' };
-            int codNum = Convert.ToInt32(s_codigoMarca.TrimStart(CharsToTream)) + 1;
-
-            this.Session["codigoMarca"] = codNum;
+        { 
             Response.Redirect("AdminAltaMarca.aspx");
         }
     }

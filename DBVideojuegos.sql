@@ -1,6 +1,7 @@
 USE MASTER
 GO
-
+drop database TiendaVideojuegos
+go
 CREATE DATABASE TiendaVideojuegos
 GO
 
@@ -73,6 +74,7 @@ CREATE TABLE Generos
 (
 	Cod_Genero_G char(4) PRIMARY KEY NOT NULL,
 	Nombre_Genero_G varchar(60) NOT NULL,
+	Estado_Genero_G bit NOT NULL
 )
 GO
 
@@ -135,7 +137,7 @@ CREATE TABLE DetalleCompras
 	Cod_Plataforma_DC char(4) NOT NULL,
 	Cantidad_Producto_DC int NOT NULL,
 	PrecioUnitario_Compra_DC money NOT NULL,
-	CONSTRAINT PK_DetalleCompras PRIMARY KEY (Cod_Compra_DC, Cod_Producto_DC, Cod_Plataforma_DC)
+	CONSTRAINT PK_DetalleCompras PRIMARY KEY (Cod_Compra_DC, Cod_Producto_DC)
 )
 GO
 
@@ -156,7 +158,7 @@ CREATE TABLE DetalleVentas
 	Cod_Plataforma_DV char(4) NOT NULL,
 	Cantidad_Producto_DV int NOT NULL,
 	PrecioUnitario_Venta_DV money NOT NULL,
-	CONSTRAINT PK_DetalleVentas PRIMARY KEY (Cod_Venta_DV, Cod_Producto_DV, Cod_Plataforma_DV)
+	CONSTRAINT PK_DetalleVentas PRIMARY KEY (Cod_Venta_DV, Cod_Producto_DV)
 )
 GO
 
@@ -185,7 +187,7 @@ ADD CONSTRAINT FK_DetalleCompras_Compras FOREIGN KEY (Cod_Compra_DC) REFERENCES 
 GO
 
 ALTER TABLE DetalleCompras
-ADD CONSTRAINT FK_DetalleCompras_Productos FOREIGN KEY (Cod_Producto_DC, Cod_Plataforma_DC) REFERENCES PlataformaxProducto (Cod_Producto_PxP, Cod_Plataforma_PxP)
+ADD CONSTRAINT FK_DetalleCompras_Productos FOREIGN KEY (Cod_Producto_DC) REFERENCES Productos (Cod_Producto_PR)
 GO
 
 ALTER TABLE DetalleVentas
@@ -193,15 +195,7 @@ ADD CONSTRAINT FK_DetalleVentas_Ventas FOREIGN KEY (Cod_Venta_DV) REFERENCES Ven
 GO
 
 ALTER TABLE DetalleVentas
-ADD CONSTRAINT FK_DetalleVentas_Productos FOREIGN KEY (Cod_Producto_DV, Cod_Plataforma_DV) REFERENCES PlataformaxProducto (Cod_Producto_PxP, Cod_Plataforma_PxP)
-GO
-
-ALTER TABLE Usuarios
-ADD CONSTRAINT FK_Usuarios_Provincias FOREIGN KEY (Provincia_Usuario_U) REFERENCES Provincias (Cod_Provincia_prov)
-GO
-
-ALTER TABLE Usuarios
-ADD CONSTRAINT FK_Usuarios_Localidades FOREIGN KEY (Localidad_Usuario_U) REFERENCES Localidades (Cod_Localidad_loc)
+ADD CONSTRAINT FK_DetalleVentas_Productos FOREIGN KEY (Cod_Producto_DV) REFERENCES Productos (Cod_Producto_PR)
 GO
 
 ALTER TABLE Usuarios
@@ -2669,21 +2663,21 @@ SELECT 'M4','Electronic Arts','Gary J.','50 Montgomery','New York','53823355','c
 SELECT 'M5','Netherrealm Studios','Ed B.','200 Montgomery','New York','56660355','contact@netherrealm.com',1 UNION
 SELECT 'M6','Activision','Jay C.','30 Montgomery','New York','56330355','contact@activision.com',1
 
-INSERT INTO Generos (Cod_Genero_G,Nombre_Genero_G)
-SELECT 'G0','Sin Genero' UNION
-SELECT 'G1','Aventura' UNION
-SELECT 'G2','Lucha' UNION
-SELECT 'G3','Shoother' UNION
-SELECT 'G4','Deportes' UNION
-SELECT 'G5','Accion' UNION
-SELECT 'G6','Arcade' UNION
-SELECT 'G7','Carreras' UNION
-SELECT 'G8','Estrategias' UNION
-SELECT 'G9','Infantil' UNION
-SELECT 'G10','Lucha' UNION
-SELECT 'G11','RPG' UNION
-SELECT 'G12','Plataformas' UNION
-SELECT 'G13','Simulador'
+INSERT INTO Generos (Cod_Genero_G,Nombre_Genero_G, Estado_Genero_G)
+SELECT 'G0','Sin Genero',1 UNION
+SELECT 'G1','Aventura',1 UNION
+SELECT 'G2','Lucha',1 UNION
+SELECT 'G3','Shoother',1 UNION
+SELECT 'G4','Deportes',1 UNION
+SELECT 'G5','Accion',1 UNION
+SELECT 'G6','Arcade',1 UNION
+SELECT 'G7','Carreras',1 UNION
+SELECT 'G8','Estrategias',1 UNION
+SELECT 'G9','Infantil',1 UNION
+SELECT 'G10','Lucha',1 UNION
+SELECT 'G11','RPG',1 UNION
+SELECT 'G12','Plataformas',1 UNION
+SELECT 'G13','Simulador',1
 
 INSERT INTO Productos(Cod_Producto_PR,Nombre_Producto_PR,Descripcion_Producto_PR,Cod_Marca_PR,Cod_Categoria_PR,Cod_Genero_PR,fPublicacion_Producto_PR,Estado_Producto_PR)
 SELECT 'A1','Nintendo Switch Gray','Consola de videojuegos Nintendo.','M1','CA1','G0','',1 UNION
@@ -2795,7 +2789,7 @@ AS
 	RETURN
 	GO
 
-CREATE PROCEDURE SpAltaPLataforma(
+CREATE PROCEDURE SpAltaPlataforma(
 		@Cod_Plataforma_P char(4),
 		@Nombre_Plataforma_P varchar(60)
 	)
@@ -2870,92 +2864,79 @@ CREATE PROCEDURE SpAltaDetalleVentas(
 		RETURN
 		GO
 
-    CREATE PROCEDURE spAltaUsuario(
-    		@Cod_Usuario_U char(4),
-        @Cod_TipoUsuario_U char(4),
-        @Nombre_Usuario_U varchar(60),
-        @Apellido_Usuario_U varchar(60),
-        @Nickname_Usuario_U varchar(100),
-        @Contraseña_Usuario_U varchar(100),
-        @DNI_Usuario_U varchar(10),
-        @fNacimiento_Usuario_U date,
-        @Telefono_Usuario_U varchar(15),
-        @EMail_Usuario_U varchar(100),
-        @Direccion_Usuario_U varchar(100),
-        @Provincia_Usuario_U char(2),
-        @Localidad_Usuario_U char(4),
-        @Estado_Usuario_U bit
-    		)
-    		AS
-    		INSERT INTO Usuarios(Cod_Usuario_U,Cod_TipoUsuario_U,Nombre_Usuario_U,Apellido_Usuario_U,Nickname_Usuario_U,Contraseña_Usuario_U,DNI_Usuario_U,fNacimiento_Usuario_U,Telefono_Usuario_U,EMail_Usuario_U,Direccion_Usuario_U,Provincia_Usuario_U,Localidad_Usuario_U,Estado_Usuario_U)
-        VALUES(@Cod_Usuario_U,@Cod_TipoUsuario_U,@Nombre_Usuario_U,@Apellido_Usuario_U,@Nickname_Usuario_U,@Contraseña_Usuario_U,@DNI_Usuario_U,@fNacimiento_Usuario_U,@Telefono_Usuario_U,@EMail_Usuario_U,@Direccion_Usuario_U,@Provincia_Usuario_U,@Localidad_Usuario_U,@Estado_Usuario_U)
-    		RETURN
-    		GO
+CREATE PROCEDURE SpAltaMarca(
+					@Cod_Marca_M char(4),
+					@Nombre_Marca_M varchar(60),
+					@Nombre_Contacto_M varchar(100),
+					@Direccion_Marca_M varchar(100),
+					@Ciudad_Marca_M varchar(100),
+					@Telefono_Marca_M varchar(15),
+					@EMail_Marca_M varchar(200)
+		)
+		AS
+		INSERT INTO Marcas(Cod_Marca_M, Nombre_Marca_M, Nombre_Contacto_M, Direccion_Marca_M, Ciudad_Marca_M, Telefono_Marca_M, EMail_Marca_M, Estado_Marca_M)
+		VALUES(@Cod_Marca_M, @Nombre_Marca_M, @Nombre_Contacto_M, @Direccion_Marca_M, @Ciudad_Marca_M, @Telefono_Marca_M, @EMail_Marca_M, 1)				
+		RETURN
+		GO
 
-    CREATE PROCEDURE spModificarUsuario(
-        		@Cod_Usuario_U char(4),
-            @Cod_TipoUsuario_U char(4),
-            @Nombre_Usuario_U varchar(60),
-            @Apellido_Usuario_U varchar(60),
-            @Nickname_Usuario_U varchar(100),
-            @Contraseña_Usuario_U varchar(100),
-            @DNI_Usuario_U varchar(10),
-            @fNacimiento_Usuario_U date,
-            @Telefono_Usuario_U varchar(15),
-            @EMail_Usuario_U varchar(100),
-            @Direccion_Usuario_U varchar(100),
-            @Provincia_Usuario_U char(2),
-            @Localidad_Usuario_U char(4),
-            @Estado_Usuario_U bit
-        		)
-        		AS
-            BEGIN
-        		   UPDATE Usuarios SET Cod_Usuario_U = @Cod_Usuario_U, Cod_TipoUsuario_U = @Cod_TipoUsuario_U, Nombre_Usuario_U=@Nombre_Usuario_U ,Apellido_Usuario_U=@Apellido_Usuario_U, Nickname_Usuario_U=@Nickname_Usuario_U, Contraseña_Usuario_U=@Contraseña_Usuario_U,
-               DNI_Usuario_U=@DNI_Usuario_U,fNacimiento_Usuario_U=@fNacimiento_Usuario_U,Telefono_Usuario_U=@Telefono_Usuario_U,
-               EMail_Usuario_U=@EMail_Usuario_U,Direccion_Usuario_U=@Direccion_Usuario_U,Provincia_Usuario_U=@Provincia_Usuario_U,Localidad_Usuario_U=@Localidad_Usuario_U,Estado_Usuario_U=@Estado_Usuario_U
-        			WHERE Cod_Usuario_U = @Cod_Usuario_U AND Cod_TipoUsuario_U = @Cod_TipoUsuario_U
-        		END
-        		RETURN
-        		GO
+CREATE PROCEDURE SpModificarMarca(
+					@Cod_Marca_M char(4),
+					@Nombre_Marca_M varchar(60),
+					@Nombre_Contacto_M varchar(100),
+					@Direccion_Marca_M varchar(100),
+					@Ciudad_Marca_M varchar(100),
+					@Telefono_Marca_M varchar(15),
+					@EMail_Marca_M varchar(200)
+		)
+		AS
+		BEGIN
+		   UPDATE Marcas SET Nombre_Marca_M = @Nombre_Marca_M, 
+		   Nombre_Contacto_M = @Nombre_Contacto_M, 
+		   Direccion_Marca_M = @Direccion_Marca_M, 
+		   Ciudad_Marca_M = @Ciudad_Marca_M, 
+		   Telefono_Marca_M = @Telefono_Marca_M,
+		   EMail_Marca_M = @EMail_Marca_M
+			WHERE Cod_Marca_M = @Cod_Marca_M
+		END
+		GO
 
-create procedure SpModificarProductos(
-	@Cod_Producto_PR char (4),
-	@Nombre_Producto_PR varchar (100),
-	@Descripcion_Producto_PR varchar (500),
-	@Cod_Marca_PR char (4),
-	@Cod_Categoria_PR char(4),
-	@Cod_Genero_PR char (4),
-	@fPublicacion_Producto_PR smalldatetime
+CREATE PROCEDURE spEliminarMarca(
+			 @Cod_Marca_M char(4)
+		 )
+		 AS
+		 update Marcas set Estado_Marca_M = 0 
+		 WHERE Cod_Marca_M = @Cod_Marca_M
+		 RETURN
+		 GO
 
+		 
+CREATE PROCEDURE SpAltaGeneros(
+	@Cod_Genero_G char(4),
+	@Nombre_Genero_G varchar(60)
 )
-as
-begin
-	update Productos SET Nombre_Producto_PR=@Nombre_Producto_PR, Descripcion_Producto_PR=@Descripcion_Producto_PR, Cod_Marca_PR=@Cod_Marca_PR, Cod_Categoria_PR=@Cod_Categoria_PR, Cod_Genero_PR=@Cod_Genero_PR, fPublicacion_Producto_PR=@fPublicacion_Producto_PR
-	where Cod_Producto_PR=@Cod_Producto_PR
-end
-go
-
-create procedure SpAltaProductos(
-	@Cod_Producto_PR char (4),
-	@Nombre_Producto_PR varchar (100),
-	@Descripcion_Producto_PR varchar (500),
-	@Cod_Marca_PR char (4),
-	@Cod_Categoria_PR char(4),
-	@Cod_Genero_PR char (4),
-	@fPublicacion_Producto_PR smalldatetime,
-	@Estado_Producto_PR bit
-)
-as
-	insert into Productos(Cod_Producto_PR, Nombre_Producto_PR, Descripcion_Producto_PR, Cod_Marca_PR, Cod_Categoria_PR, Cod_Genero_PR, fPublicacion_Producto_PR, Estado_Producto_PR)
-	values(@Cod_Producto_PR, @Nombre_Producto_PR, @Descripcion_Producto_PR, @Cod_Marca_PR, @Cod_Categoria_PR, @Cod_Genero_PR, @fPublicacion_Producto_PR, @Estado_Producto_PR)
+AS
+	INSERT INTO Generos(Cod_Genero_G, Nombre_Genero_G, Estado_Genero_G)
+	VALUES(@Cod_Genero_G, @Nombre_Genero_G, 1)
 	RETURN
 	GO
 
-	CREATE PROCEDURE spEliminarProducto(
-    @IDPRODUCTO char(4)
-    )
-    AS
-    UPDATE Productos SET  Estado_Producto_PR=0
- WHERE Cod_Producto_PR = @IDPRODUCTO
-    RETURN
-GO
+CREATE PROCEDURE spModificarGenero(
+			@Cod_Genero_G char(4),
+			@Nombre_Genero_G varchar(60)
+		)
+		AS
+		BEGIN
+		    UPDATE Generos SET Nombre_Genero_G = @Nombre_Genero_G
+			WHERE Cod_Genero_G = @Cod_Genero_G 
+		END
+		GO
+
+CREATE PROCEDURE spEliminarGenero(
+			 @Cod_Genero_G char(4)
+		 )
+		 AS
+		 BEGIN
+		 update Generos set Estado_Genero_G = 0 
+		 WHERE Cod_Genero_G = @Cod_Genero_G
+		 END 
+		 GO
