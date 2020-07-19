@@ -46,6 +46,7 @@ CREATE TABLE Plataformas
 (
 	Cod_Plataforma_P char(4) PRIMARY KEY NOT NULL,
 	Nombre_Plataforma_P varchar(60) NOT NULL,
+	Estado_Plataforma_P bit NOT NULL
 )
 GO
 
@@ -2636,16 +2637,16 @@ INSERT INTO Tipo_Usuarios (Cod_TipoUsuario_TU, Nombre_TipoUsuario_TU)
 SELECT 'TU1','Administrador' UNION
 SELECT 'TU2','Cliente'
 
-INSERT INTO Plataformas (Cod_Plataforma_P, Nombre_Plataforma_P)
-SELECT 'PF1','Nintendo Switch' UNION
-SELECT 'PF2','Nintendo 3DS' UNION
-SELECT 'PF3','Playstation 3' UNION
-SELECT 'PF4','Playstation 4' UNION
-SELECT 'PF5','PS Vita' UNION
-SELECT 'PF6','XBOX 360' UNION
-SELECT 'PF7','XBOX One' UNION
-SELECT 'PF8','PC' UNION
-SELECT 'PF9','Playstation Classic'
+INSERT INTO Plataformas (Cod_Plataforma_P, Nombre_Plataforma_P, Estado_Plataforma_P)
+SELECT 'PF1','Nintendo Switch',1 UNION
+SELECT 'PF2','Nintendo 3DS',1 UNION
+SELECT 'PF3','Playstation 3',1 UNION
+SELECT 'PF4','Playstation 4',1 UNION
+SELECT 'PF5','PS Vita',1  UNION
+SELECT 'PF6','XBOX 360',1 UNION
+SELECT 'PF7','XBOX One',1 UNION
+SELECT 'PF8','PC',1 UNION
+SELECT 'PF9','Playstation Classic',1
 
 INSERT INTO Categorias (Cod_Categoria_C, Nombre_Categoria_C)
 SELECT 'CA1','Consolas' UNION
@@ -2792,46 +2793,47 @@ CREATE PROCEDURE SpAltaPLataforma(
 		@Nombre_Plataforma_P varchar(60)
 	)
 	AS
-		INSERT INTO Plataformas(Cod_Plataforma_P,Nombre_Plataforma_P)
-		VALUES(@Cod_Plataforma_P,@Nombre_Plataforma_P)
+		INSERT INTO Plataformas(Cod_Plataforma_P,Nombre_Plataforma_P, Estado_Plataforma_P)
+		VALUES(@Cod_Plataforma_P,@Nombre_Plataforma_P,1)
 		RETURN
 		GO
 
 CREATE PROCEDURE spEliminarCategoria(
-	  @IDCATEGORIA char(4)
+	  @Cod_Categoria_C char(4)
 	 )
 	 AS
-	 DELETE Categorias WHERE Cod_Categoria_C = @IDCATEGORIA
+	 DELETE Categorias WHERE Cod_Categoria_C = @Cod_Categoria_C
 	 RETURN
 	 GO
 
 CREATE PROCEDURE spEliminarPlataforma(
-    @IDPLATAFORMA char(4)
+    @Cod_Plataforma_P char(4)
     )
     AS
-    DELETE Plataformas WHERE Cod_Plataforma_P = @IDPLATAFORMA
+    update Plataformas set Estado_Plataforma_P = 0 
+	WHERE Cod_Plataforma_P = @Cod_Plataforma_P
     RETURN
 		GO
 
 CREATE PROCEDURE spModificarCategoria(
-			@codigoCategoria char(4),
-			@nombreCategoria varchar(60)
+			@Cod_Categoria_C char(4),
+			@Nombre_Categoria_C varchar(60)
 		)
 		AS
 		BEGIN
-		    UPDATE Categorias SET Nombre_Categoria_C = @nombreCategoria
-			WHERE Cod_Categoria_C = @codigoCategoria
+		    UPDATE Categorias SET Nombre_Categoria_C = @Nombre_Categoria_C
+			WHERE Cod_Categoria_C = @Cod_Categoria_C 
 		END
 		GO
 
 CREATE PROCEDURE spModificarPlataforma(
-			@codigoPlataforma char(4),
-			@nombrePlataforma varchar(60)
+			@Cod_Plataforma_P char(4),
+			@Nombre_Plataforma_P varchar(60)
 		)
 		AS
 		BEGIN
-		   UPDATE plataformas SET Nombre_Plataforma_P = @nombrePlataforma
-			WHERE Cod_Plataforma_P = @codigoPlataforma
+		   UPDATE plataformas SET Nombre_Plataforma_P = @Nombre_Plataforma_P
+			WHERE Cod_Plataforma_P = @Cod_Plataforma_P
 		END
 		GO
 
