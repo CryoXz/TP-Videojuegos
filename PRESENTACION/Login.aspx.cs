@@ -15,7 +15,16 @@ namespace PRESENTACION
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblIncorrecto.Visible = false;
+            if (!IsPostBack)
+            {
+                switch (Request.QueryString["u"])
+                {
+                    case "1":
+                        lblIncorrecto.Text = "USUARIO CREADO CORRECTAMENTE!";
+                        break;
+                }
+            }
+
         }
 
 

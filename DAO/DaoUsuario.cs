@@ -88,6 +88,10 @@ namespace DAO
             return tabla;
         }
 
+        public int getCantidadUsuarios()
+        {
+            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Usuarios ");
+        }
 
         public int getLogin(string username, string password)
         {

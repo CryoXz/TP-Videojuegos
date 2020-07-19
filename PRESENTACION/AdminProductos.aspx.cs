@@ -236,7 +236,7 @@ namespace PRESENTACION
             {
 
                 N_Producto n_Producto = new N_Producto();
-                grdProductos.DataSource = n_Producto.getBuscarProducto(txtNombreBuscar.Text);
+                ///grdProductos.DataSource = n_Producto.getBuscarProducto(txtNombreBuscar.Text);
                 grdProductos.DataBind();
             }
 
@@ -309,7 +309,7 @@ namespace PRESENTACION
                                         TxtFechaFin.Text,
                                         ref ClausulaSQLProductos);
 
-                grdProductos.DataSource = n_Producto.getFiltrarProducto(ClausulaSQLProductos);
+                ///grdProductos.DataSource = n_Producto.getFiltrarProducto(ClausulaSQLProductos);
                 grdProductos.DataBind();
             }
             catch (InvalidCastException ex)

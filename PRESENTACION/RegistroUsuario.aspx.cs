@@ -36,7 +36,7 @@ namespace PRESENTACION
             //  fechaNacimiento = DateTime.Parse(txtfNacimiento_Usuario.ToString());
 
             // se pasa por parametro los el selectdValue de dropdown.tostring, y los demas textbox en .text
-            N_usuario.GuardarUsuario(ddlTipoUsuario.SelectedValue.ToString(), txtNombre_Usuario.Text, txtApellido_Usuario.Text, txtNickname_Usuario.Text, txtContraseña_usuario.Text, txtDni_Usuario.Text, /*fechaNacimiento,*/ txtEmail_Usuario.Text, txtTelefono_Usuario.Text, txtDireccion_Usuario.Text);
+           /// N_usuario.GuardarUsuario(ddlTipoUsuario.SelectedValue.ToString(), txtNombre_Usuario.Text, txtApellido_Usuario.Text, txtNickname_Usuario.Text, txtContraseña_usuario.Text, txtDni_Usuario.Text, /*fechaNacimiento,*/ txtEmail_Usuario.Text, txtTelefono_Usuario.Text, txtDireccion_Usuario.Text);
             
         }
 
