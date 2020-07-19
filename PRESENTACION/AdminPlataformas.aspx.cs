@@ -36,7 +36,7 @@ namespace PRESENTACION
 
         protected void grdPlataformas_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_eit_codigoPlataforma")).Text;
+            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_eit_codigoPlataforma")).Text.Trim();
 
             N_Plataforma n_plat = new N_Plataforma();
             n_plat.eliminarPlataforma(s_codigoPlataforma);
@@ -60,8 +60,8 @@ namespace PRESENTACION
 
         protected void grdPlataformas_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_eit_codigoPlataforma")).Text;
-            String s_nombrePlataforma = ((TextBox)grdPlataformas.Rows[e.RowIndex].FindControl("txt_eit_nombrePlataforma")).Text;
+            String s_codigoPlataforma = ((Label)grdPlataformas.Rows[e.RowIndex].FindControl("lbl_eit_codigoPlataforma")).Text.Trim();
+            String s_nombrePlataforma = ((TextBox)grdPlataformas.Rows[e.RowIndex].FindControl("txt_eit_nombrePlataforma")).Text.Trim();
 
 
 
@@ -79,24 +79,38 @@ namespace PRESENTACION
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Plataforma p = new Plataforma();
- 
-
-            int N_filas = grdPlataformas.Rows.Count-1;
-            string s_codigoPlataforma=((Label)grdPlataformas.Rows[N_filas].FindControl("lbl_eit_codigoPlataforma")).Text;
-            char[] CharsToTream = { 'P', 'F' };
-            int codNum=Convert.ToInt32( s_codigoPlataforma.TrimStart(CharsToTream))+1;
-
-            p.setCodigoPlataforma ( "PF"+codNum) ;
-            p.setNombrePlataforma(TxtNombre.Text);
-
-          
+            Plataforma plataforma = new Plataforma();
             N_Plataforma n_Plataforma = new N_Plataforma();
-            n_Plataforma.AltaPlataforma(p);
 
-            grdPlataformas.EditIndex = -1;
-            cargarGridview();
-
+            string nombrePlataforma = TxtNombrePlataforma.Text.Trim();
+            if(nombrePlataforma != "")
+            {
+                if(!n_Plataforma.getBuscarNombrePlataforma(nombrePlataforma))
+                {
+                    int ultimaPlataforma = n_Plataforma.getConsultaUltimaPlataforma() + 1;
+                    plataforma.setCodigoPlataforma("PF" + ultimaPlataforma);
+                    plataforma.setNombrePlataforma(nombrePlataforma);
+                    n_Plataforma.AltaPlataforma(plataforma);
+                    Response.Write("<script>alert('Plataforma agregada con exito');</script>");
+                    TxtNombrePlataforma.Text = "";
+                    grdPlataformas.EditIndex = -1;
+                    cargarGridview();
+                }
+                else
+                {
+                    Response.Write("<script>alert('La plataforma ya existe');</script>");
+                    TxtNombrePlataforma.Text = "";
+                    grdPlataformas.EditIndex = -1;
+                    cargarGridview();
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('Debe ingresar una Plataforma');</script>");
+                TxtNombrePlataforma.Text = "";
+                grdPlataformas.EditIndex = -1;
+                cargarGridview();
+            }
         }
 
         protected void grdPlataformas_PageIndexChanging(object sender, GridViewPageEventArgs e)
