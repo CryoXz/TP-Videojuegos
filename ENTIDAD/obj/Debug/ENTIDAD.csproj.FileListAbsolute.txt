@@ -4,3 +4,9 @@ C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojA
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
+D:\Projects\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.dll
+D:\Projects\TP-Videojuegos\ENTIDAD\bin\Debug\ENTIDAD.pdb
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csprojAssemblyReference.cache
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.csproj.CoreCompileInputs.cache
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.dll
+D:\Projects\TP-Videojuegos\ENTIDAD\obj\Debug\ENTIDAD.pdb
