@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-
+ 
+  
     <div class="col-md-10">
         <div class="container">
             <h3>Usuarios</h3>
@@ -13,7 +13,7 @@
                 <div class="form-inline">
                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Label">NOMBRE DE USUARIO</asp:Label>
                     &nbsp                
-                    <asp:TextBox ID="txtBuscarNombre" runat="server" placeholder="Nombre o Apellido" CssClass="rounded" ></asp:TextBox>
+                    <asp:TextBox ID="txtBuscarNombre" runat="server" placeholder="Nombre o Apellido" CssClass="rounded" onkeypress="if (event.keyCode==13) return false;" ></asp:TextBox>
                     &nbsp
                     <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click" />
                 </div>
@@ -84,10 +84,10 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Fecha de nacimiento">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txt_eit_fnac" runat="server" Text='<%# Bind("fNacimiento_Usuario_U") %>' TextMode="Date"></asp:TextBox>
+                            <asp:TextBox ID="txt_eit_fnac" runat="server" Text='<%# Bind("fNacimiento_Usuario_U", "{0:d/M/yyy}") %>' ></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
-                            <asp:Label ID="lbl_it_fnac" runat="server" Text='<%# Bind("fNacimiento_Usuario_U") %>'></asp:Label>
+                            <asp:Label ID="lbl_it_fnac" runat="server" Text='<%# Bind("fNacimiento_Usuario_U", "{0:d/M/yyy}") %>'></asp:Label>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Telefono">
@@ -100,7 +100,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="E-mail">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txt_eit_email" runat="server" Text='<%# Bind("EMail_Usuario_U") %>'></asp:TextBox>
+                            <asp:TextBox ID="txt_eit_email" runat="server" Text='<%# Bind("EMail_Usuario_U") %>' ></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_Email" runat="server" Text='<%# Bind("EMail_Usuario_U") %>'></asp:Label>
@@ -128,7 +128,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Direccion">
                         <EditItemTemplate>
-                            <asp:TextBox ID="txt_eit_direccion" runat="server" Text='<%# Bind("Direccion_Usuario_U") %>'></asp:TextBox>
+                            <asp:TextBox ID="txt_eit_direccion" runat="server" Text='<%# Bind("Direccion_Usuario_U") %>' ></asp:TextBox>
                         </EditItemTemplate>
                         <ItemTemplate>
                             <asp:Label ID="lbl_it_Direccion" runat="server" Text='<%# Bind("Direccion_Usuario_U") %>'></asp:Label>
@@ -147,8 +147,17 @@
                 <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
         </div>
-
-
+<script type="text/javascript" src="/jQuery-2.1.4.js"></script>
+<script> 
+        $(document).keypress(function(e) 
+{ 
+    if(e.keyCode === 13) 
+    { 
+     e.preventDefault(); 
+     return false; 
+    } 
+        }); 
+    </script>
 
     </div>
 </asp:Content>

@@ -53,17 +53,17 @@ namespace PRESENTACION
         protected void grdUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
             string codigo = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text;
-            string apellido = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_apellido")).Text;
-            string nombre = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_nombre")).Text;
-            string nick = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_nickname")).Text;
-            string contraseña = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_contraseña")).Text;
-            string dni = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_dni")).Text;
-            string email = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_email")).Text;
-            string fechanac= ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_fnac")).Text;
-            string tipousu = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_tipousuario")).Text;
-            string dire = ((Label)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_direccion")).Text;
-            string provincia = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_provincia")).Text;
-            string localidad = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("lbl_eit_localidad")).Text;
+            string apellido = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_apellido")).Text;
+            string nombre = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_nombre")).Text;
+            string nick = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_nickname")).Text;
+            string contraseña = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_contraseña")).Text;
+            string dni = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_dni")).Text;
+            string email = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_email")).Text;
+            string fechanac= ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_fnac")).Text;
+            string tipousu = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("ddl_eit_tipousuario")).Text;
+            string dire = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_direccion")).Text;
+            string provincia = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("ddl_eit_provincia")).Text;
+            string localidad = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("ddl_eit_localidad")).Text;
 
             TipoUsuario t = new TipoUsuario();
             t.setCodigoTipoUsuario(tipousu);
