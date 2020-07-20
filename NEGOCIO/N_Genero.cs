@@ -59,5 +59,17 @@ namespace NEGOCIO
             else
                 return false;
         }
+
+        public bool getBuscarNombreGenero(String nombreGenero)
+        {
+            DaoGenero dao = new DaoGenero();
+            return dao.getBuscarNombreGenero(nombreGenero);
+        }
+
+        public int getConsultaUltimoGenero()
+        {
+            DaoGenero dao = new DaoGenero();
+            return dao.getConsultaUltimoGenero();
+        }
     }
 }

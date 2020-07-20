@@ -12,6 +12,11 @@ namespace DAO
     {
         AccesoDatos ds = new AccesoDatos();
 
+        public DaoGenero()
+        {
+
+        }
+
         public Genero getGenero(string id)
         {
             Genero gen = new Genero();
@@ -24,8 +29,17 @@ namespace DAO
 
         public DataTable getTablaGenero()
         {
-            DataTable tabla = ds.ObtenerTabla("Generos", "Select * from Generos");
+            DataTable tabla = ds.ObtenerTabla("Generos", "Select * from Generos where Estado_Genero_G = 1 ");
             return tabla;
+        }
+
+        
+
+        private void ArmarParametrosGeneroEliminar(ref SqlCommand Comando, Genero gen)
+        {
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@Cod_Genero_G", SqlDbType.Char, 4);
+            SqlParametros.Value = gen.getCodigoGenero();         
         }
 
         public int eliminarGenero(Genero gen)
@@ -35,32 +49,46 @@ namespace DAO
             return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarGenero");
         }
 
-        private void ArmarParametrosGeneroEliminar(ref SqlCommand Comando, Genero gen)
-        {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Cod_Genero_G", SqlDbType.Char, 4);
-            SqlParametros.Value = gen.getNombreGenero();
-        }
         private void ArmarParametrosGenero(ref SqlCommand Comando, Genero p)
         {
             SqlParameter SqlParametros = new SqlParameter();
             SqlParametros = Comando.Parameters.Add("@Cod_Genero_G", SqlDbType.Char, 4);
             SqlParametros.Value = p.getCodigoGenero();
             SqlParametros = Comando.Parameters.Add("@Nombre_Genero_G", SqlDbType.NVarChar, 60);
-            SqlParametros.Value = p.getNombreGenero();
-            ;
+            SqlParametros.Value = p.getNombreGenero();            
         }
+
         public int actualizarGenero(Genero p)
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosGenero(ref comando, p);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spModificarGenero");
         }
+
         public int AltaGenero(Genero x)
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosGenero(ref comando, x);
             return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaGenero");
+        }
+
+        public bool getBuscarNombreGenero(String NombreGenero)
+        {            
+            DataTable tabla = new DataTable();
+            tabla = ds.ObtenerTabla("Genero", "select Cod_Genero_G, Nombre_Genero_G from Generos where Nombre_Genero_G like '" + NombreGenero.ToString() + "' and Estado_Genero_G = 1");
+            if (tabla.Rows.Count != 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public int getConsultaUltimoGenero()
+        {
+            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Genero");
         }
     }
 }

@@ -2729,7 +2729,9 @@ SELECT 'A35','Grand Theft Auto V','Videojuego de accion.','M7','CA2','G5','',1 U
 SELECT 'A36','Batman: Arkham City','Videojuego de aventuras.','M5','CA2','G1','',1 UNION
 SELECT 'A37','Funko Pop Anakin Skywalker','Juguete de Star Wars.','M8','CA4','G0','',1 UNION
 SELECT 'A38','Funko Pop Thanos','Juguete de Marvel.','M8','CA4','G0','',1 UNION
-SELECT 'A39','Funko Pop Squirtle','Juguete de Pokemon.','M8','CA4','G0','',1
+SELECT 'A39','Funko Pop Squirtle','Juguete de Pokemon.','M8','CA4','G0','',1 UNION
+SELECT 'A40','Wii Mote Plus','Accesorios de Wii U.','M1','CA3','G0','',1 UNION
+SELECT 'A41','Wii U Pro Controller','Accesorios de Wii U.','M1','CA3','G0','',1
 
 INSERT INTO PlataformaxProducto(Cod_Producto_PxP,Cod_Plataforma_PxP,Stock_Producto_PxP,PrecioUnitario_Producto_PxP,Imagen_Producto_PxP,Estado_Plataforma_PxP)
 SELECT 'A1','PF1',1000,32500,'IMAGES/switchgris-box.jpg', 1 UNION
@@ -2777,7 +2779,9 @@ SELECT 'A36','PF2',1000,3800,'IMAGES/batmanacwiiu-box.jpg', 1 UNION
 SELECT 'A36','PF3',1000,3800,'IMAGES/batmanacps3-box.jpg', 1 UNION
 SELECT 'A37','PF0',1000,3700,'IMAGES/funko1-box.jpg', 1 UNION
 SELECT 'A38','PF0',1000,3700,'IMAGES/funko2-box.jpg', 1 UNION
-SELECT 'A39','PF0',1000,3700,'IMAGES/funko3-box.jpg', 1
+SELECT 'A39','PF0',1000,3700,'IMAGES/funko3-box.jpg', 1 UNION
+SELECT 'A40','PF0',1000,5000,'IMAGES/wiimote-box.jpg', 1 UNION
+SELECT 'A41','PF0',1000,8000,'IMAGES/wiiuprocon-box.jpg', 1
 
 INSERT INTO Usuarios(Cod_Usuario_U,Cod_TipoUsuario_U,Nombre_Usuario_U,Apellido_Usuario_U,Nickname_Usuario_U,Contraseña_Usuario_U,DNI_Usuario_U,fNacimiento_Usuario_U,Telefono_Usuario_U,EMail_Usuario_U,Direccion_Usuario_U,Estado_Usuario_U,Provincia_Usuario_U,Localidad_Usuario_U)
 SELECT 'U1','TU1','Alexis','Rodriguez','CryoXz','123456','41804277','03/04/1999','44650251','ard@outlook.com','Moreno 362',1,'01','0048' UNION

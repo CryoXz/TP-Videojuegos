@@ -53,10 +53,10 @@
                               <a class="dropdown-item" href="ProductosJuegos.aspx?cate=ca3&plat=pf7">XBOX ONE</a>
                               <a class="dropdown-item" href="ProductosJuegos.aspx?cate=ca3&plat=pf4">PLAYSTATION 4</a>
                               <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="ProductosJuegosO.aspx?cate=ca2">OTROS</a>
+                              <a class="dropdown-item" href="ProductosJuegosO.aspx?cate=ca3">OTROS</a>
                               </div>
                             </li>
-                            <li class="nav-item"><a href="ProductosJuegosO.aspx?cate=ca3" class="nav-link">OTROS</a></li>
+                            <li class="nav-item"><a href="ProductosJuegosO.aspx?cate=ca4" class="nav-link">OTROS</a></li>
                             <li><a href="Carrito.aspx"><img src="IMAGES/carritologo.png" alt="carrito" style="width:25px;height:25px;margin-top:8px;margin-right:8px;"></a></li>
                             <li><a href="Login.aspx" class="btn btn-danger" role="button" id="btnIniciar">INICIAR SESION</a></li>
                             
