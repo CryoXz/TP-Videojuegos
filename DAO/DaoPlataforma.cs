@@ -88,8 +88,7 @@ namespace DAO
         }
 
         public bool getBuscarNombrePlataforma(String NombrePlataforma)
-        {
-            Plataforma plat = new Plataforma();
+        {             
             DataTable tabla = new DataTable();
             tabla = ds.ObtenerTabla("Plataformas", "select  Cod_Plataforma_P, Nombre_Plataforma_P from Plataformas where Nombre_Plataforma_P like '" + NombrePlataforma.ToString() + "' and Estado_Plataforma_P = 1");
             if (tabla.Rows.Count != 0)

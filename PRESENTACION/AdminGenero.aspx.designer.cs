@@ -7,31 +7,29 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PRESENTACION
-{
-
-
-    public partial class Formulario_web15
-    {
-
+namespace PRESENTACION {
+    
+    
+    public partial class Formulario_web15 {
+        
         /// <summary>
-        /// Control Label1.
+        /// Control lblGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
+        protected global::System.Web.UI.WebControls.Label lblGenero;
+        
         /// <summary>
-        /// Control TxtNombre.
+        /// Control txtNombreGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtNombre;
-
+        protected global::System.Web.UI.WebControls.TextBox txtNombreGenero;
+        
         /// <summary>
         /// Control btnAgregar.
         /// </summary>
@@ -40,7 +38,7 @@ namespace PRESENTACION
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregar;
-
+        
         /// <summary>
         /// Control grdGeneros.
         /// </summary>
