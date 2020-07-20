@@ -65,7 +65,7 @@
             <div class="form-group row">
                 <label class="col-lg-2 col-form-label">Precio Unitario:</label>
                 <div class="col-lg-4">
-                    <asp:TextBox ID="txtPrecio" runat="server"  CssClass="rounded"></asp:TextBox>/// validar solo numeros y puntos.
+                    <asp:TextBox ID="txtPrecio" runat="server"  CssClass="rounded"></asp:TextBox>
                 </div>
             </div>
             <div class="form-group row">

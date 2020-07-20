@@ -132,10 +132,10 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Precio Unitario">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txt_eit_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnitario") %>' ></asp:TextBox>
+                        <asp:TextBox ID="txt_eit_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnitario", "{0:0.00}") %>' ></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnitario") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnitario", "{0:0.00}") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Stock">

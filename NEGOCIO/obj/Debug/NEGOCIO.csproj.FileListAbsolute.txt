@@ -9,14 +9,3 @@ C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb
-D:\Projects\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.dll
-D:\Projects\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.pdb
-D:\Projects\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.dll
-D:\Projects\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.dll
-D:\Projects\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.pdb
-D:\Projects\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.pdb
-D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csprojAssemblyReference.cache
-D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
-D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
-D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
-D:\Projects\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb

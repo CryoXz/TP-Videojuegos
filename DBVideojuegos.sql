@@ -3031,6 +3031,19 @@ CREATE PROCEDURE spEliminarMarca(
 		 RETURN
 		 GO
 
+create procedure SpAltaPlataformaXProducto(
+	@Cod_Producto_PxP char (4),
+	@Cod_Plataforma_PxP char (4),
+	@Stock_Producto_PxP int,
+	@PrecioUnitario_Producto_PxP Money,
+	@Imagen_Producto_PxP varchar(100),
+	@Estado_Plataforma_PxP bit
+)
+as
+INSERT INTO PlataformaxProducto(Cod_Producto_PxP, Cod_Plataforma_PxP, Stock_Producto_PxP, PrecioUnitario_Producto_PxP, Imagen_Producto_PxP, Estado_Plataforma_PxP)
+	Values(@Cod_Producto_PxP, @Cod_Plataforma_PxP ,@Stock_Producto_PxP ,@PrecioUnitario_Producto_PxP, @Imagen_Producto_PxP, 1)
+return
+go
 
 CREATE PROCEDURE SpAltaGeneros(
 	@Cod_Genero_G char(4),

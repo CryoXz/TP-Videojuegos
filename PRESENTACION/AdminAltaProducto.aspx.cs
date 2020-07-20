@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using NEGOCIO;
 using ENTIDAD;
+using System.Web.Configuration;
 
 namespace PRESENTACION
 {
@@ -76,34 +77,53 @@ namespace PRESENTACION
                 String s_genero = ddlGeneros.SelectedValue.ToString();
                 String s_marca = ddlMarcas.SelectedValue.ToString();
                 String s_plat = ddlPlataformas.SelectedValue.ToString();
+                String nom = txtNombreProducto.Text;
+                String desc = txtDescripcion.Text;
+                String fecha = txtAnioFabricacion.Text;
+                String img = txtimgURL.Text;
+                String pu = txtPrecio.Text;
+                String stock = txtStock.Text;
 
-                N_Producto n_Producto = new N_Producto();
-          
-                int n = n_Producto.getConsultaUltimoProducto() + 1;
-                string cod = "A"+ n.ToString();
-
-                producto.setCodigoProducto(cod);
-                producto.setNombreProducto(txtNombreProducto.Text);
-                producto.setIdCodigoCategoria(s_categoria);
-                producto.setIdCodigoGenero(s_genero);
-                producto.setIdCodigoMarca(s_marca);
-                producto.setDescripcion(txtDescripcion.Text);
-                producto.setFechaPublicacion(DateTime.Parse(txtAnioFabricacion.Text.ToString()));
-                producto.setEstado(true);
-                PxP.setIdPlataforma(s_plat);
-                PxP.setimgURL(txtimgURL.Text);
-                PxP.setPrecioUnitario(decimal.Parse(txtPrecio.Text));
-                PxP.setStock(Int16.Parse(txtStock.Text.ToString()));
-                PxP.setIdProducto(cod);
-
-                N_PlataformaXProducto n_PXP = new N_PlataformaXProducto();
-                if (n_Producto.AltaProducto(producto) == true && n_PXP.AltaPlataformaxProducto(PxP) == true)
+                if (solonumeros(Int32.Parse(pu)) == false)
                 {
-                        Label1.Text = "Se ha agregado con exito";
-   
+                    Response.Write("<script>alert('Solo se aceptan numeros con decimal');</script>");
                 }
 
-                Response.Redirect("AdminProductos.aspx");
+                N_Producto n_Producto = new N_Producto();
+                if (s_categoria != "" && s_genero != "" && s_marca != "" && s_plat != "" && nom!= "" && desc != "" && fecha != "" && img != "" && pu != "" && stock != "")
+                {
+                    int n = n_Producto.getConsultaUltimoProducto() + 1;
+                    string cod = "A" + n.ToString();
+
+                    producto.setCodigoProducto(cod);
+                    producto.setNombreProducto(nom);
+                    producto.setIdCodigoCategoria(s_categoria);
+                    producto.setIdCodigoGenero(s_genero);
+                    producto.setIdCodigoMarca(s_marca);
+                    producto.setDescripcion(desc);
+                    producto.setFechaPublicacion(DateTime.Parse(fecha));
+                    producto.setEstado(true);
+                    PxP.setIdPlataforma(s_plat);
+                    PxP.setimgURL(img);
+                    PxP.setPrecioUnitario(decimal.Parse(pu));
+                    PxP.setStock(Int16.Parse(stock));
+                    PxP.setIdProducto(cod);
+
+                    N_PlataformaXProducto n_PXP = new N_PlataformaXProducto();
+                    if (n_Producto.AltaProducto(producto) == true && n_PXP.AltaPlataformaxProducto(PxP) == true)
+                    {
+                        Response.Write("<script>alert('Marca agregada con exito');</script>");
+                        Response.Redirect("AdminProductos.aspx");
+
+                    }
+
+               
+
+                }
+                else
+                {
+                    Response.Write("<script>alert('Debe completar todos los campos');</script>");
+                }
             }
             catch (Exception ex)
             {
@@ -112,6 +132,30 @@ namespace PRESENTACION
             }
            
         }
+
+        public bool solonumeros(int code)
+        {
+            bool resultado;
+
+            if (code == 44 )//se evalua si es coma
+            {
+                resultado = true;
+            }
+            else if ((((code >= 48) && (code <= 57)) || (code == 8) || code == 46)) //se evaluan las teclas validas
+            {
+                resultado = false;
+            }
+            else
+            {
+                resultado = true;
+            }
+
+            return resultado;
+
+        }
+
+
+
 
         protected void TextBox2_TextChanged(object sender, EventArgs e)
         {

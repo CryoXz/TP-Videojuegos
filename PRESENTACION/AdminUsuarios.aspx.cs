@@ -59,11 +59,12 @@ namespace PRESENTACION
             string contraseña = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_contraseña")).Text;
             string dni = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_dni")).Text;
             string email = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_email")).Text;
-            string fechanac= ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_fnac")).Text;
+            string fechanac = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_fnac")).Text;
             string tipousu = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("ddl_eit_tipousuario")).Text;
             string dire = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_direccion")).Text;
             string provincia = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("ddl_eit_provincia")).Text;
             string localidad = ((DropDownList)grdUsuarios.Rows[e.RowIndex].FindControl("ddl_eit_localidad")).Text;
+            string tel = ((TextBox)grdUsuarios.Rows[e.RowIndex].FindControl("txt_eit_telefono")).Text;
 
             TipoUsuario t = new TipoUsuario();
             t.setCodigoTipoUsuario(tipousu);
@@ -84,7 +85,7 @@ namespace PRESENTACION
             usu.setDireccion(dire);
             usu.setProvincia(p);
             usu.setLocalidad(l);
-
+            usu.setTelefono(tel);
 
             N_Usuario n = new N_Usuario();
             n.ModificarUsuario(usu);
