@@ -19,7 +19,7 @@
                 <div class="form-inline">
                     <asp:Label ID="lblBuscarProducto" runat="server" Text="Label">NOMBRE DE PRODUCTO A BUSCAR: </asp:Label>
                     &nbsp
-                    <asp:TextBox ID="txtNombreBuscar" runat="server" CssClass="rounded" ></asp:TextBox>
+                    <asp:TextBox ID="txtNombreBuscar" runat="server" CssClass="rounded" pattern="[A-Za-z]*{1,30}" title="Solo se admiten Letras sin caracteres especiales. Tamaño mínimo: 1. Tamaño máximo: 30" ></asp:TextBox>
                     &nbsp
                     <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click1" />
                 </div>

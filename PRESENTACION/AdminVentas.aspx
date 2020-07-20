@@ -76,7 +76,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Fecha Venta">
                     <ItemTemplate>
-                        <asp:Label ID="lbl_it_FechaVenta" runat="server" Text='<%# Bind("fVenta_V") %>'></asp:Label>
+                        <asp:Label ID="lbl_it_FechaVenta" runat="server" Text='<%# Bind("fVenta_V", "{0:d/M/yyy}") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -91,5 +91,6 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
+
       </div>
 </asp:Content>
