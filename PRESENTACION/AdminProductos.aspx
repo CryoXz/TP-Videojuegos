@@ -19,7 +19,7 @@
                 <div class="form-inline">
                     <asp:Label ID="lblBuscarProducto" runat="server" Text="Label">NOMBRE DE PRODUCTO A BUSCAR: </asp:Label>
                     &nbsp
-                    <asp:TextBox ID="txtNombreBuscar" runat="server" CssClass="rounded"></asp:TextBox>
+                    <asp:TextBox ID="txtNombreBuscar" runat="server" CssClass="rounded" ></asp:TextBox>
                     &nbsp
                     <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click1" />
                 </div>
@@ -43,11 +43,11 @@
                      &nbsp   
                 <asp:Label ID="lbldesde" runat="server" Text="Label">DESDE:</asp:Label> 
                                  &nbsp                  
-                <asp:TextBox ID = "TxtFechaInicio" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>           
+                <asp:TextBox ID = "TxtFechaInicio" runat="server" TextMode="Date" CssClass="btn btn-danger" ></asp:TextBox>           
                  &nbsp   
                 <asp:Label ID="LblHasta" runat="server" Text="Label">HASTA:</asp:Label> 
                  
-                 <asp:TextBox ID = "TxtFechaFin" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>
+                 <asp:TextBox ID = "TxtFechaFin" runat="server" TextMode="Date" CssClass="btn btn-danger" ></asp:TextBox>
                  &nbsp
                  <asp:Button ID="btnFiltrar" runat="server" Text="FILTRAR" CssClass="btn btn-danger" OnClick="btnFiltrar_Click" />
                 &nbsp         
@@ -132,7 +132,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Precio Unitario">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txt_eit_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnitario") %>'></asp:TextBox>
+                        <asp:TextBox ID="txt_eit_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnitario") %>' ></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_PrecioUnitario" runat="server" Text='<%# Bind("PrecioUnitario") %>'></asp:Label>
@@ -140,7 +140,7 @@
                 </asp:TemplateField>
                 <asp:TemplateField HeaderText="Stock">
                     <EditItemTemplate>
-                        <asp:TextBox ID="txt_eit_Stock" runat="server" Text='<%# Bind("Stock") %>'></asp:TextBox>
+                        <asp:TextBox ID="txt_eit_Stock" runat="server" TextMode="Number" Text='<%# Bind("Stock") %>'></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
                         <asp:Label ID="lbl_it_Stock" runat="server" Text='<%# Bind("Stock") %>'></asp:Label>
