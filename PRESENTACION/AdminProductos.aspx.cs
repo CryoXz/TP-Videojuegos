@@ -237,7 +237,7 @@ namespace PRESENTACION
             {
 
                 N_Producto n_Producto = new N_Producto();
-                ///grdProductos.DataSource = n_Producto.getBuscarProducto(txtNombreBuscar.Text);
+                grdProductos.DataSource = n_Producto.getBuscarProducto(txtNombreBuscar.Text);
                 grdProductos.DataBind();
             }
 
@@ -300,17 +300,17 @@ namespace PRESENTACION
                                         ddlGeneros.SelectedItem.Text,
                                         ref ClausulaSQLProductos);
                 if (TxtFechaInicio.Text != "")
-                    ConstruirClausulaSQL("fVenta_V",
+                    ConstruirClausulaSQL("fPublicacion_Producto_PR",
                                          "mayor:",
                                          TxtFechaInicio.Text,
                                          ref ClausulaSQLProductos);
                 if (TxtFechaFin.Text != "")
-                    ConstruirClausulaSQL("fVenta_V",
+                    ConstruirClausulaSQL("fPublicacion_Producto_PR",
                                         "menor:",
                                         TxtFechaFin.Text,
                                         ref ClausulaSQLProductos);
 
-                ///grdProductos.DataSource = n_Producto.getFiltrarProducto(ClausulaSQLProductos);
+                grdProductos.DataSource = n_Producto.getFiltrarProducto(ClausulaSQLProductos);
                 grdProductos.DataBind();
             }
             catch (InvalidCastException ex)

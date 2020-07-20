@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace PRESENTACION {
-    
-    
-    public partial class AdminVentas {
-        
+namespace PRESENTACION
+{
+
+
+    public partial class AdminVentas
+    {
+
         /// <summary>
         /// Control Label1.
         /// </summary>
@@ -20,7 +22,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// Control txtNombreBuscar.
         /// </summary>
@@ -29,7 +31,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNombreBuscar;
-        
+
         /// <summary>
         /// Control btnBuscar.
         /// </summary>
@@ -38,7 +40,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnBuscar;
-        
+
         /// <summary>
         /// Control ddlPlataformas.
         /// </summary>
@@ -47,7 +49,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlPlataformas;
-        
+
         /// <summary>
         /// Control ddlGeneros.
         /// </summary>
@@ -56,7 +58,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlGeneros;
-        
+
         /// <summary>
         /// Control ddlCategorias.
         /// </summary>
@@ -65,7 +67,16 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCategorias;
-        
+
+        /// <summary>
+        /// Control lbldesde.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbldesde;
+
         /// <summary>
         /// Control TxtFechaInicio.
         /// </summary>
@@ -74,7 +85,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtFechaInicio;
-        
+
         /// <summary>
         /// Control LblHasta.
         /// </summary>
@@ -83,7 +94,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblHasta;
-        
+
         /// <summary>
         /// Control TxtFechaFin.
         /// </summary>
@@ -92,7 +103,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtFechaFin;
-        
+
         /// <summary>
         /// Control btnFiltrar.
         /// </summary>
@@ -101,7 +112,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFiltrar;
-        
+
         /// <summary>
         /// Control btnQuitarFiltro.
         /// </summary>
@@ -110,7 +121,7 @@ namespace PRESENTACION {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnQuitarFiltro;
-        
+
         /// <summary>
         /// Control grdVentas.
         /// </summary>

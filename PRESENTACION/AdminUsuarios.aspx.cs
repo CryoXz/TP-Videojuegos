@@ -49,13 +49,6 @@ namespace PRESENTACION
             
         }
 
-        protected void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            N_Usuario n_usuario = new N_Usuario();
-            Char codigoTipo = Convert.ToChar(ddlTipoUsuario.SelectedValue);
-            grdUsuarios.DataSource = n_usuario.getTablaConFiltro(codigoTipo);
-            grdUsuarios.DataBind();
-        }
 
         protected void grdUsuarios_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
