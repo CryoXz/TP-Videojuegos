@@ -84,11 +84,11 @@ namespace PRESENTACION
                     d2 = "%'";
                     break;
                 case "mayor:":
-                    d1 = " >  '";
+                    d1 = " >=  '";
                     d2 = " ' ";
                     break;
                 case "menor:":
-                    d1 = " < '";
+                    d1 = " <= '";
                     d2 = " ' ";
                     break;
             }

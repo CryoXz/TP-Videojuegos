@@ -9,3 +9,14 @@ C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
 C:\Users\Rocio\Documents\GitHub\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\bin\Debug\NEGOCIO.pdb
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\bin\Debug\DAO.pdb
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\bin\Debug\ENTIDAD.pdb
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csprojAssemblyReference.cache
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CoreCompileInputs.cache
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.csproj.CopyComplete
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.dll
+D:\aUTN TSP\cUTN_TSP_2C_2019\julio 2020 p3 final\TP-Videojuegos\NEGOCIO\obj\Debug\NEGOCIO.pdb

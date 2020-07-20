@@ -69,7 +69,7 @@ namespace DAO
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosGenero(ref comando, x);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaGenero");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spAltaGeneros");
         }
 
         public bool getBuscarNombreGenero(String NombreGenero)
@@ -88,7 +88,7 @@ namespace DAO
 
         public int getConsultaUltimoGenero()
         {
-            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Genero");
+            return ds.ConsultarUsuario("SELECT COUNT(*) FROM Generos");
         }
     }
 }
