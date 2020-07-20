@@ -3046,8 +3046,7 @@ create procedure SpAltaPlataformaXProducto(
 	@Cod_Plataforma_PxP char (4),
 	@Stock_Producto_PxP int,
 	@PrecioUnitario_Producto_PxP Money,
-	@Imagen_Producto_PxP varchar(100),
-	@Estado_Plataforma_PxP bit
+	@Imagen_Producto_PxP varchar(100)	 
 )
 as
 INSERT INTO PlataformaxProducto(Cod_Producto_PxP, Cod_Plataforma_PxP, Stock_Producto_PxP, PrecioUnitario_Producto_PxP, Imagen_Producto_PxP, Estado_Plataforma_PxP)
