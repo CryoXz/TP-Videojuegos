@@ -2660,6 +2660,8 @@ SELECT 'PF7','XBOX One',1 UNION
 SELECT 'PF8','PC',1 UNION
 SELECT 'PF9','Playstation Classic',1
 
+INSERT INTO Categorias (Cod_Categoria_C, Nombre_Categoria_C, Estado_Categoria_C)
+SELECT 'CA1','Consolas',1 UNION
 SELECT 'CA2','Videojuegos',1 UNION
 SELECT 'CA3','Accesorios',1 UNION
 SELECT 'CA4','Otros',1
