@@ -7,7 +7,7 @@
 
     <div class="col-md-10">
         <div class="container">
-            <h3>Filtros Usuarios</h3>
+            <h3>Usuarios</h3>
             <hr />
             <div class="row">
                 <div class="form-inline">
@@ -16,12 +16,6 @@
                     <asp:TextBox ID="txtBuscarNombre" runat="server" placeholder="Nombre o Apellido" CssClass="rounded" ></asp:TextBox>
                     &nbsp
                     <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click" />
-                    &nbsp
-                    <asp:Label ID="lblFiltrarPor" runat="server" Text="Label">FILTRAR POR:</asp:Label>
-                    &nbsp
-                    <asp:DropDownList ID="ddlTipoUsuario" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
-                    &nbsp
-                    <asp:Button ID="btnFiltrar" runat="server" Text="FILTRAR" CssClass="btn btn-danger" OnClick="btnFiltrar_Click" />
                 </div>
             </div>
         </div>

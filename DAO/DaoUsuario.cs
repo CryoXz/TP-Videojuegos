@@ -67,24 +67,24 @@ namespace DAO
         }
         public DataTable getTablaUsuarios()
         {
-            DataTable tabla = ds.ObtenerTabla("Usuarios", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Cod_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Provincia_Usuario_U, Localidad_Usuario_U, Nombre_prov, Nombre_loc, Estado_Usuario_U, Cod_Provincia_loc from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU inner join Localidades on Localidad_Usuario_U=Cod_Localidad_loc inner join Provincias on Provincia_Usuario_U=Cod_Provincia_prov");
+            DataTable tabla = ds.ObtenerTabla("Usuarios", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Cod_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, Nickname_Usuario_U, Contraseña_Usuario_U, DNI_Usuario_U, fNacimiento_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Provincia_Usuario_U, Localidad_Usuario_U, Nombre_prov, Nombre_loc, Estado_Usuario_U, Cod_Provincia_loc from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU inner join Localidades on Localidad_Usuario_U=Cod_Localidad_loc inner join Provincias on Provincia_Usuario_U=Cod_Provincia_prov WHERE Estado_Usuario_U=1");
             return tabla;
         }
         public DataTable getTablaUsuariosConFiltro(Char tipoUsuario)
         {
-            DataTable tabla = ds.ObtenerTabla("UsuariosConFiltro", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Estado_Usuario_U from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU where Cod_TipoUsuario_U LIKE 'TU"+ tipoUsuario.ToString() +"'");
+            DataTable tabla = ds.ObtenerTabla("UsuariosConFiltro", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Cod_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, Nickname_Usuario_U, Contraseña_Usuario_U, DNI_Usuario_U, fNacimiento_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Provincia_Usuario_U, Localidad_Usuario_U, Nombre_prov, Nombre_loc, Estado_Usuario_U, Cod_Provincia_loc from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU inner join Localidades on Localidad_Usuario_U=Cod_Localidad_loc inner join Provincias on Provincia_Usuario_U=Cod_Provincia_prov where Cod_TipoUsuario_U LIKE 'TU" + tipoUsuario.ToString() + "' AND Estado_Usuario_U=1");
             return tabla;
         }
 
         public DataTable getBuscarNombre(String nombreBuscado)
         {
-            DataTable tabla = ds.ObtenerTabla("UsuarioBuscarNombre", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, DNI_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Estado_Usuario_U from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU where Nombre_Usuario_U like '%" + nombreBuscado + "%' or Apellido_Usuario_U like '%" + nombreBuscado + "%'");
+            DataTable tabla = ds.ObtenerTabla("UsuarioBuscarNombre", "select Cod_Usuario_U, Nombre_TipoUsuario_TU, Cod_TipoUsuario_TU, Nombre_Usuario_U, Apellido_Usuario_U, Nickname_Usuario_U, Contraseña_Usuario_U, DNI_Usuario_U, fNacimiento_Usuario_U, Telefono_Usuario_U, EMail_Usuario_U, Direccion_Usuario_U, Provincia_Usuario_U, Localidad_Usuario_U, Nombre_prov, Nombre_loc, Estado_Usuario_U, Cod_Provincia_loc from Usuarios inner join Tipo_Usuarios on Cod_TipoUsuario_U = Cod_TipoUsuario_TU inner join Localidades on Localidad_Usuario_U=Cod_Localidad_loc inner join Provincias on Provincia_Usuario_U=Cod_Provincia_prov where Nombre_Usuario_U like '%" + nombreBuscado + "%' or Apellido_Usuario_U like '%" + nombreBuscado + "%' AND Estado_Usuario_U=1");
             return tabla;
         }
 
         public DataTable getUsuarioPorUsername(String username)
         {
-            DataTable tabla = ds.ObtenerTabla("Usuario", "SELECT * FROM Usuarios WHERE Nickname_Usuario_U = '" + username +"'");
+            DataTable tabla = ds.ObtenerTabla("Usuario", "SELECT * FROM Usuarios WHERE Nickname_Usuario_U = '" + username + "' AND Estado_Usuario_U=1");
             return tabla;
         }
 
@@ -102,12 +102,12 @@ namespace DAO
 
         public string getUserType(string username)
         {
-            return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_TipoUsuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "'");
+            return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_TipoUsuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "' AND Estado_Usuario_U=1");
         }
 
         public string getIDporUsername(string username)
         {
-            return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_Usuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "'");
+            return ds.ConsultarTipoUsuario("SELECT Usuarios.Cod_Usuario_U FROM Usuarios WHERE Usuarios.Nickname_Usuario_U = '" + username + "' AND Estado_Usuario_U=1");
         }
 
         public int eliminarUsuario(Usuario u)

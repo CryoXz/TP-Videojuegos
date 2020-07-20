@@ -26,10 +26,12 @@
                  <asp:DropDownList ID="ddlGeneros" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
                  &nbsp
                  <asp:DropDownList ID="ddlCategorias" runat="server" CssClass="btn btn-danger"></asp:DropDownList>
+                  &nbsp   
+                <asp:Label ID="lbldesde" runat="server" Text="Label">DESDE:</asp:Label> 
                  &nbsp                  
                 <asp:TextBox ID = "TxtFechaInicio" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>           
                  &nbsp   
-                <asp:Label ID="LblHasta" runat="server" Text="Label">ENTRE:</asp:Label> 
+                <asp:Label ID="LblHasta" runat="server" Text="Label">HASTA:</asp:Label> 
                  
                  <asp:TextBox ID = "TxtFechaFin" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>
                  &nbsp

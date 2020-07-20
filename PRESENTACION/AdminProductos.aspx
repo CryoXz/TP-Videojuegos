@@ -27,23 +27,25 @@
             <hr />     
             <div class="row">
                     <div class="dropdown">
-                        <asp:DropDownList ID="ddlPlataformas" runat="server" AutoPostBack="True">
+                        <asp:DropDownList ID="ddlPlataformas" runat="server" AutoPostBack="True" CssClass="btn btn-danger">
                         </asp:DropDownList>
                 </div>
             &nbsp
                 <div class="dropdown">
-                    <asp:DropDownList ID="ddlCategorias" runat="server" AutoPostBack="True">
+                    <asp:DropDownList ID="ddlCategorias" runat="server" AutoPostBack="True" CssClass="btn btn-danger">
                     </asp:DropDownList>
                 </div>
             &nbsp
                 <div class="dropdown">
-                        <asp:DropDownList ID="ddlGeneros" runat="server" AutoPostBack="True" >
+                        <asp:DropDownList ID="ddlGeneros" runat="server" AutoPostBack="True" CssClass="btn btn-danger" >
                         </asp:DropDownList>
                 </div>
+                     &nbsp   
+                <asp:Label ID="lbldesde" runat="server" Text="Label">DESDE:</asp:Label> 
                                  &nbsp                  
                 <asp:TextBox ID = "TxtFechaInicio" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>           
                  &nbsp   
-                <asp:Label ID="LblHasta" runat="server" Text="Label">ENTRE:</asp:Label> 
+                <asp:Label ID="LblHasta" runat="server" Text="Label">HASTA:</asp:Label> 
                  
                  <asp:TextBox ID = "TxtFechaFin" runat="server" TextMode="Date" CssClass="btn btn-danger"></asp:TextBox>
                  &nbsp
