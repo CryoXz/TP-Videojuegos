@@ -154,5 +154,10 @@ namespace PRESENTACION
             grdVentas.DataSource = n_Venta.getTabla();
             grdVentas.DataBind();      
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Estadisticas.aspx");
+        }
     }
 }

@@ -91,6 +91,11 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
+      <hr />
+                  &nbsp   &nbsp  &nbsp 
+                <asp:Label ID="Label2" runat="server" Text="Label">Mostrar gráfico de ventas del año:</asp:Label> 
+                            &nbsp         
+                   <asp:Button ID="Button1" runat="server" Text="VENTAS DEL AÑO" CssClass="btn btn-danger" OnClick="Button1_Click" /> 
 
       </div>
 </asp:Content>
