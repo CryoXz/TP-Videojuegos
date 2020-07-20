@@ -2647,8 +2647,9 @@ SELECT 'TU1','Administrador' UNION
 SELECT 'TU2','Cliente'
 
 INSERT INTO Plataformas (Cod_Plataforma_P, Nombre_Plataforma_P, Estado_Plataforma_P)
+SELECT 'PF0','Sin Plataforma',1 UNION
 SELECT 'PF1','Nintendo Switch',1 UNION
-SELECT 'PF2','Nintendo 3DS',1 UNION
+SELECT 'PF2','Nintendo Wii U',1 UNION
 SELECT 'PF3','Playstation 3',1 UNION
 SELECT 'PF4','Playstation 4',1 UNION
 SELECT 'PF5','PS Vita',1  UNION
@@ -2669,7 +2670,9 @@ SELECT 'M2','Sony','Charles X.','5 Th Avenue','New York','5555555','contact@sony
 SELECT 'M3','Microsoft','Bob W.','300 Montgomery','New York','57743355','contact@microsoft.com',1 UNION
 SELECT 'M4','Electronic Arts','Gary J.','50 Montgomery','New York','53823355','contact@ea.com',1 UNION
 SELECT 'M5','Netherrealm Studios','Ed B.','200 Montgomery','New York','56660355','contact@netherrealm.com',1 UNION
-SELECT 'M6','Activision','Jay C.','30 Montgomery','New York','56330355','contact@activision.com',1
+SELECT 'M6','Activision','Jay C.','30 Montgomery','New York','56330355','contact@activision.com',1 UNION
+SELECT 'M7','Rockstar Games','Carl J.','30 Canada','New York','56330466','contact@rockstar.com',1 UNION
+SELECT 'M8','Funko','Caleb J.','34 Chicago','New York','554884212','contact@yunko.com',1
 
 INSERT INTO Generos (Cod_Genero_G,Nombre_Genero_G, Estado_Genero_G)
 SELECT 'G0','Sin Genero',1 UNION
@@ -2721,7 +2724,12 @@ SELECT 'A30','Joystick Xbox One Grey','Control/mando para Xbox One.','M3','CA3',
 SELECT 'A31','Microsoft Xbox One S','Consola de videojuegos Microsoft.','M3','CA1','G0','',1 UNION
 SELECT 'A32','Star Wars Jedi Fallen Order','Videojuego de aventura.','M4','CA2','G1','',1 UNION
 SELECT 'A33','Mortal Kombat 11','Videojuego de peleas.','M5','CA2','G2','',1 UNION
-SELECT 'A34','Call of Duty: Modern Warfare','Videojuego de disparos.','M6','CA2','G3','',1
+SELECT 'A34','Call of Duty: Modern Warfare','Videojuego de disparos.','M6','CA2','G3','',1 UNION
+SELECT 'A35','Grand Theft Auto V','Videojuego de accion.','M7','CA2','G5','',1 UNION
+SELECT 'A36','Batman: Arkham City','Videojuego de aventuras.','M5','CA2','G1','',1 UNION
+SELECT 'A37','Funko Pop Anakin Skywalker','Juguete de Star Wars.','M8','CA4','G0','',1 UNION
+SELECT 'A38','Funko Pop Thanos','Juguete de Marvel.','M8','CA4','G0','',1 UNION
+SELECT 'A39','Funko Pop Squirtle','Juguete de Pokemon.','M8','CA4','G0','',1
 
 INSERT INTO PlataformaxProducto(Cod_Producto_PxP,Cod_Plataforma_PxP,Stock_Producto_PxP,PrecioUnitario_Producto_PxP,Imagen_Producto_PxP,Estado_Plataforma_PxP)
 SELECT 'A1','PF1',1000,32500,'IMAGES/switchgris-box.jpg', 1 UNION
@@ -2761,12 +2769,20 @@ SELECT 'A33','PF1',1000,4000,'IMAGES/mk11switch-box.jpg', 1 UNION
 SELECT 'A33','PF4',1000,4000,'IMAGES/mk11ps4-box.jpg', 1 UNION
 SELECT 'A33','PF7',1000,5500,'IMAGES/mk11xboxone-box.jpg', 1 UNION
 SELECT 'A34','PF4',1000,5600,'IMAGES/codps4-box.jpg', 1 UNION
-SELECT 'A34','PF7',1000,5600,'IMAGES/codxboxone-box.jpg', 1
-
+SELECT 'A34','PF7',1000,5600,'IMAGES/codxboxone-box.jpg', 1 UNION
+SELECT 'A35','PF3',1000,3500,'IMAGES/gtavps3-box.jpg', 1 UNION
+SELECT 'A35','PF6',1000,3500,'IMAGES/gtav360-box.jpg', 1 UNION
+SELECT 'A6','PF2',1000,3500,'IMAGES/botwwiiu-box.jpg', 1 UNION
+SELECT 'A36','PF2',1000,3800,'IMAGES/batmanacwiiu-box.jpg', 1 UNION
+SELECT 'A36','PF3',1000,3800,'IMAGES/batmanacps3-box.jpg', 1 UNION
+SELECT 'A37','PF0',1000,3700,'IMAGES/funko1-box.jpg', 1 UNION
+SELECT 'A38','PF0',1000,3700,'IMAGES/funko2-box.jpg', 1 UNION
+SELECT 'A39','PF0',1000,3700,'IMAGES/funko3-box.jpg', 1
 
 INSERT INTO Usuarios(Cod_Usuario_U,Cod_TipoUsuario_U,Nombre_Usuario_U,Apellido_Usuario_U,Nickname_Usuario_U,Contraseña_Usuario_U,DNI_Usuario_U,fNacimiento_Usuario_U,Telefono_Usuario_U,EMail_Usuario_U,Direccion_Usuario_U,Estado_Usuario_U,Provincia_Usuario_U,Localidad_Usuario_U)
 SELECT 'U1','TU1','Alexis','Rodriguez','CryoXz','123456','41804277','03/04/1999','44650251','ard@outlook.com','Moreno 362',1,'01','0048' UNION
 SELECT 'U2','TU2','Rocio','Favre','Rofavre','123444','35123222','12/07/1994','1546825737','raf@outlook.com','Av Centenario 664',1,'01','0048'
+
 INSERT INTO Compras(Cod_Marca_CO, Fecha_Compra_CO)
 SELECT 'M1', '08/12/2019' UNION
 SELECT 'M2', '08/12/2019'
@@ -2782,7 +2798,7 @@ SELECT 'U2', 'TU2', '08/02/2020', 'TP1' UNION
 SELECT 'U2', 'TU2', '09/02/2020', 'TP1' UNION
 SELECT 'U2', 'TU2', '07/03/2020', 'TP1' UNION
 SELECT 'U2', 'TU2', '12/04/2020', 'TP1' UNION
-SELECT 'U2', 'TU2', '14/04/2020', 'TP1' 
+SELECT 'U2', 'TU2', '14/04/2020', 'TP1'
 
 INSERT INTO DetalleVentas(Cod_Venta_DV, Cod_Producto_DV, Cod_Plataforma_DV, Cantidad_Producto_DV, PrecioUnitario_Venta_DV)
 SELECT 1, 'A2', 'PF1', 1, 32500 UNION
@@ -2794,7 +2810,7 @@ SELECT 4, 'A6', 'PF1', 1, 5000 UNION
 SELECT 4, 'A11', 'PF1', 1, 10500 UNION
 SELECT 5, 'A7', 'PF1', 1, 4800 UNION
 SELECT 5, 'A31', 'PF7',1, 35000 UNION
-SELECT 5, 'A8', 'PF1', 1, 4900 
+SELECT 5, 'A8', 'PF1', 1, 4900
 
 go
 
@@ -3042,7 +3058,7 @@ CREATE PROCEDURE spEliminarGenero(
 		 WHERE Cod_Genero_G = @Cod_Genero_G
 		 END
 		 GO
-		 
+
 create procedure SpModificarPlataformaXProducto(
 	@Cod_Producto_PxP char (4),
 	@Cod_Plataforma_PxP char (4),
