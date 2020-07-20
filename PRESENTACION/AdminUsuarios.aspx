@@ -13,7 +13,7 @@
                 <div class="form-inline">
                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Label">NOMBRE DE USUARIO</asp:Label>
                     &nbsp                
-                    <asp:TextBox ID="txtBuscarNombre" runat="server" placeholder="Nombre o Apellido" CssClass="rounded" onkeypress="if (event.keyCode==13) return false;" ></asp:TextBox>
+                    <asp:TextBox ID="txtBuscarNombre" runat="server" placeholder="Nombre o Apellido" CssClass="rounded" pattern="[A-Za-z]*{1,30}" title="Solo se admiten Letras sin caracteres especiales. Tamaño mínimo: 1. Tamaño máximo: 30" ></asp:TextBox>
                     &nbsp
                     <asp:Button ID="btnBuscar" runat="server" Text="BUSCAR" CssClass="btn btn-danger" OnClick="btnBuscar_Click" />
                 </div>
