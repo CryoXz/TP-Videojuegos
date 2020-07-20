@@ -1,6 +1,7 @@
 USE MASTER
 GO
-
+drop database TiendaVideojuegos
+go
 CREATE DATABASE TiendaVideojuegos
 GO
 
@@ -53,6 +54,7 @@ CREATE TABLE Categorias
 (
 	Cod_Categoria_C char(4) PRIMARY KEY NOT NULL,
 	Nombre_Categoria_C varchar(60) NOT NULL,
+	Estado_Categoria_C bit NOT NULL
 )
 GO
 
@@ -2658,11 +2660,9 @@ SELECT 'PF7','XBOX One',1 UNION
 SELECT 'PF8','PC',1 UNION
 SELECT 'PF9','Playstation Classic',1
 
-INSERT INTO Categorias (Cod_Categoria_C, Nombre_Categoria_C)
-SELECT 'CA1','Consolas' UNION
-SELECT 'CA2','Videojuegos' UNION
-SELECT 'CA3','Accesorios' UNION
-SELECT 'CA4','Otros'
+SELECT 'CA2','Videojuegos',1 UNION
+SELECT 'CA3','Accesorios',1 UNION
+SELECT 'CA4','Otros',1
 
 INSERT INTO Marcas (Cod_Marca_M,Nombre_Marca_M,Nombre_Contacto_M,Direccion_Marca_M,Ciudad_Marca_M,Telefono_Marca_M,EMail_Marca_M,Estado_Marca_M)
 SELECT 'M1','Nintendo','Doug B.','10 Rockefeller','New York','1138205845','contact@nintendo.com',1 UNION
@@ -2839,6 +2839,14 @@ CREATE PROCEDURE SpAltaPlataforma(
 		RETURN
 		GO
 
+CREATE PROCEDURE SpEliminarCategoria(
+		@Cod_Categoria_C char(4)
+		)
+		AS
+		UPDATE Categorias set Estado_Categoria_C = 0 
+		where Cod_Categoria_C = @Cod_Categoria_C
+		RETURN
+		GO
 
 CREATE PROCEDURE spEliminarPlataforma(
     @Cod_Plataforma_P char(4)
