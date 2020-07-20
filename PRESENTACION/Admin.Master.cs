@@ -52,5 +52,9 @@ namespace PRESENTACION
             Response.Redirect("Home.aspx");
         }
 
+        protected void btnGeneros_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AdminGenero.aspx");
+        }
     }
 }

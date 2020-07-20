@@ -29,7 +29,7 @@ namespace PRESENTACION
 
         protected void grdGeneros_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            String s_codigoGenero = ((Label)grdGeneros.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text;
+            String s_codigoGenero = ((Label)grdGeneros.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text.Trim();
 
             N_Genero n_plat = new N_Genero();
             n_plat.eliminarGenero(s_codigoGenero);
@@ -53,17 +53,17 @@ namespace PRESENTACION
 
         protected void grdGeneros_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            String s_codigoGenero = ((Label)grdGeneros.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text;
-            String s_nombreGenero = ((TextBox)grdGeneros.Rows[e.RowIndex].FindControl("txt_eit_nombre")).Text;
+            String s_codigoGenero = ((Label)grdGeneros.Rows[e.RowIndex].FindControl("lbl_eit_codigo")).Text.Trim();
+            String s_nombreGenero = ((TextBox)grdGeneros.Rows[e.RowIndex].FindControl("txt_eit_nombre")).Text.Trim();
 
 
 
-            Genero plat = new Genero();
-            plat.setCodigoGenero(s_codigoGenero);
-            plat.setNombreGenero(s_nombreGenero);
+            Genero genero = new Genero();
+            genero.setCodigoGenero(s_codigoGenero);
+            genero.setNombreGenero(s_nombreGenero);
 
             N_Genero n_Genero = new N_Genero();
-            n_Genero.ActualizarGenero(plat);
+            n_Genero.ActualizarGenero(genero);
 
             grdGeneros.EditIndex = -1;
             cargarGridview();
@@ -72,24 +72,35 @@ namespace PRESENTACION
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            Genero p = new Genero();
-
-
-            int N_filas = grdGeneros.Rows.Count - 1;
-            string s_codigoGenero = ((Label)grdGeneros.Rows[N_filas].FindControl("lbl_it_codigo")).Text;
-            char[] CharsToTream = { 'G' };
-            int codNum = Convert.ToInt32(s_codigoGenero.TrimStart(CharsToTream)) + 1;
-
-            p.setCodigoGenero("G" + codNum);
-            p.setNombreGenero(TxtNombre.Text);
-
-
+            Genero genero = new Genero();
             N_Genero n_Genero = new N_Genero();
-            n_Genero.AltaGenero(p);
 
-            grdGeneros.EditIndex = -1;
-            cargarGridview();
-
+            string nombreGenero = txtNombreGenero.Text.Trim();
+            if(nombreGenero != "")
+            {
+                if(!n_Genero.getBuscarNombreGenero(nombreGenero))
+                {
+                    int ultimoGenero = n_Genero.getConsultaUltimoGenero() + 1;
+                    genero.setCodigoGenero("G" + ultimoGenero);
+                    genero.setNombreGenero(nombreGenero);
+                    n_Genero.AltaGenero(genero);
+                    Response.Write("<script>alert('Genero agregado con exito');</script>");
+                    txtNombreGenero.Text = "";
+                    cargarGridview();
+                }
+                else
+                {
+                    Response.Write("<script>alert('El genero ya existe');</script>");
+                    txtNombreGenero.Text = "";
+                    cargarGridview();
+                }
+            }
+            else
+            {
+                Response.Write("<script>alert('Debe ingresar un genero');</script>");
+                txtNombreGenero.Text = "";
+                cargarGridview();
+            }  
         }
 
         protected void grdGeneros_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -97,6 +108,5 @@ namespace PRESENTACION
             grdGeneros.PageIndex = e.NewPageIndex;
             cargarGridview();
         }
-
     }
 }

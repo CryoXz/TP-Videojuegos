@@ -16,52 +16,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-   
-
-<SCRIPT language=Javascript>  
-
-function soloNumeros(e) {
- 
-            var key;
- 
-            if (window.event) // IE
-            {
-                key = e.keyCode;
-            }
-            else if (e.which) // Netscape/Firefox/Opera
-            {
-                key = e.which;
-            }
- 
-            if (key < 48 || key > 57) {
-                return false;
-            }
- 
-            return true;
-    }
-function soloLetras(e) {
- 
-            var key;
- 
-            if (window.event) // IE
-            {
-                key = e.keyCode;
-            }
-            else if (e.which) // Netscape/Firefox/Opera
-            {
-                key = e.which;
-            }
- 
-            if ((key >= 32 || key <= 64) || (key >= 91 || key <= 96) || (key >= 123 || key <= 255)) {
-                return true;
-            }
- 
-            return false;
-    }
-
-
-  </SCRIPT>
-
 </head>
 <body>
     <form id="form1" runat="server">
@@ -90,11 +44,11 @@ function soloLetras(e) {
 
                 <asp:Button ID="btnUsuarios" runat="server" Text="Usuarios" CssClass="btn btn-danger" OnClick="btnUsuario_Click" />
                 <asp:Button ID="btnVentas" runat="server" Text="Ventas" CssClass="btn btn-danger" OnClick="btnVentas_Click" />
-                <asp:Button ID="btnProductos" runat="server" Text="Productos" CssClass="btn btn-danger" OnClick="btnProductos_Click" Enabled="true" />
-                
-                 <asp:Button ID="btnPlataformas" runat="server" Text="Plataformas" CssClass="btn btn-danger" OnClick="btnPlatafomas_Click"/>
+                <asp:Button ID="btnProductos" runat="server" Text="Productos" CssClass="btn btn-danger" OnClick="btnProductos_Click" Enabled="true" />                
+                <asp:Button ID="btnPlataformas" runat="server" Text="Plataformas" CssClass="btn btn-danger" OnClick="btnPlatafomas_Click"/>
                 <asp:Button ID="btnCategorias" runat="server" Text="Categorias" CssClass="btn btn-danger" OnClick="btnCategorias_Click"/>
                 <asp:Button ID="btnMarcas" runat="server" Text="Marcas" CssClass="btn btn-danger" OnClick="btnMarcas_Click"/>
+                <asp:Button ID="btnGeneros" runat="server" Text="Generos" CssClass="btn btn-danger" OnClick="btnGeneros_Click"/>
                 </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
